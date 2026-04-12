@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber tesis"] 1775550683.26258 "tesis.bcf" "tesis.bbl" "tesis" 1775677231.77082 0
+["biber tesis"] 1775953721.99399 "tesis.bcf" "tesis.bbl" "tesis" 1775957983.0843 0
   "bibliografia.bib" 1775550674 3006 4377357569c36b4d1574757ed8356a87 ""
-  "tesis.bcf" 1775677231 109619 cd2137bdbf70c6fc02140c5e16467046 "pdflatex"
+  "tesis.bcf" 1775957982 109619 cd2137bdbf70c6fc02140c5e16467046 "pdflatex"
   (generated)
   "tesis.bbl"
   "tesis.blg"
   (rewritten before read)
-["pdflatex"] 1775677228.50423 "c:/Users/andre/Documents/latex_tesis/tesis.tex" "tesis.pdf" "tesis" 1775677231.77153 0
+["pdflatex"] 1775957981.07453 "c:/Users/andre/Desktop/Tesis-la-categoria-de-espacios/tesis.tex" "tesis.pdf" "tesis" 1775957983.08502 0
   "C:/Users/andre/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1775358507 84710 c1941653dbb43d8c7182a2934c72cad4 ""
   "C:/Users/andre/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx1200.pk" 1774575837 27340 a67d9ae72249626bb497606eb3ff2204 ""
   "C:/Users/andre/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecsx2074.pk" 1774575838 52312 414acd510729e94871d1a6c8d656a801 ""
@@ -221,14 +221,14 @@
   "C:/Users/andre/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1729265222 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "C:/Users/andre/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "C:/Users/andre/AppData/Local/Programs/MiKTeX/tex/latex/xstring/xstring.sty" 1693735632 123 a302f2c651a95033260db60e51527ae8 ""
-  "c:/Users/andre/Documents/latex_tesis/tesis.tex" 1775677226 11157 36edf287e82bcaf7535e5891d127b129 ""
+  "c:/Users/andre/Desktop/Tesis-la-categoria-de-espacios/tesis.tex" 1775957980 11223 a6fcf27c6ac7727c17ce5fb33f3df14f ""
   "fc.pdf" 1774575574 54695 aac43b93d475152d3d05a37aef651bb2 ""
   "mycats.sty" 1774575602 4707 7481775e09bdfb593e87861a82c977fd ""
-  "tesis.aux" 1775677231 5149 44c0c8b0b35f7d6d27c484b5581edb80 "pdflatex"
-  "tesis.bbl" 1775550685 18785 8fff038c87e601b1b3676c54f301f9c8 "biber tesis"
-  "tesis.out" 1775677231 1779 87bdced73c1770ac12a0a9c991291be7 "pdflatex"
-  "tesis.run.xml" 1775677231 2320 821df929b4060f8d5fb8428090460240 "pdflatex"
-  "tesis.tex" 1775677226 11157 36edf287e82bcaf7535e5891d127b129 ""
+  "tesis.aux" 1775957982 5149 d7c8b924f8c07fc66c8331928fa95028 "pdflatex"
+  "tesis.bbl" 1775953727 18764 664628256fe7a29b8e05ec3ce8cf0e9e "biber tesis"
+  "tesis.out" 1775957982 1777 801e690eb3736c92739be43e29491641 "pdflatex"
+  "tesis.run.xml" 1775957982 2320 821df929b4060f8d5fb8428090460240 "pdflatex"
+  "tesis.tex" 1775957980 11223 a6fcf27c6ac7727c17ce5fb33f3df14f ""
   "tesisFC.cls" 1774575647 6165 ebe4e375322a009f710db216dccb26be ""
   "unam.pdf" 1774575652 80625 6dcba2dde346725290e332a9426755a9 ""
   (generated)

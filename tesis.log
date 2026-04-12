@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  8 APR 2026 13:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  11 APR 2026 19:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/andre/Documents/latex_tesis/tesis.tex
-(c:/Users/andre/Documents/latex_tesis/tesis.tex
+**c:/Users/andre/Desktop/Tesis-la-categoria-de-espacios/tesis.tex
+(c:/Users/andre/Desktop/Tesis-la-categoria-de-espacios/tesis.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (tesisFC.cls
@@ -1326,7 +1326,7 @@ Package: memhfixc 2025/09/16 v1.24 hyperref package fixes for memoir class
 \c@memhycontfloat=\count553
 \c@mem@Hpagenote=\count554
 )
-LaTeX Font Info:    Trying to load font information for T1+stix2 on input line 21.
+LaTeX Font Info:    Trying to load font information for T1+stix2 on input line 22.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\t1stix2.fd
 File: t1stix2.fd 2018/04/02 v2.0.0-latex stix2 T1 font definitions
 ) (tesis.aux
@@ -1337,51 +1337,51 @@ Package babel Info: 'spanish' activates 'spanish' shorthands.
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for LS1/stix2/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for LS1+stix2 on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LS1/stix2/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for LS1+stix2 on input line 22.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls1stix2.fd
 File: ls1stix2.fd 2018/04/02 v2.0.0-latex stix2 LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for LS2/stix2/m/n on input line 21.
-LaTeX Font Info:    Trying to load font information for LS2+stix2 on input line 21.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for LS2/stix2/m/n on input line 22.
+LaTeX Font Info:    Trying to load font information for LS2+stix2 on input line 22.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls2stix2.fd
 File: ls2stix2.fd 2018/04/02 v2.0.0-latex stix2 LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Info: Command `\dddot' is already robust on input line 21.
-LaTeX Info: Command `\ddddot' is already robust on input line 21.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Info: Command `\dddot' is already robust on input line 22.
+LaTeX Info: Command `\ddddot' is already robust on input line 22.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/latex/translations/dicts\translations-basic-dictionary-spanish.trsl
 File: translations-basic-dictionary-spanish.trsl (spanish translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `spanish'. on input line 21.
-LaTeX Info: Redefining \. on input line 21.
-LaTeX Info: Redefining \% on input line 21.
-LaTeX Info: Redefining \microtypecontext on input line 21.
-Package microtype Info: Applying patch `item' on input line 21.
-Package microtype Info: Applying patch `toc' on input line 21.
-Package microtype Info: Applying patch `eqnum' on input line 21.
-Package microtype Info: Applying patch `footnote' on input line 21.
-Package microtype Info: Applying patch `verbatim' on input line 21.
-LaTeX Info: Redefining \microtypesetup on input line 21.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `spanish'. on input line 22.
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
+LaTeX Info: Redefining \microtypecontext on input line 22.
+Package microtype Info: Applying patch `item' on input line 22.
+Package microtype Info: Applying patch `toc' on input line 22.
+Package microtype Info: Applying patch `eqnum' on input line 22.
+Package microtype Info: Applying patch `footnote' on input line 22.
+Package microtype Info: Applying patch `verbatim' on input line 22.
+LaTeX Info: Redefining \microtypesetup on input line 22.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1429,9 +1429,9 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'tesis.bbl' found.
  (tesis.bbl)
-Package biblatex Info: Reference section=0 on input line 21.
-Package biblatex Info: Reference segment=0 on input line 21.
-Package hyperref Info: Link coloring ON on input line 21.
+Package biblatex Info: Reference section=0 on input line 22.
+Package biblatex Info: Reference segment=0 on input line 22.
+Package hyperref Info: Link coloring ON on input line 22.
  (tesis.out) (tesis.out)
 \@outlinefile=\write6
 \openout6 = `tesis.out'.
@@ -1442,33 +1442,33 @@ pdfTeX warning: pdflatex (file ./unam.pdf): PDF inclusion: found PDF version <1.
 <unam.pdf, id=42, 1027.84pt x 1155.31625pt>
 File: unam.pdf Graphic file (type pdf)
 <use unam.pdf>
-Package pdftex.def Info: unam.pdf  used on input line 23.
+Package pdftex.def Info: unam.pdf  used on input line 24.
 (pdftex.def)             Requested size: 68.78807pt x 77.33466pt.
-LaTeX Font Info:    Trying to load font information for LS1+stix2scr on input line 23.
+LaTeX Font Info:    Trying to load font information for LS1+stix2scr on input line 24.
 (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls1stix2scr.fd
 File: ls1stix2scr.fd 2018/04/02 v2.0.0-latex stix2 script LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stix2ex on input line 23.
+LaTeX Font Info:    Trying to load font information for LS2+stix2ex on input line 24.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls2stix2ex.fd
 File: ls2stix2ex.fd 2018/04/02 v2.0.0-latex stix2 extentions LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stix2frak on input line 23.
+LaTeX Font Info:    Trying to load font information for LS1+stix2frak on input line 24.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls1stix2frak.fd
 File: ls1stix2frak.fd 2018/04/02 v2.0.0-latex stix2 fraktur LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stix2bb on input line 23.
+LaTeX Font Info:    Trying to load font information for LS1+stix2bb on input line 24.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls1stix2bb.fd
 File: ls1stix2bb.fd 2018/04/02 v2.0.0-latex stix2 blackboard LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stix2cal on input line 23.
+LaTeX Font Info:    Trying to load font information for LS2+stix2cal on input line 24.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls2stix2cal.fd
 File: ls2stix2cal.fd 2018/04/02 v2.0.0-latex stix2 calligraphic LS2 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS1+stix2sf on input line 23.
+LaTeX Font Info:    Trying to load font information for LS1+stix2sf on input line 24.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls1stix2sf.fd
 File: ls1stix2sf.fd 2018/04/02 v2.0.0-latex stix2 sans-serif LS1 font definitions
 )
-LaTeX Font Info:    Trying to load font information for LS2+stix2tt on input line 23.
+LaTeX Font Info:    Trying to load font information for LS2+stix2tt on input line 24.
  (C:\Users\andre\AppData\Local\Programs\MiKTeX\tex/fonts/stix2-type1\ls2stix2tt.fd
 File: ls2stix2tt.fd 2018/04/02 v2.0.0-latex stix2 typewriter LS2 font definitions
 )
@@ -1477,15 +1477,15 @@ pdfTeX warning: pdflatex (file ./fc.pdf): PDF inclusion: found PDF version <1.7>
 <fc.pdf, id=43, 1027.84pt x 1155.31625pt>
 File: fc.pdf Graphic file (type pdf)
 <use fc.pdf>
-Package pdftex.def Info: fc.pdf  used on input line 23.
+Package pdftex.def Info: fc.pdf  used on input line 24.
 (pdftex.def)             Requested size: 68.78807pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 23
+Underfull \hbox (badness 10000) detected at line 24
 \T1/stix2/m/sc/25/50ls T E S I S
  []
 
 
-Underfull \hbox (badness 10000) detected at line 23
+Underfull \hbox (badness 10000) detected at line 24
 \T1/stix2/m/n/10 P R E S E N T A :
  []
 
@@ -1498,24 +1498,24 @@ Underfull \hbox (badness 10000) detected at line 23
 Cap\'{\i }tulo 1.
 
 LaTeX Font Warning: Font shape `T1/cmss/bx/sc' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 28.
+(Font)              using `T1/cmss/bx/n' instead on input line 29.
 
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--77
+Underfull \hbox (badness 10000) in paragraph at lines 54--78
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--91
+Underfull \hbox (badness 10000) in paragraph at lines 80--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--118
+Underfull \hbox (badness 10000) in paragraph at lines 94--119
 
  []
 
@@ -1523,29 +1523,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--118
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.118 
+l.119 
        [1
 
 
 {C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc}]
-LaTeX Info: Redefining \. on input line 127.
-LaTeX Info: Redefining \% on input line 127.
+LaTeX Info: Redefining \. on input line 128.
+LaTeX Info: Redefining \% on input line 128.
 Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 127.
+(babel)             Reported on input line 128.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.127 \chapter
+l.128 \chapter
               {Geometría Diferencial Sintética} [2{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathsf.enc}]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 142--149
+Underfull \hbox (badness 10000) in paragraph at lines 143--150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 151--163
+Underfull \hbox (badness 10000) in paragraph at lines 152--164
 
  []
 
@@ -1555,10 +1555,14 @@ Underfull \vbox (badness 2393) has occurred while \output is active []
  [3
 
 {C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc}]
-LaTeX Info: Redefining \. on input line 207.
-LaTeX Info: Redefining \% on input line 207.
- [4] [5
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
+ [4]
+LaTeX Info: Redefining \. on input line 208.
+LaTeX Info: Redefining \% on input line 208.
+ [5] [6
 
+] [7
 
 ] (tesis.aux
 LaTeX Info: Redefining \sptext on input line 11.
@@ -1574,23 +1578,23 @@ L3 programming layer <2020/03/25>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 87BDCED73C1770AC12A0A9C991291BE7;1779.
+(rerunfilecheck)             Checksum: 801E690EB3736C92739BE43E29491641;1777.
 Package logreq Info: Writing requests to 'tesis.run.xml'.
 \openout1 = `tesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45651 strings out of 467867
- 912985 string characters out of 5418334
- 1750256 words of memory out of 5000000
+ 45650 strings out of 467867
+ 913160 string characters out of 5418334
+ 1747256 words of memory out of 5000000
  73806 multiletter control sequences out of 15000+600000
- 774686 words of font info for 167 fonts, out of 8000000 for 9000
+ 774843 words of font info for 168 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,118p,1235b,1830s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,12n,118p,1252b,1830s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Math.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on tesis.pdf (7 pages, 847183 bytes).
+Output written on tesis.pdf (9 pages, 847717 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
  41055 words of extra memory for PDF output out of 42996 (max. 10000000)
 

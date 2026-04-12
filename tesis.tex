@@ -3,6 +3,7 @@
 \usepackage{mycats}
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}
 \usepackage[style=mexican]{csquotes}
+\usepackage{amsmath}
 
 \usepackage[colorlinks, allcolors=blue]{hyperref}
 %\usepackage[style=numeric, backend=biber]{biblatex}
@@ -54,12 +55,12 @@ El objetivo del presente trabajo es examinar, explicar y unir los resultados de 
 en donde Colin Mclarty muestra como puedes recuperar una categoría de conjuntos, entendida
 como un topos que satisface los axiomas de Lawvere \cite{lawvere1964elementary}, a partir de una categoría de
 espacios suaves y mapas diferenciables, de manera que los conjuntos quedan definidos como colecciones de puntos de los
-espacios. La categoria de espacios que describe Mclarty es también un topos, al cual
+espacios. La categoría de espacios que describe Mclarty es también un topos, al cual
 llamaremos Espacios, que obedece los axiomas básicos de la geometría diferencial sintética
 (GDS). Aunque todo topos tiene una ``teoría de conjuntos interna'' \cite{johnstone2014topos}, lo interesante de Espacios
 es que tanto si nos restringimos a espacios donde la ley del tercero excluido (LTE) sea válida,
 como si forzamos LTE en todos los espacios pasando a las gavillas doble negación, en ambos
-casos obtenemos categorias de conjuntos, que resultan ser equivalentes. Con la formalización
+casos obtenemos categorías de conjuntos, que resultan ser equivalentes. Con la formalización
 de Espacios podemos (1) Argumentar que la diferencia entre espacios y conjuntos depende
 enteramente de LTE (2) Considerar a la teoría de conjuntos como un caso degenerado o
 discreto de la geometría y (3) Explicar por qué la teoría de conjuntos surgió del cálculo,
@@ -76,7 +77,7 @@ principales del cálculo \cite{dunham2018calculus} e incluso hoy en día ingenie
 a un nivel intuitivo o pedagógico.
 
 \section{Infinitesimales y la ley del tercero excluido}
-Historicamente el uso de infinitesimales ha sido controversial, incluso en los orígenes
+Históricamente el uso de infinitesimales ha sido controversial, incluso en los orígenes
 del cálculo. Ciertamente, si uno ve los argumentos de Newton y Leibniz, pareciera haber
 una contradicción en que al principio del análisis se considera una cantidad $d$ distinta de $0$,
 pero en el último paso de repente se trata a $d$ como si fuese $0$ para poder llegar a la
@@ -87,38 +88,38 @@ aplicación de la LTE. Por tanto, para intentar trabajar con infinitesimales una
 es asumir una lógica constructivista.
 \\
 \\
-Análisis no estandar.
+Análisis no estándar.
 
-\section{Categorias Cartesianas Cerrrada y la Física Continua}
+\section{Categorías Cartesianas Cerradas y la Física Continua}
 Lawvere en múltiples publicaciones insiste que el lugar ``correcto'' para desarrollar a
-la física continua es una categoria cartesiana cerrada \cite{lawvere1979categorical} \cite{lawvere1997toposes} \cite{lawvere2006categories}. Para Lawvere,
-el lenguaje en el que se exprese la física continua debe incluir objetos $T$ y $E$ ha ser pensados
+la física continua es una categoría cartesiana cerrada \cite{lawvere1979categorical} \cite{lawvere1997toposes} \cite{lawvere2006categories}. Para Lawvere,
+el lenguaje en el que se exprese la física continua debe incluir objetos $T$ y $E$ a ser pensados
 como el tiempo y el espacio respectivamente, además cualquier cuerpo o colección de cuerpos
-debe de poderse pensar como un objeto $B$. Luego, quisieramos un morfismo $T \times B \to E$
+debe de poderse pensar como un objeto $B$. Luego, quisiéramos un morfismo $T \times B \to E$
 que asocia cada momento y parte del cuerpo con su posición en el espacio en tal momento, para
 hablar del movimiento. También queremos un morfismo $B \to E^T$ que mande cada parte del
 cuerpo a su trayectoria a través del tiempo, de manera que $E^T$, el espacio de todas las trayectorias
-es independiente de cualquier cuerpo específico. Hay una tercera manera de considerar al moviento,
+es independiente de cualquier cuerpo específico. Hay una tercera manera de considerar al movimiento,
 $T \to E^B$ que en cada instante representa la colocación del cuerpo en el espacio y de nuevo,
 $E^B$, el espacio de todas las posibles colocaciones de $B$ en el espacio, es independiente
 del tiempo. Introduciendo más objetos y morfismos uno puede definir distancias, velocidad,
 morfismos que le asignan a cada colocación la posición de su centro de masa y mucho más \cite{lawvere1980toward}.
-Con estas consideraciones parece razonable pensar que las categorias cartesianas cerradas
+Con estas consideraciones parece razonable pensar que las categorías cartesianas cerradas
 dan una buena fundación para la física continua.
 \\
 \\
-Lo interesante de las categorias cartesianas cerradas, al contantar con objetos exponenciales,
-en muchos contextos estan automáticamente lidiando y haciendo que espacios infinito-dimensionales
-formen parte de la misma teoría que espacios de dimension finita, situación deseable, por
+Lo interesante de las categorías cartesianas cerradas es que, al contar con objetos exponenciales,
+en muchos contextos están automáticamente lidiando y haciendo que espacios infinito-dimensionales
+formen parte de la misma teoría que espacios de dimensión finita, situación deseable, por
 ejemplo, en cálculo de variaciones donde uno quiere aplicar los teoremas de optimización,
-pero en espacios de funciones. Sin embargo, ni en la categoria de espacios topológicos ni 
-en la categoria de variedades, podemos afirmar que siempre exista el objeto exponencial de
-dos objetos. De algún modo, Espacios esta forzando que los espacios de funciones sean espacios suaves
+pero en espacios de funciones. Sin embargo, ni en la categoría de espacios topológicos ni 
+en la categoría de variedades, podemos afirmar que siempre exista el objeto exponencial de
+dos objetos. De algún modo, el topos Espacios esta forzando que los espacios de funciones sean espacios suaves
 sin que nosotros nos preocupemos por darle una topología. [citas]
 
 % \section{Motivación}
 % \begin{itemize}
-%     \item Los modelos clásicos para geometría diferencial tienen problemas con algo tan fundamental como el espacio suave de funciones suaves y no existen pullbacks en general
+%     \item Los modelos clásicos para geometría diferencial tienen problemas con algo tan fundamental como el espacio suave de funciones suaves y no existen productos fibrados en general
 %     \item El desarrollo del cálculo fue gracias a los infinitesimales e intuiciones relacionadas
 %     \item Es importante para la física trabajar en una categoría cartesiana cerrada
 %     \item Es más pedagógico
@@ -134,7 +135,7 @@ $D= \{d \in R:d^2=0 \}$ o el igualador del mapa constante $0$ y el mapa $(-)^2$,
 $(GDS_4)$ dice que toda función de $D$ a $R$ es lineal con pendiente única. Estos cuatro
 axiomas ya nos permiten hacer cálculo básico, pero primero:
 
-\section{Proprosición catastrófica}
+\section{Proposición catastrófica}
 $(d \not =0) \land \lnot (d \not= 0)$ \\
 $R$ puede ser un campo
 
@@ -160,43 +161,43 @@ Sean $f\colon R\to R$, $g\colon R\to R$, $a,c\in R$ y $d\in D$. $(f+g)(a+d) = f(
 por definición de derivada, pero también $(f+g)(a+d) = f(a+d)+g(a+d)=f(a)+d\cdot f'(a)+g(a)
 +d\cdot g'(a)$. Cancelando términos comunes obtenemos $d\cdot (f+g)'(a) = d \cdot[f'(a)+g'(a)]$
 y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(f+g)'=f'+g'$.
-\begin{eqnarray}
-   (c\cdot f)(a+d) = c\cdot f(a)+d\cdot (c\cdot f)'(a)\\
-    f(a+d) = f(a)+d\cdot f'(a)\\
-    c\cdot f(a+d) = c\cdot f(a)+ c\cdot d\cdot f'(a)\\
-    d\cdot [c\cdot f'(a)] = d\cdot (c\cdot f)'(a)\\
-    (c\cdot f)'(a)=c\cdot f'(a)\\
-    (c\cdot f)'=c\cdot f' 
-\end{eqnarray}
-\begin{eqnarray}
-   \id (a+d) = \id (a)+d\cdot \id '(a)\\
-    a+d = a+d\cdot \id '(a)\\
-    d\cdot 1 = d\cdot \id '(a)\\
-    \id '(a) = 1\\
-    \id ' = 1\\
-\end{eqnarray}
-\begin{eqnarray}
-   c(a+d) = c(a)+d\cdot c'(a)\\
-    c = c+d\cdot c'(a)\\
-    d\cdot 0 = d\cdot c'(a)\\
-    c'(a) = 0\\
-    c' = 0\\
-\end{eqnarray}
-\begin{eqnarray}
-   (f\circ g)(a+d) = f(g(a))+d\cdot (f\circ g)'(a)\\
-    (f\circ g)(a+d) = f(g(a)+d\cdot g'(a))\\
-    (f\circ g)(a+d) = f(g(a))+[d\cdot g'(a)] \cdot f'(g(a))\\
-    d\cdot (f\circ g)'(a) = d\cdot [f'(g(a))\cdot g'(a)]\\
-    (f\circ g)'=(f'\circ g)\cdot g'\\
-\end{eqnarray}
-\begin{eqnarray}
-   (f\cdot g)(a+d) = f(a)\cdot g(a)+d\cdot (f\cdot g)'(a)\\
-    (f\cdot g)(a+d) = f(a+d)\cdot g(a+d)\\
-    (f\cdot g)(a+d) = [f(a)+d\cdot f'(a)]\cdot [g(a)+d\cdot g'(a)]\\
-    (f\cdot g)(a+d) = f(a)\cdot g(a)+d\cdot[f'(a)\cdot g(a)+g'(a)\cdot f(a)]+d^2\cdot f'(a)\cdot g'(a)\\
-    d\cdot (f\cdot g)'(a)=d\cdot[f'(a)\cdot g(a)+f(a)\cdot g'(a)]\\
-    (f\cdot g)'=f\cdot g+f\cdot g' 
-\end{eqnarray}
+\begin{align*}
+   (c\cdot f)(a+d) &= c\cdot f(a)+d\cdot (c\cdot f)'(a)\\
+    f(a+d) &= f(a)+d\cdot f'(a)\\
+    c\cdot f(a+d) &= c\cdot f(a)+ c\cdot d\cdot f'(a)\\
+    d\cdot [c\cdot f'(a)] &= d\cdot (c\cdot f)'(a)\\
+    (c\cdot f)'(a) &=c\cdot f'(a)\\
+    (c\cdot f)' &=c\cdot f' 
+\end{align*}
+\begin{align*}
+   \id (a+d) &= \id (a)+d\cdot \id '(a)\\
+    a+d &= a+d\cdot \id '(a)\\
+    d\cdot 1 &= d\cdot \id '(a)\\
+    \id '(a) &= 1\\
+    \id ' &= 1\\
+\end{align*}
+\begin{align*}
+   c(a+d) &= c(a)+d\cdot c'(a)\\
+    c &= c+d\cdot c'(a)\\
+    d\cdot 0 &= d\cdot c'(a)\\
+    c'(a) &= 0\\
+    c' &= 0\\
+\end{align*}
+\begin{align*}
+   (f\circ g)(a+d) &= f(g(a))+d\cdot (f\circ g)'(a)\\
+    (f\circ g)(a+d) &= f(g(a)+d\cdot g'(a))\\
+    (f\circ g)(a+d) &= f(g(a))+[d\cdot g'(a)] \cdot f'(g(a))\\
+    d\cdot (f\circ g)'(a) &= d\cdot [f'(g(a))\cdot g'(a)]\\
+    (f\circ g)'&=(f'\circ g)\cdot g'\\
+\end{align*}
+\begin{align*}
+   (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot (f\cdot g)'(a)\\
+    (f\cdot g)(a+d) &= f(a+d)\cdot g(a+d)\\
+    (f\cdot g)(a+d) &= [f(a)+d\cdot f'(a)]\cdot [g(a)+d\cdot g'(a)]\\
+    (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot[f'(a)\cdot g(a)+g'(a)\cdot f(a)]+d^2\cdot f'(a)\cdot g'(a)\\
+    d\cdot (f\cdot g)'(a)&=d\cdot[f'(a)\cdot g(a)+f(a)\cdot g'(a)]\\
+    (f\cdot g)'&=f\cdot g+f\cdot g' 
+\end{align*}
 \section{Ejemplos}
 Sea $f(x) = 5x^2+3$. En ese caso, $f(x+d)=5(x^2+2xd+d^2)+3=5x^2+3+df'(x)$, entonces $d\cdot 10x=d\cdot f'(x)$.
 Por tanto, $f'(x)=10x$.

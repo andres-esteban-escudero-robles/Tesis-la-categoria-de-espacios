@@ -1,6 +1,6 @@
-PWD c:\Users\andre\Documents\latex_tesis
+PWD c:\Users\andre\Desktop\Tesis-la-categoria-de-espacios
 INPUT C:\Users\andre\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\andre\Documents\latex_tesis\tesis.tex
+INPUT c:\Users\andre\Desktop\Tesis-la-categoria-de-espacios\tesis.tex
 OUTPUT tesis.log
 INPUT .\tesisFC.cls
 INPUT tesisFC.cls
