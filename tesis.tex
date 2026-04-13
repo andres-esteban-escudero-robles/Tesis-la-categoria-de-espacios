@@ -4,6 +4,7 @@
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}
 \usepackage[style=mexican]{csquotes}
 \usepackage{amsmath}
+\usepackage{enumitem}
 
 \usepackage[colorlinks, allcolors=blue]{hyperref}
 %\usepackage[style=numeric, backend=biber]{biblatex}
@@ -52,7 +53,7 @@
 % \end{equation*}
 
 El objetivo del presente trabajo es examinar, explicar y unir los resultados de \cite{mclarty1987elementary}, \cite{mclarty1988defining}
-en donde Colin Mclarty muestra como puedes recuperar una categoría de conjuntos, entendida
+en donde Colin Mclarty muestra como se puede recuperar una categoría de conjuntos, entendida
 como un topos que satisface los axiomas de Lawvere \cite{lawvere1964elementary}, a partir de una categoría de
 espacios suaves y mapas diferenciables, de manera que los conjuntos quedan definidos como colecciones de puntos de los
 espacios. La categoría de espacios que describe Mclarty es también un topos, al cual
@@ -137,7 +138,7 @@ axiomas ya nos permiten hacer cálculo básico, pero primero:
 
 \section{El espacio de infinitesimales}
 Los infinitesimales con los que trabajamos en GDS son números $d\in D$ que al cuadrado dan cero, y por supuesto,
-esto implica que todas las potencias mayores a dos también dan cero, pues $d^n=d^2*d^{n-2}=0$ para $n>2$. Esto
+esto implica que todas las potencias mayores a dos también dan cero, pues $d^n=d^2\cdot d^{n-2}=0$ para $n>2$. Esto
 corresponde con los argumentos de Newton, Leibniz, Euler, entre otros, donde se eliminan los términos de orden
 superior de una cantidad infinitesimal. Sin embargo, si queremos que $R$ sea un campo y tenemos que $\lnot(d=0)$,
 $d$ es invertible, por lo que $d^2=0$ implica $d=0$, entonces sucede que $\lnot \not(d=0)$, pues estamos usando
@@ -165,10 +166,36 @@ puede volver a ser diferenciada con el mismo procedimiento. Concluimos que todas
 de $R$ en $R$ son suaves.
 \\
 \\
-Sean $f\colon R\to R$, $g\colon R\to R$, $a,c\in R$ y $d\in D$. $(f+g)(a+d) = f(a)+g(a)+d\cdot (f+g)'(a)$
+\textbf{Definición:} Sea $f\colon R\to R$ y $a\in R$. Definimos $f'(a)$ como el único número tal que para todo $d\in D$
+\begin{equation*}
+    f(a+d)=f(a)+d\cdot f'(a)
+\end{equation*}
+
+
+\subsection{Teorema: Si $f\colon R\to R$,\ $g\colon R\to R$,\ $a,c\in R$ y $d\in D$, entonces}
+\begin{enumerate}[label=\textbf{\alph*)}]
+    \item $c' = 0$
+    \item $(c\cdot f)' =c\cdot f'$
+    \item $\id' = 1$
+    \item $(f+g)'=f'+g'$
+    \item $(f\circ g)' =(f'\circ g)\cdot g'$
+    \item $(f\cdot g)' =f'\cdot g+f\cdot g'$
+\end{enumerate}
+
+Probemos d) como ejemplo. $(f+g)(a+d) = f(a)+g(a)+d\cdot (f+g)'(a)$
 por definición de derivada, pero también $(f+g)(a+d) = f(a+d)+g(a+d)=f(a)+d\cdot f'(a)+g(a)
 +d\cdot g'(a)$. Cancelando términos comunes obtenemos $d\cdot (f+g)'(a) = d \cdot[f'(a)+g'(a)]$
 y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(f+g)'=f'+g'$.
+
+\subsection{a)\ $c' = 0$}
+\begin{align*}
+   c(a+d) &= c(a)+d\cdot c'(a)\\
+    c &= c+d\cdot c'(a)\\
+    d\cdot 0 &= d\cdot c'(a)\\
+    c'(a) &= 0\\
+    c' &= 0\\
+\end{align*}
+\subsection{b)\ $(c\cdot f)' =c\cdot f'$}
 \begin{align*}
    (c\cdot f)(a+d) &= c\cdot f(a)+d\cdot (c\cdot f)'(a)\\
     f(a+d) &= f(a)+d\cdot f'(a)\\
@@ -177,6 +204,7 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
     (c\cdot f)'(a) &=c\cdot f'(a)\\
     (c\cdot f)' &=c\cdot f' 
 \end{align*}
+\subsection{Teorema: $\id' = 1$}
 \begin{align*}
    \id (a+d) &= \id (a)+d\cdot \id '(a)\\
     a+d &= a+d\cdot \id '(a)\\
@@ -184,13 +212,8 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
     \id '(a) &= 1\\
     \id ' &= 1\\
 \end{align*}
-\begin{align*}
-   c(a+d) &= c(a)+d\cdot c'(a)\\
-    c &= c+d\cdot c'(a)\\
-    d\cdot 0 &= d\cdot c'(a)\\
-    c'(a) &= 0\\
-    c' &= 0\\
-\end{align*}
+
+\subsection{Teorema: $(f\circ g)' =(f'\circ g)\cdot g'$}
 \begin{align*}
    (f\circ g)(a+d) &= f(g(a))+d\cdot (f\circ g)'(a)\\
     (f\circ g)(a+d) &= f(g(a)+d\cdot g'(a))\\
@@ -198,6 +221,7 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
     d\cdot (f\circ g)'(a) &= d\cdot [f'(g(a))\cdot g'(a)]\\
     (f\circ g)'&=(f'\circ g)\cdot g'\\
 \end{align*}
+\subsection{Teorema: $(f\cdot g)' =f'\cdot g+f\cdot g'$}
 \begin{align*}
    (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot (f\cdot g)'(a)\\
     (f\cdot g)(a+d) &= f(a+d)\cdot g(a+d)\\
