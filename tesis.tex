@@ -132,21 +132,29 @@ conmutativo con unidad. $(GDS_2)$: El anillo $R$ no es trivial ($1\not = 0$). $(
 En la lógica interna de $R$, $R$ es un campo. Y el axioma de Kock-Lawvere \cite{lawvere1979categorical},
 $(GDS_4)$: $(\forall f \in R^D)(\exists ! b \in R)(\forall d \in D) (f(d) = f(0)+d \cdot b)$, donde
 $D= \{d \in R:d^2=0 \}$ o el igualador del mapa constante $0$ y el mapa $(-)^2$, un espacio de infinitesimales. Intuitivamente,
-$(GDS_4)$ dice que toda función de $D$ a $R$ es lineal con pendiente única. Estos cuatro
+$(GDS_4)$ dice que toda función de $D$ a $R$ es lineal. Estos cuatro
 axiomas ya nos permiten hacer cálculo básico, pero primero:
 
-\section{Proposición catastrófica}
-$(d \not =0) \land \lnot (d \not= 0)$ \\
-$R$ puede ser un campo
+\section{El espacio de infinitesimales}
+Los infinitesimales con los que trabajamos en GDS son números $d\in D$ que al cuadrado dan cero, y por supuesto,
+esto implica que todas las potencias mayores a dos también dan cero, pues $d^n=d^2*d^{n-2}=0$ para $n>2$. Esto
+corresponde con los argumentos de Newton, Leibniz, Euler, entre otros, donde se eliminan los términos de orden
+superior de una cantidad infinitesimal. Sin embargo, si queremos que $R$ sea un campo y tenemos que $\lnot(d=0)$,
+$d$ es invertible, por lo que $d^2=0$ implica $d=0$, entonces sucede que $\lnot \not(d=0)$, pues estamos usando
+lógica constructivista. Por otro lado, si para todo $d\in D$, $d=0$ y fijamos $f\colon D \to R$, obtenemos que
+$f(0)=f(d)=f(0)+d \cdot b$ aplicando $(GDS_4)$, pero como $d=0$, $f(d)=f(0)+d \cdot 0=f(0)+d \cdot 1$, y por unicidad
+de $b$, $b=0=1$, lo cual es inconsistente con $(GDS_2)$. Así que también $\lnot (\forall d \in D)(d=0)$ es verdad.
+De esta manera, $R$ puede ser un campo a pesar de los infinitesimales, en el sentido de que $\lnot(r=0)\implies \exists s\in R(s\cdot r=1)$.
 
 \section{Infinitesimales y Microcancelación}
 Si resulta que $(\forall d \in D) (d\cdot r = d\cdot s)$ con $r,s\in R$, podemos concluir
 $r=s$. Demostración: Definimos $f\colon D\to R$ como $f(d)=d\cdot r = d\cdot s$, luego,
 por $(GDS_4)$, $f(d) = f(0)+d\cdot b$ donde $f(0) = 0\cdot r = 0$, entonces $d\cdot b=d\cdot r = d\cdot s$
 con $b$ única. Por lo tanto, $r=b=s$.
-\\
-\\
-Si $r\in R$ y $d\in D$, entonces $d\cdot r \in D$, porque $(d\cdot r)^2=d^2\cdot r^2=0\cdot r^2=0$
+
+\section{Operaciones con infinitesimales}
+Si $r\in R$ y $d\in D$, entonces $d\cdot r \in D$, porque $(d\cdot r)^2=d^2\cdot r^2=0\cdot r^2=0$.
+Si $d_1\in D$ y $d_2\in D$, entonces $(d_1+d_2)^2=d_1^2+2\cdot d_1\cdot d_2+d_2^2=2\cdot d_1\cdot d_2$.
 
 \section{La derivada y reglas básicas}
 Sea $f\colon R\to R$, consideramos a $g\colon D\to R$ tal que $g(d)=f(a+d)$ para alguna

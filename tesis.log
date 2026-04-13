@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  11 APR 2026 19:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  13 APR 2026 01:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1439,7 +1439,7 @@ Package hyperref Info: Link coloring ON on input line 22.
 
 
 pdfTeX warning: pdflatex (file ./unam.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<unam.pdf, id=42, 1027.84pt x 1155.31625pt>
+<unam.pdf, id=46, 1027.84pt x 1155.31625pt>
 File: unam.pdf Graphic file (type pdf)
 <use unam.pdf>
 Package pdftex.def Info: unam.pdf  used on input line 24.
@@ -1474,7 +1474,7 @@ File: ls2stix2tt.fd 2018/04/02 v2.0.0-latex stix2 typewriter LS2 font definition
 )
 
 pdfTeX warning: pdflatex (file ./fc.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<fc.pdf, id=43, 1027.84pt x 1155.31625pt>
+<fc.pdf, id=47, 1027.84pt x 1155.31625pt>
 File: fc.pdf Graphic file (type pdf)
 <use fc.pdf>
 Package pdftex.def Info: fc.pdf  used on input line 24.
@@ -1540,12 +1540,7 @@ l.128 \chapter
               {Geometría Diferencial Sintética} [2{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathsf.enc}]
 Cap\'{\i }tulo 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 143--150
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--164
+Underfull \hbox (badness 10000) in paragraph at lines 160--172
 
  []
 
@@ -1554,12 +1549,12 @@ Underfull \vbox (badness 2393) has occurred while \output is active []
 
  [3
 
-{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc}]
+{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathtt.enc}]
 LaTeX Info: Redefining \. on input line 208.
 LaTeX Info: Redefining \% on input line 208.
  [4]
-LaTeX Info: Redefining \. on input line 208.
-LaTeX Info: Redefining \% on input line 208.
+LaTeX Info: Redefining \. on input line 216.
+LaTeX Info: Redefining \% on input line 216.
  [5] [6
 
 ] [7
@@ -1578,23 +1573,23 @@ L3 programming layer <2020/03/25>
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 801E690EB3736C92739BE43E29491641;1777.
+(rerunfilecheck)             Checksum: CEED23C1F00C1449DB7926BDA5FF0892;2018.
 Package logreq Info: Writing requests to 'tesis.run.xml'.
 \openout1 = `tesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45650 strings out of 467867
- 913160 string characters out of 5418334
- 1747256 words of memory out of 5000000
- 73806 multiletter control sequences out of 15000+600000
- 774843 words of font info for 168 fonts, out of 8000000 for 9000
+ 45655 strings out of 467867
+ 913230 string characters out of 5418334
+ 1749255 words of memory out of 5000000
+ 73807 multiletter control sequences out of 15000+600000
+ 775000 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,118p,1252b,1830s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Math.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on tesis.pdf (9 pages, 847717 bytes).
+Output written on tesis.pdf (9 pages, 851657 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 33 named destinations out of 1000 (max. 500000)
- 41055 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 214 PDF objects out of 1000 (max. 8388607)
+ 34 named destinations out of 1000 (max. 500000)
+ 41063 words of extra memory for PDF output out of 42996 (max. 10000000)
 
