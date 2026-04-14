@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  13 APR 2026 14:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  13 APR 2026 21:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1558,16 +1558,20 @@ Underfull \vbox (badness 2393) has occurred while \output is active []
  [3
 
 {C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathtt.enc}]
-Underfull \vbox (badness 1092) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
+LaTeX Info: Redefining \. on input line 207.
+LaTeX Info: Redefining \% on input line 207.
  [4]
-LaTeX Info: Redefining \. on input line 240.
-LaTeX Info: Redefining \% on input line 240.
- [5] [6
+Underfull \hbox (badness 10000) in paragraph at lines 235--246
 
-] [7
+ []
+
+LaTeX Info: Redefining \. on input line 246.
+LaTeX Info: Redefining \% on input line 246.
+[5]
+LaTeX Info: Redefining \. on input line 250.
+LaTeX Info: Redefining \% on input line 250.
+ [6{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathex.enc}] [7
+
 
 ] (tesis.aux
 LaTeX Info: Redefining \sptext on input line 11.
@@ -1589,17 +1593,17 @@ Package logreq Info: Writing requests to 'tesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46068 strings out of 467867
- 920703 string characters out of 5418334
- 1753894 words of memory out of 5000000
+ 46075 strings out of 467867
+ 920805 string characters out of 5418334
+ 1755894 words of memory out of 5000000
  74190 multiletter control sequences out of 15000+600000
- 809466 words of font info for 203 fonts, out of 8000000 for 9000
+ 809937 words of font info for 206 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,12n,118p,1252b,1830s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Math.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on tesis.pdf (9 pages, 855166 bytes).
+Output written on tesis.pdf (9 pages, 858883 bytes).
 PDF statistics:
- 230 PDF objects out of 1000 (max. 8388607)
+ 234 PDF objects out of 1000 (max. 8388607)
  46 named destinations out of 1000 (max. 500000)
  47207 words of extra memory for PDF output out of 51595 (max. 10000000)
 

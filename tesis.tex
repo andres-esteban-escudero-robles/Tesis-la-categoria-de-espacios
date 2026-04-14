@@ -170,6 +170,7 @@ de $R$ en $R$ son suaves.
 \begin{equation*}
     f(a+d)=f(a)+d\cdot f'(a)
 \end{equation*}
+Notemos que si pudiéramos dividir entre $d$, tendríamos $f'(a) = \frac{f(a+d)-f(a)}{d}$, lo cual es la definición clásica de derivada.
 
 
 \subsection{Teorema: Si $f\colon R\to R$,\ $g\colon R\to R$,\ $a,c\in R$ y $d\in D$, entonces}
@@ -204,7 +205,7 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
     (c\cdot f)'(a) &=c\cdot f'(a)\\
     (c\cdot f)' &=c\cdot f' 
 \end{align*}
-\subsection{Teorema: $\id' = 1$}
+\subsection{c)\ $\id' = 1$}
 \begin{align*}
    \id (a+d) &= \id (a)+d\cdot \id '(a)\\
     a+d &= a+d\cdot \id '(a)\\
@@ -213,7 +214,7 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
     \id ' &= 1\\
 \end{align*}
 
-\subsection{Teorema: $(f\circ g)' =(f'\circ g)\cdot g'$}
+\subsection{e)\ $(f\circ g)' =(f'\circ g)\cdot g'$}
 \begin{align*}
    (f\circ g)(a+d) &= f(g(a))+d\cdot (f\circ g)'(a)\\
     (f\circ g)(a+d) &= f(g(a)+d\cdot g'(a))\\
@@ -221,7 +222,7 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
     d\cdot (f\circ g)'(a) &= d\cdot [f'(g(a))\cdot g'(a)]\\
     (f\circ g)'&=(f'\circ g)\cdot g'\\
 \end{align*}
-\subsection{Teorema: $(f\cdot g)' =f'\cdot g+f\cdot g'$}
+\subsection{f)\ $(f\cdot g)' =f'\cdot g+f\cdot g'$}
 \begin{align*}
    (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot (f\cdot g)'(a)\\
     (f\cdot g)(a+d) &= f(a+d)\cdot g(a+d)\\
@@ -233,6 +234,15 @@ y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(
 \section{Ejemplos}
 Sea $f(x) = 5x^2+3$. En ese caso, $f(x+d)=5(x^2+2xd+d^2)+3=5x^2+3+df'(x)$, entonces $d\cdot 10x=d\cdot f'(x)$.
 Por tanto, $f'(x)=10x$.
+\\
+\\
+Con axiomas más fuertes podemos introducir números transcendentales y por ejemplo, a la función seno. Para encontrar
+la derivada de $seno(x)$, debemos evaluar $seno(a+d)=seno(a)\cdot cos(d)+cos(a)\cdot seno(d)$ con $a\in R$ y $d\in D$. Entonces queremos
+saber cuanto valen $cos(d)$ y $seno(d)$, así que hay que considerar un triángulo rectángulo con un ángulo tan pequeño
+que vale $d$. Pero a escalas infinitesimales, el círculo se ve como una línea recta, es decir, la longitud de arco para
+trazar el ángulo $d$ es tan pequeña que el arco en realidad es una recta y por tanto el cateto opuesto al ángulo $d$ también mide $d$.
+Ahora, si consideramos al círculo unitario, lo anterior implica que $seno(d)=d$ y $cos(d)=\sqrt{1^2-d^2}=1$. Por lo tanto, $seno(a+d)=seno(a)+d\cdot cos(a)$ y $seno'(a)=cos(a)$
+para toda $a\in R$.
 
 
 
