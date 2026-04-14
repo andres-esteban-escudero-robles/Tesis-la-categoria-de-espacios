@@ -3,14 +3,17 @@
 \usepackage{mycats}
 \usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}
 \usepackage[style=mexican]{csquotes}
-\usepackage{amsmath}
+\usepackage{mathtools} %Extensión y corrección de errores de amsmath
 \usepackage{enumitem}
+\usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
 
 \usepackage[colorlinks, allcolors=blue]{hyperref}
 %\usepackage[style=numeric, backend=biber]{biblatex}
 
 \addbibresource{bibliografia.bib}
 \nocite{*}
+
+\setlength{\parskip}{1em} %No se debe usar \\ en el texto
 
 \title{La categoría de Conjuntos como subcategoría de la categoría de Espacios}
 \author{Andrés Esteban Escudero Robles}
@@ -67,8 +70,7 @@ enteramente de LTE (2) Considerar a la teoría de conjuntos como un caso degener
 discreto de la geometría y (3) Explicar por qué la teoría de conjuntos surgió del cálculo,
 gracias a la insistencia de figuras como Cantor y Dedekind de adoptar la LTE como un
 principio fundamental de las matemáticas.
-\\
-\\
+
 Con el propósito de entender mejor al topos Espacios presentaremos algunos de los resultados
 fundacionales del cálculo usando el lenguaje de la GDS. La idea detrás de la GDS es formalizar
 el uso de infinitesimales en cálculo, análisis y en geometría diferencial. Esta perspectiva
@@ -87,8 +89,7 @@ puede terminar. Para que esta observación sea realmente un problema necesitamos
 todo número $d$, $(d=0) \lor (d \not = 0)$, sea verdadero, pero dicha afirmación es una
 aplicación de la LTE. Por tanto, para intentar trabajar con infinitesimales una posibilidad
 es asumir una lógica constructivista.
-\\
-\\
+
 Análisis no estándar.
 
 \section{Categorías Cartesianas Cerradas y la Física Continua}
@@ -107,8 +108,7 @@ del tiempo. Introduciendo más objetos y morfismos uno puede definir distancias,
 morfismos que le asignan a cada colocación la posición de su centro de masa y mucho más \cite{lawvere1980toward}.
 Con estas consideraciones parece razonable pensar que las categorías cartesianas cerradas
 dan una buena fundación para la física continua.
-\\
-\\
+
 Lo interesante de las categorías cartesianas cerradas es que, al contar con objetos exponenciales,
 en muchos contextos están automáticamente lidiando y haciendo que espacios infinito-dimensionales
 formen parte de la misma teoría que espacios de dimensión finita, situación deseable, por
@@ -164,16 +164,19 @@ $f(a+d)=f(a)+d\cdot b$ y definimos a $b$ como la derivada de $f$ en $a$, $f'(a)$
 arbitrario, en realidad definimos a una función $f'\colon R \to R$, la derivada de $f$, que
 puede volver a ser diferenciada con el mismo procedimiento. Concluimos que todas las funciones
 de $R$ en $R$ son suaves.
-\\
-\\
-\textbf{Definición:} Sea $f\colon R\to R$ y $a\in R$. Definimos $f'(a)$ como el único número tal que para todo $d\in D$
-\begin{equation*}
+
+\begin{definition}[label=def:defrivada]
+  Sea $f\colon R\to R$ y $a\in R$. Definimos $f'(a)$ como el único número tal que para todo $d\in D$
+  \begin{equation*}
     f(a+d)=f(a)+d\cdot f'(a)
-\end{equation*}
-Notemos que si pudiéramos dividir entre $d$, tendríamos $f'(a) = \frac{f(a+d)-f(a)}{d}$, lo cual es la definición clásica de derivada.
+  \end{equation*}
+  Notemos que si pudiéramos dividir entre $d$, tendríamos $f'(a) = \frac{f(a+d)-f(a)}{d}$, lo cual es la definición clásica de derivada.
+\end{definition}
+{\color{red}Borrar esto después. Ahora se puede hacer referencia a lo que
+definas o enuncies, ver definición~\ref{def:defrivada} o el teorema~\ref{thm:reglasderivada}.}
 
-
-\subsection{Teorema: Si $f\colon R\to R$,\ $g\colon R\to R$,\ $a,c\in R$ y $d\in D$, entonces}
+\begin{theorem}[label=thm:reglasderivada]
+  Si $f\colon R\to R$,\ $g\colon R\to R$,\ $a,c\in R$ y $d\in D$, entonces
 \begin{enumerate}[label=\textbf{\alph*)}]
     \item $c' = 0$
     \item $(c\cdot f)' =c\cdot f'$
@@ -182,60 +185,66 @@ Notemos que si pudiéramos dividir entre $d$, tendríamos $f'(a) = \frac{f(a+d)-
     \item $(f\circ g)' =(f'\circ g)\cdot g'$
     \item $(f\cdot g)' =f'\cdot g+f\cdot g'$
 \end{enumerate}
-
-Probemos d) como ejemplo. $(f+g)(a+d) = f(a)+g(a)+d\cdot (f+g)'(a)$
-por definición de derivada, pero también $(f+g)(a+d) = f(a+d)+g(a+d)=f(a)+d\cdot f'(a)+g(a)
-+d\cdot g'(a)$. Cancelando términos comunes obtenemos $d\cdot (f+g)'(a) = d \cdot[f'(a)+g'(a)]$
-y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces $(f+g)'=f'+g'$.
-
-\subsection{a)\ $c' = 0$}
-\begin{align*}
+\end{theorem}
+\begin{proof}
+  Probemos d) como ejemplo. $(f+g)(a+d) = f(a)+g(a)+d\cdot (f+g)'(a)$
+  por definición de derivada, pero también $(f+g)(a+d) = f(a+d)+g(a+d)=f(a)+d\cdot f'(a)+g(a)
+  +d\cdot g'(a)$. Cancelando términos comunes obtenemos $d\cdot (f+g)'(a) = d \cdot[f'(a)+g'(a)]$
+  y por microcancelación, $(f+g)'(a)=f'(a)+g'(a)$ con $a$ cualquiera, entonces
+  $(f+g)'=f'+g'$.
+  
+  Para demostrar a) consideremos
+  \begin{align*}
    c(a+d) &= c(a)+d\cdot c'(a)\\
     c &= c+d\cdot c'(a)\\
     d\cdot 0 &= d\cdot c'(a)\\
     c'(a) &= 0\\
-    c' &= 0\\
-\end{align*}
-\subsection{b)\ $(c\cdot f)' =c\cdot f'$}
-\begin{align*}
-   (c\cdot f)(a+d) &= c\cdot f(a)+d\cdot (c\cdot f)'(a)\\
-    f(a+d) &= f(a)+d\cdot f'(a)\\
-    c\cdot f(a+d) &= c\cdot f(a)+ c\cdot d\cdot f'(a)\\
-    d\cdot [c\cdot f'(a)] &= d\cdot (c\cdot f)'(a)\\
-    (c\cdot f)'(a) &=c\cdot f'(a)\\
-    (c\cdot f)' &=c\cdot f' 
-\end{align*}
-\subsection{c)\ $\id' = 1$}
-\begin{align*}
-   \id (a+d) &= \id (a)+d\cdot \id '(a)\\
-    a+d &= a+d\cdot \id '(a)\\
-    d\cdot 1 &= d\cdot \id '(a)\\
-    \id '(a) &= 1\\
-    \id ' &= 1\\
-\end{align*}
+    c' &= 0
+  \end{align*}
 
-\subsection{e)\ $(f\circ g)' =(f'\circ g)\cdot g'$}
-\begin{align*}
-   (f\circ g)(a+d) &= f(g(a))+d\cdot (f\circ g)'(a)\\
-    (f\circ g)(a+d) &= f(g(a)+d\cdot g'(a))\\
-    (f\circ g)(a+d) &= f(g(a))+[d\cdot g'(a)] \cdot f'(g(a))\\
-    d\cdot (f\circ g)'(a) &= d\cdot [f'(g(a))\cdot g'(a)]\\
-    (f\circ g)'&=(f'\circ g)\cdot g'\\
-\end{align*}
-\subsection{f)\ $(f\cdot g)' =f'\cdot g+f\cdot g'$}
-\begin{align*}
-   (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot (f\cdot g)'(a)\\
-    (f\cdot g)(a+d) &= f(a+d)\cdot g(a+d)\\
-    (f\cdot g)(a+d) &= [f(a)+d\cdot f'(a)]\cdot [g(a)+d\cdot g'(a)]\\
-    (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot[f'(a)\cdot g(a)+g'(a)\cdot f(a)]+d^2\cdot f'(a)\cdot g'(a)\\
-    d\cdot (f\cdot g)'(a)&=d\cdot[f'(a)\cdot g(a)+f(a)\cdot g'(a)]\\
-    (f\cdot g)'&=f\cdot g+f\cdot g' 
-\end{align*}
+  Ahora, para mostrar el inciso b), tenemos que
+  \begin{align*}
+     (c\cdot f)(a+d) &= c\cdot f(a)+d\cdot (c\cdot f)'(a)\\
+      f(a+d) &= f(a)+d\cdot f'(a)\\
+      c\cdot f(a+d) &= c\cdot f(a)+ c\cdot d\cdot f'(a)\\
+      d\cdot [c\cdot f'(a)] &= d\cdot (c\cdot f)'(a)\\
+      (c\cdot f)'(a) &=c\cdot f'(a)\\
+      (c\cdot f)' &=c\cdot f' 
+  \end{align*}
+
+  El inciso c) se sigue de:
+  \begin{align*}
+     \id (a+d) &= \id (a)+d\cdot \id '(a)\\
+      a+d &= a+d\cdot \id '(a)\\
+      d\cdot 1 &= d\cdot \id '(a)\\
+      \id '(a) &= 1\\
+      \id ' &= 1\\
+  \end{align*}
+
+  Para el inciso e) hacemos lo siguiente
+  \begin{align*}
+     (f\circ g)(a+d) &= f(g(a))+d\cdot (f\circ g)'(a)\\
+      (f\circ g)(a+d) &= f(g(a)+d\cdot g'(a))\\
+      (f\circ g)(a+d) &= f(g(a))+[d\cdot g'(a)] \cdot f'(g(a))\\
+      d\cdot (f\circ g)'(a) &= d\cdot [f'(g(a))\cdot g'(a)]\\
+      (f\circ g)'&=(f'\circ g)\cdot g'\\
+  \end{align*}
+
+  Finalmente, para el inciso f) tenemos
+  \begin{align*}
+     (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot (f\cdot g)'(a)\\
+      (f\cdot g)(a+d) &= f(a+d)\cdot g(a+d)\\
+      (f\cdot g)(a+d) &= [f(a)+d\cdot f'(a)]\cdot [g(a)+d\cdot g'(a)]\\
+      (f\cdot g)(a+d) &= f(a)\cdot g(a)+d\cdot[f'(a)\cdot g(a)+g'(a)\cdot f(a)]+d^2\cdot f'(a)\cdot g'(a)\\
+      d\cdot (f\cdot g)'(a)&=d\cdot[f'(a)\cdot g(a)+f(a)\cdot g'(a)]\\
+      (f\cdot g)'&=f\cdot g+f\cdot g' \qedhere
+  \end{align*}
+\end{proof}
+
 \section{Ejemplos}
 Sea $f(x) = 5x^2+3$. En ese caso, $f(x+d)=5(x^2+2xd+d^2)+3=5x^2+3+df'(x)$, entonces $d\cdot 10x=d\cdot f'(x)$.
 Por tanto, $f'(x)=10x$.
-\\
-\\
+
 Con axiomas más fuertes podemos introducir números transcendentales y por ejemplo, a la función seno. Para encontrar
 la derivada de $seno(x)$, debemos evaluar $seno(a+d)=seno(a)\cdot cos(d)+cos(a)\cdot seno(d)$ con $a\in R$ y $d\in D$. Entonces queremos
 saber cuanto valen $cos(d)$ y $seno(d)$, así que hay que considerar un triángulo rectángulo con un ángulo tan pequeño
