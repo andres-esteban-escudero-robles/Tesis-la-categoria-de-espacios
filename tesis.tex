@@ -8,7 +8,9 @@
 \usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
 
 \usepackage[colorlinks, allcolors=blue]{hyperref}
-%\usepackage[style=numeric, backend=biber]{biblatex}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows,spy,positioning,snakes}
 
 \addbibresource{bibliografia.bib}
 \nocite{*}
@@ -172,8 +174,9 @@ de $R$ en $R$ son suaves.
   \end{equation*}
   Notemos que si pudiéramos dividir entre $d$, tendríamos $f'(a) = \frac{f(a+d)-f(a)}{d}$, lo cual es la definición clásica de derivada.
 \end{definition}
-{\color{red}Borrar esto después. Ahora se puede hacer referencia a lo que
-definas o enuncies, ver definición~\ref{def:defrivada} o el teorema~\ref{thm:reglasderivada}.}
+
+% {\color{red}Borrar esto después. Ahora se puede hacer referencia a lo que
+% definas o enuncies, ver definición~\ref{def:defrivada} o el teorema~\ref{thm:reglasderivada}.}
 
 \begin{theorem}[label=thm:reglasderivada]
   Si $f\colon R\to R$,\ $g\colon R\to R$,\ $a,c\in R$ y $d\in D$, entonces
@@ -249,11 +252,36 @@ Con axiomas más fuertes podemos introducir números transcendentales y por ejem
 la derivada de $seno(x)$, debemos evaluar $seno(a+d)=seno(a)\cdot cos(d)+cos(a)\cdot seno(d)$ con $a\in R$ y $d\in D$. Entonces queremos
 saber cuanto valen $cos(d)$ y $seno(d)$, así que hay que considerar un triángulo rectángulo con un ángulo tan pequeño
 que vale $d$. Pero a escalas infinitesimales, el círculo se ve como una línea recta, es decir, la longitud de arco para
-trazar el ángulo $d$ es tan pequeña que el arco en realidad es una recta y por tanto el cateto opuesto al ángulo $d$ también mide $d$.
-Ahora, si consideramos al círculo unitario, lo anterior implica que $seno(d)=d$ y $cos(d)=\sqrt{1^2-d^2}=1$. Por lo tanto, $seno(a+d)=seno(a)+d\cdot cos(a)$ y $seno'(a)=cos(a)$
-para toda $a\in R$.
+trazar el ángulo $d$ es tan pequeña que el arco en realidad es una recta y por tanto, si trazamos el triángulo en un círculo unitario, el cateto opuesto al ángulo $d$ también mide $d$.
+Ahora, si la hipotenusa es de longitud 1, lo anterior implica que $seno(d)=d$ y $cos(d)=\sqrt{1^2-d^2}=1$. Por lo tanto, $seno(a+d)=seno(a)+d\cdot cos(a)$ y $seno'(a)=cos(a)$
+para toda $a\in R$ por \ref{def:defrivada}.
 
+\begin{center}
+  \begin{tikzpicture}
+    \draw (1,1) -- (5,1) -- (5,3) -- (1,1);
+    \draw (5,1.5) -- (4.5,1.5) -- (4.5,1);
+    \draw (1.8,1) -- (1.8,1.4);
 
+    \node at (2,1.2) {$d$};
+    \node at (3,2.2) {$1$};
+    \node at (5.2,2) {$d$};
+  \end{tikzpicture}
+\end{center}
+
+\section{Más axiomas para Espacios}
+\begin{definition}[label=def:discreto]
+  Un espacio $E$ es discreto si $(x=y) \lor \lnot(x = y)$ es verdad con $x,y$ variables
+  variando sobre $E$.
+\end{definition}
+Pedimos $(GDS_5)$: Existe un espacio $N$ que es un objeto de números naturales.
+Se puede demostrar que $N$ es es un espacio discreto.
+
+$(GDS_6)$: Para todo espacio $E$, $E \cong  \varnothing $ o $E$ tiene elementos globales.
+Esto implica que si $b_1, b_2\in B (b_1=b_2)\lor \lnot(b_1=b_2)$ es verdad incluso si $B$ no es discreto.
+
+$(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $E$ está en $\Gamma E$.
+
+\chapter{El topos Espacios}
 
 
 \backmatter
