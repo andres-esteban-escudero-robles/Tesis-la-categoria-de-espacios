@@ -15,6 +15,18 @@
   }
 ],
 "latex-workshop.latex.tools": [
+    {
+        "name": "pdflatex",
+        "command": "pdflatex",
+        "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "-output-directory=%OUTDIR%",
+            "%DOC%"
+        ],
+        "env": {}
+    },
   {
     "name": "biber",
     "command": "biber",
