@@ -281,6 +281,14 @@ $(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo
 
 \chapter{El topos Espacios}
 
+\begin{definition}[label=puntos]
+  Los puntos de un espacio $E$ son sus elementos globales, morfismos de la forma $1\to E$
+\end{definition}
+
+\begin{proposition}
+  Los subobjetos de un espacio discreto son discretos
+\end{proposition}
+
 \begin{theorem}
   $(GDS_6)$ y $(GDS_7)$ inducen una pareja de funtores adjuntos entre $M$, la
   subcategoría de espacios discretos, y Espacios.
@@ -314,7 +322,7 @@ $(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo
   en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo cumple lo que queríamos
   y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma : Espacios \to M$ es
   un funtor que manda a los espacios a sus espacios discretos asociados, en morfismos $\Gamma(f)=\overline{f}$
-  y $\Gamma$ es adjunto derecho de $\Delta$.
+  y $\Gamma$ es adjunto derecho de $\Delta$ con $c_\square : \Delta\Gamma \to \text{Id}$ la counidad.
 \end{proof}
 
 \backmatter
