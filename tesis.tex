@@ -1,20 +1,18 @@
 \documentclass{tesisFC}
 
 \usepackage{mycats}
-\usepackage[backend=biber,defernumbers,style=alphabetic,giveninits=true]{biblatex}
+\usepackage[backend=biber,defernumbers=true,style=alphabetic,giveninits=true]{biblatex}
 \usepackage[style=mexican]{csquotes}
 \usepackage{mathtools} %Extensión y corrección de errores de amsmath
 \usepackage{enumitem}
 \usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
-
-\usepackage[colorlinks, allcolors=blue]{hyperref}
 
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,spy,positioning,snakes}
 
 \addbibresource{bibliografia.bib}
 \nocite{*}
-
+\usepackage[colorlinks, allcolors=blue]{hyperref}
 \setlength{\parskip}{1em} %No se debe usar \\ en el texto
 
 \title{La categoría de Conjuntos como subcategoría de la categoría de Espacios}
@@ -167,7 +165,7 @@ arbitrario, en realidad definimos a una función $f'\colon R \to R$, la derivada
 puede volver a ser diferenciada con el mismo procedimiento. Concluimos que todas las funciones
 de $R$ en $R$ son suaves.
 
-\begin{definition}[label=def:defrivada]
+\begin{definition}[label=def:derivada]
   Sea $f\colon R\to R$ y $a\in R$. Definimos $f'(a)$ como el único número tal que para todo $d\in D$
   \begin{equation*}
     f(a+d)=f(a)+d\cdot f'(a)
@@ -254,7 +252,7 @@ saber cuanto valen $cos(d)$ y $seno(d)$, así que hay que considerar un triángu
 que vale $d$. Pero a escalas infinitesimales, el círculo se ve como una línea recta, es decir, la longitud de arco para
 trazar el ángulo $d$ es tan pequeña que el arco en realidad es una recta y por tanto, si trazamos el triángulo en un círculo unitario, el cateto opuesto al ángulo $d$ también mide $d$.
 Ahora, si la hipotenusa es de longitud 1, lo anterior implica que $seno(d)=d$ y $cos(d)=\sqrt{1^2-d^2}=1$. Por lo tanto, $seno(a+d)=seno(a)+d\cdot cos(a)$ y $seno'(a)=cos(a)$
-para toda $a\in R$ por \ref{def:defrivada}.
+para toda $a\in R$ por \ref{def:derivada}.
 
 \begin{center}
   \begin{tikzpicture}
@@ -270,19 +268,52 @@ para toda $a\in R$ por \ref{def:defrivada}.
 
 \section{Más axiomas para Espacios}
 \begin{definition}[label=def:discreto]
-  Un espacio $E$ es discreto si $(x=y) \lor \lnot(x = y)$ es verdad con $x,y$ variables
+  Un espacio $E$ es discreto si y solo si es decidible, es decir, $(x=y) \lor \lnot(x = y)$ es verdad con $x,y$ variables
   variando sobre $E$.
 \end{definition}
 Pedimos $(GDS_5)$: Existe un espacio $N$ que es un objeto de números naturales.
 Se puede demostrar que $N$ es es un espacio discreto.
 
 $(GDS_6)$: Para todo espacio $E$, $E \cong  \varnothing $ o $E$ tiene elementos globales.
-Esto implica que si $b_1, b_2\in B (b_1=b_2)\lor \lnot(b_1=b_2)$ es verdad incluso si $B$ no es discreto.
+Esto implica que si $b_1, b_2\in B$ entonces $(b_1=b_2)\lor \lnot(b_1=b_2)$ es verdad incluso si $B$ no es discreto.
 
 $(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $E$ está en $\Gamma E$.
 
 \chapter{El topos Espacios}
 
+\begin{theorem}
+  $(GDS_6)$ y $(GDS_7)$ inducen una pareja de funtores adjuntos entre $M$, la
+  subcategoría de espacios discretos, y Espacios.
+\end{theorem}
+\begin{proof}
+  Para cada $A$ un espacio tenemos un monomorfismo $c_A\colon \Gamma A \to A$ dado
+  que $\Gamma A$ es un subobjeto. Veamos que $c_A$ es couniversal hacia
+  $A$ desde $\Delta\colon M \to Espacios$, la inclusión de $M$. Sea $B$ un objeto de $M$ y $f\colon B \to A$,
+  deseamos encontrar un morfismo que haga conmutar al siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta B \ar{r} \ar{rd}{f} & \Delta\Gamma A \ar[tail]{d}{c_A} \\
+                                & A
+    \end{tikzcd}
+  \end{equation*}
+  Notemos que si $B$ fuera el objeto inicial ya acabamos. En otro caso, 
+  consideramos al producto fibrado entre $f$ y $c_A$. Además, por $(GDS_6)$, podemos
+  tomar $b: 1\to B$.
+  \begin{equation*}
+    \begin{tikzcd}
+        1\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{b}
+          \ar[dashed]{rd}{b}\\[-2ex]
+        &[-2ex] f^{-1} (\Gamma A)\ar{r}{\overline{f}} \ar[tail]{d}[swap]{c_B} & \Gamma A\ar[tail]{d}{c_A}\\
+        & B\ar{r}[swap]{f} & A
+    \end{tikzcd}
+  \end{equation*}
+  Para ver que el exterior conmuta recordemos que según $(GDS_7)$, los puntos de $A$ se factorizan a
+  través de $\Gamma A$ y $fb$ es un punto de $A$. Entonces los puntos de $B$ se factorizan
+  a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
+  de $B$, que es discreto, por lo que $\Gamma B = f^{-1} (\Gamma A)$ y dado que $B$ está
+  en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo cumple lo que queríamos
+  y además es único gracias a que $c_A$ es mono.
+\end{proof}
 
 \backmatter
 \printbibliography[title={Bibliografía}]

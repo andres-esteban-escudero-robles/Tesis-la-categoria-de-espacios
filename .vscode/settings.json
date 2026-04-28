@@ -1,3 +1,4 @@
+
 {
     "spellright.language": [
         "es"
@@ -6,5 +7,18 @@
         "markdown",
         "latex",
         "plaintext"
-    ]
+    ],
+    "latex-workshop.latex.recipes": [
+  {
+    "name": "pdflatex -> biber -> pdflatex",
+    "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+  }
+],
+"latex-workshop.latex.tools": [
+  {
+    "name": "biber",
+    "command": "biber",
+    "args": ["%DOCFILE%"]
+  }
+]
 }
