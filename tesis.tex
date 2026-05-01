@@ -7,6 +7,11 @@
 \usepackage{enumitem}
 \usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
 
+%Para tener axiomas como teoremas numerados
+\AtBeginDocument{%
+  \newkeytheorem{axioma}[sibling=theorem]
+}
+
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,spy,positioning,snakes}
 
@@ -54,6 +59,12 @@
 %         & B\ar{r}[swap]{g} & C
 %     \end{tikzcd}
 % \end{equation*}
+
+\begin{axioma}[label=ax:bla]
+  Esto es un axioma.
+\end{axioma}
+
+Referencia al axioma~\ref{ax:bla}.
 
 El objetivo del presente trabajo es examinar, explicar y unir los resultados de \cite{mclarty1987elementary}, \cite{mclarty1988defining}
 en donde Colin Mclarty muestra como se puede recuperar una categoría de conjuntos, entendida
