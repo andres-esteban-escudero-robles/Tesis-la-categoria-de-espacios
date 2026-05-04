@@ -60,11 +60,11 @@
 %     \end{tikzcd}
 % \end{equation*}
 
-\begin{axioma}[label=ax:bla]
-  Esto es un axioma.
-\end{axioma}
+% \begin{axioma}[label=ax:bla]
+%   Esto es un axioma.
+% \end{axioma}
 
-Referencia al axioma~\ref{ax:bla}.
+% Referencia al axioma~\ref{ax:bla}.
 
 El objetivo del presente trabajo es examinar, explicar y unir los resultados de \cite{mclarty1987elementary}, \cite{mclarty1988defining}
 en donde Colin Mclarty muestra como se puede recuperar una categoría de conjuntos, entendida
@@ -138,30 +138,42 @@ sin que nosotros nos preocupemos por darle una topología. [citas]
 % \end{itemize}
 
 \chapter{Geometría Diferencial Sintética}
-En esta sección usaremos los axiomas que expone Mclarty \cite{mclarty1988defining},
-empezando por $(GDS_1)$: Existe un espacio, $R$, que cuenta con una estructura de anillo
-conmutativo con unidad. $(GDS_2)$: El anillo $R$ no es trivial ($1\not = 0$). $(GDS_3)$:
-En la lógica interna de $R$, $R$ es un campo. Y el axioma de Kock-Lawvere \cite{lawvere1979categorical},
-$(GDS_4)$: $(\forall f \in R^D)(\exists ! b \in R)(\forall d \in D) (f(d) = f(0)+d \cdot b)$, donde
-$D= \{d \in R:d^2=0 \}$ o el igualador del mapa constante $0$ y el mapa $(-)^2$, un espacio de infinitesimales. Intuitivamente,
-$(GDS_4)$ dice que toda función de $D$ a $R$ es lineal. Estos cuatro
-axiomas ya nos permiten hacer cálculo básico, pero primero:
+En esta sección usaremos los axiomas que expone Mclarty \cite{mclarty1988defining} para trabajar
+rigurosamente con infinitesimales y fundamentar al cálculo, así como al estudio de variedades.
+\begin{axioma}[label=ax:gds1]
+Existe un espacio, $R$, que cuenta con una estructura de anillo conmutativo con unidad.
+\end{axioma}
+\begin{axioma}[label=ax:gds2]
+El anillo $R$ no es trivial, es decir, $1\not = 0$.
+\end{axioma}
+\begin{axioma}[label=ax:gds3]
+En la lógica interna de $R$, $R$ es un campo.
+\end{axioma}
+Y el axioma de Kock-Lawvere \cite{lawvere1979categorical}, para el cual es necesario definir
+al espacio de infinitesimales $D$, el cual será el igualador de $0:R\to R$, el mapa constante $0$, y $(-)^2:R\to R$.
+Equivalentemente, $D$ es el subespacio (subobjeto) de $R$, $D= \{d \in R:d^2=0 \}$.
+\begin{axioma}[label=ax:gds4]
+$(\forall f \in R^D)(\exists ! b \in R)(\forall d \in D) (f(d) = f(0)+d \cdot b)$.
+\end{axioma}
+Intuitivamente, \ref{ax:gds4} dice que toda función de $D$ a $R$ es lineal. A continuación 
+mostramos algunas propiedades de los infinitesimales y que estos cuatro axiomas ya nos 
+permiten hacer cálculo básico.
 
 \section{El espacio de infinitesimales}
 Los infinitesimales con los que trabajamos en GDS son números $d\in D$ que al cuadrado dan cero, y por supuesto,
 esto implica que todas las potencias mayores a dos también dan cero, pues $d^n=d^2\cdot d^{n-2}=0$ para $n>2$. Esto
 corresponde con los argumentos de Newton, Leibniz, Euler, entre otros, donde se eliminan los términos de orden
 superior de una cantidad infinitesimal. Sin embargo, si queremos que $R$ sea un campo y tenemos que $\lnot(d=0)$,
-$d$ es invertible, por lo que $d^2=0$ implica $d=0$, entonces sucede que $\lnot \not(d=0)$, pues estamos usando
+$d$ es invertible, por lo que $d^2=0$ implica $d=0$, entonces sucede que $\lnot\lnot(d=0)$, pues estamos usando
 lógica constructivista. Por otro lado, si para todo $d\in D$, $d=0$ y fijamos $f\colon D \to R$, obtenemos que
-$f(0)=f(d)=f(0)+d \cdot b$ aplicando $(GDS_4)$, pero como $d=0$, $f(d)=f(0)+d \cdot 0=f(0)+d \cdot 1$, y por unicidad
-de $b$, $b=0=1$, lo cual es inconsistente con $(GDS_2)$. Así que también $\lnot (\forall d \in D)(d=0)$ es verdad.
+$f(0)=f(d)=f(0)+d \cdot b$ aplicando \ref{ax:gds4}, pero como $d=0$, $f(d)=f(0)+d \cdot 0=f(0)+d \cdot 1$, y por unicidad
+de $b$, $b=0=1$, lo cual es inconsistente con \ref{ax:gds2}. Así que también $\lnot (\forall d \in D)(d=0)$ es verdad.
 De esta manera, $R$ puede ser un campo a pesar de los infinitesimales, en el sentido de que $\lnot(r=0)\implies \exists s\in R(s\cdot r=1)$.
 
 \section{Infinitesimales y Microcancelación}
 Si resulta que $(\forall d \in D) (d\cdot r = d\cdot s)$ con $r,s\in R$, podemos concluir
 $r=s$. Demostración: Definimos $f\colon D\to R$ como $f(d)=d\cdot r = d\cdot s$, luego,
-por $(GDS_4)$, $f(d) = f(0)+d\cdot b$ donde $f(0) = 0\cdot r = 0$, entonces $d\cdot b=d\cdot r = d\cdot s$
+por \ref{ax:gds4}, $f(d) = f(0)+d\cdot b$ donde $f(0) = 0\cdot r = 0$, entonces $d\cdot b=d\cdot r = d\cdot s$
 con $b$ única. Por lo tanto, $r=b=s$.
 
 \section{Operaciones con infinitesimales}
@@ -170,7 +182,7 @@ Si $d_1\in D$ y $d_2\in D$, entonces $(d_1+d_2)^2=d_1^2+2\cdot d_1\cdot d_2+d_2^
 
 \section{La derivada y reglas básicas}
 Sea $f\colon R\to R$, consideramos a $g\colon D\to R$ tal que $g(d)=f(a+d)$ para alguna
-$a\in R$ fija. Por $(GDS_4)$, $f(a+d)=g(d)=g(0)+d\cdot b$, pero $g(0)=f(a+0)=f(a)$, entonces
+$a\in R$ fija. Por \ref{ax:gds4}, $f(a+d)=g(d)=g(0)+d\cdot b$, pero $g(0)=f(a+0)=f(a)$, entonces
 $f(a+d)=f(a)+d\cdot b$ y definimos a $b$ como la derivada de $f$ en $a$, $f'(a)$. Dado que $a$ era
 arbitrario, en realidad definimos a una función $f'\colon R \to R$, la derivada de $f$, que
 puede volver a ser diferenciada con el mismo procedimiento. Concluimos que todas las funciones
@@ -278,30 +290,44 @@ para toda $a\in R$ por \ref{def:derivada}.
 \end{center}
 
 \section{Más axiomas para Espacios}
+
 \begin{definition}[label=def:discreto]
   Un espacio $E$ es discreto si y solo si es decidible, es decir, $(x=y) \lor \lnot(x = y)$ es verdad con $x,y$ variables
   variando sobre $E$.
 \end{definition}
-Pedimos $(GDS_5)$: Existe un espacio $N$ que es un objeto de números naturales.
+
+Mclarty le pide más axiomas a Espacios.
+
+\begin{axioma}[label=ax:gds5]
+Existe un espacio $N$ que es un objeto de números naturales.
+\end{axioma}
+
 Se puede demostrar que $N$ es es un espacio discreto.
 
-$(GDS_6)$: Para todo espacio $E$, $E \cong  \varnothing $ o $E$ tiene elementos globales.
+\begin{definition}[label=puntos]
+Los puntos de un espacio $E$ son sus elementos globales, morfismos de la forma $1\to E$
+\end{definition}
+
+\begin{axioma}[label=ax:gds6]
+Para todo espacio $E$, $E \cong  \varnothing $ o $E$ tiene al menos un punto.
+\end{axioma}
+
 Esto implica que si $b_1, b_2\in B$ entonces $(b_1=b_2)\lor \lnot(b_1=b_2)$ es verdad incluso si $B$ no es discreto.
 
-$(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $E$ está en $\Gamma E$.
+\begin{axioma}[label=ax:gds7]
+Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $E$ está en $\Gamma E$. 
+\end{axioma} 
 
 \chapter{El topos Espacios}
 
-\begin{definition}[label=puntos]
-  Los puntos de un espacio $E$ son sus elementos globales, morfismos de la forma $1\to E$
-\end{definition}
+(Equivalencia de ser discreto)
 
 \begin{proposition}
   Los subobjetos de un espacio discreto son discretos
 \end{proposition}
 
 \begin{theorem}
-  $(GDS_6)$ y $(GDS_7)$ inducen una pareja de funtores adjuntos entre $M$, la
+  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$, la
   subcategoría de espacios discretos, y Espacios.
 \end{theorem}
 \begin{proof}
@@ -316,7 +342,7 @@ $(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo
     \end{tikzcd}
   \end{equation*}
   Notemos que si $B$ fuera el objeto inicial ya acabamos. En otro caso, 
-  consideramos al producto fibrado entre $f$ y $c_A$. Además, por $(GDS_6)$, podemos
+  consideramos al producto fibrado entre $f$ y $c_A$. Además, por \ref{ax:gds6}, podemos
   tomar $b: 1\to B$.
   \begin{equation*}
     \begin{tikzcd}
@@ -326,7 +352,7 @@ $(GDS_7)$: Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo
         & B\ar{r}[swap]{f} & A
     \end{tikzcd}
   \end{equation*}
-  Para ver que el exterior conmuta recordemos que según $(GDS_7)$, los puntos de $A$ se factorizan a
+  Para ver que el exterior conmuta recordemos que según \ref{ax:gds7}, los puntos de $A$ se factorizan a
   través de $\Gamma A$ y $fb$ es un punto de $A$. Entonces los puntos de $B$ se factorizan
   a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
   de $B$, que es discreto, por lo que $\Gamma B = f^{-1} (\Gamma A)$ y dado que $B$ está
