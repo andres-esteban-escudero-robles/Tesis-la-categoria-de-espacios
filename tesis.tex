@@ -323,8 +323,46 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
 (Equivalencia de ser discreto)
 
 \begin{proposition}
-  Los subobjetos de un espacio discreto son discretos
+  Los subespacios de un espacio discreto son discretos
 \end{proposition}
+\begin{proof}
+  Sea $A$ un espacio discreto y $m:S\to A$ un subespacio de $A$, queremos demostrar que la 
+  diagonal $\Delta_S:S\to S\times S$ es un subobjeto complementado. Por hipótesis, para $\Delta_A:A\to A\times A$
+  existe su complemento, $C$, tal que $C\cap A=\varnothing$ y $C\cup A=A\times A$. Notamos que
+  $m$ induce $m\times m:S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\Delta_A)=\Delta_S$ ya que
+  \begin{equation*}
+    \begin{tikzcd}
+        T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
+          \ar[dashed]{rd}{\pi_S t}\\[-2ex]
+        &[-2ex] S\ar{r}{m} \ar[tail]{d}[swap]{\Delta_S} & A\ar[tail]{d}{\Delta_A}\\
+        & S\times S\ar{r}[swap]{m\times m} & A\times A
+    \end{tikzcd}
+  \end{equation*}
+  Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
+  y que para cualquier objeto $T$ con flechas que haga conmutar al diagrama exterior, exista 
+  un única morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle id_A, id_A\rangle m = m\times m$ la conmutatividad
+  del cuadrado es inmediata. Para un $T$ con flechas $t:T\to S\times S$, $u:T\to A$ tales
+  que $\Delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
+  a $S$, aprovechando que $t=\langle\pi_S t, \pi_S t\rangle$ donde $\pi_S:S\times S \to S$
+  es la proyección a $S$. De esta manera tenemos la conmutatividad del triángulo izquierdo
+  y, junto con la conmutatividad del cuadrado exterior e interior, obtenemos que $\Delta_A u
+  = \Delta_A m \pi_S t$, pero $\Delta_A$ es mono, entonces $u=m \pi_S t$ y el triángulo superior
+  también conmuta. La unicidad de $\pi_S t$ es inmediata ya que $\Delta_S$ es mono. 
+
+  Dado que $S\times S$ es un subobjeto de $A\times A$ a través de $m\times m$, la imagen
+  inversa $(m\times m)^{-1}$ es un morfismo de álgebras de Heyting $Sub(A\times A)\to Sub(S\times S)$,
+  con lo cual $(m\times m)^{-1}$ preserva complementos y por lo anterior $\Delta_S:S\to S\times S$ es un
+  subobjeto complementado con complemento $(m\times m)^{-1}(C)$.
+
+\end{proof}
+
+\begin{proposition}
+  1 es un espacio discreto.
+\end{proposition}
+
+\begin{corollary}
+  Todo subespacio de 1 es discreto.
+\end{corollary}
 
 \begin{theorem}
   \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$, la
