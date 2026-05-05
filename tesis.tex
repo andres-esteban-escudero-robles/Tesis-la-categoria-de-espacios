@@ -359,10 +359,32 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
 \begin{proposition}
   1 es un espacio discreto.
 \end{proposition}
+\begin{proof}
+  Queremos mostrar que $\Delta_1:1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
+  entonces $1$ es el subobjeto maximal, por lo que $\varnothing \to 1\times 1$ es el complemento que buscamos.
+\end{proof}
 
 \begin{corollary}
   Todo subespacio de 1 es discreto.
 \end{corollary}
+
+\begin{theorem}
+  Sea $A\in Sub(1)$, entonces $A$ tiene complemento.
+\end{theorem}
+\begin{proof}
+  Procedemos por casos. Si $A \cong \varnothing$ entonces $1$ es su complemento, en otro caso,
+  aplicando \ref{ax:gds6} tenemos que existe $a:1\to A$. En este caso, proponemos al pseudocomplemento
+  $\lnot A$ como el complemento de $A$. En automático tenemos que $A\cap \lnot A = \varnothing$,
+  para $A\cup \lnot A = 1$ vemos que
+  \begin{equation*}
+    \begin{tikzcd}
+      1\ar{r}{a} \ar{rd}{id} & A\ar{r}{i_A} & A+\lnot A \ar{r} & A\cup\lnot A\ar[tail]{r}{m} &1 \\
+        & 1\ar{urrr}
+    \end{tikzcd}
+  \end{equation*}
+  El diagrama conmuta pues acaba en el terminal y como la composición es igual a la identidad
+  en $1$, que es un epimorfismo, entonces $m$ también es epi. Por tanto, $A\cup \lnot A \cong 1$.
+\end{proof}
 
 \begin{theorem}
   \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$, la
