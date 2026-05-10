@@ -422,6 +422,39 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   y $\Gamma$ es adjunto derecho de $\Delta$ con $c_\square : \Delta\Gamma \to \text{Id}$ la counidad.
 \end{proof}
 
+\begin{theorem}
+  Sea $\mathcal{E}$ un topos y $C=(G,\epsilon,\delta)$ una comonada en $\mathcal{E}$ tal que
+  $G$ es exacto por la izquierda. Entonces la categoría de coálgebras $\mathcal{E}_C$ es un topos.
+\end{theorem}
+\begin{proof}
+  Primero mostremos que $\mathcal{E}_C$ tiene límites finitos, para ello es suficiente mostrar
+  que tiene productos e igualadores finitos. Como $\mathcal{E}$ tiene productos y $G$ es
+  funtor, dadas $(A,s),(B,t)$ coálgebras de $C$ tenemos:
+  \begin{equation*}
+    \begin{tikzcd}
+        GA & GA\times GB \ar[swap]{l}{\pi_{GA}} \ar{r}{\pi_{GB}} & GB\\
+        & G(A\times B) \ar{ul}{G(\pi_A)} \ar[dashed]{u}{\phi} \ar[swap]{ur}{G(\pi_B)}
+    \end{tikzcd}
+  \end{equation*}
+  En este caso, gracias a que $G$ es izquierdo exacto, $\phi$ es un isomorfismo. Proponemos
+  $(A\times B, \phi^{-1}(s\times t))$ como el producto de $(A,s)$ y $(B,t)$. Veamos que
+  es una coálgebra de $C$.
+  \begin{equation*}
+    \begin{tikzcd}
+        A\times B\ar{r}{s\times t}\ar[swap]{d}{\pi_A}\ar[phantom]{2-2}{(1)} & GA\times GB \ar[swap]{d}{\pi_{GA}}\ar{r}{\phi^{-1}}\ar[phantom]{2-3}[near start]{(2)} 
+          & G(A\times B)\ar{dl}{G(\pi_A)}\ar{d}{\epsilon_{A\times B}} \\
+        A\ar{r}{s}\ar[swap]{dr}{id_A} & GA\ar{d}{\epsilon_A}\ar[phantom]{r}{(4)}\ar[phantom]{3-1}[near start]{(3)} & A\times B \ar{dl}{\pi_A} \\
+        {} & A
+    \end{tikzcd}
+  \end{equation*}
+  En el diagrama (1) conmuta por la definición de $s\times t$, (2) conmuta gracias a la construcción
+  de $\phi$, (3) conmuta ya que $(A,s)$ es coálgebra y (4) conmuta pues es un cuadrado de naturalidad
+  de $\epsilon$. Por tanto $\pi_A=\pi_A \epsilon_{A\times B} \phi^{-1}(s\times t)$ y dado que podemos
+  repetir el argumento para $\pi_B$, concluimos que $\epsilon_{A\times B} \phi^{-1}(s\times t)$
+  es la identidad en $A\times B$. Esto es la ecuación de la counidad, entonces seguimos con la
+  coasociatividad.
+\end{proof}
+
 \backmatter
 \printbibliography[title={Bibliografía}]
 
