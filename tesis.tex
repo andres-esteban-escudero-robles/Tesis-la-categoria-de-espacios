@@ -452,7 +452,89 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   de $\epsilon$. Por tanto $\pi_A=\pi_A \epsilon_{A\times B} \phi^{-1}(s\times t)$ y dado que podemos
   repetir el argumento para $\pi_B$, concluimos que $\epsilon_{A\times B} \phi^{-1}(s\times t)$
   es la identidad en $A\times B$. Esto es la ecuación de la counidad, entonces seguimos con la
-  coasociatividad.
+  coasociatividad. De manera similar a $\phi$ podemos encontrar un isomorfismo $\psi:G(GA\times GB) \to G^2A\times G^2B$,
+  lo cual nos da el siguiente diagrama de isomorfismos.
+  \begin{equation*}
+    \begin{tikzcd}
+      G(GA\times GB)\ar{r}{G(\phi^{-1})} & G^2(A\times B) \\
+      G^2A\times G^2B\ar{u}{\psi^{-1}}\ar[swap]{ur}{G(\phi^{-1})\psi^{-1}}
+    \end{tikzcd}
+  \end{equation*}
+  Para la coasociatividad queremos ver la conmutatividad del siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      A\times B\ar[phantom]{rd}{(1)}\ar{r}{s\times t}\ar{d}{s\times t} & GA\times GB\ar{r}{\phi^{-1}}\ar{d}{\delta_A\times \delta_B}
+        & G(A\times B)\ar{dd}{\delta_{A\times B}} \\
+      GA\times GB\ar{r}{G(s)\times G(t)}\ar{d}{\phi^{-1}} & G^2A\times G^2B\ar{d}{\psi^{-1}} \\
+      G(A\times B)\ar[phantom]{ur}{(2)}\ar{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(3)}\ar{r}{G(\phi^{-1})} & G^2(A\times B)
+    \end{tikzcd}
+  \end{equation*}
+  En (1) sabemos que el diagrama en cada coordenada conmuta pues $(A,s),(B,t)$ son coálgebras. 
+  Para (2) tenemos:
+  \begin{equation*}
+    \begin{tikzcd}
+      GA\ar{d}{G(s)} & GA\times GB\ar{l}{\pi_{GA}}\ar{r}{\pi_{GB}}\ar[dashed]{d}{G(s)\times G(t)} & GB\ar{d}{G(t)}\\
+      G^2A & G^2A\times G^2B\ar{l}{\pi_{G^2A}}\ar{r}{\pi_{G^2B}} & G^2B \\
+      G^2A\ar{u}{id_{G^2A}} & G(GA\times GB)\ar{l}{G(\pi_{GA})}\ar{u}{\psi}\ar{r}{G(\pi_{GB})} & G^2B\ar{u}{id_{G^2B}} \\
+      GA\ar{u}{G(s)} & G(A\times B)\ar{l}{G(\pi_A)}\ar{u}{G(s\times t)}\ar{r}{G(\pi_B)} & GB\ar{u}{G(t)} \\
+      & GA\times GB\ar{ul}{\pi_{GA}}\ar{u}{\phi^{-1}}\ar{ur}{\pi_{GB}}
+    \end{tikzcd}
+  \end{equation*}
+  Cada parte conmuta gracias a cómo construimos los morfismos usando la propiedad universal del producto,
+  por lo que $G(s)\times G(t)=\langle G(s)\pi_{GA},G(t)\pi_{GB} \rangle = \psi G(s\times t)\phi^{-1}$,
+  lo cual nos da la identidad deseada al poscomponer con $\psi^{-1}$. En el caso de (3) observamos que:
+  \begin{equation*}
+    \begin{tikzcd}
+      {} & GB\ar{r}{\delta_B} & G^2B & {} \\
+      GA\times GB\ar{ur}{\pi_{GB}}\ar{r}{\phi^{-1}}\ar{dr}{\pi_A} & G(A\times B)\ar{u}{G(\pi_B)}\ar{r}{\delta_{A\times B}}\ar{d}{G(\pi_A)}
+        & G^2(A\times B)\ar{u}{G^2(\pi_B)}\ar{r}{\psi G(\phi)}\ar{d}{G^2(\pi_A)}
+        & G^2A\times G^2GB\ar[swap]{ul}{\pi_{G^2B}}\ar{dl}{\pi_{G^2A}} \\
+      & GA\ar{r}{\delta_A} & G^2A
+    \end{tikzcd}
+  \end{equation*}
+  Donde todo conmuta ya que son diagramas de productos y cuadrados de naturalidad de $\delta$, así
+  que $\delta_A\times\delta_B=\psi G(\phi)\delta_{A\times B}\phi^{-1}$, pero $\psi G(\phi)$ es un
+  isomorfismo, entonces obtenemos la igualdad que queríamos.
+
+  Ahora consideramos a los morfismos de coálgebras $f:(X,u)\to (A,s)$ y $g:(X,u)\to (B,t)$ para demostrar
+  la propiedad universal de $(A\times B, \phi^{-1}(s\times t))$.
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar{d}{u}\ar{r}{f\times g} & A\times B\ar{dr}{\phi^{-1}(s\times t)}\ar{d}{s\times t} \\
+      GX\ar[swap]{r}{G(f)\times G(g)} & GA\times GB\ar[swap]{r}{\phi^{-1}} & G(A\times B)
+    \end{tikzcd}
+  \end{equation*}
+  El cuadro conmuta pues $f$ y $g$ son morfismos de coálgebras, además como $G$ preserva
+  productos tenemos que $\phi^{-1}(G(f)\times G(g))=G(f\times g)$, lo cual demuestra la
+  existencia del morfismo $f\times g:(X,u)\to (A\times B,\phi^{-1}(s\times t))$. La unicidad
+  se da gracias a la unicidad de $f\times g$ en $\mathcal{E}$. Por tanto $\mathcal{E}_C$
+  tiene productos finitos y procedemos a mostrar que tiene igualadores. Consideramos $(A,s)$,
+  $(B,t)$ coálgebras y $f,g:(A,s)\to (B,t)$. Proponemos $(E,\phi^{-1}u)$ como sigue:
+  \begin{equation*}
+    \begin{tikzcd}
+      E\ar{r}{e}\ar[dashed]{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
+      D\ar{r}{d} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB \\
+      GE\ar[dashed]{u}{\phi}\ar{ur}{G(e)}
+    \end{tikzcd}
+  \end{equation*}
+  Los cuadros conmutan ya que $f$ y $g$ son morfismos de coálgebras, entonces $se$ iguala
+  a $G(f)$ con $G(g)$, lo cual nos da la existencia de $u$. De nuevo, $\phi$ es un
+  isomorfismo porque $G$ preserva límites. Veamos que $(E,\phi^{-1}u)$ es coálgebra, para
+  ello empezamos con la ``counidad'' , es decir, queremos demostrar la conmutatividad del siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      E\ar{r}{\phi^{-1}u}\ar{dr}{id_E} & GE\ar{d}{\epsilon_E} \\
+      & E
+    \end{tikzcd}
+  \end{equation*}
+  Notemos que $\epsilon_AG(e)$ iguala a $f,g$.
+  \begin{equation*}
+    \begin{tikzcd}
+      E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B \\
+      GE\ar[dashed]{u}{\epsilon_E}\ar{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} \\
+      E\ar{u}{\phi^{-1}u}
+    \end{tikzcd}
+  \end{equation*}
 \end{proof}
 
 \backmatter
