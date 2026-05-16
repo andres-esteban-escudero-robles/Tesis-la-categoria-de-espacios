@@ -509,32 +509,35 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   existencia del morfismo $f\times g:(X,u)\to (A\times B,\phi^{-1}(s\times t))$. La unicidad
   se da gracias a la unicidad de $f\times g$ en $\mathcal{E}$. Por tanto $\mathcal{E}_C$
   tiene productos finitos y procedemos a mostrar que tiene igualadores. Consideramos $(A,s)$,
-  $(B,t)$ coálgebras y $f,g:(A,s)\to (B,t)$. Proponemos $(E,\phi^{-1}u)$ como sigue:
+  $(B,t)$ coálgebras y $f,g:(A,s)\to (B,t)$. Proponemos $(E,u)$ como sigue:
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e}\ar[dashed]{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
-      D\ar{r}{d} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB \\
-      GE\ar[dashed]{u}{\phi}\ar{ur}{G(e)}
+      GE\ar{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB \\
     \end{tikzcd}
   \end{equation*}
-  Los cuadros conmutan ya que $f$ y $g$ son morfismos de coálgebras, entonces $se$ iguala
-  a $G(f)$ con $G(g)$, lo cual nos da la existencia de $u$. De nuevo, $\phi$ es un
-  isomorfismo porque $G$ preserva límites. Veamos que $(E,\phi^{-1}u)$ es coálgebra, para
-  ello empezamos con la ``counidad'' , es decir, queremos demostrar la conmutatividad del siguiente diagrama:
+  Los cuadros conmutan ya que $f$ y $g$ son morfismos de coálgebras, entonces $s\circ e$ iguala
+  a $G(f)$ con $G(g)$, lo cual nos da la existencia de $u$. $GE$ es el igualador de $G(f)$ y $G(g)$ salvo isomorfismo
+  porque $G$ preserva límites. Veamos que $(E,u)$ es coálgebra, para ello empezamos con la ``counidad'',
+  es decir, queremos demostrar la conmutatividad del siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      E\ar{r}{\phi^{-1}u}\ar{dr}{id_E} & GE\ar{d}{\epsilon_E} \\
+      E\ar{r}{u}\ar[swap]{dr}{id_E} & GE\ar{d}{\epsilon_E} \\
       & E
     \end{tikzcd}
   \end{equation*}
-  Notemos que $\epsilon_AG(e)$ iguala a $f,g$.
+  Notemos que $\epsilon_AG(e)$ iguala a $f,g$ por la naturalidad de $\epsilon$.
   \begin{equation*}
     \begin{tikzcd}
-      E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B \\
-      GE\ar[dashed]{u}{\epsilon_E}\ar{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} \\
-      E\ar{u}{\phi^{-1}u}
+      E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B & {} E\ar{r}{e}\ar{d}{u} & A\ar{r}{id_A}\ar{d}{s} & A \\
+      GE\ar[dashed]{u}{\epsilon_E}\ar{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} & {} GE\ar{r}{G(e)} & GA\ar[swap]{ur}{\epsilon_A} \\
+      E\ar{u}{u}
     \end{tikzcd}
   \end{equation*}
+  La flecha inducida de $GE$ a $E$ debe ser $\epsilon_E$, de nuevo por la naturalidad de $\epsilon$.
+  El diagrama de la derecha conmuta por la definición de $u$ y porque $s$ es la estructura de coálgebra de $A$,
+  entonces $\epsilon_AG(e)u=e$, así que, por la propiedad universal de $E$ como igualador, $\epsilon_Eu=id_E$. Para la coasociatividad, queremos ver que el siguiente diagrama conmuta:
+
 \end{proof}
 
 \backmatter
