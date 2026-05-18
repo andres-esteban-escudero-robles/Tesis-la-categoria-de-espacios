@@ -537,7 +537,49 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   La flecha inducida de $GE$ a $E$ debe ser $\epsilon_E$, de nuevo por la naturalidad de $\epsilon$.
   El diagrama de la derecha conmuta por la definición de $u$ y porque $s$ es la estructura de coálgebra de $A$,
   entonces $\epsilon_AG(e)u=e$, así que, por la propiedad universal de $E$ como igualador, $\epsilon_Eu=id_E$. Para la coasociatividad, queremos ver que el siguiente diagrama conmuta:
-
+  \begin{equation*}
+    \begin{tikzcd}
+      E\ar{r}{u}\ar{d}{u} & GE\ar{d}{\delta_E} \\
+      GE\ar{r}{G(u)} & G^2E
+    \end{tikzcd}
+  \end{equation*}
+  Para ello consideramos el siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      A\ar{r}{s} & GA\ar[shift left=0.75ex]{r}{G(s)}\ar[swap, shift right=0.75ex]{r}{\delta_A} & G^2A \\
+      E\ar{u}{e}\ar{r}{u} & GE\ar[shift left=0.75ex]{r}{G(u)}\ar[swap, shift right=0.75ex]{r}{\delta_E}\ar{u}{G(e)} & G^2E\ar[swap]{u}{G^2(e)}
+    \end{tikzcd}
+  \end{equation*}
+  El cuadrado de la izquierda conmuta por la construcción de $u$ y ambos cuadrados derechos conmutan, en un caso
+  porque $G$ es funtor y en el otro caso porque $\delta$ es una transformación natural. Más aún, $\delta_As=G(s)s$
+  por la coasociatividad de $A$, pero $G^2(e)$ es un igualador y como los cuadros conmutan, $\delta_Ase$, $G(s)se$
+  también igualan a $G^2(f)$ con $G^2(g)$, entonces por la propiedad universal de $G^2E$ obtenemos que $\delta_Eu=G(u)u$. Ahora veamos que $(E,u)$ es el igualador de $f$ y $g$ en $\mathcal{E}_C$.
+  \begin{equation*}
+    \begin{tikzcd}
+      E\ar{r}{e}\ar{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
+      GE\ar{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB
+    \end{tikzcd}
+  \end{equation*}
+  Claramente $e$, visto como morfismo de coálgebras, iguala a $f$ con $g$. Sea $h:(X,w)\to (A,s)$ otro morfismo
+  de coálgebras que iguala a $f$ y a $g$, entonces por la propiedad universal de $E$ y $GE$ tenemos:
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar[dashed]{r}{j}\ar{d}{w} & E\ar{d}{u} \\
+      GX\ar[dashed]{r}{k} & GE
+    \end{tikzcd}
+  \end{equation*}
+  Por construcción, $ej=h$ entonces $G(e)G(j)=G(h)$, lo cual implica que $G(j)=k$. Como $G(h)$ iguala a $G(f)$ con $G(g)$,
+  $G(h)w:X\to GA$ induce una única flecha de $X$ a $GE$.
+  \begin{equation*}
+    \begin{tikzcd}
+      GE\ar{r}{G(e)} & GA & GE\ar{rr}{G(e)} & {} & GA\\
+      GX\ar{u}{G(j)}\ar{ur}{G(h)} & {} & E\ar{u}{u}\ar{r}{e} & A\ar{ur}{s} \\
+      X\ar{u}{w}\ar[swap]{uur}{G(h)w} & {} & X\ar{u}{j}\ar{ur}{h}\ar{rr}{w} & {} & GX\ar{uu}{G(h)}
+    \end{tikzcd}
+  \end{equation*}
+  El diagrama de la izquierda es la definición de $k=G(j)$. El diagrama de la derecha conmuta por la definición
+  de $u$, la definición de $j$ y porque $h$ es un morfismo de coálgebras. Por lo tanto, $uj=G(j)w$ y existe
+  $j:(X,w)\to (E,u)$. La unicidad de $j$ similarmente se da gracias a la unicidad de $j$ en $\mathcal{E}$. De esta manera, $\mathcal{E}_C$ tiene límites finitos.
 \end{proof}
 
 \backmatter
