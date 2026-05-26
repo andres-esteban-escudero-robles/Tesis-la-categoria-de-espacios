@@ -356,7 +356,7 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
 
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}[label=prop:terminaldiscreto]
   1 es un espacio discreto.
 \end{proposition}
 \begin{proof}
@@ -582,6 +582,92 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   $j:(X,w)\to (E,u)$. La unicidad de $j$ similarmente se da gracias a la unicidad de $j$ en $\mathcal{E}$. De esta manera, $\mathcal{E}_C$ tiene límites finitos.
 \end{proof}
 
+\begin{proposition}
+  Si $A$ es un espacio discreto, entonces $\Gamma A = A$.
+\end{proposition}
+\begin{proof}
+  Por \ref{ax:gds7} existe un único subespacio discreto $\Gamma A$ de $A$ tal que todo punto de $A$ está en $\Gamma A$. 
+  Dado que $A$ es discreto, $A$ es un subespacio de $A$, y cada punto de $A$ está en $A$, concluimos que $\Gamma A = A$.
+\end{proof}
+
+\begin{corollary}[label=cor:unidadidentidad]
+  $\Gamma\Delta$ es la identidad en $M$ y $\Delta\Gamma$ es idempotente.
+\end{corollary}
+
+\begin{theorem}
+  Si $\Omega$ es el clasificador de subobjetos en $\mathcal{E}$, entonces $\Gamma\Omega$ con 
+  $\Gamma v:\Gamma1\to\Gamma\Omega$ es el clasificador de subobjetos de M. $\Gamma$ preserva al 
+  clasificador de subobjetos.
+\end{theorem}
+\begin{proof}
+  Para cada $A\in M$ y $m:S\to A$ un subespacio de $A$, existe un único morfismo $\chi_m:A\to \Omega$ tal que el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta S\ar{r}{!}\ar[tail]{d}{\Delta m} & 1\ar{d}{v} \\
+      \Delta A\ar{r}{\chi_m} & \Omega
+    \end{tikzcd}
+  \end{equation*}
+  Como $\Gamma$ es adjunto derecho, preserva límites, entonces al aplicar $\Gamma$ al diagrama anterior
+  obtenemos un producto fibrado. Por \ref{prop:terminaldiscreto} $\Gamma 1 = 1$ y aplicamos \ref{cor:unidadidentidad}.
+  \begin{equation*}
+    \begin{tikzcd}
+      S\ar{r}{!}\ar[tail]{d}{m} & 1\ar{d}{\Gamma v} \\
+      A\ar{r}{\Gamma \chi_m} & \Gamma\Omega
+    \end{tikzcd}
+  \end{equation*}
+  Si hubiera otro morfismo $f:A\to \Gamma\Omega$ tal que el diagrama sea un producto fibrado, entonces
+  consideramos al siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      S\ar{r}{!}\ar[tail]{d}{m} & \Delta\Gamma 1\ar{d}{\Delta\Gamma v}\ar{r}{c_1} & 1\ar{d}{v} \\
+      A\ar[shift left=0.75ex]{r}{f}\ar[swap,shift right=0.75ex]{r}{\Gamma \chi_m} & \Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega
+    \end{tikzcd}
+  \end{equation*}
+  El cuadrado de la derecha conmuta por la naturalidad de la counidad, pero es también un producto fibrado.
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar[bend left=30]{rrd}{!}\ar[bend right=30]{rdd}[swap]{p}
+          \ar[dashed]{rd}{!}\\[-2ex]
+      &[-2ex] \Delta\Gamma 1\ar{r}{c_1}\ar{d}{\Delta\Gamma v} & 1\ar{d}{v} \\
+      &\Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega
+    \end{tikzcd}
+  \end{equation*}
+  Bajo la hipótesis de que $v!=c_{\Omega}p$, como los diagramas que terminal en 1 conmutan, 
+  $c_{\Omega}p=vc_1!=c_{\Omega}\Delta\Gamma v!$, entonces $p=\Delta\Gamma v!$ y en efecto, es un producto fibrado.
+  De esta manera, por el lema del producto fibrado, el exterior es un producto fibrado, lo cual implica que
+  $c_{\Omega}f=\chi_m=c_{\Omega}\Gamma \chi_m$, pero $c_{\Omega}$ es mono, entonces $f=\Gamma \chi_m$. 
+  Por tanto, $\Gamma\Omega$ con $\Gamma v$ es el clasificador de subobjetos de $M$.
+\end{proof}
+
+\begin{theorem}[label=thm:puntitos]
+  Si $A$ tiene una cantidad finita de puntos, entonces $\Gamma A=\sqcup 1$ donde la cantidad de copias
+  de $1$ es igual a la cantidad de puntos de $A$.
+\end{theorem}
+\begin{proof}
+  Basta demostrarlo para $A$ con dos puntos, $a,b:1\to A$ con $a\neq b$ y el resultado se sigue por inducción.
+  Primero hay que ver que $\Gamma1 + \Gamma1$ es un subespacio de $A$. Como $\Gamma 1=1$ y tenemos elementos globales 
+  globales $a$ y $b$, por la propiedad universal del coproducto, existe un morfismo $a+b:1+1\to A$. Veamos que es un monomorfismo.
+  \begin{equation*}
+    \begin{tikzcd}
+      (a+b)\times_A (a+b)\ar{r}\ar{d} & 1+1\ar{d}{a+b}\\
+      1+1\ar{r}{a+b} & A
+    \end{tikzcd}
+  \end{equation*}
+  En un topos el coproducto es estable bajo productos fibrados, entonces $(a+b)\times_A (a+b)\cong
+  (a\times_A a) + (a\times_A b) + (b\times_A a) + (b\times_A b)$. Además, $a\times_A b\cong \varnothing$
+  ya que $a\neq b$. Por lo tanto, $(a+b)\times_A (a+b)\cong (a\times_A a) + (b\times_A b)$, pero $a$ y $b$
+  son monomorfismos, entonces $(a+b)\times_A (a+b)\cong 1+1$. Por lo anterior, $a+b$ es mono. Por otro lado,
+  $\Gamma1+\Gamma1$ es un espacio discreto porque es el coproducto en $M$. Falta demostrar que los puntos
+  de $A$ se factorizan a través de $\Gamma1+\Gamma1 = 1+1$.
+  \begin{equation*}
+    \begin{tikzcd}
+      1\ar{r}{a}\ar[swap]{dr}{i} & \Gamma A & 1\ar{l}{b}\ar{dl}{i} \\
+      {} & 1+1\ar[dashed]{u}{a+b} 
+    \end{tikzcd}
+  \end{equation*}
+  Los puntos de $A$ se encuentran en $\Gamma A$ y se factorizan a través de $a+b$. Por lo tanto,
+  la unicidad de $\Gamma A$ implica que $\Gamma A = 1+1$.
+\end{proof}
 \backmatter
 \printbibliography[title={Bibliografía}]
 
