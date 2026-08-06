@@ -46,6 +46,35 @@
       \field{title}{The calculus gallery: Masterpieces from Newton to Lebesgue}
       \field{year}{2018}
     \endentry
+    \entry{johnstone2002sketches}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=0fd3c6c701987f321528f4265c0c3449}{%
+           family={Johnstone},
+           familyi={J\bibinitperiod},
+           given={Peter\bibnamedelima T},
+           giveni={P\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Oxford University Press}%
+      }
+      \strng{namehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{fullhash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{fullhashraw}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{bibnamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorbibnamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authornamehash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorfullhash}{0fd3c6c701987f321528f4265c0c3449}
+      \strng{authorfullhashraw}{0fd3c6c701987f321528f4265c0c3449}
+      \field{extraname}{1}
+      \field{labelalpha}{Joh02}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sketches of an Elephant: A Topos Theory Compendium: Volume 2}
+      \field{volume}{2}
+      \field{year}{2002}
+    \endentry
     \entry{johnstone2014topos}{book}{}{}
       \name{author}{1}{}{%
         {{hash=0fd3c6c701987f321528f4265c0c3449}{%
@@ -65,6 +94,7 @@
       \strng{authornamehash}{0fd3c6c701987f321528f4265c0c3449}
       \strng{authorfullhash}{0fd3c6c701987f321528f4265c0c3449}
       \strng{authorfullhashraw}{0fd3c6c701987f321528f4265c0c3449}
+      \field{extraname}{2}
       \field{labelalpha}{Joh14}
       \field{sortinit}{J}
       \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
@@ -382,6 +412,38 @@
       \field{year}{1988}
       \field{pages}{75\bibrangedash 90}
       \range{pages}{16}
+    \endentry
+    \entry{maclane2012sheaves}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=d35756c9f39a938d9533376dfaa5ad43}{%
+           family={MacLane},
+           familyi={M\bibinitperiod},
+           given={Saunders},
+           giveni={S\bibinitperiod}}}%
+        {{hash=1fc4bc57ad663c84359227240f5bc42f}{%
+           family={Moerdijk},
+           familyi={M\bibinitperiod},
+           given={Ieke},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Science \& Business Media}%
+      }
+      \strng{namehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{fullhash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{fullhashraw}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{bibnamehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authorbibnamehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authornamehash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authorfullhash}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \strng{authorfullhashraw}{5ddd5fc6ef7aceb84cfa1296eb79bdb9}
+      \field{labelalpha}{MM12}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Sheaves in geometry and logic: A first introduction to topos theory}
+      \field{year}{2012}
     \endentry
     \entry{robinson1974non}{book}{}{}
       \name{author}{1}{}{%

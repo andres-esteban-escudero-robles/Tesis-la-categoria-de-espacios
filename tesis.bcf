@@ -2386,6 +2386,9 @@
     <bcf:citekey order="11" intorder="1">lawvere1980toward</bcf:citekey>
     <bcf:citekey order="12" intorder="1">mclarty1988defining</bcf:citekey>
     <bcf:citekey order="13" intorder="1">lawvere1979categorical</bcf:citekey>
+    <bcf:citekey order="14" intorder="1">johnstone2002sketches</bcf:citekey>
+    <bcf:citekey order="15" intorder="1">johnstone2002sketches</bcf:citekey>
+    <bcf:citekey order="16" intorder="1">maclane2012sheaves</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="anyt">
