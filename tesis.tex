@@ -335,7 +335,7 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
         T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
           \ar[dashed]{rd}{\pi_S t}\\[-2ex]
         &[-2ex] S\ar{r}{m} \ar[tail]{d}[swap]{\Delta_S} & A\ar[tail]{d}{\Delta_A}\\
-        & S\times S\ar{r}[swap]{m\times m} & A\times A
+        & S\times S\ar{r}[swap]{m\times m} & A\times A.
     \end{tikzcd}
   \end{equation*}
   Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
@@ -379,7 +379,7 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{a} \ar[swap]{rd}{id} & A\ar{r}{i_A} & A+\lnot A \ar{r} & A\cup\lnot A\ar[tail]{r}{m} &1 \\
-        & 1\ar{urrr}
+        & 1.\ar{urrr}
     \end{tikzcd}
   \end{equation*}
   El diagrama conmuta pues acaba en el terminal y como la composición es igual a la identidad
@@ -394,7 +394,7 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar[swap]{rd}{a} & N\ar{d}{f}\ar{r}{s} & N\ar{d}{f} \\
-      & A\ar[swap]{r}{g} & A
+      & A\ar[swap]{r}{g} & A.
     \end{tikzcd}
   \end{equation*}
   Intuitivamente, la flecha $o$ señala al cero y $s$ es la función sucesor, por lo que
@@ -408,7 +408,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   Sea $(N,o,s)$ un ONN en una categoría $\mathcal{C}$ con coproductos binarios, entonces
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{o} & N & N\ar[swap]{l}{s}
+      1\ar{r}{o} & N & N.\ar[swap]{l}{s}
     \end{tikzcd}
   \end{equation*}
   es un coproducto.
@@ -420,15 +420,15 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar[swap]{rd}{ai_1} & N\ar[dashed]{d}{f}\ar{r}{s} & N\ar[dashed]{d}{f} \\
-      & A\ar[swap]{r}{ai_A} & A
+      & A\ar[swap]{r}{ai_A} & A.
     \end{tikzcd}
   \end{equation*}
   Para que $f$ realmente sea un morfismo entre $(N,[o,s]:1+N\to N)$ y $(A,a:1+A\to A)$ necesitamos que $f[o,s]=aT(f)$.
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{o} & 1+N\ar{d}{[o,s]} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar{ld}{s} & {} & 1\ar[swap]{r}{i_1}\ar{rdd}{ai_1}\ar{rd}{i_1} & 1+N\ar{d}{[i_1,i_Af]} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar{ld}{i_Af} \\
+      1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{o} & 1+N\ar{d}{[o,s]} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar{ld}{s} & {} & 1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{i_1} & 1+N & N\ar{d}{}\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar[swap]{ld}{i_Af} \\
         & N\ar{d}{f} & {} & {} & {} & 1+A\ar{d}{a} & {} \\
-        & A & {} & {} & {} & A & {}
+        & A & {} & {} & {} & A. & {}
     \end{tikzcd}
   \end{equation*}
   La construcción de $f$ nos permite concluir que los diagramas son conmutativos, así que
@@ -447,7 +447,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar[swap]{rd}{o\times o} & N\ar[dashed]{d}{(id,p)}\ar{r}{s} & N\ar[dashed]{d}{(id,p)} \\
-      & N\times N\ar[swap]{r}{(s\pi_1,\pi_1)} & N\times N
+      & N\times N\ar[swap]{r}{(s\pi_1,\pi_1)} & N\times N.
     \end{tikzcd}
   \end{equation*}
   De donde $ps = id_N$ y por tanto $s$ es mono.
@@ -470,9 +470,9 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   morfismo $f:N\to N'$ tal que el siguiente diagrama es conmutativo.
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{o}\ar[swap]{rd}{o'}\ar{rdd}{o} & N\ar{d}{f}\ar{r}{s} & N\ar{d}{f} \\
+      1\ar{r}{o}\ar{rd}{o'}\ar[swap]{rdd}{o} & N\ar{d}{f}\ar{r}{s} & N\ar{d}{f} \\
       & N'\ar[swap]{r}{s'}\ar{d}{m} & N'\ar{d}{m} \\
-      & N\ar{r}{s} & N
+      & N\ar{r}{s} & N.
     \end{tikzcd}
   \end{equation*}
   Por lo que $mf:N\to N'\to N$ tiene que ser la identidad en $N$, pero esto implica que $m$ además de ser mono tiene
@@ -485,15 +485,15 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
 \begin{proof}
   El plan es ver a $\Delta:N\to N\times N$ como intersección de subobjetos complementados en $Sub(N\times N)$ (así va la demostracion de Johnstone pero hay una más directa con la lógica interna).
   Primero, en un topos tenemos recursividad con parámetros que nos permite definir a la resta truncada como 
-  $~:N\times N\to N$ tal que $~(a,0)=a$ y $~(a,n+1)=p(~(a,n))$ donde $p$ es el predecesor de \ref{prop:sucesormono}.
+  $\dot{-}:N\times N\to N$ tal que $\dot{-}(a,0)=a$ y $\dot{-}(a,n+1)=p(\dot{-}(a,n))$ donde $p$ es el predecesor de \ref{prop:sucesormono}.
   Ahora construimos a los subobjetos:
   \begin{equation*}
     \begin{tikzcd}
       N_1\ar{r}{}\ar{d}{} & 1\ar{d}{o} \\
-      N\times N\ar{r}{~} & N
+      N\times N\ar{r}{\dot{-}} & N.
     \end{tikzcd}
   \end{equation*}
-  Que son complementados gracias a que ser complementado es estable bajo productos fibrados. Como $n~n=0$ para toda $n$,
+  Que son complementados gracias a que ser complementado es estable bajo productos fibrados. Como $n\dot{-}n=0$ para toda $n$,
   $\Delta$ es subobjeto de $N_1$ y por lo tanto $\Delta$ también tiene complemento en $Sub(N\times N)$.
 \end{proof}
 
@@ -509,7 +509,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       \Delta B \ar{r} \ar[swap]{rd}{f} & \Delta\Gamma A \ar[tail]{d}{c_A} \\
-                                & A
+                                & A.
     \end{tikzcd}
   \end{equation*}
   Notemos que si $B$ fuera el objeto inicial ya acabamos. En otro caso, 
@@ -520,7 +520,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
         1\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{b}
           \ar[dashed]{rd}{b}\\[-2ex]
         &[-2ex] f^{-1} (\Gamma A)\ar{r}{\overline{f}} \ar[tail]{d}[swap]{c_B} & \Gamma A\ar[tail]{d}{c_A}\\
-        & B\ar{r}[swap]{f} & A
+        & B\ar{r}[swap]{f} & A.
     \end{tikzcd}
   \end{equation*}
   Para ver que el exterior conmuta recordemos que según \ref{ax:gds7}, los puntos de $A$ se factorizan a
@@ -546,7 +546,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
         GA & GA\times GB \ar[swap]{l}{\pi_{GA}} \ar{r}{\pi_{GB}} & GB\\
-        & G(A\times B) \ar{ul}{G(\pi_A)} \ar[dashed]{u}{\phi} \ar[swap]{ur}{G(\pi_B)}
+        & G(A\times B). \ar{ul}{G(\pi_A)} \ar[dashed]{u}{\phi} \ar[swap]{ur}{G(\pi_B)}
     \end{tikzcd}
   \end{equation*}
   Con $\phi$ natural en los objetos A y B.En este caso, gracias a que $G$ es izquierdo exacto, $\phi$ es un isomorfismo. Proponemos
@@ -557,7 +557,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
         A\times B\ar{r}{s\times t}\ar[swap]{d}{\pi_A}\ar[phantom]{2-2}{(1)} & GA\times GB \ar[swap]{d}{\pi_{GA}}\ar{r}{\phi^{-1}}\ar[phantom]{2-3}[near start]{(2)} 
           & G(A\times B)\ar{dl}{G(\pi_A)}\ar{d}{\epsilon_{A\times B}} \\
         A\ar{r}{s}\ar[swap]{dr}{id_A} & GA\ar{d}{\epsilon_A}\ar[phantom]{r}{(4)}\ar[phantom]{3-1}[near start]{(3)} & A\times B \ar{dl}{\pi_A} \\
-        {} & A
+        {} & A.
     \end{tikzcd}
   \end{equation*}
   En el diagrama (1) conmuta por la definición de $s\times t$, (2) conmuta gracias a la construcción
@@ -570,7 +570,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       G(GA\times GB)\ar{r}{G(\phi^{-1})} & G^2(A\times B) \\
-      G^2A\times G^2B\ar{u}{\psi^{-1}}\ar[swap]{ur}{G(\phi^{-1})\psi^{-1}}
+      G^2A\times G^2B.\ar{u}{\psi^{-1}}\ar[swap]{ur}{G(\phi^{-1})\psi^{-1}}
     \end{tikzcd}
   \end{equation*}
   Para la coasociatividad queremos ver la conmutatividad del siguiente diagrama:
@@ -579,7 +579,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
       A\times B\ar[phantom]{rd}{(1)}\ar{r}{s\times t}\ar[swap]{d}{s\times t} & GA\times GB\ar{r}{\phi^{-1}}\ar{d}{\delta_A\times \delta_B}
         & G(A\times B)\ar{dd}{\delta_{A\times B}} \\
       GA\times GB\ar{r}{G(s)\times G(t)}\ar[swap]{d}{\phi^{-1}} & G^2A\times G^2B\ar{d}{\psi^{-1}} \\
-      G(A\times B)\ar[phantom]{ur}{(2)}\ar[swap]{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(3)}\ar{r}{G(\phi^{-1})} & G^2(A\times B)
+      G(A\times B)\ar[phantom]{ur}{(2)}\ar[swap]{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(3)}\ar{r}{G(\phi^{-1})} & G^2(A\times B).
     \end{tikzcd}
   \end{equation*}
   En (1) sabemos que el diagrama en cada coordenada conmuta pues $(A,s),(B,t)$ son coálgebras. 
@@ -590,7 +590,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
       G^2A & G^2A\times G^2B\ar[swap]{l}{\pi_{G^2A}}\ar{r}{\pi_{G^2B}} & G^2B \\
       G^2A\ar{u}{id_{G^2A}} & G(GA\times GB)\ar[swap]{l}{G(\pi_{GA})}\ar{u}{\psi}\ar{r}{G(\pi_{GB})} & G^2B\ar[swap]{u}{id_{G^2B}} \\
       GA\ar{u}{G(s)} & G(A\times B)\ar[swap]{l}{G(\pi_A)}\ar{u}{G(s\times t)}\ar{r}{G(\pi_B)} & GB\ar[swap]{u}{G(t)} \\
-      & GA\times GB\ar{ul}{\pi_{GA}}\ar{u}{\phi^{-1}}\ar[swap]{ur}{\pi_{GB}}
+      & GA\times GB.\ar{ul}{\pi_{GA}}\ar{u}{\phi^{-1}}\ar[swap]{ur}{\pi_{GB}}
     \end{tikzcd}
   \end{equation*}
   Cada parte conmuta gracias a cómo construimos los morfismos usando la propiedad universal del producto,
@@ -602,7 +602,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
       GA\times GB\ar{ur}{\pi_{GB}}\ar{r}{\phi^{-1}}\ar[swap]{dr}{\pi_A} & G(A\times B)\ar[swap]{u}{G(\pi_B)}\ar{r}{\delta_{A\times B}}\ar{d}{G(\pi_A)}
         & G^2(A\times B)\ar{u}{G^2(\pi_B)}\ar{r}{\psi G(\phi)}\ar[swap]{d}{G^2(\pi_A)}
         & G^2A\times G^2GB\ar[swap]{ul}{\pi_{G^2B}}\ar{dl}{\pi_{G^2A}} \\
-      & GA\ar[swap]{r}{\delta_A} & G^2A
+      & GA\ar[swap]{r}{\delta_A} & G^2A.
     \end{tikzcd}
   \end{equation*}
   Donde todo conmuta ya que son diagramas de productos y cuadrados de naturalidad de $\delta$, así
@@ -614,7 +614,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       X\ar[swap]{d}{u}\ar{r}{f\times g} & A\times B\ar{dr}{\phi^{-1}(s\times t)}\ar{d}{s\times t} \\
-      GX\ar[swap]{r}{G(f)\times G(g)} & GA\times GB\ar[swap]{r}{\phi^{-1}} & G(A\times B)
+      GX\ar[swap]{r}{G(f)\times G(g)} & GA\times GB\ar[swap]{r}{\phi^{-1}} & G(A\times B).
     \end{tikzcd}
   \end{equation*}
   El cuadro conmuta pues $f$ y $g$ son morfismos de coálgebras, además como $G$ preserva
@@ -626,7 +626,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e}\ar[swap,dashed]{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
-      GE\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB \\
+      GE\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB. \\
     \end{tikzcd}
   \end{equation*}
   Los cuadros conmutan ya que $f$ y $g$ son morfismos de coálgebras, entonces $s\circ e$ iguala
@@ -643,7 +643,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B & {} E\ar{r}{e}\ar[swap]{d}{u} & A\ar{r}{id_A}\ar{d}{s} & A \\
-      GE\ar[dashed]{u}{\epsilon_E}\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} & {} GE\ar[swap]{r}{G(e)} & GA\ar[swap]{ur}{\epsilon_A} \\
+      GE\ar[dashed]{u}{\epsilon_E}\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} & {} GE\ar[swap]{r}{G(e)} & GA.\ar[swap]{ur}{\epsilon_A} \\
       E\ar{u}{u}
     \end{tikzcd}
   \end{equation*}
@@ -653,14 +653,14 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{u}\ar[swap]{d}{u} & GE\ar{d}{\delta_E} \\
-      GE\ar[swap]{r}{G(u)} & G^2E
+      GE\ar[swap]{r}{G(u)} & G^2E.
     \end{tikzcd}
   \end{equation*}
   Para ello consideramos el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       A\ar{r}{s} & GA\ar[shift left=0.75ex]{r}{G(s)}\ar[swap, shift right=0.75ex]{r}{\delta_A} & G^2A \\
-      E\ar{u}{e}\ar[swap]{r}{u} & GE\ar[shift left=0.75ex]{r}{G(u)}\ar[swap, shift right=0.75ex]{r}{\delta_E}\ar{u}{G(e)} & G^2E\ar[swap]{u}{G^2(e)}
+      E\ar{u}{e}\ar[swap]{r}{u} & GE\ar[shift left=0.75ex]{r}{G(u)}\ar[swap, shift right=0.75ex]{r}{\delta_E}\ar{u}{G(e)} & G^2E.\ar[swap]{u}{G^2(e)}
     \end{tikzcd}
   \end{equation*}
   El cuadrado de la izquierda conmuta por la construcción de $u$ y ambos cuadrados derechos conmutan, en un caso
@@ -670,7 +670,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e}\ar[swap]{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
-      GE\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB
+      GE\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)} & GB.
     \end{tikzcd}
   \end{equation*}
   Claramente $e$, visto como morfismo de coálgebras, iguala a $f$ con $g$. Sea $h:(X,w)\to (A,s)$ otro morfismo
@@ -678,7 +678,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       X\ar[dashed]{r}{j}\ar[swap]{d}{w} & E\ar{d}{u} \\
-      GX\ar[swap,dashed]{r}{k} & GE
+      GX\ar[swap,dashed]{r}{k} & GE.
     \end{tikzcd}
   \end{equation*}
   Por construcción, $ej=h$ entonces $G(e)G(j)=G(h)$, lo cual implica que $G(j)=k$. Como $G(h)$ iguala a $G(f)$ con $G(g)$,
@@ -687,7 +687,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
     \begin{tikzcd}
       GE\ar{r}{G(e)} & GA & GE\ar{rr}{G(e)} & {} & GA\\
       GX\ar{u}{G(j)}\ar{ur}{G(h)} & {} & E\ar{u}{u}\ar{r}{e} & A\ar{ur}{s} \\
-      X\ar{u}{w}\ar[swap]{uur}{G(h)w} & {} & X\ar{u}{j}\ar[swap]{ur}{h}\ar[swap]{rr}{w} & {} & GX\ar[swap]{uu}{G(h)}
+      X\ar{u}{w}\ar[swap]{uur}{G(h)w} & {} & X\ar{u}{j}\ar[swap]{ur}{h}\ar[swap]{rr}{w} & {} & GX.\ar[swap]{uu}{G(h)}
     \end{tikzcd}
   \end{equation*}
   El diagrama de la izquierda es la definición de $k=G(j)$. El diagrama de la derecha conmuta por la definición
@@ -699,9 +699,9 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   La categoría $\mathcal{E}_C$ tiene exponenciales.
 \end{lemma}
 \begin{proof}
-  Seguiremos la demostración de Maclane \cite{maclane2012sheaves}. Sean $(A,s), (B,t)$ y $(C,u)$ coálgebras, entonces tenemos la siguiente cadena de isomorfismos naturales:
+  Seguiremos la demostración de Mac Lane \cite{maclane2012sheaves}. Sean $(A,s), (B,t)$ y $(C,u)$ coálgebras, entonces tenemos la siguiente cadena de isomorfismos naturales:
   \begin{equation*}
-    Hom_{\mathcal{E}}(A\times B, C) \cong Hom_{\mathcal{E}}(U(A,s), C^B) \cong Hom_{\mathcal{E}_C}((A,s), R(C^B))
+    Hom_{\mathcal{E}}(A\times B, C) \cong Hom_{\mathcal{E}}(U(A,s), C^B) \cong Hom_{\mathcal{E}_C}((A,s), R(C^B)).
   \end{equation*}
   Recordando que tenemos una adjunción entre el funtor olvidadizo, $U$, y el funtor colibre, $R$.
   La coálgebra colibre de un objeto $X$ es $(GX, \delta_X)$ y un morfismo $h:U(Y,\alpha)\to X$ es enviado a
@@ -710,7 +710,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   de coálgebras, por lo que sospechamos que hay un subobjeto $(E,v)$ de $R(C^B)$ tal que tengamos
   el siguiente isomorfismo natural:
   \begin{equation*}
-    Hom_{\mathcal{E}_C}((A,s)\times (B,t), (C,u)) \cong Hom_{\mathcal{E}_C}((A,s), (E,v))
+    Hom_{\mathcal{E}_C}((A,s)\times (B,t), (C,u)) \cong Hom_{\mathcal{E}_C}((A,s), (E,v)).
   \end{equation*}
   Lo anterior implicaría que $(E,v)$ es el exponencial que buscamos. Sea $f:(A,s)\times (B,t) \to (C,u)$,
   definimos a $f'$ como su transpuesta exponencial en $\mathcal{E}$ y sea $f''=G(f')s$. Si traducimos
@@ -721,14 +721,14 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       A\times B\ar{r}{s\times t}\ar[swap]{d}{f} & GA\times GB\ar{r}{\phi^{-1}} & G(A\times B)\ar{d}{G(f)} \\
-      C\ar{rr}{u} & {} & GC
+      C\ar{rr}{u} & {} & GC.
     \end{tikzcd}
   \end{equation*}
   Ahora transponemos cada morfismo empezando por $G(f)\phi^{-1}(s\times t)$ con la siguiente observación:
   \begin{equation*}
     \begin{tikzcd}
       A\times B\ar[swap]{d}{=}\ar{r}{s\times 1_B}\ar[phantom]{rd}{(1)} & GA\times B\ar[swap]{d}{Gf'\times 1_B}\ar{r}{1_{GA}\times t}\ar[phantom]{rd}{(2)} & GA\times GB\ar[swap]{d}{Gf'\times 1_{GB}}\ar{r}{\cong}\ar[phantom]{rd}{(3)} & G(A\times B)\ar[swap]{d}{G(f'\times 1_B)}\ar{r}{Gf}\ar[phantom]{rd}{(4)} & GC\ar{d}{=}\\
-      A\times B\ar[swap]{r}{f''\times 1_B}              & G(C^B)\times B\ar[swap]{r}{1\times t}                       & G(C^B)\times GB\ar[swap]{r}{\phi^{-1}}                 & G(C^B\times B)\ar[swap]{r}{G(ev_{B,C})}             & GC
+      A\times B\ar[swap]{r}{f''\times 1_B}              & G(C^B)\times B\ar[swap]{r}{1\times t}                       & G(C^B)\times GB\ar[swap]{r}{\phi^{-1}}                 & G(C^B\times B)\ar[swap]{r}{G(ev_{B,C})}             & GC.
     \end{tikzcd}
   \end{equation*}
   Donde la fila de arriba es precisamente $G(f)\phi^{-1}(s\times t)$ y cada cuadro conmuta, en (1) por la definición de $f''$, (2) es inmediato, (3) es por la 
@@ -736,14 +736,14 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   transpuesta. La conmutatividad de (4), luego (3), etcétera, nos permite concluir que la fila de
   arriba es igual a la fila de abajo, que es un morfismo más sencillo de transponer.
   \begin{equation*}
-    \overline{G(ev)\phi^{-1}(1\times t)(f''\times 1_B)} = \overline{G(ev)\phi^{-1}(1\times t)}f'' = (GC)^t\overline{G(ev)\phi^{-1}}f''
+    \overline{G(ev)\phi^{-1}(1\times t)(f''\times 1_B)} = \overline{G(ev)\phi^{-1}(1\times t)}f'' = (GC)^t\overline{G(ev)\phi^{-1}}f''.
   \end{equation*}
   Por otro lado, $\overline{uf} = u^Bf'$. Si nombramos $p=\overline{G(ev)\phi^{-1}}$, que $f$ sea
   morfismo de coálgebras es equivalente a que $u^Bf' = (GC)^tpf''$. Ahora pasamos la igualdad a
   través de la adjunción.
   \begin{align*}
     G(u^Bf')s &= G(u^B)G(f')s = G(u^B)f'' \\
-    G((GC)^tpf'')s &= G((GC)^t)G(p)G(f'')s = G((GC)^t)G(p)\delta_{C^B}f''
+    G((GC)^tpf'')s &= G((GC)^t)G(p)G(f'')s = G((GC)^t)G(p)\delta_{C^B}f''.
   \end{align*}
   Recordando que $f'':(A,s)\to (G(C^B),\delta_{C^B})$. Como $f''$ iguala a los anteriores
   morfismos entre coálgebras colibres, aprovechamos que $\mathcal{E}_C$ tiene límites finitos
@@ -751,7 +751,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       (E,v)\ar{r}{i} & (G(C^B),\delta_{C^B})\ar{r}{G(u^B)}\ar{d}{\delta_{C^B}} & (G((GC)^B),\delta_{(GC)^B}) \\
-      (A,s)\ar[dashed]{u}{f^*} & (G(G(C^B)),\delta_{G(C^B)})\ar{r}{G(p)} & (G((GC)^{GB}),\delta_{(GC)^{GB}})\ar{u}{G((GC)^t)} \\
+      (A,s)\ar[dashed]{u}{f^*} & (G(G(C^B)),\delta_{G(C^B)})\ar{r}{G(p)} & (G((GC)^{GB}),\delta_{(GC)^{GB}}).\ar{u}{G((GC)^t)} \\
     \end{tikzcd}
   \end{equation*}
   El mapeo de $f$ a $f^*$ define un isomorfismo natural ya que cada asignación se hizo a través
@@ -769,7 +769,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
     \label{eq:subalgebra}
     \begin{tikzcd}
       D\ar[tail]{r}{m}\ar[swap]{d}{d} & A\ar{d}{s} \\
-      GD\ar[swap]{r}{G(m)} & GA
+      GD\ar[swap]{r}{G(m)} & GA.
     \end{tikzcd}
   \end{equation*}
   Como $m$ es mono y $G$ es exacto por la izquierda, $G(m)$ es mono, y por lo tanto, $d$ debe ser único.
@@ -785,7 +785,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
       D\ar{rrr}{d}\ar[swap]{ddd}{d}\ar{rd}{m} & {} & {} & GD\ar{ddd}{Gd}\ar{ld}{Gm} \\
       {} & A\ar{r}{s}\ar{d}{s} & GA\ar{d}{Gs} & {} \\
       {} & GA\ar{r}{\delta_A} & G^2A & {} \\
-      GD\ar{rrr}{\delta_D}\ar{ru}{Gm} & {} & {} & G^2D\ar{lu}{G^2m}
+      GD\ar{rrr}{\delta_D}\ar{ru}{Gm} & {} & {} & G^2D.\ar{lu}{G^2m}
     \end{tikzcd}
   \end{equation*}
   El cuadrado interior conmuta dado que $(A,s)$ es coálgebra, el trapecio inferior conmuta por la
@@ -794,14 +794,14 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   tenemos lo siguiente:
   \begin{align*}
     G^2(m)G(d)d &= G(s)G(m)d = G(s)sm \\
-    G^2(m)\delta_Dd &= \delta_A G(m)d = \delta_Asm
+    G^2(m)\delta_Dd &= \delta_A G(m)d = \delta_Asm.
   \end{align*}
   Y como el interior conmuta, concluimos que el exterior también y por tanto, $d$ cumple la coasociatividad.
   Para la counidad, consideremos el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       D\ar{r}{d}\ar[swap,tail]{d}{m} & GD\ar{r}{\epsilon_D}\ar[tail]{d}{Gm} & D\ar[tail]{d}{m} \\
-      A\ar{r}{s} & GA\ar{r}{\epsilon_A} & A
+      A\ar{r}{s} & GA\ar{r}{\epsilon_A} & A.
     \end{tikzcd}
   \end{equation*}
   El cuadrado de la izquierda conmuta por hipótesis y el de la derecha por la naturalidad de $\epsilon$,
@@ -813,13 +813,13 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
       X\ar[bend left=30]{rrd}{p}\ar[bend right=30]{rdd}[swap]{q}
           \ar[dashed]{rd}{\epsilon_Dp}\\[-2ex]
       & [-2ex] D\ar{r}{d}\ar[swap]{d}{m} & GD\ar{d}{Gm} \\
-      & A\ar[swap]{r}{s} & GA
+      & A\ar[swap]{r}{s} & GA.
     \end{tikzcd}
   \end{equation*}
   Notemos que:
   \begin{align*}
     G(m)d\epsilon_Dp = sm\epsilon_Dp = s\epsilon_AG(m)p &= s\epsilon_Asq = sq = G(m)p \\
-    m\epsilon_Dp = \epsilon_AG(m)p &= \epsilon_Asq = q
+    m\epsilon_Dp = \epsilon_AG(m)p &= \epsilon_Asq = q.
   \end{align*}
   Dado que $G(m)$ es mono, nuestra propuesta $\epsilon_Dp$ hace conmutar a los triángulos deseados
   y es único porque $m$ es mono. Por tanto, el diagrama es un producto fibrado.
@@ -836,7 +836,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
     \label{eq:clasificadorm}
     \begin{tikzcd}
       D\ar{r}{d}\ar[swap]{d}{m} & GD\ar{r}{G(!_D)}\ar{d}{Gm} & G1\ar{r}{!_{G1}}\ar{d}{Gv} & 1\ar{d}{v} \\
-      A\ar{r}{s} & GA\ar{r}{Gh} & G\Omega\ar{r}{\tau} & \Omega \\
+      A\ar{r}{s} & GA\ar{r}{Gh} & G\Omega\ar{r}{\tau} & \Omega. \\
     \end{tikzcd}
   \end{equation*}
   Donde no solo cada cuadro conmuta, sino que es un producto fibrado. El cuadrado de la izquierda debido
@@ -847,14 +847,14 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   \begin{align*}
     id_{G\Omega}G(h)s = G(\tau G(h)s) s &= G(\tau)G^2(h)G(s)s \\
     &=G(\tau)G^2(h)\delta_A s  \tag{Coasociatividad de s} \\
-    &=G(\tau)\delta_{\Omega}G(h)s \tag{Naturalidad de $\delta$}
+    &=G(\tau)\delta_{\Omega}G(h)s \tag{Naturalidad de $\delta$}.
   \end{align*}
   Es decir, $G(h)s$ iguala a $id_{G\Omega}$ con $G(\tau)\delta_{\Omega}$, que son morfismos de coálgebras,
   así que $G(h)s$ se factoriza a través del igualador
   \begin{equation*}
     \begin{tikzcd}
       (\Omega_G,u)\ar{r}{e} & (G\Omega,\delta_{\Omega})\ar[shift left=0.75ex]{r}{id_{G\Omega}}\ar[swap, shift right=0.75ex]{r}{G(\tau)\delta_{\Omega}} & (G\Omega,\delta_{\Omega}) \\
-      (A,s)\ar[dashed]{u}{h^*}\ar[swap]{ru}{G(h)s}
+      (A,s).\ar[dashed]{u}{h^*}\ar[swap]{ru}{G(h)s}
     \end{tikzcd}
   \end{equation*}
   Esta factorización se da para cualquier monomorfismo de coálgebras, en particular, como $G$
@@ -864,7 +864,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   \begin{equation*}
     \begin{tikzcd}
       D\ar{r}{!_D}\ar[swap]{d}{m} & 1\ar{r}{\cong}\ar{d}{v_G} & G1\ar{d}{Gv} \\
-      A\ar{r}{h^*}\ar[no head]{d}{} & \Omega_G\ar{r}{e} & G\Omega \\
+      A\ar{r}{h^*}\ar[no head]{d}{} & \Omega_G\ar{r}{e} & G\Omega. \\
       {}\ar[no head]{rr}{G(h)s} & {} & {}\ar{u}{}
     \end{tikzcd}
   \end{equation*}
@@ -879,13 +879,13 @@ $\epsilon_{\Omega}ef=h$ en $\mathcal{E}$.
 \begin{align*}
   \epsilon_{\Omega}ef &= \epsilon_{\Omega}G(\tau)\delta_{\Omega}ef \tag{Definición de e} \\
   &= \tau\epsilon_{G\Omega}\delta_{\Omega}ef \tag{Naturalidad de $\epsilon$} \\
-  &= \tau ef \tag{Estructura de comónada}
+  &= \tau ef. \tag{Estructura de comónada}
 \end{align*}
 Sin embargo tenemos el siguiente diagrama:
 \begin{equation*}
   \begin{tikzcd}
     D\ar{r}{!_D}\ar[swap]{d}{m} & 1\ar{r}{\cong}\ar{d}{v_G} & G1\ar{r}{!_{G1}}\ar{d}{Gv} & 1\ar{d}{v} \\
-    A\ar{r}{f} & \Omega_G\ar{r}{e} & G\Omega\ar{r}{\tau} & \Omega 
+    A\ar{r}{f} & \Omega_G\ar{r}{e} & G\Omega\ar{r}{\tau} & \Omega.
   \end{tikzcd}
 \end{equation*}
 Dado que $f$ clasifica a $m$, el cuadrado de la izquierda es un producto fibrado en $\mathcal{E}_C$, pero por
@@ -918,7 +918,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       \Delta S\ar{r}{!}\ar[swap,tail]{d}{\Delta m} & 1\ar{d}{v} \\
-      \Delta A\ar{r}{\chi_m} & \Omega
+      \Delta A\ar{r}{\chi_m} & \Omega.
     \end{tikzcd}
   \end{equation*}
   Como $\Gamma$ es adjunto derecho, preserva límites, entonces al aplicar $\Gamma$ al diagrama anterior
@@ -926,7 +926,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       S\ar{r}{!}\ar[swap,tail]{d}{m} & 1\ar{d}{\Gamma v} \\
-      A\ar{r}{\Gamma \chi_m} & \Gamma\Omega
+      A\ar{r}{\Gamma \chi_m} & \Gamma\Omega.
     \end{tikzcd}
   \end{equation*}
   Si hubiera otro morfismo $f:A\to \Gamma\Omega$ tal que el diagrama sea un producto fibrado, entonces
@@ -934,7 +934,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       S\ar{r}{!}\ar[swap,tail]{d}{m} & \Delta\Gamma 1\ar{d}{\Delta\Gamma v}\ar{r}{c_1} & 1\ar{d}{v} \\
-      A\ar[shift left=0.75ex]{r}{f}\ar[swap,shift right=0.75ex]{r}{\Gamma \chi_m} & \Delta\Gamma\Omega\ar[swap,tail]{r}{c_{\Omega}} & \Omega
+      A\ar[shift left=0.75ex]{r}{f}\ar[swap,shift right=0.75ex]{r}{\Gamma \chi_m} & \Delta\Gamma\Omega\ar[swap,tail]{r}{c_{\Omega}} & \Omega.
     \end{tikzcd}
   \end{equation*}
   El cuadrado de la derecha conmuta por la naturalidad de la counidad, pero es también un producto fibrado.
@@ -943,7 +943,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
       X\ar[bend left=30]{rrd}{!}\ar[bend right=30]{rdd}[swap]{p}
           \ar[dashed]{rd}{!}\\[-2ex]
       &[-2ex] \Delta\Gamma 1\ar{r}{c_1}\ar[swap]{d}{\Delta\Gamma v} & 1\ar{d}{v} \\
-      &\Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega
+      &\Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega.
     \end{tikzcd}
   \end{equation*}
   Bajo la hipótesis de que $v!=c_{\Omega}p$, como los diagramas que terminal en 1 conmutan, 
@@ -964,7 +964,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       (a+b)\times_A (a+b)\ar{r}\ar{d} & 1+1\ar{d}{a+b}\\
-      1+1\ar{r}{a+b} & A
+      1+1\ar{r}{a+b} & A.
     \end{tikzcd}
   \end{equation*}
   En un topos el coproducto es estable bajo productos fibrados, entonces $(a+b)\times_A (a+b)\cong
@@ -976,7 +976,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{a}\ar[swap]{dr}{i} & \Gamma A & 1\ar{l}{b}\ar{dl}{i} \\
-      {} & 1+1\ar[dashed]{u}{a+b} 
+      {} & 1+1.\ar[dashed]{u}{a+b} 
     \end{tikzcd}
   \end{equation*}
   Los puntos de $A$ se encuentran en $\Gamma A$ y se factorizan a través de $a+b$. Por lo tanto,
