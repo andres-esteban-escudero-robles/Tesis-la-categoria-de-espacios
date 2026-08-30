@@ -361,29 +361,31 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
 \end{proposition}
 \begin{proof}
   Queremos mostrar que $\Delta_1:1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
-  entonces $1$ es el subobjeto maximal, por lo que $\varnothing \to 1\times 1$ es el complemento que buscamos.
+  entonces $1$ es el subobjeto maximal, por lo que $0 \to 1\times 1$ es el complemento que buscamos.
 \end{proof}
 
-\begin{corollary}
-  Todo subespacio de 1 es discreto.
-\end{corollary}
-
 \begin{theorem}
-  Sea $A\in Sub(1)$, entonces $A$ tiene complemento.
+  Sea $A\in Sub(1)$, entonces $A \cong 0$ o $A \cong 1$.
 \end{theorem}
 \begin{proof}
-  Procedemos por casos. Si $A \cong \varnothing$ entonces $1$ es su complemento, en otro caso,
-  aplicando \ref{ax:gds6} tenemos que existe $a:1\to A$. En este caso, proponemos al pseudocomplemento
-  $\lnot A$ como el complemento de $A$. En automático tenemos que $A\cap \lnot A = \varnothing$,
-  para $A\cup \lnot A = 1$ vemos que
+  Sea $A$ un subespacio de $1$, con $m:A\to 1$. Sin perder generalidad, supongamos que $A$ no es isomorfo a $0$, entonces por \ref{ax:gds6} tenemos que existe $a:1\to A$. 
+  Lo anterior nos da que:
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{a} \ar[swap]{rd}{id} & A\ar{r}{i_A} & A+\lnot A \ar{r} & A\cup\lnot A\ar[tail]{r}{m} &1 \\
-        & 1.\ar{urrr}
+      1\ar{r}{a}\ar[swap]{rrd}{\text{id}} & A\ar{r}{m} & 1\ar[shift left = 0.3ex, no head]{d}{}\ar[shift right = 0.3ex, no head]{d}{} \\
+       & {} & 1.
     \end{tikzcd}
   \end{equation*}
   El diagrama conmuta pues acaba en el terminal y como la composición es igual a la identidad
-  en $1$, que es un epimorfismo, entonces $m$ también es epi. Por tanto, $A\cup \lnot A \cong 1$.
+  en $1$, $m$ es un epimorfismo que se divide aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
+\end{proof}
+
+\begin{corollary}[label=cor:bivaluado]
+  El clasificador de subobjetos de Espacios tiene dos puntos.
+\end{corollary}
+\begin{proof}
+  Sea $\Omega$ el clasificador de subobjetos de Espacios, entonces $Sub(1)\cong Hom(1,\Omega)$
+  y por el teorema anterior, $Sub(1)=\{0,1\}$, así que $Hom(1,\Omega)=\{0,1\}$.
 \end{proof}
 
 \begin{definition}
@@ -408,7 +410,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   Sea $(N,o,s)$ un ONN en una categoría $\mathcal{C}$ con coproductos binarios, entonces
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{o} & N & N.\ar[swap]{l}{s}
+      1\ar{r}{o} & N & N,\ar[swap]{l}{s}
     \end{tikzcd}
   \end{equation*}
   es un coproducto.
@@ -426,7 +428,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   Para que $f$ realmente sea un morfismo entre $(N,[o,s]:1+N\to N)$ y $(A,a:1+A\to A)$ necesitamos que $f[o,s]=aT(f)$.
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{o} & 1+N\ar{d}{[o,s]} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar{ld}{s} & {} & 1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{i_1} & 1+N & N\ar{d}{}\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar[swap]{ld}{i_Af} \\
+      1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{o} & 1+N\ar{d}{[o,s]} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar{ld}{s} & {} & 1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{i_1} & 1+N\ar[swap]{d}{Tf} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar[swap]{ld}{i_Af} \\
         & N\ar{d}{f} & {} & {} & {} & 1+A\ar{d}{a} & {} \\
         & A & {} & {} & {} & A. & {}
     \end{tikzcd}
@@ -497,9 +499,12 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   $\Delta$ es subobjeto de $N_1$ y por lo tanto $\Delta$ también tiene complemento en $Sub(N\times N)$.
 \end{proof}
 
+\begin{definition}
+  Sea $M$ la categoría de espacios discretos y los morfismos entre ellos en Espacios. $M$ es una subcategoría plena de Espacios.
+\end{definition}
+
 \begin{theorem}
-  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$, la
-  subcategoría de espacios discretos, y Espacios.
+  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$ y Espacios.
 \end{theorem}
 \begin{proof}
   Para cada $A$ un espacio tenemos un monomorfismo $c_A\colon \Gamma A \to A$ dado
@@ -527,7 +532,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   través de $\Gamma A$ y $fb$ es un punto de $A$. Entonces los puntos de $B$ se factorizan
   a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
   de $B$, que es discreto, por lo que $\Gamma B = f^{-1} (\Gamma A)$ y dado que $B$ está
-  en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo cumple lo que queríamos
+  en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
   y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma : Espacios \to M$ es
   un funtor que manda a los espacios a sus espacios discretos asociados, en morfismos $\Gamma(f)=\overline{f}$
   y $\Gamma$ es adjunto derecho de $\Delta$ con $c_\square : \Delta\Gamma \to \text{Id}$ la counidad.
@@ -643,8 +648,8 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B & {} E\ar{r}{e}\ar[swap]{d}{u} & A\ar{r}{id_A}\ar{d}{s} & A \\
-      GE\ar[dashed]{u}{\epsilon_E}\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} & {} GE\ar[swap]{r}{G(e)} & GA.\ar[swap]{ur}{\epsilon_A} \\
-      E\ar{u}{u}
+      GE\ar[dashed]{u}{\epsilon_E}\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} & {} GE\ar[swap]{r}{G(e)} & GA\ar[swap]{ur}{\epsilon_A} \\
+      E.\ar{u}{u}
     \end{tikzcd}
   \end{equation*}
   La flecha inducida de $GE$ a $E$ debe ser $\epsilon_E$, de nuevo por la naturalidad de $\epsilon$.
@@ -908,8 +913,22 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   $\Gamma\Delta$ es la identidad en $M$ y $\Delta\Gamma$ es idempotente.
 \end{corollary}
 
+\begin{lemma}
+  $C=(\Delta\Gamma,c,\cong)$ es una comonada en $\mathcal{E}$.
+\end{lemma}
+\begin{proof}
+  
+\end{proof}
+
 \begin{theorem}
-  Si $\Omega$ es el clasificador de subobjetos en $\mathcal{E}$, entonces $\Gamma\Omega$ con 
+  La categoría $M$ de espacios discretos es un topos.
+\end{theorem}
+\begin{proof}
+  
+\end{proof}
+
+\begin{theorem}
+  Si $\Omega$ es el clasificador de subobjetos en Espacios, entonces $\Gamma\Omega$ con 
   $\Gamma v:\Gamma1\to\Gamma\Omega$ es el clasificador de subobjetos de M. $\Gamma$ preserva al 
   clasificador de subobjetos.
 \end{theorem}
@@ -982,6 +1001,16 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   Los puntos de $A$ se encuentran en $\Gamma A$ y se factorizan a través de $a+b$. Por lo tanto,
   la unicidad de $\Gamma A$ implica que $\Gamma A = 1+1$.
 \end{proof}
+
+\begin{corollary}
+  $M$ es un topos booleano.
+\end{corollary}
+\begin{proof}
+  Sabemos por \ref{cor:bivaluado} que $\Omega$ tiene dos puntos, entonces por \ref{thm:puntitos} $\Gamma\Omega \cong 1+1$.
+\end{proof}
+
+
+
 \backmatter
 \printbibliography[title={Bibliografía}]
 
