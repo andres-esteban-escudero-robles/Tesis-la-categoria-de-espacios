@@ -340,7 +340,7 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   \end{equation*}
   Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
   y que para cualquier objeto $T$ con flechas que haga conmutar al diagrama exterior, exista 
-  un única morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle id_A, id_A\rangle m = m\times m$ la conmutatividad
+  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle id_A, id_A\rangle m = m\times m$ la conmutatividad
   del cuadrado es inmediata. Para un $T$ con flechas $t:T\to S\times S$, $u:T\to A$ tales
   que $\Delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
   a $S$, aprovechando que $t=\langle\pi_S t, \pi_S t\rangle$ donde $\pi_S:S\times S \to S$
@@ -924,7 +924,20 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   La categoría $M$ de espacios discretos es un topos.
 \end{theorem}
 \begin{proof}
-  
+  Basta demostrar que $M$ es equivalente al topos $Espacios_C$ de coálgebras, con
+  $\mathcal{C}$ la comónada del lema anterior. Con tal propósito, proponemos al funtor
+  $F:M\to Espacios_{\mathcal{C}}$ que envía a cada espacio discreto $D$ a la coálgebra 
+  $(\Delta D, u_D)$, donde $u:Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
+  morfismos $F$ es la identidad. Primero veamos que $(\Delta D, \Delta u_D)$ realmente es una coálgebra,
+  para lo cual es necesario que los siguientes diagramas conmuten.
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta D & \Delta\Gamma\Delta D\ar[swap]{l}{c_{\Delta D}} & {} & \Delta\Gamma\Delta\Gamma\Delta D & \Delta\Gamma\Delta D\ar[swap]{l}{\Delta\Gamma\Delta u_D} \\
+       & \Delta D\ar{lu}{id}\ar[swap]{u}{\Delta u_D} & {} & \Delta\Gamma\Delta D\ar{u}{id} & \Delta D.\ar{l}{\Delta u_D}\ar[swap]{u}{\Delta u_D}
+    \end{tikzcd}
+  \end{equation*}
+  El primer diagrama conmuta ya que es una ecuación unidad-counidad, mientras que
+  el segundo diagrama se da gracias a que las componentes de la unidad son identidades.
 \end{proof}
 
 \begin{theorem}
@@ -937,7 +950,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       \Delta S\ar{r}{!}\ar[swap,tail]{d}{\Delta m} & 1\ar{d}{v} \\
-      \Delta A\ar{r}{\chi_m} & \Omega.
+      \Delta A\ar[swap]{r}{\chi_m} & \Omega.
     \end{tikzcd}
   \end{equation*}
   Como $\Gamma$ es adjunto derecho, preserva límites, entonces al aplicar $\Gamma$ al diagrama anterior
@@ -945,7 +958,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \begin{equation*}
     \begin{tikzcd}
       S\ar{r}{!}\ar[swap,tail]{d}{m} & 1\ar{d}{\Gamma v} \\
-      A\ar{r}{\Gamma \chi_m} & \Gamma\Omega.
+      A\ar[swap]{r}{\Gamma \chi_m} & \Gamma\Omega.
     \end{tikzcd}
   \end{equation*}
   Si hubiera otro morfismo $f:A\to \Gamma\Omega$ tal que el diagrama sea un producto fibrado, entonces
