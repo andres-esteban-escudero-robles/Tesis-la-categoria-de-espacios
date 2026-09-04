@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  1 SEP 2026 22:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  3 SEP 2026 19:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1500,12 +1500,79 @@ Package biblatex Info: Automatic encoding selection.
 \openout5 = `tesis.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'tesis.bbl' found.
- (tesis.bbl)
+Package biblatex Info: ... file 'tesis.bbl' not found.
+
+No file tesis.bbl.
+
+Package biblatex Warning: citation 'mclarty1987elementary'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'mclarty1988defining'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'lawvere1964elementary'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'johnstone2014topos'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'dunham2018calculus'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'lawvere1979categorical'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'lawvere1997toposes'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'lawvere2006categories'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'lawvere1980toward'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'johnstone2002sketches'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
+
+Package biblatex Warning: citation 'maclane2012sheaves'
+(biblatex)                was not found at all in the .bbl file,
+(biblatex)                bibliography labels cannot be generated,
+(biblatex)                please correct the citation.
+
 Package biblatex Info: Reference section=0 on input line 31.
 Package biblatex Info: Reference segment=0 on input line 31.
 Package hyperref Info: Link coloring ON on input line 31.
- (tesis.out) (tesis.out)
+(tesis.out) (tesis.out)
 \@outlinefile=\write6
 \openout6 = `tesis.out'.
 
@@ -1553,128 +1620,4 @@ File: fc.pdf Graphic file (type pdf)
 Package pdftex.def Info: fc.pdf  used on input line 33.
 (pdftex.def)             Requested size: 68.78807pt x 77.33466pt.
 
-Underfull \hbox (badness 10000) detected at line 33
-\T1/stix2/m/sc/25/50ls T E S I S
- []
-
-
-Underfull \hbox (badness 10000) detected at line 33
-\T1/stix2/m/n/10 P R E S E N T A :
- []
-
-[1
-
-
-{C:/Users/andre/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-t1sc.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-t1.enc} <./unam.pdf> <./fc.pdf>] [2
-
-]
-Cap\'{\i }tulo 1.
-
-LaTeX Font Warning: Font shape `T1/cmss/bx/sc' undefined
-(Font)              using `T1/cmss/bx/n' instead on input line 38.
-
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `cmss' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.122 
-       [1
-
-
-{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathit.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathrm.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathcal.enc}]
-LaTeX Info: Redefining \. on input line 140.
-LaTeX Info: Redefining \% on input line 140.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 140.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.140 \chapter
-              {Geometría Diferencial Sintética} [2{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathsf.enc}]
-Cap\'{\i }tulo 2.
-[3
-
-{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathscr.enc}{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathtt.enc}]
-LaTeX Info: Redefining \. on input line 227.
-LaTeX Info: Redefining \% on input line 227.
- [4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 265.
-LaTeX Info: Redefining \% on input line 265.
- [5]
-LaTeX Info: Redefining \. on input line 316.
-LaTeX Info: Redefining \% on input line 316.
- [6{C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/stix2-type1/stix2-mathex.enc}]
-LaTeX Info: Redefining \. on input line 321.
-LaTeX Info: Redefining \% on input line 321.
- [7] [8
-
-]
-Cap\'{\i }tulo 3.
-[9]
-LaTeX Info: Redefining \. on input line 427.
-LaTeX Info: Redefining \% on input line 427.
- [10] [11]
-LaTeX Info: Redefining \. on input line 530.
-LaTeX Info: Redefining \% on input line 530.
- [12] [13]
-LaTeX Info: Redefining \. on input line 617.
-LaTeX Info: Redefining \% on input line 617.
- [14] [15]
-LaTeX Info: Redefining \. on input line 701.
-LaTeX Info: Redefining \% on input line 701.
- [16] [17]
-Underfull \vbox (badness 1215) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 795.
-LaTeX Info: Redefining \% on input line 795.
- [18] [19]
-LaTeX Info: Redefining \. on input line 884.
-LaTeX Info: Redefining \% on input line 884.
- [20] [21]
-LaTeX Info: Redefining \. on input line 987.
-LaTeX Info: Redefining \% on input line 987.
- [22] [23] [24
-
-] [25
-
-] (tesis.aux
-LaTeX Info: Redefining \sptext on input line 11.
-LaTeX Info: Redefining \. on input line 11.
-LaTeX Info: Redefining \% on input line 11.
-)
- ***********
-LaTeX2e <2025-11-01>
-L3 programming layer <2020/03/25>
- ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: FC83B4B19EBCEE7042DB24089144B7E0;2346.
-Package logreq Info: Writing requests to 'tesis.run.xml'.
-\openout1 = `tesis.run.xml'.
-
- ) 
-Here is how much of TeX's memory you used:
- 53073 strings out of 467867
- 1121800 string characters out of 5418334
- 1905301 words of memory out of 5000000
- 80988 multiletter control sequences out of 15000+600000
- 809701 words of font info for 207 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 99i,15n,118p,1257b,1834s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Math.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-BoldItalic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on c:/Users\andre\Desktop\code\Tesis-la-categoria-de-espacios\tesis.pdf (27 pages, 1096891 bytes).
-PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 103 named destinations out of 1000 (max. 500000)
- 49271 words of extra memory for PDF output out of 51595 (max. 10000000)
-
+Underfull \hbox (badness 10000) de
