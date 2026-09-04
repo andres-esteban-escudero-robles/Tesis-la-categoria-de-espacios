@@ -340,7 +340,7 @@ Todo espacio $E$ tiene un subespacio $\Gamma E$ discreto tal que todo punto de $
   \end{equation*}
   Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
   y que para cualquier objeto $T$ con flechas que haga conmutar al diagrama exterior, exista 
-  un única morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle id_A, id_A\rangle m = m\times m$ la conmutatividad
+  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle id_A, id_A\rangle m = m\times m$ la conmutatividad
   del cuadrado es inmediata. Para un $T$ con flechas $t:T\to S\times S$, $u:T\to A$ tales
   que $\Delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
   a $S$, aprovechando que $t=\langle\pi_S t, \pi_S t\rangle$ donde $\pi_S:S\times S \to S$
@@ -503,7 +503,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   Sea $M$ la categoría de espacios discretos y los morfismos entre ellos en Espacios. $M$ es una subcategoría plena de Espacios.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}[label=thm:funtordiscretos]
   \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$ y Espacios.
 \end{theorem}
 \begin{proof}
@@ -914,10 +914,30 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 \end{corollary}
 
 \begin{lemma}
-  $C=(\Delta\Gamma,c,\cong)$ es una comonada en $\mathcal{E}$.
+  $\mathcal{C}=(\Delta\Gamma,c,=)$ es una comonada en Espacios.
 \end{lemma}
 \begin{proof}
-  
+  Para todo espacio $A$, tenemos que $\Delta\Gamma A = \Delta\Gamma\Delta\Gamma A$ por \ref{cor:unidadidentidad},
+  lo cual se puede pensar como un isomorfismo natural $Id:\Delta\Gamma\to \Delta\Gamma\Delta\Gamma$, cuyas componentes son identidades. En esta prueba 
+  $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c:\Delta\Gamma\to Id_{Espacios}$ que construimos en \ref{thm:funtordiscretos}.
+  Procedemos a demostrar que se cumplen los diagramas de comonada para $\mathcal{C}$. Primero, la coasociatividad,
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta\Gamma A\ar{r}{id_{\Delta\Gamma A}}\ar[swap]{d}{id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma A\ar{d}{id_{\Delta\Gamma\Delta\Gamma A}} \\
+      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma\Delta\Gamma A.
+    \end{tikzcd}
+  \end{equation*}
+  El diagrama conmuta gracias a que $\Delta\Gamma$ es functorial. Ahora, la counidad, queremos ver
+  que el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      {} & \Delta\Gamma A\ar{d}{id}\ar[swap]{ld}{id}\ar{rd}{id} & {} \\
+      \Delta\Gamma A & \Delta\Gamma\Delta\Gamma A\ar{l}{c_{\Delta\Gamma A}}\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
+    \end{tikzcd}
+  \end{equation*}
+  Nuevamente, debido a \ref{cor:unidadidentidad} las componentes de $c$ en espacios discretos tienen que ser identidades,
+  lo cual nos da la conmutatividad del triángulo izquierdo. 
+
 \end{proof}
 
 \begin{theorem}

@@ -1,36 +1,41 @@
 
 {
-    "spellright.language": [
-        "es"
-    ],
-    "spellright.documentTypes": [
-        "markdown",
-        "latex",
-        "plaintext"
-    ],
+    "spellright.language": ["es"],
+    "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+
     "latex-workshop.latex.recipes": [
-  {
-    "name": "pdflatex -> biber -> pdflatex",
-    "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
-  }
-],
-"latex-workshop.latex.tools": [
-    {
-        "name": "pdflatex",
-        "command": "pdflatex",
-        "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "-output-directory=%OUTDIR%",
-            "%DOC%"
-        ],
-        "env": {}
-    },
-  {
-    "name": "biber",
-    "command": "biber",
-    "args": ["%DOCFILE%"]
-  }
-]
+        {
+            "name": "Rápida (solo pdflatex)",
+            "tools": ["pdflatex"]
+        },
+        {
+            "name": "Completa (pdflatex -> biber -> pdflatex x2)",
+            "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": ["%DOCFILE%"]
+        }
+    ],
+
+    // La primera receta de la lista es la que se usa por defecto (build automático)
+    "latex-workshop.latex.recipe.default": "first",
+
+    // Opcional: que no compile en cada guardado, solo al cambiar de archivo o manualmente
+    "latex-workshop.latex.autoBuild.run": "onFileChange"
 }

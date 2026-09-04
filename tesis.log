@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  29 AUG 2026 21:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.3.23)  1 SEP 2026 22:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1638,8 +1638,8 @@ LaTeX Info: Redefining \% on input line 795.
 LaTeX Info: Redefining \. on input line 884.
 LaTeX Info: Redefining \% on input line 884.
  [20] [21]
-LaTeX Info: Redefining \. on input line 988.
-LaTeX Info: Redefining \% on input line 988.
+LaTeX Info: Redefining \. on input line 987.
+LaTeX Info: Redefining \% on input line 987.
  [22] [23] [24
 
 ] [25
@@ -1664,17 +1664,17 @@ Package logreq Info: Writing requests to 'tesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 52959 strings out of 467867
- 1118908 string characters out of 5418334
- 1905271 words of memory out of 5000000
- 80874 multiletter control sequences out of 15000+600000
+ 53073 strings out of 467867
+ 1121800 string characters out of 5418334
+ 1905301 words of memory out of 5000000
+ 80988 multiletter control sequences out of 15000+600000
  809701 words of font info for 207 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  99i,15n,118p,1257b,1834s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx2074.pk> <C:\Users\andre\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1200.pk><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Math.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Bold.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-BoldItalic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Italic.pfb><C:/Users/andre/AppData/Local/Programs/MiKTeX/fonts/type1/public/stix2-type1/STIX2Text-Regular.pfb>
-Output written on c:/Users\andre\Desktop\code\Tesis-la-categoria-de-espacios\tesis.pdf (27 pages, 1094215 bytes).
+Output written on c:/Users\andre\Desktop\code\Tesis-la-categoria-de-espacios\tesis.pdf (27 pages, 1096891 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
+ 401 PDF objects out of 1000 (max. 8388607)
  103 named destinations out of 1000 (max. 500000)
  49271 words of extra memory for PDF output out of 51595 (max. 10000000)
 
