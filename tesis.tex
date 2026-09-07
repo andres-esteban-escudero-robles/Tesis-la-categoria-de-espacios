@@ -898,7 +898,7 @@ como construimos los límites finitos en un lema anterior, el funtor que olvida 
 producto fibrado en $\mathcal{E}$. El cuadro de en medio tiene un iso arriba y un mono abajo, mientras que el cuadro
 de la derecha es un producto fibrado al ser la definición de $\tau$. Lo anterior nos permite concluir que el exterior
 es un producto fibrado y que $\tau ef$ clasifica a $m$ en $\mathcal{E}$, en otras palabras, $\tau ef = h$ que era
-lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clasificado de subobjetos y es un topos.
+lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clasificador de subobjetos y es un topos.
 \end{proof}
 
 \begin{proposition}
@@ -935,8 +935,8 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
       \Delta\Gamma A & \Delta\Gamma\Delta\Gamma A\ar{l}{c_{\Delta\Gamma A}}\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
     \end{tikzcd}
   \end{equation*}
-  Nuevamente, debido a \ref{cor:unidadidentidad} las componentes de $c$ en espacios discretos tienen que ser identidades,
-  lo cual nos da la conmutatividad del triángulo izquierdo. 
+  Dado que $u_{\Gamma A} = id_{\Gamma A}$, sucede que $id_{\Delta\Gamma A} = \Delta u_{\Gamma A}$, y
+  ambos triángulos se sigue de las ecuaciones unidad-counidad, por lo que el diagrama conmuta.
 
 \end{proof}
 
@@ -958,6 +958,36 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \end{equation*}
   El primer diagrama conmuta ya que es una ecuación unidad-counidad, mientras que
   el segundo diagrama se da gracias a que las componentes de la unidad son identidades.
+  Además, dejar igual a los morfismos resulta en morfismos de coálgebras ya que si $f:D\to D'$
+  es un morfismo de espacios discretos, entonces el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta D\ar{r}{f}\ar[swap]{d}{\Delta u_D} & \Delta D'\ar{d}{\Delta u_{D'}} \\
+      \Delta\Gamma\Delta D\ar[swap]{r}{\Delta\Gamma f} & \Delta\Gamma\Delta D'.
+    \end{tikzcd}
+  \end{equation*}
+  Recordando que $\Delta$ es la inclusión, tenemos que el diagrama es un cuadrado de naturalidad de $u$.
+  Por tanto, $F$ es funtorial ya que no hace nada en morfismos. Ahora, proponemos al funtor inverso $G:Espacios_{\mathcal{C}}\to M$ 
+  que envía a cada coálgebra $(A,s)$ a $\Gamma A$ y a cada morfismo de coálgebras $f:(A,s)\to (B,t)$ a $\Gamma f$.
+  Es fácil ver que $G$ es un funtor ya que $\Gamma$ lo es. Sea $D$ un espacio discreto y 
+  $(A,s)$ una coálgebra, veamos qué sucede con las composiciones.
+  \begin{align*}
+    GF(D) &= G(\Delta D, \Delta u_D) = \Gamma\Delta D = D \\
+    FG(A,s) &= F(\Gamma A) = (\Delta\Gamma A, \Delta u_{\Gamma A}) \cong (A,s).
+  \end{align*}
+  Para convencernos del último paso consideremos el siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta\Gamma A\ar[swap]{d}{\Delta u_{\Gamma A}}\ar{r}{c_A} & A\ar{d}{s} \\
+      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
+    \end{tikzcd}
+  \end{equation*}
+  Se trata de un diagrama conmutativo puesto que la parte inferior es la identidad, 
+  una vez más, al ser una ecuación unidad-counidad. Luego, la condición de counidad para que
+  $(A,s)$ sea coálgebra nos dice que $c_As = id_A$, por lo que $c_A$ es mono y tiene inverso por la derecha,
+  así que $c_A$ es de hecho un isomorfismo con $s$ su inverso por ambos lados. Entonces la parte superior
+  del diagrama también es la identidad, y por lo anterior, $c_A$ es un isomorfismo de coálgebras.
+  Por lo tanto $F$ es una equivalencia de categorías y $M$ es un topos.
 \end{proof}
 
 \begin{theorem}
