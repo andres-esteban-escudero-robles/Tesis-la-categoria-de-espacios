@@ -9,8 +9,9 @@
 \usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
 \usepackage{tikz}
 \usetikzlibrary{shapes,arrows,spy,positioning,snakes}
-\usepackage[colorlinks, allcolors=blue]{hyperref}
-
+%\usepackage[colorlinks, allcolors=blue]{hyperref}
+\usepackage{pdfcomment}
+\hypersetup{colorlinks, allcolors=blue}
 
 %Para tener axiomas como teoremas numerados
 \AtBeginDocument{%
@@ -33,6 +34,8 @@
 \tutorW{tutor}
 \tutor{Grado y nombre}
 
+%\includeonly{2espacios}
+
 \begin{document}
 \frontmatter
 \portadatesis
@@ -41,7 +44,7 @@
 
 \mainmatter
 \include{0intro}
-%\include{1geodif}
+\include{1geodif}
 \include{2espacios}
 
 \backmatter

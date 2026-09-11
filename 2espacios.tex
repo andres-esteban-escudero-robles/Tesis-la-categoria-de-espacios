@@ -11,6 +11,7 @@
   diagonal $\Delta_S\colon S\to S\times S$ es un subobjeto complementado. Por hipótesis, para $\Delta_A\colon A\to A\times A$
   existe su complemento, $C$, tal que $C\cap A=0$ y $C\cup A=A\times A$. Notamos que
   $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\Delta_A)=\Delta_S$ ya que
+  \pdfcomment{ya que el siguiente es un producto fibrado (Sólo poner el cuadrado})
   \begin{equation*}
     \begin{tikzcd}
         T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
@@ -28,7 +29,9 @@
   es la proyección a $S$. De esta manera tenemos la conmutatividad del triángulo izquierdo
   y, junto con la conmutatividad del cuadrado exterior e interior, obtenemos que $\Delta_A u
   = \Delta_A m \pi_S t$, pero $\Delta_A$ es mono, entonces $u=m \pi_S t$ y el triángulo superior
-  también conmuta. La unicidad de $\pi_S t$ es inmediata ya que $\Delta_S$ es mono. 
+  también conmuta. La unicidad de $\pi_S t$ es inmediata ya que $\Delta_S$ es
+  mono.\pdfcomment{Tal vez se pueda quitar la demostración}
+  
 
   Dado que $S\times S$ es un subobjeto de $A\times A$ a través de $m\times m$, la imagen
   inversa $(m\times m)^{-1}$ es un morfismo de álgebras de Heyting $Sub(A\times A)\to Sub(S\times S)$,
@@ -47,9 +50,13 @@
 
 \begin{theorem}
   Sea $A\in Sub(1)$, entonces $A \cong 0$ o $A \cong 1$.
+  \pdfcomment{Si A está en Sub(1) y tiene un punto, entonces A es isomorfo a 1.}
 \end{theorem}
 \begin{proof}
-  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$. Sin perder generalidad, supongamos que $A$ no es isomorfo a $0$, entonces por \ref{ax:gds6} tenemos que existe $a\colon 1\to A$. 
+  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$. Sin perder generalidad,
+  supongamos que $A$ no es isomorfo a $0$, entonces por
+  \ref{ax:gds6}\pdfcomment{No será necesario referir al axioma} tenemos
+  que existe $a\colon 1\to A$. 
   Lo anterior nos da que:
   \begin{equation*}
     \begin{tikzcd}
