@@ -10,14 +10,13 @@
   Sea $A$ un espacio discreto y $m\colon S\to A$ un subespacio de $A$, queremos demostrar que la 
   diagonal $\Delta_S\colon S\to S\times S$ es un subobjeto complementado. Por hipótesis, para $\Delta_A\colon A\to A\times A$
   existe su complemento, $C$, tal que $C\cap A=0$ y $C\cup A=A\times A$. Notamos que
-  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\Delta_A)=\Delta_S$ ya que
-  \pdfcomment{ya que el siguiente es un producto fibrado (Sólo poner el cuadrado})
+  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\Delta_A)=\Delta_S$ ya que el siguiente es un producto fibrado:
   \begin{equation*}
     \begin{tikzcd}
-        T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
-          \ar[dashed]{rd}{\pi_S t}\\[-2ex]
-        &[-2ex] S\ar{r}{m} \ar[tail]{d}[swap]{\Delta_S} & A\ar[tail]{d}{\Delta_A}\\
-        & S\times S\ar{r}[swap]{m\times m} & A\times A.
+        %T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
+          %\ar[dashed]{rd}{\pi_S t}\\[-2ex]
+        S\ar{r}{m} \ar[tail]{d}[swap]{\Delta_S} & A\ar[tail]{d}{\Delta_A}\\
+        S\times S\ar{r}[swap]{m\times m} & A\times A.
     \end{tikzcd}
   \end{equation*}
   Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
@@ -49,15 +48,10 @@
 \end{proof}
 
 \begin{theorem}
-  Sea $A\in Sub(1)$, entonces $A \cong 0$ o $A \cong 1$.
-  \pdfcomment{Si A está en Sub(1) y tiene un punto, entonces A es isomorfo a 1.}
+  En un topos cualquiera, si $A\in \sub(1)$ y $A$ tiene un punto $a\colon 1\to A$, entonces $A \cong 1$.
 \end{theorem}
 \begin{proof}
-  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$. Sin perder generalidad,
-  supongamos que $A$ no es isomorfo a $0$, entonces por
-  \ref{ax:gds6}\pdfcomment{No será necesario referir al axioma} tenemos
-  que existe $a\colon 1\to A$. 
-  Lo anterior nos da que:
+  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{a}\ar[swap]{rrd}{\text{id}} & A\ar{r}{m} & 1\ar[shift left = 0.3ex, no head]{d}{}\ar[shift right = 0.3ex, no head]{d}{} \\
@@ -129,18 +123,25 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   De esta manera, $N\cong 1+N$.
 \end{proof}
 
-\begin{proposition}[label=prop:sucesormono]
-  Sea $(N,o,s)$ un ONN en una categoría con productos binarios, entonces $s$ es un monomorfismo.
-\end{proposition}
-\begin{proof}
-  Primero construimos al morfismo ``predecesor'' $p\colon N\to N$ tal que $p(0)=0$ y $p(n+1)=n$ con el siguiente diagrama:
+\begin{definition}[label=def:predecesor]
+  En una categoría con ONN y productos binarios, es posible definir al morfismo predecesor
+  como el único $p\colon N\to N$ que hace conmutar al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar[swap]{rd}{o\times o} & N\ar[dashed]{d}{(id,p)}\ar{r}{s} & N\ar[dashed]{d}{(id,p)} \\
       & N\times N\ar[swap]{r}{(s\pi_1,\pi_1)} & N\times N.
     \end{tikzcd}
   \end{equation*}
-  De donde $ps = id_N$ y por tanto $s$ es mono.
+  Intuitivamente, la conmutatividad del diagrama nos dice que $p(0)=0$ y $p(n+1)=n$.
+\end{definition}
+
+\begin{proposition}[label=prop:sucesormono]
+  Sea $(N,o,s)$ un ONN en una categoría con productos binarios, entonces $s$ es un monomorfismo.
+\end{proposition}
+\begin{proof}
+  Sea $p\colon N\to N$ el predecesor de~\ref{def:predecesor}, notemos en la construcción de $p$ que
+  la conmutatividad en la segunda entrada dice que $ps=\pi_1(id_N,p)=id_N$. Por tanto,
+  $s$ tiene retracto y es mono.
 \end{proof}
 
 \begin{proposition}[label=prop:complementosucesor]
@@ -175,7 +176,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
 \begin{proof}
   El plan es ver a $\Delta\colon N\to N\times N$ como intersección de subobjetos complementados en $\sub(N\times N)$ (así va la demostración de Johnstone pero hay una más directa con la lógica interna).
   Primero, en un topos tenemos recursividad con parámetros que nos permite definir a la resta truncada como 
-  $\dot{-}\colon N\times N\to N$ tal que $\dot{-}(a,0)=a$ y $\dot{-}(a,n+1)=p(\dot{-}(a,n))$ donde $p$ es el predecesor de \ref{prop:sucesormono}.
+  $\dot{-}\colon N\times N\to N$ tal que $\dot{-}(a,0)=a$ y $\dot{-}(a,n+1)=p(\dot{-}(a,n))$ donde $p$ es el predecesor de~\ref{def:predecesor}.
   Ahora construimos a los subobjetos:
   \begin{equation*}
     \begin{tikzcd}
