@@ -40,7 +40,9 @@
 \end{proof}
 
 \begin{proposition}[label=prop:terminaldiscreto]
-  1 es un espacio discreto.
+  1 es un espacio discreto.\pdfcomment{El objeto terminal 1 es discreto.
+  Esto para que el enunciado no empiece con un número. Además, recuerda poner al
+  1 en modo matemático.}
 \end{proposition}
 \begin{proof}
   Queremos mostrar que $\Delta_1\colon 1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
@@ -51,7 +53,8 @@
   En un topos cualquiera, si $A\in \sub(1)$ y $A$ tiene un punto $a\colon 1\to A$, entonces $A \cong 1$.
 \end{theorem}
 \begin{proof}
-  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
+  Sea $A$ un subespacio de $1$, \pdfcomment{Nota que ``con m:
+  A -> 1'' no dice nada. Debería decir ``con m: A -> 1 mono''.}con $m\colon A\to 1$. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{a}\ar[swap]{rrd}{\text{id}} & A\ar{r}{m} & 1\ar[shift left = 0.3ex, no head]{d}{}\ar[shift right = 0.3ex, no head]{d}{} \\
@@ -59,7 +62,8 @@
     \end{tikzcd}
   \end{equation*}
   El diagrama conmuta pues acaba en el terminal y como la composición es igual a la identidad
-  en $1$, $m$ es un epimorfismo que se divide aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
+  en $1$, $m$ es un epimorfismo que se divide\pdfcomment{creo que lo usual es
+  decir que se escinde} aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
 \end{proof}
 
 \begin{corollary}[label=cor:bivaluado]
@@ -100,7 +104,9 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
 \begin{proof}
   La demostración se resume en que el ONN es el objeto inicial de la categoría de T-álgebras con
   $T\colon \mathcal{C}\to \mathcal{C}$ el endofuntor $1+(-)$. Dada una T-álgebra $(A,a)$, con $a\colon 1+A\to A$,
-  por definición de coproducto tenemos $i_1\colon 1\to 1+A$ e $i_A\colon A\to 1+A$ entonces:
+  por definición de coproducto tenemos $i_1\colon 1\to 1+A$ e $i_A\colon A\to
+  1+A$, entonces:
+  \pdfcomment{entonces existe una única f: N -> A que hace conmutar al siguiente diagrama}
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar[swap]{rd}{ai_1} & N\ar[dashed]{d}{f}\ar{r}{s} & N\ar[dashed]{d}{f} \\

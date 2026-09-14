@@ -10,6 +10,10 @@
         {
             "name": "Completa (pdflatex -> biber -> pdflatex x2)",
             "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
+        },
+        {
+            "name": "latexmk (latexmk)",
+            "tools": ["latexmk"]
         }
     ],
     "latex-workshop.latex.tools": [
@@ -29,6 +33,19 @@
             "name": "biber",
             "command": "biber",
             "args": ["%DOCFILE%"]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "-outdir=%OUTDIR%",
+                "-auxdir=%AUXDIR%",
+                "%DOC%"
+            ]
         }
     ],
 
