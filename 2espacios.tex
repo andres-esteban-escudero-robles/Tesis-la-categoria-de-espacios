@@ -40,9 +40,7 @@
 \end{proof}
 
 \begin{proposition}[label=prop:terminaldiscreto]
-  1 es un espacio discreto.\pdfcomment{El objeto terminal 1 es discreto.
-  Esto para que el enunciado no empiece con un número. Además, recuerda poner al
-  1 en modo matemático.}
+  El objeto terminal de un topos es un objeto decidible.
 \end{proposition}
 \begin{proof}
   Queremos mostrar que $\Delta_1\colon 1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
@@ -53,8 +51,7 @@
   En un topos cualquiera, si $A\in \sub(1)$ y $A$ tiene un punto $a\colon 1\to A$, entonces $A \cong 1$.
 \end{theorem}
 \begin{proof}
-  Sea $A$ un subespacio de $1$, \pdfcomment{Nota que ``con m:
-  A -> 1'' no dice nada. Debería decir ``con m: A -> 1 mono''.}con $m\colon A\to 1$. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
+  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$ monomorfismo. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{a}\ar[swap]{rrd}{\text{id}} & A\ar{r}{m} & 1\ar[shift left = 0.3ex, no head]{d}{}\ar[shift right = 0.3ex, no head]{d}{} \\
@@ -62,8 +59,7 @@
     \end{tikzcd}
   \end{equation*}
   El diagrama conmuta pues acaba en el terminal y como la composición es igual a la identidad
-  en $1$, $m$ es un epimorfismo que se divide\pdfcomment{creo que lo usual es
-  decir que se escinde} aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
+  en $1$, $m$ es un epimorfismo que se escinde aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
 \end{proof}
 
 \begin{corollary}[label=cor:bivaluado]
@@ -105,8 +101,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   La demostración se resume en que el ONN es el objeto inicial de la categoría de T-álgebras con
   $T\colon \mathcal{C}\to \mathcal{C}$ el endofuntor $1+(-)$. Dada una T-álgebra $(A,a)$, con $a\colon 1+A\to A$,
   por definición de coproducto tenemos $i_1\colon 1\to 1+A$ e $i_A\colon A\to
-  1+A$, entonces:
-  \pdfcomment{entonces existe una única f: N -> A que hace conmutar al siguiente diagrama}
+  1+A$, entonces existe una única $f\colon N\to A$ que hace conmutar al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar[swap]{rd}{ai_1} & N\ar[dashed]{d}{f}\ar{r}{s} & N\ar[dashed]{d}{f} \\
@@ -229,7 +224,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   de $B$, que es discreto, por lo que $\Gamma B = f^{-1} (\Gamma A)$ y dado que $B$ está
   en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
   y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma : Espacios \to M$ es
-  un funtor que manda a los espacios a sus espacios discretos asociados, en morfismos $\Gamma(f)=\overline{f}$
+  un funtor que manda a los espacios a sus espacios discretos asociados
   y $\Gamma$ es adjunto derecho de $\Delta$ con $c_\square : \Delta\Gamma \to \text{Id}$ la counidad.
 \end{proof}
 
@@ -723,7 +718,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
       &\Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega.
     \end{tikzcd}
   \end{equation*}
-  Bajo la hipótesis de que $v!=c_{\Omega}p$, como los diagramas que terminal en 1 conmutan, 
+  Bajo la hipótesis de que $v!=c_{\Omega}p$, como los diagramas que terminal en $1$ conmutan, 
   $c_{\Omega}p=vc_1!=c_{\Omega}\Delta\Gamma v!$, entonces $p=\Delta\Gamma v!$ y en efecto, es un producto fibrado.
   De esta manera, por el lema del producto fibrado, el exterior es un producto fibrado, lo cual implica que
   $c_{\Omega}f=\chi_m=c_{\Omega}\Gamma \chi_m$, pero $c_{\Omega}$ es mono, entonces $f=\Gamma \chi_m$. 
