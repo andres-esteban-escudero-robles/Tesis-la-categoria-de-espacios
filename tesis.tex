@@ -1,3 +1,8 @@
+% arara: pdflatex: { draft: yes } unless exists(toFile('tesis.aux'))
+% arara: biber if changed (toFile('bibliografia.bib')) || found('log', 'Citation')
+% arara: --> || found ('log', 'Please \\(re\\)run Biber')
+% arara: pdflatex: { synctex: yes } until !found('log', '\\(?(R|r)e\\)?run (to get|LaTeX)')
+
 \documentclass{tesisFC}
 
 \usepackage{mycats}

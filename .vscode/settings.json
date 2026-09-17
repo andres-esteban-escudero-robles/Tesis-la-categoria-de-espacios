@@ -12,8 +12,10 @@
             "tools": ["pdflatex", "biber", "pdflatex", "pdflatex"]
         },
         {
-            "name": "latexmk (latexmk)",
-            "tools": ["latexmk"]
+            "name": "arara",
+            "tools": [
+                "arara"
+            ]
         }
     ],
     "latex-workshop.latex.tools": [
@@ -35,16 +37,10 @@
             "args": ["%DOCFILE%"]
         },
         {
-            "name": "latexmk",
-            "command": "latexmk",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "-outdir=%OUTDIR%",
-                "-auxdir=%AUXDIR%",
-                "%DOC%"
+            "name" : "arara",
+            "command" : "arara",
+            "args" : [
+                "%DOC%.tex"
             ]
         }
     ],
