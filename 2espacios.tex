@@ -62,12 +62,60 @@
   en $1$, $m$ es un epimorfismo que se escinde aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
 \end{proof}
 
+Notamos que, en el caso de Espacios, todo subespacio de $1$ o es $0$ o tiene 
+un punto, según el axioma~\ref{ax:gds6}, así que el teorema anterior nos dice que $\sub(1)=\{0,1\}$.
+
 \begin{corollary}[label=cor:bivaluado]
   El clasificador de subobjetos de Espacios tiene dos puntos.
 \end{corollary}
 \begin{proof}
   Sea $\Omega$ el clasificador de subobjetos de Espacios, entonces $\sub(1)\cong \homs(1,\Omega)$
-  y por el teorema anterior, $\sub(1)=\{0,1\}$, así que $\homs(1,\Omega)=\{0,1\}$.
+  y por la observación anterior, $\sub(1)=\{0,1\}$, así que $\homs(1,\Omega)=\{0,1\}$.
+\end{proof}
+
+\begin{definition}[label=def:bivaluado]
+  Un topos es bivaluado si su clasificador de subobjetos tiene exactamente dos puntos, verdadero
+  y falso. En particular, un topos bivaluado no es trivial y, con el resultado anterior, Espacios es bivaluado.
+\end{definition}
+
+Vale la pena distinguir entre que un topos sea bivaluado y que su lógica interna sea clásica,
+ya que, de manera quizá contraintuitiva, tener dos valores de verdad no lo garantiza. Para analizar la distinción tenemos la siguiente definición.
+
+\begin{definition}
+  Un topos $\mathcal{E}$ es booleano si $\Omega_{\mathcal{E}} \cong 1+1$. Esto es equivalente a que para
+  cada objeto $A$ de $\mathcal{E}$, $\sub(A)$ es una álgebra de Boole, es decir, tercero excluido es válido internamente.
+\end{definition}
+
+Ser bivaluado sí implica tercero excluido para fórmulas sin variables libres, pero esto no basta
+ni siquiera para que las leyes clásicas de cuantificadores se cumplan. Por ejemplo, en Espacios,
+podemos demostrar para el espacio $D$ de infinitesimales tanto que $\forall x\in D, \neg\neg(x=0)$ como que $\neg(\forall x\in D, x=0)$,
+por lo que Espacios es bivaluado, pero no es booleano. Podemos evidenciar que bivaluado no implica booleano, 
+así como booleano no implica bivaluado, con ejemplos más sencillos y abundantes.
+
+\begin{proposition}
+  El topos $Conjuntos\times  Conjuntos$ es booleano y no bivaluado. 
+\end{proposition}
+\begin{proof}
+  En este topos los objetos son pares de conjuntos $(X,Y)$, y los morfismos son pares de funciones 
+  $(f,g)$, donde $f\colon X\to X'$ y $g\colon Y\to Y'$. Es sencillo comprobar que $(1,1)$ es el objeto terminal y que
+  el clasificador de subobjetos es $(2,2)$, por lo que $\sub(1,1)\cong \homs((1,1),(2,2))\cong 4$ y el topos no es bivaluado,
+  hay cuatro valores de verdad. Por otro lado, el coproducto se calcula como el coproducto de Conjuntos entrada a entrada,
+  así que, $(1,1)+(1,1)=(1+1,1+1)=(2,2)$ y el topos es booleano. Para ver que el axioma~\ref{ax:gds6} no se cumple en este topos, 
+  basta notar que el objeto $(1,0)$ no es el objeto inicial, sin embargo, no tiene puntos.
+\end{proof}
+
+\begin{proposition}
+  Si $M$ es una categoría de un solo objeto y una flecha $f$ distinta a la identidad tal que 
+  $f\circ f = f$, el topos $Conjuntos^M$ es bivaluado y no booleano.
+\end{proposition}
+\begin{proof}
+  Los objetos de $Conjuntos^M$ son pares $(X,h)$ donde $X$ es un conjunto y $h\colon X\to X$ es 
+  una función idempotente. Un morfismo $(X,h)\to (Y,k)$ es una función $g\colon X\to Y$ tal que 
+  $g\circ h = k \circ g$. El objeto terminal es $(1,id_1)$ y, al tratarse de un topos de pregavillas de $M$ un monoide, el 
+  clasificador de subobjetos es el conjunto de ideales ${\varnothing,{f},M}\cong 3$, dotado de una endofunción $f_{\Omega}$ que manda a $0$ a $0$, $1$ a $2$ y $2$ a $2$. 
+  Como el objeto terminal es un bucle, $(3,f_{\Omega})$ solo tiene dos elementos globales, así que el topos es bivaluado. 
+  Ahora, en un topos de pregavillas los colímites se calculan puntualmente, de manera que $(1,id_1)+(1,id_1)=(2,id_2)$ y
+  por lo tanto, el topos no es booleano.
 \end{proof}
 
 \begin{definition}
