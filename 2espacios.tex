@@ -21,7 +21,7 @@
   \end{equation*}
   Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
   y que para cualquier objeto $T$ con flechas que haga conmutar al diagrama exterior, exista 
-  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle id_A, id_A\rangle m = m\times m$ la conmutatividad
+  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle \id_A, \id_A\rangle m = m\times m$ la conmutatividad
   del cuadrado es inmediata. Para un $T$ con flechas $t\colon T\to S\times S$, $u\colon T\to A$ tales
   que $\Delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
   a $S$, aprovechando que $t=\langle\pi_S t, \pi_S t\rangle$ donde $\pi_S\colon S\times S \to S$
@@ -93,7 +93,7 @@ por lo que Espacios es bivaluado, pero no es booleano. Podemos evidenciar que bi
 así como booleano no implica bivaluado, con ejemplos más sencillos y abundantes.
 
 \begin{proposition}
-  El topos $Conjuntos\times  Conjuntos$ es booleano y no bivaluado. 
+  El topos $\con\times  \con$ es booleano y no bivaluado. 
 \end{proposition}
 \begin{proof}
   En este topos los objetos son pares de conjuntos $(X,Y)$, y los morfismos son pares de funciones 
@@ -106,15 +106,15 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
 
 \begin{proposition}
   Si $M$ es una categoría de un solo objeto y una flecha $f$ distinta a la identidad tal que 
-  $f\circ f = f$, el topos $Conjuntos^M$ es bivaluado y no booleano.
+  $f\circ f = f$, el topos $\con^M$ es bivaluado y no booleano.
 \end{proposition}
 \begin{proof}
-  Los objetos de $Conjuntos^M$ son pares $(X,h)$ donde $X$ es un conjunto y $h\colon X\to X$ es 
+  Los objetos de $\con^M$ son pares $(X,h)$ donde $X$ es un conjunto y $h\colon X\to X$ es 
   una función idempotente. Un morfismo $(X,h)\to (Y,k)$ es una función $g\colon X\to Y$ tal que 
-  $g\circ h = k \circ g$. El objeto terminal es $(1,id_1)$ y, al tratarse de un topos de pregavillas de $M$ un monoide, el 
-  clasificador de subobjetos es el conjunto de ideales ${\varnothing,{f},M}\cong 3$, dotado de una endofunción $f_{\Omega}$ que manda a $0$ a $0$, $1$ a $2$ y $2$ a $2$. 
+  $g\circ h = k \circ g$. El objeto terminal es $(1,\id_1)$ y, al tratarse de un topos de pregavillas de $M$ un monoide, el 
+  clasificador de subobjetos es el conjunto de ideales $\{\varnothing,\{f\},M\}\cong 3$, dotado de una endofunción $f_{\Omega}$ que manda a $0$ a $0$, $1$ a $2$ y $2$ a $2$. 
   Como el objeto terminal es un bucle, $(3,f_{\Omega})$ solo tiene dos elementos globales, así que el topos es bivaluado. 
-  Ahora, en un topos de pregavillas los colímites se calculan puntualmente, de manera que $(1,id_1)+(1,id_1)=(2,id_2)$ y
+  Ahora, en un topos de pregavillas los colímites se calculan puntualmente, de manera que $(1,\id_1)+(1,\id_1)=(2,\id_2)$ y
   por lo tanto, el topos no es booleano.
 \end{proof}
 
@@ -177,7 +177,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   como el único $p\colon N\to N$ que hace conmutar al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      1\ar{r}{o}\ar[swap]{rd}{o\times o} & N\ar[dashed]{d}{(id,p)}\ar{r}{s} & N\ar[dashed]{d}{(id,p)} \\
+      1\ar{r}{o}\ar[swap]{rd}{o\times o} & N\ar[dashed]{d}{(\id,p)}\ar{r}{s} & N\ar[dashed]{d}{(\id,p)} \\
       & N\times N\ar[swap]{r}{(s\pi_1,\pi_1)} & N\times N.
     \end{tikzcd}
   \end{equation*}
@@ -189,7 +189,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
 \end{proposition}
 \begin{proof}
   Sea $p\colon N\to N$ el predecesor de~\ref{def:predecesor}, notemos en la construcción de $p$ que
-  la conmutatividad en la segunda entrada dice que $ps=\pi_1(id_N,p)=id_N$. Por tanto,
+  la conmutatividad en la segunda entrada dice que $ps=\pi_1(\id_N,p)=\id_N$. Por tanto,
   $s$ tiene retracto y es mono.
 \end{proof}
 
@@ -299,7 +299,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
     \begin{tikzcd}
         A\times B\ar{r}{s\times t}\ar[swap]{d}{\pi_A}\ar[phantom]{2-2}{(1)} & GA\times GB \ar[swap]{d}{\pi_{GA}}\ar{r}{\phi^{-1}}\ar[phantom]{2-3}[near start]{(2)} 
           & G(A\times B)\ar{dl}{G(\pi_A)}\ar{d}{\epsilon_{A\times B}} \\
-        A\ar{r}{s}\ar[swap]{dr}{id_A} & GA\ar{d}{\epsilon_A}\ar[phantom]{r}{(4)}\ar[phantom]{3-1}[near start]{(3)} & A\times B \ar{dl}{\pi_A} \\
+        A\ar{r}{s}\ar[swap]{dr}{\id_A} & GA\ar{d}{\epsilon_A}\ar[phantom]{r}{(4)}\ar[phantom]{3-1}[near start]{(3)} & A\times B \ar{dl}{\pi_A} \\
         {} & A.
     \end{tikzcd}
   \end{equation*}
@@ -331,7 +331,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
     \begin{tikzcd}
       GA\ar[swap]{d}{G(s)} & GA\times GB\ar[swap]{l}{\pi_{GA}}\ar{r}{\pi_{GB}}\ar[dashed]{d}{G(s)\times G(t)} & GB\ar{d}{G(t)}\\
       G^2A & G^2A\times G^2B\ar[swap]{l}{\pi_{G^2A}}\ar{r}{\pi_{G^2B}} & G^2B \\
-      G^2A\ar{u}{id_{G^2A}} & G(GA\times GB)\ar[swap]{l}{G(\pi_{GA})}\ar{u}{\psi}\ar{r}{G(\pi_{GB})} & G^2B\ar[swap]{u}{id_{G^2B}} \\
+      G^2A\ar{u}{\id_{G^2A}} & G(GA\times GB)\ar[swap]{l}{G(\pi_{GA})}\ar{u}{\psi}\ar{r}{G(\pi_{GB})} & G^2B\ar[swap]{u}{\id_{G^2B}} \\
       GA\ar{u}{G(s)} & G(A\times B)\ar[swap]{l}{G(\pi_A)}\ar{u}{G(s\times t)}\ar{r}{G(\pi_B)} & GB\ar[swap]{u}{G(t)} \\
       & GA\times GB.\ar{ul}{\pi_{GA}}\ar{u}{\phi^{-1}}\ar[swap]{ur}{\pi_{GB}}
     \end{tikzcd}
@@ -378,21 +378,21 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   es decir, queremos demostrar la conmutatividad del siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      E\ar{r}{u}\ar[swap]{dr}{id_E} & GE\ar{d}{\epsilon_E} \\
+      E\ar{r}{u}\ar[swap]{dr}{\id_E} & GE\ar{d}{\epsilon_E} \\
       & E
     \end{tikzcd}
   \end{equation*}
   Notemos que $\epsilon_AG(e)$ iguala a $f,g$ por la naturalidad de $\epsilon$.
   \begin{equation*}
     \begin{tikzcd}
-      E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B & {} E\ar{r}{e}\ar[swap]{d}{u} & A\ar{r}{id_A}\ar{d}{s} & A \\
+      E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B & {} E\ar{r}{e}\ar[swap]{d}{u} & A\ar{r}{\id_A}\ar{d}{s} & A \\
       GE\ar[dashed]{u}{\epsilon_E}\ar[swap]{r}{G(e)} & GA\ar[shift left=0.75ex]{r}{G(f)}\ar[swap, shift right=0.75ex]{r}{G(g)}\ar{u}{\epsilon_A} & GB\ar{u}{\epsilon_B} & {} GE\ar[swap]{r}{G(e)} & GA\ar[swap]{ur}{\epsilon_A} \\
       E.\ar{u}{u}
     \end{tikzcd}
   \end{equation*}
   La flecha inducida de $GE$ a $E$ debe ser $\epsilon_E$, de nuevo por la naturalidad de $\epsilon$.
   El diagrama de la derecha conmuta por la definición de $u$ y porque $s$ es la estructura de coálgebra de $A$,
-  entonces $\epsilon_AG(e)u=e$, así que, por la propiedad universal de $E$ como igualador, $\epsilon_Eu=id_E$. Para la coasociatividad, queremos ver que el siguiente diagrama conmuta:
+  entonces $\epsilon_AG(e)u=e$, así que, por la propiedad universal de $E$ como igualador, $\epsilon_Eu=\id_E$. Para la coasociatividad, queremos ver que el siguiente diagrama conmuta:
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{u}\ar[swap]{d}{u} & GE\ar{d}{\delta_E} \\
@@ -548,8 +548,8 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
     \end{tikzcd}
   \end{equation*}
   El cuadrado de la izquierda conmuta por hipótesis y el de la derecha por la naturalidad de $\epsilon$,
-  esto basta para mostrar que el exterior conmuta. Como $(A,s)$ es coálgebra, $\epsilon_As=id_A$, entonces 
-  $m\epsilon_Dd=id_Am=m id_D$, pero $m$ es mono así que $\epsilon_Dd=id_D$ y $d$ cumple la counidad.
+  esto basta para mostrar que el exterior conmuta. Como $(A,s)$ es coálgebra, $\epsilon_As=\id_A$, entonces 
+  $m\epsilon_Dd=\id_Am=m \id_D$, pero $m$ es mono así que $\epsilon_Dd=\id_D$ y $d$ cumple la counidad.
   Observemos con más cuidado el diagrama anterior. Supongamos que tenemos un objeto $X$ y morfismos $p\colon X\to GD$ y $q\colon X\to A$ tales que $G(m)p=sq$.
   \begin{equation*}
     \begin{tikzcd}
@@ -588,11 +588,11 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   Por lo tanto, el exterior es un producto fibrado y $\tau G(h)s$ clasifica a $m$. Entonces $h=\tau G(h)s$,
   Donde $G(h)s$ es justamente la transposición de $h$ bajo la adjunción $U\dashv R$. Más aún
   \begin{align*}
-    id_{G\Omega}G(h)s = G(\tau G(h)s) s &= G(\tau)G^2(h)G(s)s \\
-    &=G(\tau)G^2(h)\delta_A s  \tag{Coasociatividad de s} \\
-    &=G(\tau)\delta_{\Omega}G(h)s \tag{Naturalidad de $\delta$}.
+    \id_{G\Omega}G(h)s = G(\tau G(h)s) s &= G(\tau)G^2(h)G(s)s \\
+    &=G(\tau)G^2(h)\delta_A s  && \text{Coasociatividad de s} \\
+    &=G(\tau)\delta_{\Omega}G(h)s && \text{Naturalidad de $\delta$}.
   \end{align*}
-  Es decir, $G(h)s$ iguala a $id_{G\Omega}$ con $G(\tau)\delta_{\Omega}$, que son morfismos de coálgebras,
+  Es decir, $G(h)s$ iguala a $\id_{G\Omega}$ con $G(\tau)\delta_{\Omega}$, que son morfismos de coálgebras,
   así que $G(h)s$ se factoriza a través del igualador
   \begin{equation*}
     \begin{tikzcd}
@@ -620,9 +620,9 @@ es un producto fibrado. Para mostrar que $f=h^*$, basta mostrar que $ef=eh^*=G(h
 hacia una coálgebra colibre, por lo que, pasando por la adjunción $U\dashv R$, es suficiente que
 $\epsilon_{\Omega}ef=h$ en $\mathcal{E}$.
 \begin{align*}
-  \epsilon_{\Omega}ef &= \epsilon_{\Omega}G(\tau)\delta_{\Omega}ef \tag{Definición de e} \\
-  &= \tau\epsilon_{G\Omega}\delta_{\Omega}ef \tag{Naturalidad de $\epsilon$} \\
-  &= \tau ef. \tag{Estructura de comónada}
+  \epsilon_{\Omega}ef &= \epsilon_{\Omega}G(\tau)\delta_{\Omega}ef && \text{Definición de e} \\
+  &= \tau\epsilon_{G\Omega}\delta_{\Omega}ef && \text{Naturalidad de $\epsilon$} \\
+  &= \tau ef. && \text{Estructura de comónada}
 \end{align*}
 Sin embargo tenemos el siguiente diagrama:
 \begin{equation*}
@@ -656,24 +656,24 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 \end{lemma}
 \begin{proof}
   Para todo espacio $A$, tenemos que $\Delta\Gamma A = \Delta\Gamma\Delta\Gamma A$ por \ref{cor:unidadidentidad},
-  lo cual se puede pensar como un isomorfismo natural $Id\colon \Delta\Gamma\to \Delta\Gamma\Delta\Gamma$, cuyas componentes son identidades. En esta prueba 
-  $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c\colon \Delta\Gamma\to Id_{Espacios}$ que construimos en \ref{thm:funtordiscretos}.
+  lo cual se puede pensar como un isomorfismo natural $\Id\colon \Delta\Gamma\to \Delta\Gamma\Delta\Gamma$, cuyas componentes son identidades. En esta prueba 
+  $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c\colon \Delta\Gamma\to \Id_{Espacios}$ que construimos en \ref{thm:funtordiscretos}.
   Procedemos a demostrar que se cumplen los diagramas de comonada para $\mathcal{C}$. Primero, la coasociatividad,
   \begin{equation*}
     \begin{tikzcd}
-      \Delta\Gamma A\ar{r}{id_{\Delta\Gamma A}}\ar[swap]{d}{id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma A\ar{d}{id_{\Delta\Gamma\Delta\Gamma A}} \\
-      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma\Delta\Gamma A.
+      \Delta\Gamma A\ar{r}{\id_{\Delta\Gamma A}}\ar[swap]{d}{\id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma A\ar{d}{\id_{\Delta\Gamma\Delta\Gamma A}} \\
+      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma \id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma\Delta\Gamma A.
     \end{tikzcd}
   \end{equation*}
   El diagrama conmuta gracias a que $\Delta\Gamma$ es functorial. Ahora, la counidad, queremos ver
   que el siguiente diagrama conmuta:
   \begin{equation*}
     \begin{tikzcd}
-      {} & \Delta\Gamma A\ar{d}{id}\ar[swap]{ld}{id}\ar{rd}{id} & {} \\
+      {} & \Delta\Gamma A\ar{d}{\id}\ar[swap]{ld}{\id}\ar{rd}{\id} & {} \\
       \Delta\Gamma A & \Delta\Gamma\Delta\Gamma A\ar{l}{c_{\Delta\Gamma A}}\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
     \end{tikzcd}
   \end{equation*}
-  Dado que $u_{\Gamma A} = id_{\Gamma A}$, sucede que $id_{\Delta\Gamma A} = \Delta u_{\Gamma A}$, y
+  Dado que $u_{\Gamma A} = \id_{\Gamma A}$, sucede que $\id_{\Delta\Gamma A} = \Delta u_{\Gamma A}$, y
   ambos triángulos se sigue de las ecuaciones unidad-counidad, por lo que el diagrama conmuta.
 
 \end{proof}
@@ -685,13 +685,13 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   Basta demostrar que $M$ es equivalente al topos $Espacios_C$ de coálgebras, con
   $\mathcal{C}$ la comónada del lema anterior. Con tal propósito, proponemos al funtor
   $F\colon M\to Espacios_{\mathcal{C}}$ que envía a cada espacio discreto $D$ a la coálgebra 
-  $(\Delta D, u_D)$, donde $u\colon Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
+  $(\Delta D, u_D)$, donde $u\colon \Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
   morfismos $F$ es la identidad. Primero veamos que $(\Delta D, \Delta u_D)$ realmente es una coálgebra,
   para lo cual es necesario que los siguientes diagramas conmuten.
   \begin{equation*}
     \begin{tikzcd}
       \Delta D & \Delta\Gamma\Delta D\ar[swap]{l}{c_{\Delta D}} & {} & \Delta\Gamma\Delta\Gamma\Delta D & \Delta\Gamma\Delta D\ar[swap]{l}{\Delta\Gamma\Delta u_D} \\
-       & \Delta D\ar{lu}{id}\ar[swap]{u}{\Delta u_D} & {} & \Delta\Gamma\Delta D\ar{u}{id} & \Delta D.\ar{l}{\Delta u_D}\ar[swap]{u}{\Delta u_D}
+       & \Delta D\ar{lu}{\id}\ar[swap]{u}{\Delta u_D} & {} & \Delta\Gamma\Delta D\ar{u}{\id} & \Delta D.\ar{l}{\Delta u_D}\ar[swap]{u}{\Delta u_D}
     \end{tikzcd}
   \end{equation*}
   El primer diagrama conmuta ya que es una ecuación unidad-counidad, mientras que
@@ -722,7 +722,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   \end{equation*}
   Se trata de un diagrama conmutativo puesto que la parte inferior es la identidad, 
   una vez más, al ser una ecuación unidad-counidad. Luego, la condición de counidad para que
-  $(A,s)$ sea coálgebra nos dice que $c_As = id_A$, por lo que $c_A$ es mono y tiene inverso por la derecha,
+  $(A,s)$ sea coálgebra nos dice que $c_As = \id_A$, por lo que $c_A$ es mono y tiene inverso por la derecha,
   así que $c_A$ es de hecho un isomorfismo con $s$ su inverso por ambos lados. Entonces la parte superior
   del diagrama también es la identidad, y por lo anterior, $c_A$ es un isomorfismo de coálgebras.
   Por lo tanto $F$ es una equivalencia de categorías y $M$ es un topos.
