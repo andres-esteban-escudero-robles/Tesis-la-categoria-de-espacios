@@ -29,9 +29,6 @@
 \checkandfixthelayout
 \fi
 
-
-\RequirePackage{mathtools}
-\RequirePackage{keytheorems}
 \RequirePackage{siunitx}
 \RequirePackage{multicol}
 

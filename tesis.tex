@@ -5,16 +5,14 @@
 
 \documentclass{tesisFC}
 
-\usepackage{mycats}
 \usepackage[backend=biber,defernumbers=true,style=alphabetic,giveninits=true]{biblatex}
 \usepackage[style=mexican]{csquotes}
 \usepackage{mathtools} %Extensión y corrección de errores de amsmath
 \usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
-\usepackage{tikz}
+\usepackage{mycats}
 \usetikzlibrary{shapes,arrows,spy,positioning,snakes}
-%\usepackage[colorlinks, allcolors=blue]{hyperref}
 \usepackage{pdfcomment}
 \hypersetup{colorlinks, allcolors=blue}
 
@@ -29,7 +27,7 @@
 %Funciones especiales
 \DeclareMathOperator{\sub}{Sub}
 \DeclareMathOperator{\homs}{Hom}
-\DeclareMathOperator{\seno}{sen}
+%seno ya está definida es el comando \sen
 
 \title{La categoría de Conjuntos como subcategoría de la categoría de Espacios}
 \author{Andrés Esteban Escudero Robles}
