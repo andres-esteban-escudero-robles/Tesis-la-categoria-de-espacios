@@ -211,7 +211,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{o}\ar{rd}{o'}\ar[swap]{rdd}{o} & N\ar{d}{f}\ar{r}{s} & N\ar{d}{f} \\
-      & N'\ar[swap]{r}{s'}\ar{d}{m} & N'\ar{d}{m} \\
+      & N'\ar{r}{s'}\ar{d}{m} & N'\ar{d}{m} \\
       & N\ar{r}{s} & N.
     \end{tikzcd}
   \end{equation*}
@@ -297,14 +297,14 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   es una coálgebra de $C$.
   \begin{equation*}
     \begin{tikzcd}
-        A\times B\ar{r}{s\times t}\ar[swap]{d}{\pi_A}\ar[phantom]{2-2}{(1)} & GA\times GB \ar[swap]{d}{\pi_{GA}}\ar{r}{\phi^{-1}}\ar[phantom]{2-3}[near start]{(2)} 
+        A\times B\ar{r}{s\times t}\ar[swap]{d}{\pi_A}\ar[phantom]{2-2}{(a)} & GA\times GB \ar[swap]{d}{\pi_{GA}}\ar{r}{\phi^{-1}}\ar[phantom]{2-3}[near start]{(b)} 
           & G(A\times B)\ar{dl}{G(\pi_A)}\ar{d}{\epsilon_{A\times B}} \\
-        A\ar{r}{s}\ar[swap]{dr}{\id_A} & GA\ar{d}{\epsilon_A}\ar[phantom]{r}{(4)}\ar[phantom]{3-1}[near start]{(3)} & A\times B \ar{dl}{\pi_A} \\
+        A\ar{r}{s}\ar[swap]{dr}{\id_A} & GA\ar{d}{\epsilon_A}\ar[phantom]{r}{(d)}\ar[phantom]{3-1}[near start]{(c)} & A\times B \ar{dl}{\pi_A} \\
         {} & A.
     \end{tikzcd}
   \end{equation*}
-  En el diagrama (1) conmuta por la definición de $s\times t$, (2) conmuta gracias a la construcción
-  de $\phi$, (3) conmuta ya que $(A,s)$ es coálgebra y (4) conmuta pues es un cuadrado de naturalidad
+  En el diagrama (a) conmuta por la definición de $s\times t$, (b) conmuta gracias a la construcción
+  de $\phi$, (c) conmuta ya que $(A,s)$ es coálgebra y (d) conmuta pues es un cuadrado de naturalidad
   de $\epsilon$. Por tanto $\pi_A=\pi_A \epsilon_{A\times B} \phi^{-1}(s\times t)$ y dado que podemos
   repetir el argumento para $\pi_B$, concluimos que $\epsilon_{A\times B} \phi^{-1}(s\times t)$
   es la identidad en $A\times B$. Esto es la ecuación de la counidad, entonces seguimos con la
@@ -319,14 +319,14 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   Para la coasociatividad queremos ver la conmutatividad del siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      A\times B\ar[phantom]{rd}{(1)}\ar{r}{s\times t}\ar[swap]{d}{s\times t} & GA\times GB\ar{r}{\phi^{-1}}\ar{d}{\delta_A\times \delta_B}
+      A\times B\ar[phantom]{rd}{(a)}\ar{r}{s\times t}\ar[swap]{d}{s\times t} & GA\times GB\ar{r}{\phi^{-1}}\ar{d}{\delta_A\times \delta_B}
         & G(A\times B)\ar{dd}{\delta_{A\times B}} \\
       GA\times GB\ar{r}{G(s)\times G(t)}\ar[swap]{d}{\phi^{-1}} & G^2A\times G^2B\ar{d}{\psi^{-1}} \\
-      G(A\times B)\ar[phantom]{ur}{(2)}\ar[swap]{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(3)}\ar{r}{G(\phi^{-1})} & G^2(A\times B).
+      G(A\times B)\ar[phantom]{ur}{(b)}\ar[swap]{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(c)}\ar{r}{G(\phi^{-1})} & G^2(A\times B).
     \end{tikzcd}
   \end{equation*}
-  En (1) sabemos que el diagrama en cada coordenada conmuta pues $(A,s),(B,t)$ son coálgebras. 
-  Para (2) tenemos:
+  En (a) sabemos que el diagrama en cada coordenada conmuta pues $(A,s),(B,t)$ son coálgebras. 
+  Para (b) tenemos:
   \begin{equation*}
     \begin{tikzcd}
       GA\ar[swap]{d}{G(s)} & GA\times GB\ar[swap]{l}{\pi_{GA}}\ar{r}{\pi_{GB}}\ar[dashed]{d}{G(s)\times G(t)} & GB\ar{d}{G(t)}\\
@@ -338,7 +338,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   \end{equation*}
   Cada parte conmuta gracias a cómo construimos los morfismos usando la propiedad universal del producto,
   por lo que $G(s)\times G(t)=\langle G(s)\pi_{GA},G(t)\pi_{GB} \rangle = \psi G(s\times t)\phi^{-1}$,
-  lo cual nos da la identidad deseada al poscomponer con $\psi^{-1}$. En el caso de (3) observamos que:
+  lo cual nos da la identidad deseada al poscomponer con $\psi^{-1}$. En el caso de (c) observamos que:
   \begin{equation*}
     \begin{tikzcd}
       {} & GB\ar{r}{\delta_B} & G^2B & {} \\
@@ -470,13 +470,13 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   Ahora transponemos cada morfismo empezando por $G(f)\phi^{-1}(s\times t)$ con la siguiente observación:
   \begin{equation*}
     \begin{tikzcd}
-      A\times B\ar[swap]{d}{=}\ar{r}{s\times 1_B}\ar[phantom]{rd}{(1)} & GA\times B\ar[swap]{d}{Gf'\times 1_B}\ar{r}{1_{GA}\times t}\ar[phantom]{rd}{(2)} & GA\times GB\ar[swap]{d}{Gf'\times 1_{GB}}\ar{r}{\cong}\ar[phantom]{rd}{(3)} & G(A\times B)\ar[swap]{d}{G(f'\times 1_B)}\ar{r}{Gf}\ar[phantom]{rd}{(4)} & GC\ar{d}{=}\\
+      A\times B\ar[swap]{d}{=}\ar{r}{s\times 1_B}\ar[phantom]{rd}{(a)} & GA\times B\ar[swap]{d}{Gf'\times 1_B}\ar{r}{1_{GA}\times t}\ar[phantom]{rd}{(b)} & GA\times GB\ar[swap]{d}{Gf'\times 1_{GB}}\ar{r}{\cong}\ar[phantom]{rd}{(c)} & G(A\times B)\ar[swap]{d}{G(f'\times 1_B)}\ar{r}{Gf}\ar[phantom]{rd}{(d)} & GC\ar{d}{=}\\
       A\times B\ar[swap]{r}{f''\times 1_B}              & G(C^B)\times B\ar[swap]{r}{1\times t}                       & G(C^B)\times GB\ar[swap]{r}{\phi^{-1}}                 & G(C^B\times B)\ar[swap]{r}{G(ev_{B,C})}             & GC.
     \end{tikzcd}
   \end{equation*}
-  Donde la fila de arriba es precisamente $G(f)\phi^{-1}(s\times t)$ y cada cuadro conmuta, en (1) por la definición de $f''$, (2) es inmediato, (3) es por la 
-  naturalidad de $\phi$ y (4) conmuta pues es aplicar al funtor $G$ a la definición de $f'$ como 
-  transpuesta. La conmutatividad de (4), luego (3), etcétera, nos permite concluir que la fila de
+  Donde la fila de arriba es precisamente $G(f)\phi^{-1}(s\times t)$ y cada cuadro conmuta, en (a) por la definición de $f''$, (b) es inmediato, (c) es por la 
+  naturalidad de $\phi$ y (d) conmuta pues es aplicar al funtor $G$ a la definición de $f'$ como 
+  transpuesta. La conmutatividad de (d), luego (c), etcétera, nos permite concluir que la fila de
   arriba es igual a la fila de abajo, que es un morfismo más sencillo de transponer.
   \begin{equation*}
     \overline{G(ev)\phi^{-1}(1\times t)(f''\times 1_B)} = \overline{G(ev)\phi^{-1}(1\times t)}f'' = (GC)^t\overline{G(ev)\phi^{-1}}f''.

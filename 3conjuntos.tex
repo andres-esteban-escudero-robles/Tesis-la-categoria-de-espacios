@@ -4,35 +4,29 @@
 Originalmente, Lawvere propuso los siguientes $8$ axiomas para caracterizar a una categoría
 de conjuntos abstractos.
 
-\begin{axiom}[Ra\'ices finitas]
-Existen todas las ra\'ices (l\'imites y colimites) finitas. Expl\'icitamente:
-existen un objeto terminal $1$ y un objeto inicial $0$; para cada par de objetos
-$A,B$ existen el producto $A\times B$ y la suma (coproducto) $A+B$; y para cada
+\begin{axiom}[Raíces finitas]
+Existen todas las raíces (límites y colimites) finitas. Explícitamente:
+existen un objeto terminal $1$ y un objeto inicial $0$, para cada par de objetos
+$A,B$ existen el producto $A\times B$ y la suma (coproducto) $A+B$, y para cada
 par de flechas paralelas $f,g\colon A\to B$ existen su igualador y su coigualador.
 \end{axiom}
 
-\begin{axiom}[Exponenciaci\'on]
-Para cada par de objetos $A,B$ existe un objeto $B^{A}$ y una flecha de evaluaci\'on
-$e\colon A\times B^{A}\to B$ tales que, para toda flecha $f\colon A\times X\to B$,
-existe una \'unica flecha $h\colon X\to B^{A}$ con
-$e\circ(\mathrm{id}_A\times h)=f$.
+\begin{axiom}[Exponenciación]
+Para cada par de objetos $A,B$ existe el objeto exponencial $B^{A}$.
 \end{axiom}
 
 \begin{axiom}[Objeto de Dedekind--Peano]
-Existe un objeto $N$ con flechas $0\colon 1\to N$ y $s\colon N\to N$ tales que,
-para cualquier objeto $X$ y cualesquiera flechas $z\colon 1\to X$ y
-$t\colon X\to X$, existe una \'unica flecha $x\colon N\to X$ con
-$x\circ 0=z$ y $x\circ s=t\circ x$.
+Existe un objeto $(N,o,s)$ de números naturales
 \end{axiom}
 
-\begin{axiom}[$1$ es un generador]
+\begin{axiom}[$1$ es un separador]
 Si $f,g\colon A\to B$ son flechas distintas, entonces existe un elemento
-$x\colon 1\to A$ tal que $f\circ x\neq g\circ x$.
+$x\colon 1\to A$ tal que $fx\neq gx$.
 \end{axiom}
 
-\begin{axiom}[Axioma de elecci\'on]
+\begin{axiom}[Axioma de elección]
 Si $f\colon A\to B$ es una flecha y $A$ tiene al menos un elemento, entonces
-existe una flecha $g\colon B\to A$ tal que $f\circ g\circ f=f$.
+existe una flecha $g\colon B\to A$ tal que $fgf=f$.
 \end{axiom}
 
 \begin{axiom}[Los objetos no iniciales tienen elementos]
@@ -41,14 +35,13 @@ $x\colon 1\to A$.
 \end{axiom}
 
 \begin{axiom}[Elementos de una suma]
-Sean $i_A\colon A\to A+B$ e $i_B\colon B\to A+B$ las inyecciones can\'onicas.
-Todo elemento $x\colon 1\to A+B$ factoriza a trav\'es de $i_A$ o a trav\'es de
-$i_B$; es decir, existe $a\colon 1\to A$ con $x=i_A\circ a$ o existe
-$b\colon 1\to B$ con $x=i_B\circ b$.
+Sean $i_A\colon A\to A+B$ e $i_B\colon B\to A+B$ las inyecciones canónicas.
+Todo elemento $x\colon 1\to A+B$ factoriza a través de $i_A$ o a través de
+$i_B$.
 \end{axiom}
 
-\begin{axiom}[Existencia de un objeto con m\'as de un elemento]
-Existe un objeto que tiene m\'as de un elemento. Equivalentemente,
+\begin{axiom}[Existencia de un objeto con más de un elemento]
+Existe un objeto que tiene más de un elemento. Equivalentemente,
 $1$ y $0$ no son isomorfos.
 \end{axiom}
 
