@@ -2,7 +2,8 @@
 \label{conjuntos}
 
 Originalmente, Lawvere propuso los siguientes $8$ axiomas para caracterizar a una categoría
-de conjuntos abstractos.
+de conjuntos abstractos \cite{lawvere1964elementary}. Se conoce a esta axiomática como $\textbf{ETCS}$
+o Teoría Elemental de la Categoría de Conjuntos.
 
 \begin{axiom}[Raíces finitas]
 Existen todas las raíces (límites y colimites) finitas. Explícitamente:
@@ -47,3 +48,54 @@ $1$ y $0$ no son isomorfos.
 
 Con el desarrollo de la teoría de topos se demostró que la lista se puede simplificar a pedir
 que la categoría sea un topos bien punteado, con objeto de números naturales y axioma de elección.
+A partir de esos axiomas, Lawvere desmostró que es válido el axioma de extensionalidad, del par, de la unión
+y el axioma de potencia.También demostró un esquema restringido de separación y, por supuesto, la existencia
+de un conjunto vacio, el axioma de elección y el de infinito, son inmediatos. El axioma de reemplazo y el
+axioma de buena fundación no forman parte de la teoría, aún así, todo modelo de ETCS es
+equivalente a $\con$ como categoría \cite{lawvere1964elementary}.
+
+\begin{definition}
+    Topos bien punteado...
+\end{definition}
+
+\begin{definition}
+    El soporte de un objeto...
+\end{definition}
+
+\begin{definition}
+    Los soportes se escinden...
+\end{definition}
+
+\begin{theorem}
+    Un topos es bien punteado si y solo si es bivaluado, booleano y los soportes se escinden.
+\end{theorem}
+
+Como mencionamos anteriormente, ETCS demuestra un fragmento de los axiomas de ZFC, pero dicho fragmento también prueba a los axiomas de ETCS,
+este pedazo de ZFC se le llama BZC (Bounded Zermelo with Choice) o a veces "Teoría de Conjuntos de Mac lane".
+
+En esta sección seguiremos a Mclarty \cite{mclarty1988defining} y utilizaremos la siguiente lista de axiomas,
+a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
+
+\begin{axiom}[No trivial]
+    El objeto inicial no tiene elementos.
+\end{axiom}
+
+\begin{axiom}[Nullstellensatz]
+    Cada objeto, o es inicial o bien tiene elementos.
+\end{axiom}
+
+\begin{axiom}[Booleano]
+    La ley del tercero excluido es internamente válida.
+\end{axiom}
+
+\begin{axiom}[Infinito]
+    Existe un objeto de números naturales.
+\end{axiom}
+
+\begin{proposition}
+    Nullstellensatz si y solo si bivaluado y los soportes se escinden.
+\end{proposition}
+
+\begin{theorem}
+    El topos $M$ de espacios discretos es un modelo de CS.
+\end{theorem}
