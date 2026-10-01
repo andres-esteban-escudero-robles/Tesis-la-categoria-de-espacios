@@ -47,24 +47,34 @@ $1$ y $0$ no son isomorfos.
 \end{axiom}
 
 Con el desarrollo de la teoría de topos se demostró que la lista se puede simplificar a pedir
-que la categoría sea un topos bien punteado, con objeto de números naturales y axioma de elección.
-A partir de esos axiomas, Lawvere desmostró que es válido el axioma de extensionalidad, del par, de la unión
-y el axioma de potencia.También demostró un esquema restringido de separación y, por supuesto, la existencia
-de un conjunto vacio, el axioma de elección y el de infinito, son inmediatos. El axioma de reemplazo y el
-axioma de buena fundación no forman parte de la teoría, aún así, todo modelo de ETCS es
+que la categoría sea un topos bien punteado, con objeto de números naturales y axioma de Elección.
+A partir de esos axiomas, Lawvere desmostró que es válido el axioma de Extensionalidad, del Par, de la Unión
+y el axioma de Potencia.También demostró un esquema restringido de separación y, por supuesto, la existencia
+de un conjunto vacio, el axioma de Elección y el de Infinito, son inmediatos. El axioma de Reemplazo y el
+axioma de Buena Fundación no forman parte de la teoría, aún así, todo modelo de ETCS es
 equivalente a $\con$ como categoría \cite{lawvere1964elementary}.
 
 \begin{definition}
-    Topos bien punteado...
+    Un topos es bien punteado si
+    \begin{itemize}
+        \item No sucede que $1\cong 0$.
+        \item El objeto términal es separador (axioma 4 de ETCS).
+    \end{itemize}
+\end{definition}
+
+Para enunciar el siguiente resultado, necesitamos más definiciones.
+
+\begin{definition}
+    Dado un objeto $A$, el soporte de $A$, $\supp A$, es la imagen de la única flecha $A\to 1$, es decir,
+    $A\twoheadrightarrow \supp A\rightarrowtail 1$ es su factorización epi mono.
 \end{definition}
 
 \begin{definition}
-    El soporte de un objeto...
+    En un topos los soportes se escinden cuando, para todo objeto $A$ existe un morfismo $s\colon\supp A\to A$
+    tal que si $f\colon A\to\supp A$, la composición $fs$ es la identidad en $\supp A$.
 \end{definition}
 
-\begin{definition}
-    Los soportes se escinden...
-\end{definition}
+Un resultado estándar en teoría de topos caracteriza a los topos bien punteados \cite{maclane2012sheaves}. Resulta que:
 
 \begin{theorem}
     Un topos es bien punteado si y solo si es bivaluado, booleano y los soportes se escinden.
