@@ -49,7 +49,7 @@ $1$ y $0$ no son isomorfos.
 Con el desarrollo de la teoría de topos se demostró que la lista se puede simplificar a pedir
 que la categoría sea un topos bien punteado, con objeto de números naturales y axioma de Elección.
 A partir de esos axiomas, Lawvere desmostró que es válido el axioma de Extensionalidad, del Par, de la Unión
-y el axioma de Potencia.También demostró un esquema restringido de separación y, por supuesto, la existencia
+y el axioma de Potencia.También demostró un esquema restringido de Separación y, por supuesto, la existencia
 de un conjunto vacio, el axioma de Elección y el de Infinito, son inmediatos. El axioma de Reemplazo y el
 axioma de Buena Fundación no forman parte de la teoría, aún así, todo modelo de ETCS es
 equivalente a $\con$ como categoría \cite{lawvere1964elementary}.
@@ -65,13 +65,13 @@ equivalente a $\con$ como categoría \cite{lawvere1964elementary}.
 Para enunciar el siguiente resultado, necesitamos más definiciones.
 
 \begin{definition}
-    Dado un objeto $A$, el soporte de $A$, $\supp A$, es la imagen de la única flecha $A\to 1$, es decir,
-    $A\twoheadrightarrow \supp A\rightarrowtail 1$ es su factorización epi mono.
+    Dado un objeto $A$, el soporte de $A$, $\supp(A)$, es la imagen de la única flecha $A\to 1$, es decir,
+    $A\twoheadrightarrow \supp(A)\rightarrowtail 1$ es su factorización epi mono.
 \end{definition}
 
 \begin{definition}
-    En un topos los soportes se escinden cuando, para todo objeto $A$ existe un morfismo $s\colon\supp A\to A$
-    tal que si $f\colon A\to\supp A$, la composición $fs$ es la identidad en $\supp A$.
+    En un topos los soportes se escinden cuando, para todo objeto $A$ existe un morfismo $s\colon\supp(A)\to A$
+    tal que si $f\colon A\to\supp(A)$, la composición $fs$ es la identidad en $\supp(A)$.
 \end{definition}
 
 Un resultado estándar en teoría de topos caracteriza a los topos bien punteados \cite{maclane2012sheaves}. Resulta que:
@@ -103,8 +103,24 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
 \end{axiom}
 
 \begin{proposition}
+    Nullstellensatz implica no trivial.
+\end{proposition}
+\begin{proof}
+    El Nullstellensatz es equivalente a que, para todo objeto $A$, $A\cong 0$ si y solo si
+    no existe ningún morfismo $1\to A$. Por tanto, un objeto inicial no puede tener elementos.
+\end{proof}
+
+\begin{proposition}
     Nullstellensatz si y solo si bivaluado y los soportes se escinden.
 \end{proposition}
+\begin{proof}
+    Como vimos anteriormente, Nullstellensatz implica que el topos es bivaluado \ref{obs:nsbivaluado}, entonces
+    el soporte de un objeto o es $0$ o es $1$ y en ambos casos tenemos garantizada una flecha del soporte al objeto.
+    Ahora supongamos que el topos es bivaluado y los soportes se escinden. Sea $A$ un objeto,
+    $\supp(A)$ es $0$ o $1$, pero los soportes se escinden entonces o $A$ es inicial (en una 
+    categoría cartesianamente cerrada, $A\to 0$ implica $A\cong 0$) o bien, $A$ tiene un elemento. 
+\end{proof}
+
 
 \begin{theorem}
     El topos $M$ de espacios discretos es un modelo de CS.
