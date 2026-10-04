@@ -111,6 +111,19 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
 \end{proof}
 
 \begin{proposition}
+    Dado un objeto $A$ en un topos, cualquier morfismo $\supp(A)\to A$ hace que el soporte de $A$ se escinda.
+\end{proposition}
+\begin{proof}
+    Sea $A$ un objeto de un topos, $p\colon A\to \supp(A)$ su soporte y $s\colon \supp(A)\to A$ un morfismo. 
+    Consideremos al siguiente diagrama que es conmutativo pues acaba en el objeto terminal:
+    \begin{equation*}
+        \begin{tikzcd}
+            \supp(A)\ar[shift left = 0.3ex]{r}{\text{id}}\ar[swap, shift right = 0.3ex]{r}{ps} & \supp(A)\ar[tail]{r}{} & 1
+        \end{tikzcd}
+    \end{equation*}
+\end{proof}
+
+\begin{proposition}
     Nullstellensatz si y solo si bivaluado y los soportes se escinden.
 \end{proposition}
 \begin{proof}
@@ -121,7 +134,13 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
     categoría cartesianamente cerrada, $A\to 0$ implica $A\cong 0$) o bien, $A$ tiene un elemento. 
 \end{proof}
 
+Con esta proposición nos damos cuenta que la diferencia entre los axiomas de Mclarty y ETCS es si 
+se asume o no el axioma de Elección.
 
-\begin{theorem}
+\begin{theorem}[label=thm:modelocs]
     El topos $M$ de espacios discretos es un modelo de CS.
 \end{theorem}
+\begin{proof}
+    Ya demostramos que $M$ es un topos~\ref{thm:toposdiscretos}, satisface el Nullstellensatz pues es un axioma que le pedimos a Espacios~\ref{ax:gds6} y
+    es un topos booleano~\ref{cor:mbooleano}. Además, por~\ref{thm:onndecidible} $M$ hereda el ONN de Espacios.
+\end{proof}

@@ -221,8 +221,8 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$ \c
   inverso por la derecha, así que $m$ es un isomorfismo.
 \end{proof}
 
-\begin{theorem}
-  Sea $\mathcal{E}$ un topos con y $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
+\begin{theorem}[label=thm:onndecidible]
+  Sea $\mathcal{E}$ un topos con $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
 \end{theorem}
 \begin{proof}
   El plan es ver a $\Delta\colon N\to N\times N$ como intersección de subobjetos complementados en $\sub(N\times N)$ (así va la demostración de Johnstone pero hay una más directa con la lógica interna).
@@ -680,7 +680,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[label=thm:toposdiscretos]
   La categoría $M$ de espacios discretos es un topos.
 \end{theorem}
 \begin{proof}
@@ -805,7 +805,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   la unicidad de $\Gamma A$ implica que $\Gamma A = 1+1$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[label=cor:mbooleano]
   $M$ es un topos booleano.
 \end{corollary}
 \begin{proof}
