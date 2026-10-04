@@ -71,18 +71,18 @@ un punto, así que el teorema anterior nos dice que $\sub(1)=\{0,1\}$.
 \end{observation}
 
 \begin{corollary}[label=cor:bivaluado]
-  El clasificador de subobjetos de Espacios\pdfcomment{Sustituir cada una de las
+  El clasificador de subobjetos de $\esp$\pdfcomment{Sustituir cada una de las
   ocurrencias de esta categoría escrita con una palabra por la notación que se
   haya elegido} tiene dos puntos.
 \end{corollary}
 \begin{proof}
-  Sea $\Omega$ el clasificador de subobjetos de Espacios, entonces $\sub(1)\cong \homs(1,\Omega)$
+  Sea $\Omega$ el clasificador de subobjetos de $\esp$, entonces $\sub(1)\cong \homs(1,\Omega)$
   y por la observación anterior, $\sub(1)=\{0,1\}$, así que $\homs(1,\Omega)=\{0,1\}$.
 \end{proof}
 
 \begin{definition}[label=def:bivaluado]
   Un topos es bivaluado si su clasificador de subobjetos tiene exactamente dos puntos, verdadero
-  y falso. En particular, un topos bivaluado no es trivial y, con el resultado anterior, Espacios es bivaluado.
+  y falso. En particular, un topos bivaluado no es trivial y, con el resultado anterior, $\esp$ es bivaluado.
 \end{definition}
 
 Vale la pena distinguir entre que un topos sea bivaluado y que su lógica interna sea clásica,
@@ -96,9 +96,9 @@ ya que, de manera quizá contraintuitiva, tener dos valores de verdad no lo gara
 
 Ser bivaluado sí implica tercero excluido para fórmulas sin variables libres, pero esto no basta
 ni siquiera para que las leyes clásicas de cuantificadores se cumplan. Por
-ejemplo, en Espacios, podemos
+ejemplo, en $\esp$, podemos
 demostrar para el espacio $D$ de infinitesimales tanto que $\forall x\in D, \neg\neg(x=0)$ como que $\neg(\forall x\in D, x=0)$,
-por lo que Espacios es bivaluado, pero no es booleano. Podemos evidenciar que bivaluado no implica booleano, 
+por lo que $\esp$ es bivaluado, pero no es booleano. Podemos evidenciar que bivaluado no implica booleano, 
 así como booleano no implica bivaluado, con ejemplos más sencillos y abundantes.
 
 \begin{proposition}
@@ -109,7 +109,7 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
   $(f,g)$, donde $f\colon X\to X'$ y $g\colon Y\to Y'$. Es sencillo comprobar que $(1,1)$ es el objeto terminal y que
   el clasificador de subobjetos es $(2,2)$, por lo que $\sub(1,1)\cong \homs((1,1),(2,2))\cong 4$ y el topos no es bivaluado,
   hay cuatro valores de verdad. Por otro lado, el coproducto se calcula como el
-  coproducto de Conjuntos\pdfcomment{Escribir la notación que llevara conjuntos
+  coproducto de $\con$\pdfcomment{Escribir la notación que llevara conjuntos
   en lugar de la palabra}
   entrada a entrada,
   así que, $(1,1)+(1,1)=(1+1,1+1)=(2,2)$ y el topos es booleano. Para ver que el axioma~\ref{ax:gds6} no se cumple en este topos, 
@@ -142,9 +142,10 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
     \end{tikzcd}
   \end{equation*}
   \pdfcomment{Esto va fuera de la definición. Es un comentario acerca de ella no parte de ella.}
-  Intuitivamente, la flecha $o$ señala al cero y $s$ es la función sucesor, por lo que
-  $f$ es la función definida recursivamente tal que $f(0)=a$ y $f(n+1)=g(f(n))$.
 \end{definition}
+
+Intuitivamente, la flecha $o$ de la definición señala al cero y $s$ es la función sucesor, por lo que
+$f$ es la función definida recursivamente tal que $f(0)=a$ y $f(n+1)=g(f(n))$.
 
 En una categoría cartesiana cerrada, un ONN permite también hacer recursión con parámetros,
 es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, ver \cite{johnstone2002sketches}.
@@ -234,8 +235,8 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
   inverso por la derecha, así que $m$ es un isomorfismo.
 \end{proof}
 
-\begin{theorem}
-  Sea $\mathcal{E}$ un topos con y $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
+\begin{theorem}[label=thm:onndecidible]
+  Sea $\mathcal{E}$ un topos con $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
 \end{theorem}
 \begin{proof}
   El plan es ver a $\Delta\colon N\to N\times N$ como intersección de subobjetos complementados en $\sub(N\times N)$ (así va la demostración de Johnstone pero hay una más directa con la lógica interna).
@@ -254,18 +255,18 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
 
 \begin{definition}
   Sea $M$ la categoría de espacios discretos y los morfismos entre ellos en
-  Espacios. $M$ es una subcategoría plena de Espacios.
+  $\esp$. $M$ es una subcategoría plena de $\esp$.
   \pdfcomment{Creo que lo usual es escribir ``Denotaermos con M a la subcategoría plena de E cuyos objetos son los discretos''}
 \end{definition}
 
 \begin{theorem}[label=thm:funtordiscretos]
-  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$ y Espacios.
+  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$ y $\esp$.
 \end{theorem}
 \begin{proof}
   Para cada $A$ un espacio\pdfcomment{Creo que más bien es ``para cada espacio A''}
   tenemos un monomorfismo $c_A\colon  \Gamma A \to A$ dado
   que $\Gamma A$ es un subobjeto. Veamos que $c_A$ es couniversal hacia
-  $A$ desde $\Delta\colon  M \to Espacios$, la inclusión de $M$. Sea $B$ un
+  $A$ desde $\Delta\colon  M \to \esp$, la inclusión de $M$. Sea $B$ un
   objeto de $M$ y $f\colon  B \to A$,\pdfcomment{Creo que falta una Delta}
   deseamos encontrar un morfismo\pdfcomment{B -- > Gamma A} que haga conmutar al siguiente diagrama:
   \begin{equation*}
@@ -291,10 +292,10 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
   a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
   de $B$, que es discreto, por lo que $\Gamma B = f^{-1} (\Gamma A)$ y dado que $B$ está
   en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
-  y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma : Espacios \to M$ es
+  y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma\colon \esp \to M$ es
   un funtor que manda a los espacios a sus espacios discretos asociados
   y $\Gamma$ es adjunto derecho de $\Delta$ con 
-  $c_\square : \Delta\Gamma \to \text{Id}$ la counidad.
+  $c\colon \Delta\Gamma \to \text{Id}$ la counidad.
   \pdfcomment{Creo que c con subíndice un cuadrado no es buena idea, sobre todo
   cuando el cuadrado de final de la demostración está tan cerca. Lo usual es no
   poner nada de eso en las transformaciones naturales, sólo c}
@@ -693,12 +694,12 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 \end{corollary}
 
 \begin{lemma}
-  $\mathcal{C}=(\Delta\Gamma,c,=)$ es una comonada en Espacios.
+  $\mathcal{C}=(\Delta\Gamma,c,=)$ es una comonada en $\esp$.
 \end{lemma}
 \begin{proof}
   Para todo espacio $A$, tenemos que $\Delta\Gamma A = \Delta\Gamma\Delta\Gamma A$ por \ref{cor:unidadidentidad},
   lo cual se puede pensar como un isomorfismo natural $\Id\colon \Delta\Gamma\to \Delta\Gamma\Delta\Gamma$, cuyas componentes son identidades. En esta prueba 
-  $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c\colon \Delta\Gamma\to \Id_{Espacios}$ que construimos en \ref{thm:funtordiscretos}.
+  $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c\colon \Delta\Gamma\to \Id_{\esp}$ que construimos en \ref{thm:funtordiscretos}.
   Procedemos a demostrar que se cumplen los diagramas de comonada para $\mathcal{C}$. Primero, la coasociatividad,
   \begin{equation*}
     \begin{tikzcd}
@@ -719,13 +720,13 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[label=thm:toposdiscretos]
   La categoría $M$ de espacios discretos es un topos.
 \end{theorem}
 \begin{proof}
-  Basta demostrar que $M$ es equivalente al topos $Espacios_C$ de coálgebras, con
+  Basta demostrar que $M$ es equivalente al topos $\esp_C$ de coálgebras, con
   $\mathcal{C}$ la comónada del lema anterior. Con tal propósito, proponemos al funtor
-  $F\colon M\to Espacios_{\mathcal{C}}$ que envía a cada espacio discreto $D$ a la coálgebra 
+  $F\colon M\to \esp_{\mathcal{C}}$ que envía a cada espacio discreto $D$ a la coálgebra 
   $(\Delta D, u_D)$, donde $u\colon \Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
   morfismos $F$ es la identidad. Primero veamos que $(\Delta D, \Delta u_D)$ realmente es una coálgebra,
   para lo cual es necesario que los siguientes diagramas conmuten.
@@ -746,7 +747,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
     \end{tikzcd}
   \end{equation*}
   Recordando que $\Delta$ es la inclusión, tenemos que el diagrama es un cuadrado de naturalidad de $u$.
-  Por tanto, $F$ es funtorial ya que no hace nada en morfismos. Ahora, proponemos al funtor inverso $G\colon Espacios_{\mathcal{C}}\to M$ 
+  Por tanto, $F$ es funtorial ya que no hace nada en morfismos. Ahora, proponemos al funtor inverso $G\colon \esp_{\mathcal{C}}\to M$ 
   que envía a cada coálgebra $(A,s)$ a $\Gamma A$ y a cada morfismo de coálgebras $f\colon (A,s)\to (B,t)$ a $\Gamma f$.
   Es fácil ver que $G$ es un funtor ya que $\Gamma$ lo es. Sea $D$ un espacio discreto y 
   $(A,s)$ una coálgebra, veamos qué sucede con las composiciones.
@@ -770,7 +771,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 \end{proof}
 
 \begin{theorem}
-  Si $\Omega$ es el clasificador de subobjetos en Espacios, entonces $\Gamma\Omega$ con 
+  Si $\Omega$ es el clasificador de subobjetos en $\esp$, entonces $\Gamma\Omega$ con 
   $\Gamma v\colon \Gamma1\to\Gamma\Omega$ es el clasificador de subobjetos de M. $\Gamma$ preserva al 
   clasificador de subobjetos.
 \end{theorem}
@@ -844,7 +845,7 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
   la unicidad de $\Gamma A$ implica que $\Gamma A = 1+1$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[label=cor:mbooleano]
   $M$ es un topos booleano.
 \end{corollary}
 \begin{proof}
