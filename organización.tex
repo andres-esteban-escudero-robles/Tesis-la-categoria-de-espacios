@@ -10,20 +10,42 @@
 \tableofcontents*
 
 \chapter*{Introducción}
-Poner algo que motive a que la gente lea tu trabajo. De preferencia escribir cerca
-final, para saber qué es exactamente lo que estás tratando de promocionar.
+Creo que ya hay algo de trabajo en la introducción.
 
 \chapter{Preliminares}
 \section{Conjuntos abstractos}
 En esta sección debes escribir los axiomas elementales de la categoría de
 conjuntos. También estaría bien que esté la discusión sobre su relación con ZFC.
 
-\section{Coálgebras}
-Dar aquí la definición de coálgebra. Notar que estas siempre tiene un funtor que
-olvida. Luego, decir cómo es la coálgebra libre generada por un objeto y mostrar
-que el libre es adjunto izquierdo del funtor que olvida.
+\section{Comónadas y coálgebras}
+Dar aquí la definición de comónada. Después hay que observar que toda adjunción
+induce una comónada. Luego definir la categoría de coálgebras y notar que hay un
+funtor que olvida. Después de esto dar la coálgebra libre y notar que esto
+induce un funtor que es adjunto izquierdo del funtor que olvida.
 
-Esto debe terminar con la demostración de \(\toposE_C\) es un topos.
+Con lo anterior se tiene una situación como la siguiente
+\begin{equation*}
+  \begin{tikzcd}
+    \catB\ar[shift right]{d}[swap]{L} & \catA_C\ar[shift right]{d}[swap]{U}\\
+    \catA\ar[shift right]{u}[swap]{R}\ar[equals]{r} 
+     & \catA\mathrlap{.}\ar[shift right]{u}[swap]{F}
+  \end{tikzcd}
+\end{equation*}
+La unidad y la counidad de \(L\dashv R\) serán denotadas con
+\(\alpha\) y \(\beta\), respectivamente. En la situación del diagrama es posible
+construir un funtor de comparación \(K\colon\catB\to\catA_C\) que conmute con
+los adjuntos izquierdos y por tanto con los derechos. De hecho este funtor es
+único, pero no sé si vale la pena mostrar la unicidad. Para que conmute con los
+derechos debe cumplir que \(KB=(LB,b)\), donde \(b\colon LB\to LRLB\) es una
+estructura de coálgebra. El valor que podría tener hacer la unicidad de \(K\) es
+que se muestra que la estructura debe ser \(L\alpha_B\colon LB\to LRLB\). La
+otra es que se proponga tal cual y se muestre que hace conmutar al diagrama de
+los izquierdos. Este funtor de comparación es el funtor que aparece en la
+demostración del teorema~2.27. Por lo tanto, tal vez valga la pena comemtar que
+no es necesario demostrar el dual del teorema de Beck, ya que en el caso que te
+interesa se puede ver fácilmente que sí es una equivalencia.
+
+Finalmente, terminar con la demostración de \(\toposE_C\) es un topos.
 
 \section{Objetos decidibles}
 Dar aquí las propiedades de decidibles que no usan a la categoría
