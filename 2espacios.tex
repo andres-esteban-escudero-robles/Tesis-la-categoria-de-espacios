@@ -2,9 +2,6 @@
 \label{espacios}
 
 (Equivalencia de ser discreto)
-\pdfcomment{Dar una notación al topos de espacios, lo normal sería una E en
-script. Ademas, como la categoría de discretos es un topos, entonces también
-deberìa estar en script}
 
 \begin{proposition}
   Los subespacios de un espacio discreto son discretos
@@ -71,9 +68,7 @@ un punto, así que el teorema anterior nos dice que $\sub(1)=\{0,1\}$.
 \end{observation}
 
 \begin{corollary}[label=cor:bivaluado]
-  El clasificador de subobjetos de $\esp$\pdfcomment{Sustituir cada una de las
-  ocurrencias de esta categoría escrita con una palabra por la notación que se
-  haya elegido} tiene dos puntos.
+  El clasificador de subobjetos de $\esp$ tiene dos puntos.
 \end{corollary}
 \begin{proof}
   Sea $\Omega$ el clasificador de subobjetos de $\esp$, entonces $\sub(1)\cong \homs(1,\Omega)$
@@ -109,8 +104,7 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
   $(f,g)$, donde $f\colon X\to X'$ y $g\colon Y\to Y'$. Es sencillo comprobar que $(1,1)$ es el objeto terminal y que
   el clasificador de subobjetos es $(2,2)$, por lo que $\sub(1,1)\cong \homs((1,1),(2,2))\cong 4$ y el topos no es bivaluado,
   hay cuatro valores de verdad. Por otro lado, el coproducto se calcula como el
-  coproducto de $\con$\pdfcomment{Escribir la notación que llevara conjuntos
-  en lugar de la palabra}
+  coproducto de $\con$
   entrada a entrada,
   así que, $(1,1)+(1,1)=(1+1,1+1)=(2,2)$ y el topos es booleano. Para ver que el axioma~\ref{ax:gds6} no se cumple en este topos, 
   basta notar que el objeto $(1,0)$ no es el objeto inicial, sin embargo, no tiene puntos.
@@ -141,7 +135,6 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
       & A\ar[swap]{r}{g} & A.
     \end{tikzcd}
   \end{equation*}
-  \pdfcomment{Esto va fuera de la definición. Es un comentario acerca de ella no parte de ella.}
 \end{definition}
 
 Intuitivamente, la flecha $o$ de la definición señala al cero y $s$ es la función sucesor, por lo que
@@ -196,9 +189,9 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
       & N\times N\ar[swap]{r}{(s\pi_1,\pi_1)} & N\times N.
     \end{tikzcd}
   \end{equation*}
-  \pdfcomment{Sacar este comentario fuenra de la definición}
-  Intuitivamente, la conmutatividad del diagrama nos dice que $p(0)=0$ y $p(n+1)=n$.
 \end{definition}
+
+De manera informal, la conmutatividad del diagrama nos dice que $p(0)=0$ y $p(n+1)=n$.
 
 \begin{proposition}[label=prop:sucesormono]
   Sea $(N,o,s)$ un ONN en una categoría con productos binarios, entonces $s$ es un monomorfismo.
@@ -254,31 +247,28 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
 \end{proof}
 
 \begin{definition}
-  Sea $M$ la categoría de espacios discretos y los morfismos entre ellos en
-  $\esp$. $M$ es una subcategoría plena de $\esp$.
-  \pdfcomment{Creo que lo usual es escribir ``Denotaermos con M a la subcategoría plena de E cuyos objetos son los discretos''}
+  Denotaremos con $\toposM$ a la subcategoría plena de espacios discretos.
 \end{definition}
 
 \begin{theorem}[label=thm:funtordiscretos]
-  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $M$ y $\esp$.
+  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $\toposM$ y $\esp$.
 \end{theorem}
 \begin{proof}
-  Para cada $A$ un espacio\pdfcomment{Creo que más bien es ``para cada espacio A''}
+  Para cada espacio $A$ 
   tenemos un monomorfismo $c_A\colon  \Gamma A \to A$ dado
   que $\Gamma A$ es un subobjeto. Veamos que $c_A$ es couniversal hacia
-  $A$ desde $\Delta\colon  M \to \esp$, la inclusión de $M$. Sea $B$ un
-  objeto de $M$ y $f\colon  B \to A$,\pdfcomment{Creo que falta una Delta}
-  deseamos encontrar un morfismo\pdfcomment{B -- > Gamma A} que haga conmutar al siguiente diagrama:
+  $A$ desde $\Delta\colon  \toposM \to \esp$, la inclusión de $\toposM$. Sea $B$ un
+  objeto de $\toposM$ y $f\colon  \Delta B \to A$,
+  deseamos encontrar un morfismo $\overline{f}\colon  \Delta B \to \Delta\Gamma A$ que haga conmutar al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       \Delta B \ar{r} \ar[swap]{rd}{f} & \Delta\Gamma A \ar[tail]{d}{c_A} \\
-                                & A.
+        & A.
     \end{tikzcd}
   \end{equation*}
   Notemos que si $B$ fuera el objeto inicial ya acabamos. En otro caso, 
   consideramos al producto fibrado entre $f$ y $c_A$. Además, por \ref{ax:gds6}, podemos
-  tomar $b\colon  1\to B$.\pdfcomment{Decir algo como ``Consideramos el
-  siguiente diagrama''}
+  tomar $b\colon  1\to B$ y analizar qué sucede con el producto fibrado.
   \begin{equation*}
     \begin{tikzcd}
         1\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{b}
@@ -296,9 +286,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
   un funtor que manda a los espacios a sus espacios discretos asociados
   y $\Gamma$ es adjunto derecho de $\Delta$ con 
   $c\colon \Delta\Gamma \to \text{Id}$ la counidad.
-  \pdfcomment{Creo que c con subíndice un cuadrado no es buena idea, sobre todo
-  cuando el cuadrado de final de la demostración está tan cerca. Lo usual es no
-  poner nada de eso en las transformaciones naturales, sólo c}
+  
 \end{proof}
 
 \begin{theorem}
@@ -379,19 +367,26 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
   isomorfismo, entonces obtenemos la igualdad que queríamos.
 
   Ahora consideramos a los morfismos de coálgebras $f\colon (X,u)\to (A,s)$ y $g\colon (X,u)\to (B,t)$ para demostrar
-  la propiedad universal de $(A\times B, \phi^{-1}(s\times t))$.
-  \pdfcomment{Consideramos el diagrama}
+  la propiedad universal de $(A\times B, \phi^{-1}(s\times t))$. Notemos que podemos construir el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       X\ar[swap]{d}{u}\ar{r}{f\times g} & A\times B\ar{dr}{\phi^{-1}(s\times t)}\ar{d}{s\times t} \\
       GX\ar[swap]{r}{G(f)\times G(g)} & GA\times GB\ar[swap]{r}{\phi^{-1}} & G(A\times B).
     \end{tikzcd}
   \end{equation*}
-  El cuadro conmuta pues $f$ y $g$ son morfismos de coálgebras, además como $G$ preserva
-  productos tenemos que $\phi^{-1}(G(f)\times G(g))=G(f\times g)$,
-  \pdfcomment{parece que falta una fi inversa}
-  lo cual demuestra la
-  existencia del morfismo $f\times g\colon (X,u)\to (A\times B,\phi^{-1}(s\times t))$. La unicidad
+  El cuadro conmuta pues $f$ y $g$ son morfismos de coálgebras, además el diagrama exterior sería un 
+  diagrama de morfismo de coálgebras si tuvieramos que $\phi^{-1}(G(f)\times G(g))=G(f\times g)$,
+  pero, usando la propiedad universal de $G(A\times B)$ como producto, es sencillo comprobar dicha igualdad:
+  \begin{equation*}
+    \begin{tikzcd}
+      {} & {GA}\ar{r}{\text{id}} & GA \\
+      GX\ar[bend left = 5ex]{ru}{Gf}\ar[swap, bend right = 5ex]{rd}{Gg}\ar{r}{Gf\times Gg} & GA\times GB\ar{r}{\phi^{-1}}\ar{u}{\pi_{GA}}\ar[swap]{d}{\pi_{GB}} & G(A\times B)\ar{u}{G(\pi_A)}\ar[swap]{d}{G(\pi_B)} & GX\ar[swap, bend right = 5ex]{lu}{Gf}\ar[bend left = 5ex]{ld}{Gg}\ar{l}{G(f\times g)}\\
+      {} & {GB}\ar[swap]{r}{\text{id}} & GB \\
+    \end{tikzcd}
+  \end{equation*}
+  Cada parte de la izquierda conmuta por definición de $\phi^{-1}$ y la de $G(f)\times G(g)$,
+  y la derecha conmuta al ser $G$ aplicado a la construcción de $f\times g$, así que, por la propiedad universal del producto, concluimos que $\phi^{-1}(G(f)\times G(g))=G(f\times g)$. Con esto logramos
+  exhibir un morfismo $f\times g\colon (X,u)\to (A\times B,\phi^{-1}(s\times t))$. La conmutatividad con las proyecciones es inmediataLa y la unicidad
   se da gracias a la unicidad de $f\times g$ en $\mathcal{E}$. Por tanto $\mathcal{E}_C$
   tiene productos finitos y procedemos a mostrar que tiene igualadores. Consideramos $(A,s)$,
   $(B,t)$ coálgebras y $f,g\colon (A,s)\to (B,t)$. Proponemos $(E,u)$ como sigue:
@@ -411,8 +406,8 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
       & E
     \end{tikzcd}
   \end{equation*}
-  Notemos que $\epsilon_AG(e)$ iguala a $f,g$ por la naturalidad de $\epsilon$.
-  \pdfcomment{Sin el punto y escribe algo así ``como se muestra en el diagrama de abajo a la izaquierda''}
+  Notemos que $\epsilon_AG(e)$ iguala a $f,g$ por la naturalidad de $\epsilon$,
+  como se muestra en el diagrama de abajo a la izaquierda.
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g} & B & {} E\ar{r}{e}\ar[swap]{d}{u} & A\ar{r}{\id_A}\ar{d}{s} & A \\
@@ -440,9 +435,8 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
   porque $G$ es funtor y en el otro caso porque $\delta$ es una transformación natural. Más aún, $\delta_As=G(s)s$
   por la coasociatividad de $A$, pero $G^2(e)$ es un igualador y como los cuadros conmutan, $\delta_Ase$, $G(s)se$
   también igualan a $G^2(f)$ con $G^2(g)$, entonces por la propiedad universal
-  de $G^2E$ obtenemos que $\delta_Eu=G(u)u$. Ahora veamos que $(E,u)$ es el
-  igualador de $f$ y $g$ en $\mathcal{E}_C$.
-  \pdfcomment{Consideramos el siguiente diagrama}
+  de $G^2E$ obtenemos que $\delta_Eu=G(u)u$. Ahora, para demostrar que $(E,u)$ es el
+  igualador de $f$ y $g$ en $\mathcal{E}_C$ nos fijamos en el siguiente diagrama.
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e}\ar[swap]{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
@@ -451,8 +445,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
   \end{equation*}
   Claramente $e$, visto como morfismo de coálgebras, iguala a $f$ con $g$. Sea $h\colon (X,w)\to (A,s)$ otro morfismo
   de coálgebras que iguala a $f$ y a $g$, entonces por la propiedad universal de
-  $E$ y $GE$ tenemos
-  \pdfcomment{el siguiente diagrama conmutativo}
+  $E$ y $GE$ tenemos al diagrama conmutativo:
   \begin{equation*}
     \begin{tikzcd}
       X\ar[dashed]{r}{j}\ar[swap]{d}{w} & E\ar{d}{u} \\
