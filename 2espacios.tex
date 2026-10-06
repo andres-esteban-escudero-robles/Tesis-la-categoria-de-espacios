@@ -280,8 +280,8 @@ De manera informal, la conmutatividad del diagrama nos dice que $p(0)=0$ y $p(n+
   Para ver que el exterior conmuta recordemos que según \ref{ax:gds7}, los puntos de $A$ se factorizan a
   través de $\Gamma A$ y $fb$ es un punto de $A$. Entonces los puntos de $B$ se factorizan
   a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
-  de $B$, que es discreto, por lo que $\Gamma B = f^{-1} (\Gamma A)$ y dado que $B$ está
-  en $M$, $\Gamma B = B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
+  de $B$, que es discreto, por lo que $\Gamma B \cong f^{-1} (\Gamma A)$ y dado que $B$ está
+  en $M$, $\Gamma B \cong B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
   y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma\colon \esp \to M$ es
   un funtor que manda a los espacios a sus espacios discretos asociados
   y $\Gamma$ es adjunto derecho de $\Delta$ con 
@@ -554,7 +554,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   es coálgebra y el diagrama~\eqref{eq:subalgebra} es un producto fibrado en $\mathcal{E}$.
 \end{lemma}
 \begin{proof}
-  Veamos que $(D,d)$ es coálgebra.\pdfcomment{Consideramos el diagrama}
+  Veamos que $(D,d)$ es coálgebra, para ello consideremos el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       D\ar{rrr}{d}\ar[swap]{ddd}{d}\ar{rd}{m} & {} & {} & GD\ar{ddd}{Gd}\ar{ld}{Gm} \\
@@ -582,8 +582,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   El cuadrado de la izquierda conmuta por hipótesis y el de la derecha por la naturalidad de $\epsilon$,
   esto basta para mostrar que el exterior conmuta. Como $(A,s)$ es coálgebra, $\epsilon_As=\id_A$, entonces 
   $m\epsilon_Dd=\id_Am=m \id_D$, pero $m$ es mono así que $\epsilon_Dd=\id_D$ y $d$ cumple la counidad.
-  Observemos con más cuidado el diagrama anterior.\pdfcomment{¿Qué le
-  observamos? Ya no dijiste más de él}
+  Observemos con más cuidado el diagrama anterior pues resulta que el cuadrado izquierdo es un producto fibrado.
   Supongamos que tenemos un objeto $X$ y morfismos $p\colon X\to GD$ y $q\colon
   X\to A$ tales que el exterior del siguiente diagrama conmuta
   \begin{equation*}
@@ -675,22 +674,25 @@ lo que necesitábamos para que $f=h^*$. Por lo tanto, $\mathcal{E}_G$ tiene clas
 \end{proof}
 
 \begin{proposition}
-  Si $A$ es un espacio discreto, entonces $\Gamma A = A$.
+  Si $A$ es un espacio discreto, entonces $\Gamma A \cong A$.
 \end{proposition}
 \begin{proof}
   Por \ref{ax:gds7} existe un único subespacio discreto $\Gamma A$ de $A$ tal que todo punto de $A$ está en $\Gamma A$. 
-  Dado que $A$ es discreto, $A$ es un subespacio de $A$, y cada punto de $A$ está en $A$, concluimos que $\Gamma A = A$.
+  Dado que $A$ es discreto, $A$ es un subespacio de $A$, y cada punto de $A$ está en $A$, concluimos que $\Gamma A \cong A$.
 \end{proof}
 
 \begin{corollary}[label=cor:unidadidentidad]
-  $\Gamma\Delta$ es la identidad en $M$ y $\Delta\Gamma$ es idempotente.
+  $\Gamma\Delta$ es la identidad en $\toposM$ y $\Delta\Gamma$ es idempotente.
 \end{corollary}
+\begin{proof}
+  
+\end{proof}
 
 \begin{lemma}
-  $\mathcal{C}=(\Delta\Gamma,c,=)$ es una comonada en $\esp$.
+  $\mathcal{C}=(\Delta\Gamma,c,\cong)$ es una comonada en $\esp$.
 \end{lemma}
 \begin{proof}
-  Para todo espacio $A$, tenemos que $\Delta\Gamma A = \Delta\Gamma\Delta\Gamma A$ por \ref{cor:unidadidentidad},
+  Para todo espacio $A$, tenemos que $\Delta\Gamma A \cong \Delta\Gamma\Delta\Gamma A$ por \ref{cor:unidadidentidad},
   lo cual se puede pensar como un isomorfismo natural $\Id\colon \Delta\Gamma\to \Delta\Gamma\Delta\Gamma$, cuyas componentes son identidades. En esta prueba 
   $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c\colon \Delta\Gamma\to \Id_{\esp}$ que construimos en \ref{thm:funtordiscretos}.
   Procedemos a demostrar que se cumplen los diagramas de comonada para $\mathcal{C}$. Primero, la coasociatividad,
