@@ -470,16 +470,16 @@ De manera informal, la conmutatividad del diagrama nos dice que $p(0)=0$ y $p(n+
   La categoría $\mathcal{E}_C$ tiene exponenciales.
 \end{lemma}
 \begin{proof}
-  Seguiremos la demostración de Mac Lane\pdfcomment{y Moerdijk en}
-  \cite{maclane2012sheaves}. Sean $(A,s), (B,t)$ y $(C,u)$ coálgebras, entonces tenemos la siguiente cadena de isomorfismos naturales:
+  Seguiremos la demostración de Mac Lane y Moerdijk en
+  \cite{maclane2012sheaves}.  Recordemos que tenemos una adjunción entre el funtor olvidadizo $U\colon \mathcal{E}_C\to \mathcal{E}$, y el
+  funtor colibre $R\colon \mathcal{E}\to \mathcal{E}_C$.
+  La coálgebra colibre de un objeto $X$ es $(GX, \delta_X)$ y un morfismo $h\colon U(Y,\alpha)\to X$ es enviado a
+  $G(h)\alpha\colon (Y,\alpha)\to RX$ bajo la adjunción. Sean $(A,s), (B,t)$ y $(C,u)$ coálgebras, entonces tenemos la siguiente cadena de isomorfismos naturales:
+  
   \begin{equation*}
     \homs_{\mathcal{E}}(A\times B, C) \cong \homs_{\mathcal{E}}(U(A,s), C^B) \cong \homs_{\mathcal{E}_C}((A,s), R(C^B)).
   \end{equation*}
-  \pdfcomment{Escribir esto antes}
-  Recordando que tenemos una adjunción entre el funtor olvidadizo $U$,y el
-  funtor colibre $R$.
-  La coálgebra colibre de un objeto $X$ es $(GX, \delta_X)$ y un morfismo $h\colon U(Y,\alpha)\to X$ es enviado a
-  $G(h)\alpha\colon (Y,\alpha)\to RX$ bajo la adjunción. Por el isomorfismo anterior, un buen candidato
+  Por el isomorfismo anterior, un buen candidato
   para el exponencial $(C,u)^{(B,t)}$ es $R(C^B)$, sin embargo, debemos restringirnos a los morfismos
   de coálgebras, por lo que sospechamos que hay un subobjeto $(E,v)$ de $R(C^B)$ tal que tengamos
   el siguiente isomorfismo natural:
