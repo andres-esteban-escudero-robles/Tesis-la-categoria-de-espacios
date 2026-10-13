@@ -1,0 +1,235 @@
+\chapter{El topos de espacios}
+\label{espacios}
+
+
+
+\begin{definition}
+  Denotaremos con $\toposM$ a la subcategoría plena de espacios $E$ tales que $c_E$ es un isomorfismo.
+\end{definition}
+
+\begin{proposition}
+  Dado cualquier espacio $A$, $\Gamma A$ esta en $\toposM$.
+\end{proposition}
+
+\begin{theorem}[label=thm:funtordiscretos]
+  \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $\toposM$ y $\esp$.
+\end{theorem}
+\begin{proof}
+  Para cada espacio $A$ 
+  tenemos un monomorfismo $c_A\colon  \Gamma A \to A$ dado
+  que $\Gamma A$ es un subobjeto. Veamos que $c_A$ es couniversal hacia
+  $A$ desde $\Delta\colon  \toposM \to \esp$, la inclusión de $\toposM$. Sea $B$ un
+  objeto de $\toposM$ y $f\colon  \Delta B \to A$,
+  deseamos encontrar un morfismo $\overline{f}\colon  \Delta B \to \Delta\Gamma A$ que haga conmutar al siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta B \ar{r} \ar[swap]{rd}{f} & \Delta\Gamma A \ar[tail]{d}{c_A} \\
+        & A.
+    \end{tikzcd}
+  \end{equation*}
+  Notemos que si $B$ fuera el objeto inicial ya acabamos. En otro caso, 
+  consideramos al producto fibrado entre $f$ y $c_A$. Además, por \ref{ax:gds6}, podemos
+  tomar $b\colon  1\to B$ y analizar qué sucede con el producto fibrado.
+  \begin{equation*}
+    \begin{tikzcd}
+        1\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{b}
+          \ar[dashed]{rd}{}\\[-2ex]
+        &[-2ex] f^{-1} (\Gamma A)\ar{r}{\overline{f}} \ar[tail]{d}[swap]{\cong} & \Gamma A\ar[tail]{d}{c_A}\\
+        & B\ar{r}[swap]{f} & A.
+    \end{tikzcd}
+  \end{equation*}
+  Para ver que el exterior conmuta recordemos que según \ref{ax:gds7}, los puntos de $A$ se factorizan a
+  través de $\Gamma A$ y $fb$ es un punto de $A$. Entonces los puntos de $B$ se factorizan
+  a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
+  de $B$, que es discreto, por lo que $\Gamma B \cong f^{-1} (\Gamma A)$ y dado que $B$ está
+  en $M$, $\Gamma B \cong B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
+  y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma\colon \esp \to M$ es
+  un funtor que manda a los espacios a sus espacios discretos asociados
+  y $\Gamma$ es adjunto derecho de $\Delta$ con 
+  $c\colon \Delta\Gamma \to \text{Id}$ la counidad.
+  
+\end{proof}
+
+
+
+\begin{proposition}
+  Si $A$ es un espacio discreto, entonces $\Gamma A \cong A$.
+\end{proposition}
+\begin{proof}
+  Por \ref{ax:gds7} existe un único subespacio discreto $\Gamma A$ de $A$ tal que todo punto de $A$ está en $\Gamma A$. 
+  Dado que $A$ es discreto, $A$ es un subespacio de $A$, y cada punto de $A$ está en $A$, concluimos que $\Gamma A \cong A$.
+\end{proof}
+
+\begin{corollary}[label=cor:unidadidentidad]
+  $\Gamma\Delta$ es la identidad en $\toposM$ y $\Delta\Gamma$ es idempotente.
+\end{corollary}
+\begin{proof}
+  
+\end{proof}
+
+\begin{lemma}
+  $\mathcal{C}=(\Delta\Gamma,c,\cong)$ es una comonada en $\esp$.
+\end{lemma}
+\begin{proof}
+  Para todo espacio $A$, tenemos que $\Delta\Gamma A \cong \Delta\Gamma\Delta\Gamma A$ por \ref{cor:unidadidentidad},
+  lo cual se puede pensar como un isomorfismo natural $\Id\colon \Delta\Gamma\to \Delta\Gamma\Delta\Gamma$, cuyas componentes son identidades. En esta prueba 
+  $c$ es la counidad de la adjunción $\Delta\dashv\Gamma$, es decir, $c\colon \Delta\Gamma\to \Id_{\esp}$ que construimos en \ref{thm:funtordiscretos}.
+  Procedemos a demostrar que se cumplen los diagramas de comonada para $\mathcal{C}$. Primero, la coasociatividad,
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta\Gamma A\ar{r}{\id_{\Delta\Gamma A}}\ar[swap]{d}{\id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma A\ar{d}{\id_{\Delta\Gamma\Delta\Gamma A}} \\
+      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma \id_{\Delta\Gamma A}} & \Delta\Gamma\Delta\Gamma\Delta\Gamma A.
+    \end{tikzcd}
+  \end{equation*}
+  El diagrama conmuta gracias a que $\Delta\Gamma$ es functorial. Ahora, la counidad, queremos ver
+  que el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      {} & \Delta\Gamma A\ar{d}{\id}\ar[swap]{ld}{\id}\ar{rd}{\id} & {} \\
+      \Delta\Gamma A & \Delta\Gamma\Delta\Gamma A\ar{l}{c_{\Delta\Gamma A}}\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
+    \end{tikzcd}
+  \end{equation*}
+  Dado que $u_{\Gamma A} = \id_{\Gamma A}$, sucede que $\id_{\Delta\Gamma A} = \Delta u_{\Gamma A}$, y
+  ambos triángulos se sigue de las ecuaciones unidad-counidad, por lo que el diagrama conmuta.
+
+\end{proof}
+
+\begin{theorem}[label=thm:toposdiscretos]
+  La categoría $M$ de espacios discretos es un topos.
+\end{theorem}
+\begin{proof}
+  Basta demostrar que $M$ es equivalente al topos $\esp_C$ de coálgebras, con
+  $\mathcal{C}$ la comónada del lema anterior. Con tal propósito, proponemos al funtor
+  $F\colon M\to \esp_{\mathcal{C}}$ que envía a cada espacio discreto $D$ a la coálgebra 
+  $(\Delta D, u_D)$, donde $u\colon \Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
+  morfismos $F$ es la identidad. Primero veamos que $(\Delta D, \Delta u_D)$ realmente es una coálgebra,
+  para lo cual es necesario que los siguientes diagramas conmuten.
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta D & \Delta\Gamma\Delta D\ar[swap]{l}{c_{\Delta D}} & {} & \Delta\Gamma\Delta\Gamma\Delta D & \Delta\Gamma\Delta D\ar[swap]{l}{\Delta\Gamma\Delta u_D} \\
+       & \Delta D\ar{lu}{\id}\ar[swap]{u}{\Delta u_D} & {} & \Delta\Gamma\Delta D\ar{u}{\id} & \Delta D.\ar{l}{\Delta u_D}\ar[swap]{u}{\Delta u_D}
+    \end{tikzcd}
+  \end{equation*}
+  El primer diagrama conmuta ya que es una ecuación unidad-counidad, mientras que
+  el segundo diagrama se da gracias a que las componentes de la unidad son identidades.
+  Además, dejar igual a los morfismos resulta en morfismos de coálgebras ya que si $f\colon D\to D'$
+  es un morfismo de espacios discretos, entonces el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta D\ar{r}{f}\ar[swap]{d}{\Delta u_D} & \Delta D'\ar{d}{\Delta u_{D'}} \\
+      \Delta\Gamma\Delta D\ar[swap]{r}{\Delta\Gamma f} & \Delta\Gamma\Delta D'.
+    \end{tikzcd}
+  \end{equation*}
+  Recordando que $\Delta$ es la inclusión, tenemos que el diagrama es un cuadrado de naturalidad de $u$.
+  Por tanto, $F$ es funtorial ya que no hace nada en morfismos. Ahora, proponemos al funtor inverso $G\colon \esp_{\mathcal{C}}\to M$ 
+  que envía a cada coálgebra $(A,s)$ a $\Gamma A$ y a cada morfismo de coálgebras $f\colon (A,s)\to (B,t)$ a $\Gamma f$.
+  Es fácil ver que $G$ es un funtor ya que $\Gamma$ lo es. Sea $D$ un espacio discreto y 
+  $(A,s)$ una coálgebra, veamos qué sucede con las composiciones.
+  \begin{align*}
+    GF(D) &= G(\Delta D, \Delta u_D) = \Gamma\Delta D = D \\
+    FG(A,s) &= F(\Gamma A) = (\Delta\Gamma A, \Delta u_{\Gamma A}) \cong (A,s).
+  \end{align*}
+  Para convencernos del último paso consideremos el siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta\Gamma A\ar[swap]{d}{\Delta u_{\Gamma A}}\ar{r}{c_A} & A\ar{d}{s} \\
+      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
+    \end{tikzcd}
+  \end{equation*}
+  Se trata de un diagrama conmutativo puesto que la parte inferior es la identidad, 
+  una vez más, al ser una ecuación unidad-counidad. Luego, la condición de counidad para que
+  $(A,s)$ sea coálgebra nos dice que $c_As = \id_A$, por lo que $c_A$ es mono y tiene inverso por la derecha,
+  así que $c_A$ es de hecho un isomorfismo con $s$ su inverso por ambos lados. Entonces la parte superior
+  del diagrama también es la identidad, y por lo anterior, $c_A$ es un isomorfismo de coálgebras.
+  Por lo tanto $F$ es una equivalencia de categorías y $M$ es un topos.
+\end{proof}
+
+\begin{theorem}
+  Si $\Omega$ es el clasificador de subobjetos en $\esp$, entonces $\Gamma\Omega$ con 
+  $\Gamma v\colon \Gamma1\to\Gamma\Omega$ es el clasificador de subobjetos de M. $\Gamma$ preserva al 
+  clasificador de subobjetos.
+\end{theorem}
+\begin{proof}
+  Para cada $A\in M$ y $m\colon S\to A$ un subespacio de $A$, existe un único morfismo $\chi_m\colon A\to \Omega$ tal que el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta S\ar{r}{!}\ar[swap,tail]{d}{\Delta m} & 1\ar{d}{v} \\
+      \Delta A\ar[swap]{r}{\chi_m} & \Omega.
+    \end{tikzcd}
+  \end{equation*}
+  Como $\Gamma$ es adjunto derecho, preserva límites, entonces al aplicar $\Gamma$ al diagrama anterior
+  obtenemos un producto fibrado. Por \ref{prop:terminaldiscreto} $\Gamma 1 = 1$ y aplicamos \ref{cor:unidadidentidad}.
+  \begin{equation*}
+    \begin{tikzcd}
+      S\ar{r}{!}\ar[swap,tail]{d}{m} & 1\ar{d}{\Gamma v} \\
+      A\ar[swap]{r}{\Gamma \chi_m} & \Gamma\Omega.
+    \end{tikzcd}
+  \end{equation*}
+  Si hubiera otro morfismo $f\colon A\to \Gamma\Omega$ tal que el diagrama sea un producto fibrado, entonces
+  consideramos al siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      S\ar{r}{!}\ar[swap,tail]{d}{m} & \Delta\Gamma 1\ar{d}{\Delta\Gamma v}\ar{r}{c_1} & 1\ar{d}{v} \\
+      A\ar[shift left=0.75ex]{r}{f}\ar[swap,shift right=0.75ex]{r}{\Gamma \chi_m} & \Delta\Gamma\Omega\ar[swap,tail]{r}{c_{\Omega}} & \Omega.
+    \end{tikzcd}
+  \end{equation*}
+  El cuadrado de la derecha conmuta por la naturalidad de la counidad, pero es también un producto fibrado.
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar[bend left=30]{rrd}{!}\ar[bend right=30]{rdd}[swap]{p}
+          \ar[dashed]{rd}{!}\\[-2ex]
+      &[-2ex] \Delta\Gamma 1\ar{r}{c_1}\ar[swap]{d}{\Delta\Gamma v} & 1\ar{d}{v} \\
+      &\Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega.
+    \end{tikzcd}
+  \end{equation*}
+  Bajo la hipótesis de que $v!=c_{\Omega}p$, como los diagramas que terminal en $1$ conmutan, 
+  $c_{\Omega}p=vc_1!=c_{\Omega}\Delta\Gamma v!$, entonces $p=\Delta\Gamma v!$ y en efecto, es un producto fibrado.
+  De esta manera, por el lema del producto fibrado, el exterior es un producto fibrado, lo cual implica que
+  $c_{\Omega}f=\chi_m=c_{\Omega}\Gamma \chi_m$, pero $c_{\Omega}$ es mono, entonces $f=\Gamma \chi_m$. 
+  Por tanto, $\Gamma\Omega$ con $\Gamma v$ es el clasificador de subobjetos de $M$.
+\end{proof}
+
+\begin{theorem}[label=thm:puntitos]
+  Si $A$ tiene una cantidad finita de puntos, entonces $\Gamma A=\sqcup 1$ donde la cantidad de copias
+  de $1$ es igual a la cantidad de puntos de $A$.
+\end{theorem}
+\begin{proof}
+  Basta demostrarlo para $A$ con dos puntos, $a,b\colon 1\to A$ con $a\neq b$ y el resultado se sigue por inducción.
+  Primero hay que ver que $\Gamma1 + \Gamma1$ es un subespacio de $A$. Como $\Gamma 1=1$ y tenemos elementos globales 
+  globales $a$ y $b$, por la propiedad universal del coproducto, existe un morfismo $a+b\colon 1+1\to A$. Veamos que es un monomorfismo.
+  \begin{equation*}
+    \begin{tikzcd}
+      (a+b)\times_A (a+b)\ar{r}\ar{d} & 1+1\ar{d}{a+b}\\
+      1+1\ar{r}{a+b} & A.
+    \end{tikzcd}
+  \end{equation*}
+  En un topos el coproducto es estable bajo productos fibrados, entonces $(a+b)\times_A (a+b)\cong
+  (a\times_A a) + (a\times_A b) + (b\times_A a) + (b\times_A b)$. Además, $a\times_A b\cong 0$
+  ya que $a\neq b$. Por lo tanto, $(a+b)\times_A (a+b)\cong (a\times_A a) + (b\times_A b)$, pero $a$ y $b$
+  son monomorfismos, entonces $(a+b)\times_A (a+b)\cong 1+1$. Por lo anterior, $a+b$ es mono. Por otro lado,
+  $\Gamma1+\Gamma1$ es un espacio discreto porque es el coproducto en $M$. Falta demostrar que los puntos
+  de $A$ se factorizan a través de $\Gamma1+\Gamma1 = 1+1$.
+  \begin{equation*}
+    \begin{tikzcd}
+      1\ar{r}{a}\ar[swap]{dr}{i} & \Gamma A & 1\ar{l}{b}\ar{dl}{i} \\
+      {} & 1+1.\ar[dashed]{u}{a+b} 
+    \end{tikzcd}
+  \end{equation*}
+  Los puntos de $A$ se encuentran en $\Gamma A$ y se factorizan a través de $a+b$. Por lo tanto,
+  la unicidad de $\Gamma A$ implica que $\Gamma A = 1+1$.
+\end{proof}
+
+\begin{corollary}[label=cor:mbooleano]
+  $M$ es un topos booleano.
+\end{corollary}
+\begin{proof}
+  Sabemos por \ref{cor:bivaluado} que $\Omega$ tiene dos puntos, entonces por \ref{thm:puntitos} $\Gamma\Omega \cong 1+1$.
+\end{proof}
+
+\begin{theorem}[label=thm:modelocs]
+    El topos $\toposM$ de espacios discretos es un modelo de CS.
+\end{theorem}
+\begin{proof}
+    Ya demostramos que $M$ es un topos~\ref{thm:toposdiscretos}, satisface el Nullstellensatz pues es un axioma que le pedimos a $\esp$~\ref{ax:gds6} y
+    es un topos booleano~\ref{cor:mbooleano}. Además, por~\ref{thm:onndecidible} $M$ hereda el ONN de $\esp$.
+\end{proof}

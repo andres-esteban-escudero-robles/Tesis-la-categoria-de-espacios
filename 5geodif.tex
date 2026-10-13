@@ -3,19 +3,19 @@
 
 En esta sección usaremos los axiomas que expone Mclarty \cite{mclarty1988defining} para trabajar
 rigurosamente con infinitesimales y fundamentar al cálculo, así como al estudio de variedades.
-\begin{axioma}[label=ax:gds1]
+\begin{axioma}
 Existe un espacio, $R$, que cuenta con una estructura de anillo conmutativo con unidad.
 \end{axioma}
-\begin{axioma}[label=ax:gds2]
+\begin{axioma}
 El anillo $R$ no es trivial, es decir, $1\not = 0$.
 \end{axioma}
-\begin{axioma}[label=ax:gds3]
+\begin{axioma}
 En la lógica interna de $R$, $R$ es un campo.
 \end{axioma}
 Y el axioma de Kock-Lawvere \cite{lawvere1979categorical}, para el cual es necesario definir
 al espacio de infinitesimales $D$, el cual será el igualador de $0\colon R\to R$, el mapa constante $0$, y $(-)^2\colon R\to R$.
 Equivalentemente, $D$ es el subespacio (subobjeto) de $R$, $D= \{d \in R\colon d^2=0 \}$.
-\begin{axioma}[label=ax:gds4]
+\begin{axioma}
 $(\forall f \in R^D)(\exists ! b \in R)(\forall d \in D) (f(d) = f(0)+d \cdot b)$.
 \end{axioma}
 Intuitivamente, \ref{ax:gds4} dice que toda función de $D$ a $R$ es lineal. A continuación 
@@ -154,29 +154,29 @@ para toda $a\in R$ por \ref{def:derivada}.
 
 \section{Más axiomas para Espacios}
 
-\begin{definition}[label=def:discreto]
+\begin{definition}
   Un espacio $E$ es discreto si y solo si es decidible, es decir, $(x=y) \lor \lnot(x = y)$ es verdad con $x,y$ variables
   variando sobre $E$.
 \end{definition}
 
 Mclarty le pide más axiomas a Espacios.
 
-\begin{axioma}[label=ax:gds5]
+\begin{axioma}
 Existe un espacio $N$ que es un objeto de números naturales.
 \end{axioma}
 
 Se puede demostrar que $N$ es es un espacio discreto.
 
-\begin{definition}[label=puntos]
+\begin{definition}
 Los puntos de un espacio $E$ son sus elementos globales, morfismos de la forma $1\to E$
 \end{definition}
 
-\begin{axioma}[label=ax:gds6]
+\begin{axioma}
 Para todo espacio $E$, o $E \cong  0 $ o bien $E$ tiene al menos un punto.
 \end{axioma}
 
 Esto implica que si $b_1, b_2\in B$ entonces $(b_1=b_2)\lor \lnot(b_1=b_2)$ es verdad incluso si $B$ no es discreto.
 
-\begin{axioma}[label=ax:gds7]
-Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $\Gamma E$ discreto tal que todo punto de $E$ está en $\Gamma E$. 
+\begin{axioma}
+Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma E\to E$ discreto tal que todo punto de $E$ está en $\Gamma E$. 
 \end{axioma} 
