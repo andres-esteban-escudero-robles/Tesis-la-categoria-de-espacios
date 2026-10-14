@@ -174,8 +174,7 @@ Para enunciar el siguiente resultado, necesitamos más definiciones.
 \end{definition}
 
 \begin{definition}
-    En un topos los soportes se escinden cuando, para todo objeto $A$ existe un morfismo $s\colon\supp(A)\to A$
-    tal que si $f\colon A\to\supp(A)$, la composición $fs$ es la identidad en $\supp(A)$.
+    En un topos los soportes se escinden cuando, para todo objeto $A$ el epi $A\to\supp(A)$ tiene una sección.
 \end{definition}
 
 Un resultado estándar en teoría de topos caracteriza a los topos bien punteados \cite{maclane2012sheaves}. Resulta que:
@@ -228,7 +227,7 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
 \end{proof}
 
 \begin{definition}[label=def:bivaluado]
-  Un topos es bivaluado si su clasificador de subobjetos tiene exactamente dos puntos, verdadero
+  Un topos es bivaluado si su clasificador de subobjetos tiene exactamente dos elementos globales, verdadero
   y falso. En particular, un topos bivaluado no es trivial y, con el resultado anterior, $\esp$ es bivaluado.
 \end{definition}
 
@@ -280,7 +279,7 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
   En un topos cualquiera, si $A\in \sub(1)$ y $A$ tiene un punto $a\colon 1\to A$, entonces $A \cong 1$.
 \end{theorem}
 \begin{proof}
-  Sea $A$ un subespacio de $1$, con $m\colon A\to 1$ monomorfismo. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
+  Sea $A$ un subobjeto de $1$, con $m\colon A\to 1$ monomorfismo. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{a}\ar[swap]{rrd}{\text{id}} & A\ar{r}{m} & 1\ar[shift left = 0.3ex, no head]{d}{}\ar[shift right = 0.3ex, no head]{d}{} \\
