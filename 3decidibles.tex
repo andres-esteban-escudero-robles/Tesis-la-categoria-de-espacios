@@ -45,14 +45,6 @@
   entonces $1$ es el subobjeto maximal, por lo que $0 \to 1\times 1$ es el complemento que buscamos.
 \end{proof}
 
-\begin{corollary}[label=cor:bivaluado]
-  El clasificador de subobjetos de $\esp$ tiene dos puntos.
-\end{corollary}
-\begin{proof}
-  Sea $\Omega$ el clasificador de subobjetos de $\esp$, entonces $\sub(1)\cong \homs(1,\Omega)$
-  y por la observación anterior, $\sub(1)=\{0,1\}$, así que $\homs(1,\Omega)=\{0,1\}$.
-\end{proof}
-
 \begin{theorem}[label=thm:onndecidible]
   Sea $\mathcal{E}$ un topos con $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
 \end{theorem}
@@ -69,6 +61,17 @@
   \end{equation*}
   que es complementado gracias a que ser complementado es estable bajo productos fibrados. Como $n\dot{-}n=0$ para toda $n$,
   $\delta$ es subobjeto de $N_1$ y por lo tanto $\delta$ también tiene complemento en $\sub(N\times N)$.
+\end{proof}
+
+\begin{proposition}
+  Si $\toposE$ cumple el Nullstellensatz y $B$ es un objeto decidible, entonces para $f,g\colon A\to B$
+  con $f\neq g$ existe un elemento global $p\colon 1\to A$ tal que $f p \neq g p$.
+\end{proposition}
+\begin{proof}
+  Sea $\toposE$ un topos que satisface el Nullstellensatz, $B$ un objeto decidible en $\toposE$ y $f,g\colon A\to B$ con $f\neq g$. Consideramos al igualador $e\colon E\to A$ de $f$ y $g$, 
+  quien de hecho es el producto fibrado entre $\delta\colon B\to B\times B$ y $\langle f,g\rangle\colon A\to B\times B$.
+  Dado que $B$ es complementado en $\sub(B\times B)$, $E$ es complementado en $\sub(A)$, llamemos $\overline{e}\colon \overline{E}\to A$ a su complemento.
+  Como $f\neq g$, $E\not\cong A$ y por lo tanto $\overline{E}\not\cong 0$. Por el Nullstellensatz, $\overline{E}$ tiene un elemento global $p\colon 1\to \overline{E}$ y por lo tanto $e p\colon 1\to A$ es un elemento global de $A$ tal que $f e p \neq g e p$.
 \end{proof}
 
 
