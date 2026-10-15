@@ -6,33 +6,33 @@
 \end{proposition}
 \begin{proof}
   Sea $A$ un espacio discreto y $m\colon S\to A$ un subespacio de $A$, queremos demostrar que la 
-  diagonal $\Delta_S\colon S\to S\times S$ es un subobjeto complementado. Por hipótesis, para $\Delta_A\colon A\to A\times A$
+  diagonal $\delta_S\colon S\to S\times S$ es un subobjeto complementado. Por hipótesis, para $\delta_A\colon A\to A\times A$
   existe su complemento, $C$, tal que $C\cap A=0$ y $C\cup A=A\times A$. Notamos que
-  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\Delta_A)=\Delta_S$ ya que el siguiente es un producto fibrado:
+  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\delta_A)=\delta_S$ ya que el siguiente es un producto fibrado:
   \begin{equation*}
     \begin{tikzcd}
         %T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
           %\ar[dashed]{rd}{\pi_S t}\\[-2ex]
-        S\ar{r}{m} \ar[tail]{d}[swap]{\Delta_S} & A\ar[tail]{d}{\Delta_A}\\
+        S\ar{r}{m} \ar[tail]{d}[swap]{\delta_S} & A\ar[tail]{d}{\delta_A}\\
         S\times S\ar{r}[swap]{m\times m} & A\times A.
     \end{tikzcd}
   \end{equation*}
   Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
   y que para cualquier objeto $T$ con flechas que haga conmutar al diagrama exterior, exista 
-  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\Delta_A m = \langle \id_A, \id_A\rangle m = m\times m$ la conmutatividad
+  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\delta_A m = \langle \id_A, \id_A\rangle m = m\times m$ la conmutatividad
   del cuadrado es inmediata. Para un $T$ con flechas $t\colon T\to S\times S$, $u\colon T\to A$ tales
-  que $\Delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
+  que $\delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
   a $S$, aprovechando que $t=\langle\pi_S t, \pi_S t\rangle$ donde $\pi_S\colon S\times S \to S$
   es la proyección a $S$. De esta manera tenemos la conmutatividad del triángulo izquierdo
-  y, junto con la conmutatividad del cuadrado exterior e interior, obtenemos que $\Delta_A u
-  = \Delta_A m \pi_S t$, pero $\Delta_A$ es mono, entonces $u=m \pi_S t$ y el triángulo superior
-  también conmuta. La unicidad de $\pi_S t$ es inmediata ya que $\Delta_S$ es
+  y, junto con la conmutatividad del cuadrado exterior e interior, obtenemos que $\delta_A u
+  = \delta_A m \pi_S t$, pero $\delta_A$ es mono, entonces $u=m \pi_S t$ y el triángulo superior
+  también conmuta. La unicidad de $\pi_S t$ es inmediata ya que $\delta_S$ es
   mono.\pdfcomment{Tal vez se pueda quitar la demostración}
   
 
   Dado que $S\times S$ es un subobjeto de $A\times A$ a través de $m\times m$, la imagen
   inversa $(m\times m)^{-1}$ es un morfismo de álgebras de Heyting $Sub(A\times A)\to Sub(S\times S)$,
-  con lo cual $(m\times m)^{-1}$ preserva complementos y por lo anterior $\Delta_S\colon S\to S\times S$ es un
+  con lo cual $(m\times m)^{-1}$ preserva complementos y por lo anterior $\delta_S\colon S\to S\times S$ es un
   subobjeto complementado con complemento $(m\times m)^{-1}(C)$.
 
 \end{proof}
@@ -41,7 +41,7 @@
   El objeto terminal de un topos es un objeto decidible.
 \end{proposition}
 \begin{proof}
-  Queremos mostrar que $\Delta_1\colon 1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
+  Queremos mostrar que $\delta_1\colon 1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
   entonces $1$ es el subobjeto maximal, por lo que $0 \to 1\times 1$ es el complemento que buscamos.
 \end{proof}
 
@@ -57,7 +57,7 @@
   Sea $\mathcal{E}$ un topos con $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
 \end{theorem}
 \begin{proof}
-  El plan es ver a $\Delta\colon N\to N\times N$ como intersección de subobjetos complementados en $\sub(N\times N)$ (así va la demostración de Johnstone pero hay una más directa con la lógica interna).
+  El plan es ver a $\delta\colon N\to N\times N$ como intersección de subobjetos complementados en $\sub(N\times N)$ (así va la demostración de Johnstone pero hay una más directa con la lógica interna).
   Primero, en un topos tenemos recursividad con parámetros que nos permite definir a la resta truncada como 
   $\dot{-}\colon N\times N\to N$ tal que $\dot{-}(a,0)=a$ y $\dot{-}(a,n+1)=p(\dot{-}(a,n))$ donde $p$ es el predecesor de~\ref{def:predecesor}.
   Ahora construimos al subobjeto:
@@ -68,7 +68,7 @@
     \end{tikzcd}
   \end{equation*}
   que es complementado gracias a que ser complementado es estable bajo productos fibrados. Como $n\dot{-}n=0$ para toda $n$,
-  $\Delta$ es subobjeto de $N_1$ y por lo tanto $\Delta$ también tiene complemento en $\sub(N\times N)$.
+  $\delta$ es subobjeto de $N_1$ y por lo tanto $\delta$ también tiene complemento en $\sub(N\times N)$.
 \end{proof}
 
 

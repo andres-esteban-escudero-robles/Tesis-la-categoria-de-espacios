@@ -10,6 +10,13 @@
 \begin{proposition}
   Dado cualquier espacio $A$, $\Gamma A$ esta en $\toposM$.
 \end{proposition}
+\begin{proof}
+  Sea $A$ un espacio, queremos demostrar que $c_{\Gamma A}$ es un isomorfismo. Por un lado,
+  $c_{\Gamma A}\colon\Gamma\Gamma A\to\Gamma A$ es el único subobjeto discreto de $\Gamma A$
+  tal que todo punto de $\Gamma A$ se factoriza a través de $c_{\Gamma A}$, pero $\text{id}\colon\Gamma A\to\Gamma A$
+  también satisface esta propiedad, entonces por el axioma \ref{ax:gds7}, $c_{\Gamma A}$ es 
+  equivalente a $\text{id}$ como subobjeto, por lo que $\Gamma\Gamma A\cong \Gamma A$ y $c_{\Gamma A}$ es un isomorfismo.
+\end{proof}
 
 \begin{theorem}[label=thm:funtordiscretos]
   \ref{ax:gds6} y \ref{ax:gds7} inducen una pareja de funtores adjuntos entre $\toposM$ y $\esp$.
