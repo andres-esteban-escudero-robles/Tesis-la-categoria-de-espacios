@@ -94,8 +94,7 @@ es decir, definir funciones usando que $f(a,0)=g(a)$ y $f(a,n+1)=h(a,f(a,n))$, v
     \end{tikzcd}
   \end{equation*}
   Para que $f$ realmente sea un morfismo entre $(N,[o,s]\colon 1+N\to N)$ y
-  $(A,a\colon 1+A\to A)$ necesitamos que $f[o,s]=aT(f)$.
-  \pdfcomment{Tal vez el punto es una como y sigue con ``como se muestra en los siguientes diagramas''}
+  $(A,a\colon 1+A\to A)$ necesitamos que $f[o,s]=aT(f)$, lo cual podemos argumentar con los diagramas:
   \begin{equation*}
     \begin{tikzcd}
       1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{o} & 1+N\ar{d}{[o,s]} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar{ld}{s} & {} & 1\ar{r}{i_1}\ar[swap]{rdd}{ai_1}\ar{rd}{i_1} & 1+N\ar[swap]{d}{Tf} & N\ar[swap]{l}{i_N}\ar{ldd}{fs}\ar[swap]{ld}{i_Af} \\
@@ -195,9 +194,7 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
     El objeto inicial no tiene elementos.
 \end{axiom}
 
-\begin{axiom}[Nullstellensatz]
-  \pdfcomment{Todas las ocurrencias de la palabra Nullstellensatz deben estar
-  en itálicas. En español las palabras de origen extrangero se escriben en itálicas}
+\begin{axiom}[\textit{Nullstellensatz}]
     Cada objeto, o es inicial o bien tiene elementos.
 \end{axiom}
 
@@ -213,7 +210,7 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
     Nullstellensatz implica no trivial.
 \end{proposition}
 \begin{proof}
-    El Nullstellensatz implica que, para todo objeto $A$, $A\cong 0$ si y solo si
+    El \textit{Nullstellensatz} implica que, para todo objeto $A$, $A\cong 0$ si y solo si
     no existe ningún morfismo $1\to A$. Por tanto, un objeto inicial no puede tener elementos.
 \end{proof}
 
@@ -228,7 +225,7 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
             \supp(A)\ar[shift left = 0.3ex]{r}{\text{id}}\ar[swap, shift right = 0.3ex]{r}{ps} & \supp(A)\ar[tail]{r}{} & 1
         \end{tikzcd}
     \end{equation*}
-    \pdfcomment{Tal vez vale la pena decir que se concluye ps=id.}
+    Al ser $\supp(A)$ un subobjeto del $1$, se sigue que $ps=\id$ y por tanto, $s$ es una sección de $p$.
 \end{proof}
 
 \begin{definition}[label=def:bivaluado]
@@ -236,12 +233,7 @@ a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
   y falso.
 \end{definition}
 
-\pdfcomment{Saque las observaciones y los resultados de la definición. Como no
-son parte de la definición, no deberían estar dentro del ambiente de definición.
-Además, ¿cómo es que el resultado de los soportes hace que Esp sea bivaluado?}
-En particular, un topos bivaluado no es trivial y, con el resultado anterior, $\esp$ es bivaluado.
-
-Vale la pena distinguir entre que un topos sea bivaluado y que su lógica interna sea clásica,
+En particular, un topos bivaluado no es trivial. Vale la pena distinguir entre que un topos sea bivaluado y que su lógica interna sea clásica,
 ya que, de manera quizá contraintuitiva, tener dos valores de verdad no lo garantiza. Para analizar la distinción tenemos la siguiente definición.
 
 \begin{definition}
@@ -285,9 +277,9 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
   por lo tanto, el topos no es booleano.
 \end{proof}
 
-\begin{theorem}
+\begin{proposition}[label=prop:puntosubterminal]
   En un topos cualquiera, si $A\in \sub(1)$ y $A$ tiene un punto $a\colon 1\to A$, entonces $A \cong 1$.
-\end{theorem}
+\end{proposition}
 \begin{proof}
   Sea $A$ un subobjeto de $1$, con $m\colon A\to 1$ monomorfismo. Juntando nuestras hipótesis obtenemos al siguiente diagrama:
   \begin{equation*}
@@ -300,13 +292,19 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
   en $1$, $m$ es un epimorfismo que se escinde aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
 \end{proof}
 
-\begin{proposition}
-  \pdfcomment{En un topos arbitrario, el Nullstellensatz es equivalente a que
-  el topos sea bivaluado y los soportes se escindan.}
-    Nullstellensatz si y solo si bivaluado y los soportes se escinden.
-\end{proposition}
+\begin{corollary}
+  Sea $\toposE$ un topos que cumple el \textit{Nullstellensatz}, entonces $\toposE$ es bivaluado.
+\end{corollary}
 \begin{proof}
-    Como vimos anteriormente, Nullstellensatz implica que el topos es bivaluado \ref{obs:nsbivaluado}, entonces
+  Sea $A$ un subobjeto de $1$, por el \textit{Nullstellensatz} $A\cong 0$ o existe un morfismo
+  $1\to A$ y por \ref{prop:puntosubterminal}, $A\cong 1$. Por lo tanto, 
+\end{proof}
+
+\begin{theorem}
+    Si $\toposE$ es un topos, $\toposE$ satisface el \textit{Nullstellensatz} si y solo si es bivaluado y los soportes se escinden.
+\end{theorem}
+\begin{proof}
+    Como vimos anteriormente, \textit{Nullstellensatz} implica que el topos es bivaluado \ref{obs:nsbivaluado}, entonces
     el soporte de un objeto o es $0$ o es $1$ y en ambos casos tenemos garantizada una flecha del soporte al objeto.
     Ahora supongamos que el topos es bivaluado y los soportes se escinden. Sea $A$ un objeto,
     $\supp(A)$ es $0$ o $1$, pero los soportes se escinden entonces o $A$ es inicial (en una 
