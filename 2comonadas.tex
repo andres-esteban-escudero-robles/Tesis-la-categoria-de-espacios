@@ -1,5 +1,74 @@
 \chapter{Comónadas y Coálgebras}
 
+En este capítulo daremos una introducción a los conceptos de coálgebra y comónada. El resultado
+principal, y más relevante para la presente tesis, de esta sección es que, bajo ciertas condiciones, la categoría de coálgebras para comónada es un topos.
+
+\section{Comónadas}
+
+Las comónadas, como sugiere la terminología, son estructuras duales a las mónadas. 
+
+\begin{definition}
+  Una comónada en una categoría $\catC$ es un triplete $(F,\epsilon,\delta)$ donde 
+  $F\colon \catC\to \catC$ es un funtor y $\epsilon\colon F\to \id_{\catC}$ 
+  y $\delta\colon F\to F^2$ son transformaciones naturales tales que los siguientes diagramas conmutan:
+  \begin{equation*}
+    \begin{tikzcd}
+      {} & F\ar[swap]{ld}{\Id}\ar{d}{\delta}\ar{rd}{\Id} & {} & {} & F\ar{r}{\delta}\ar[swap]{d}{\delta} & F^2\ar{d}{\delta_F} \\
+      F & F\ar{l}{\epsilon_F}\ar[swap]{r}{F(\epsilon)} & F, & {} & F^2\ar[swap]{r}{F(\delta)} & F^3.
+    \end{tikzcd}
+  \end{equation*}
+\end{definition}
+
+\begin{proposition}
+  Dada una adjunción $L\dashv R$ con unidad $\eta\colon \id_{\catC}\to RL$ y counidad 
+  $\epsilon\colon FG\to \id_{\catD}$, entonces $(LR,\epsilon,L(\eta_R))$ es una comónada.
+\end{proposition}
+
+\section{Coálgebras para una comónada}
+
+\begin{definition}
+  Dada una categoría $\catC$ y un endofuntor $F$, una $F$-Coálgebra es un par $(A,s)$ donde $A$ es un objeto de $\catC$ y $s\colon A\to FA$ un morfismo, a menudo llamado el "morfismo estructural".
+\end{definition}
+
+\begin{definition}
+  Un morfismo de coálgebras entre $(A,s)$ y $(B,t)$ es un morfismo $f\colon A\to B$ en $\catC$ tal que el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      A\ar[swap]{d}{s}\ar{r}{f} & B\ar{d}{t} \\
+      FA\ar[swap]{r}{F(f)} & FB.
+    \end{tikzcd}
+  \end{equation*}
+\end{definition}
+
+\begin{proposition}
+  Dada una categoría $\catC$ y un endofuntor $F$, las $F$-coálgebras y sus morfismos forman una categoría.
+\end{proposition}
+\begin{proof}
+  Dada cualquier coálgebra $(A,s)$, la identidad $\id_A$ es un morfismo de coálgebras, ya que
+  $F(\id_A) = \id_{FA}$. Para componer morfismos pegamos los cuadrados conmutativos correspondientes 
+  y de nuevo la funtorialidad de $F$ nos asegura el resultado. La asociatividad de la composición se 
+  hereda directamente de $\catC$.
+\end{proof}
+
+Análogamente a como se construye la categoría de álgebras para una mónada y demostrar que toda mónada viene de una adjunción,
+a continuación realizamos la construcción dual para comónadas.
+
+\begin{definition}
+  Dada una comónada $\textbf{F}=(F,\epsilon,\delta)$ en una categoría $\catC$, la categoría de coálgebras para la comónada, $\catC_{\textbf{F}}$, 
+  esta constituida por los morfismos entre $F$-coálgebras $(A,s)$ tal que satisfacen las condiciones:
+  \begin{equation*}
+    \begin{tikzcd}
+      A & FA\ar[swap]{l}{\epsilon_A} & {} & F^2A & FA\ar[swap]{l}{F(s)} \\
+      {} & A,\ar{ul}{\id_A}\ar[swap]{u}{s} & {} & FA\ar{u}{\delta_A} & A.\ar{l}{s}\ar[swap]{u}{s}
+    \end{tikzcd}
+  \end{equation*}
+\end{definition}
+
+\begin{proposition}
+  Si $\textbf{F}=(F,\epsilon,\delta)$ es una comónada en $\catC$, entonces hay una adjunción 
+  $U\dashv R$ donde $U\colon \catC_{\textbf{F}}\to \catC$ es el funtor olvidadizo y $R\colon \catC\to \catC_{\textbf{F}}$ 
+  es el funtor "colibre".
+\end{proposition}
 
 \begin{theorem}
   Sean $\mathcal{E}$ un topos y $C=(G,\epsilon,\delta)$ una comonada en $\mathcal{E}$ tal que

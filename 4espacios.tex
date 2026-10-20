@@ -13,15 +13,29 @@
   Denotaremos con $\toposM$ a la subcategoría plena de espacios $A$ tales que $c_A$ es un isomorfismo.
 \end{definition}
 
-\begin{proposition}
-  Dado cualquier espacio $A$, $\Gamma A$ esta en $\toposM$.
+\begin{proposition}[label=prop:cendiscretos]
+  Para todo espacio discreto $A$, $c_A$ es un isomorfismo.
 \end{proposition}
 \begin{proof}
-  Sea $A$ un espacio, queremos demostrar que $c_{\Gamma A}$ es un isomorfismo. Por un lado,
-  $c_{\Gamma A}\colon\Gamma\Gamma A\to\Gamma A$ es el único subobjeto discreto de $\Gamma A$
-  tal que todo punto de $\Gamma A$ se factoriza a través de $c_{\Gamma A}$, pero $\text{id}\colon\Gamma A\to\Gamma A$
-  también satisface esta propiedad, entonces por el axioma \ref{ax:gds7}, $c_{\Gamma A}$ es 
-  equivalente a $\text{id}$ como subobjeto, por lo que $\Gamma\Gamma A\cong \Gamma A$ y $c_{\Gamma A}$ es un isomorfismo.
+ Por~\ref{ax:gds7} existe un único subespacio discreto $c_A\colon\Gamma A\to A$ tal que todo punto de $A$ se factoriza a través de $c_A$.
+  Dado que $A$ es discreto, $\text{id}\colon A\to A$ es un subespacio de $A$, y cada punto de $A$ se factoriza a través de $\text{id}$, concluimos que $c_A$
+  es equivalente a $\text{id}$ como subobjeto y por tanto es un isomorfismo.
+\end{proof}
+
+\begin{corollary}[label=cor:gammaenM]
+  Dado un espacio $A$, $\Gamma A$ esta en $\toposM$.
+\end{corollary}
+\begin{proof}
+  Por definición, $\Gamma A$ es discreto, y aplicando~\ref{prop:cendiscretos} $c_{\Gamma A}$
+  es un isomorfismo, así que $\Gamma A$ está en $\toposM$.
+\end{proof}
+
+\begin{theorem}
+  $\toposM$ es la categoría de espacios discretos.
+\end{theorem}
+\begin{proof}
+  Ya vimos que todo espacio discreto está en $\toposM$~\ref{prop:cendiscretos}. Por otro lado, 
+  si $A$ está en $\toposM$, entonces $A\cong\Gamma A$ con $\Gamma A$ discreto, así que $A$ es discreto.
 \end{proof}
 
 \begin{theorem}[label=thm:funtordiscretos]
@@ -56,28 +70,41 @@
   a través de $f^{-1} (\Gamma A)$. Pero $f^{-1} (\Gamma A)$ es discreto ya que es subobjeto
   de $B$, que es discreto, por lo que $\Gamma B \cong f^{-1} (\Gamma A)$ y dado que $B$ está
   en $M$, $\Gamma B \cong B$. Así que $\overline{f}$ es el morfismo que cumple lo que queríamos
-  y además es único gracias a que $c_A$ es mono. Por tanto, $\Gamma\colon \esp \to M$ es
-  un funtor que manda a los espacios a sus espacios discretos asociados
-  y $\Gamma$ es adjunto derecho de $\Delta$ con 
-  $c\colon \Delta\Gamma \to \text{Id}$ la counidad.
-  
+  y además es único gracias a que $c_A$ es mono. Por tanto, el funtor $\Gamma\colon \esp \to M$ queda
+  completamente determinado, a los espacios los manda a sus espacios discretos asociados
+  y en morfismos la couniversalidad nos da el siguiente diagrama conmutativo para cualquier $g\colon X\to Y$ en $\esp$:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Gamma X\ar[swap]{rd}{gc_X}\ar[dashed]{r}{\Gamma(g)} & \Gamma Y\ar{d}{c_Y} \\
+      & Y
+    \end{tikzcd}
+  \end{equation*}
+  La asignación es funtorial ya que la hicimos a través de una propiedad universal. Además,
+  la couniversalidad nos da que $\Gamma$ es adjunto derecho de $\Delta$ con $c\colon \Delta\Gamma \to \text{Id}$ la counidad.
 \end{proof}
 
-
-
 \begin{proposition}
-  Si $A$ es un espacio discreto, entonces $\Gamma A \cong A$.
+  Las componentes de la unidad $u\colon \text{Id}_{\toposM} \to \Gamma\Delta$ son isomorfismos.
 \end{proposition}
 \begin{proof}
-  Por \ref{ax:gds7} existe un único subespacio discreto $\Gamma A$ de $A$ tal que todo punto de $A$ está en $\Gamma A$. 
-  Dado que $A$ es discreto, $A$ es un subespacio de $A$, y cada punto de $A$ está en $A$, concluimos que $\Gamma A \cong A$.
+  Si $B$ es un objeto de $\toposM$, las ecuaciones unidad-counidad nos dan el siguiente diagrama conmutativo:
+  \begin{equation*}
+    \begin{tikzcd}
+      \Delta B\ar[swap]{rd}{\text{id}}\ar{r}{\Delta(u_B)} & \Delta\Gamma\Delta B\ar{d}{c_{\Delta B}} \\
+      & \Delta B
+    \end{tikzcd}
+  \end{equation*}
+  Pero las componentes de $c$ en $\toposM$ son isomorfismos por definición, por tanto 
+  $\Delta(u_B)=u_B$ es iso.
 \end{proof}
 
 \begin{corollary}[label=cor:unidadidentidad]
-  $\Gamma\Delta$ es la identidad en $\toposM$ y $\Delta\Gamma$ es idempotente.
+  $\Gamma\Delta$ es isomorfo a la identidad en $\toposM$ y $\Delta\Gamma$ es idempotente.
 \end{corollary}
 \begin{proof}
-  
+  Si supieramos que $\Gamma\Delta\cong\Id_{\toposM}$, entonces $\Delta\Gamma\Delta\Gamma \cong \Delta\Gamma$
+  y $\Delta\Gamma$ es idempotente. Para mostrar que $\Gamma\Delta\cong\Id_{\toposM}$, proponemos a la unidad $u$
+  como el isomorfismo natural. Por la proposición anterior, $u$ es un isomorfismo natural y obtenemos lo deseado.
 \end{proof}
 
 \begin{lemma}
@@ -159,7 +186,7 @@
 
 \begin{theorem}
   Si $\Omega$ es el clasificador de subobjetos en $\esp$, entonces $\Gamma\Omega$ con 
-  $\Gamma v\colon \Gamma1\to\Gamma\Omega$ es el clasificador de subobjetos de M. $\Gamma$ preserva al 
+  $\Gamma v\colon \Gamma1\to\Gamma\Omega$ es el clasificador de subobjetos de $\toposM$. $\Gamma$ preserva al 
   clasificador de subobjetos.
 \end{theorem}
 \begin{proof}
