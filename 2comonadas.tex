@@ -14,15 +14,35 @@ Las comónadas, como sugiere la terminología, son estructuras duales a las món
   \begin{equation*}
     \begin{tikzcd}
       {} & F\ar[swap]{ld}{\Id}\ar{d}{\delta}\ar{rd}{\Id} & {} & {} & F\ar{r}{\delta}\ar[swap]{d}{\delta} & F^2\ar{d}{\delta_F} \\
-      F & F\ar{l}{\epsilon_F}\ar[swap]{r}{F(\epsilon)} & F, & {} & F^2\ar[swap]{r}{F(\delta)} & F^3.
+      F & F^2\ar{l}{\epsilon_F}\ar[swap]{r}{F(\epsilon)} & F, & {} & F^2\ar[swap]{r}{F(\delta)} & F^3.
     \end{tikzcd}
   \end{equation*}
 \end{definition}
 
 \begin{proposition}
-  Dada una adjunción $L\dashv R$ con unidad $\eta\colon \id_{\catC}\to RL$ y counidad 
-  $\epsilon\colon FG\to \id_{\catD}$, entonces $(LR,\epsilon,L(\eta_R))$ es una comónada.
+  Dada una adjunción $L\dashv R$, donde $L\colon\catC\to\catD$ y $R\colon\catD\to\catC$, con unidad $\eta\colon \id_{\catC}\to RL$ y counidad 
+  $\epsilon\colon LR\to \id_{\catD}$, entonces $(LR,\epsilon,L(\eta_R))$ es una comónada en $\catD$.
 \end{proposition}
+\begin{proof}
+  Primero probemos la counidad. Queremos mostrar la conmutatividad de ambos triángulos en el diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      {} & LR\ar[swap]{ld}{\Id}\ar{d}{L(\eta_R)}\ar{rd}{\Id} & {} \\
+      LR & LRLR\ar{l}{\epsilon_{LR}}\ar[swap]{r}{LR(\epsilon)} & LR.
+    \end{tikzcd}
+  \end{equation*}
+  El lado izquierdo es la identidad triangular $\epsilon_L\circ L(\eta) = 1_L$ en la imagen de $R$.
+  Similarmente, el lado derecho resulta de aplicar $L$ a la identidad triangular $R(\epsilon)\circ\eta_R = 1_R$.
+  Ahora, para demostrar la coasociatividad, tomamos $X$ en $\catC$ y consideramos el siguiente diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar[swap]{d}{\eta_X}\ar{r}{\eta_X} & RLX\ar{d}{\eta_{RLX}} \\
+      RLX\ar[swap]{r}{RL(\eta_X)} & RLRLX.
+    \end{tikzcd}
+  \end{equation*}
+  Que es un cuadro de naturalidad de $\eta$ aplicada al morfismo $\eta_X$. Notemos que si
+  introducimos $R$ por la derecha y aplicamos $L$ al diagrama, obtenemos al diagrama de coasociatividad.
+\end{proof}
 
 \section{Coálgebras para una comónada}
 

@@ -292,19 +292,20 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
   en $1$, $m$ es un epimorfismo que se escinde aparte de ser mono. Por tanto, $m$ es un isomorfismo y $A\cong 1$.
 \end{proof}
 
-\begin{corollary}
+\begin{corollary}[label=cor:nsbivaluado]
   Sea $\toposE$ un topos que cumple el \textit{Nullstellensatz}, entonces $\toposE$ es bivaluado.
 \end{corollary}
 \begin{proof}
   Sea $A$ un subobjeto de $1$, por el \textit{Nullstellensatz} $A\cong 0$ o existe un morfismo
-  $1\to A$ y por \ref{prop:puntosubterminal}, $A\cong 1$. Por lo tanto, 
+  $1\to A$ y por \ref{prop:puntosubterminal}, $A\cong 1$. Por lo tanto, $\{0,1\}\cong\sub(1)$, pero
+  $\sub(1)\cong\hom(1,\Omega)$, así que $\toposE$ es bivaluado.
 \end{proof}
 
 \begin{theorem}
     Si $\toposE$ es un topos, $\toposE$ satisface el \textit{Nullstellensatz} si y solo si es bivaluado y los soportes se escinden.
 \end{theorem}
 \begin{proof}
-    Como vimos anteriormente, \textit{Nullstellensatz} implica que el topos es bivaluado \ref{obs:nsbivaluado}, entonces
+    Como vimos anteriormente, \textit{Nullstellensatz} implica que el topos es bivaluado \ref{cor:nsbivaluado}, entonces
     el soporte de un objeto o es $0$ o es $1$ y en ambos casos tenemos garantizada una flecha del soporte al objeto.
     Ahora supongamos que el topos es bivaluado y los soportes se escinden. Sea $A$ un objeto,
     $\supp(A)$ es $0$ o $1$, pero los soportes se escinden entonces o $A$ es inicial (en una 
