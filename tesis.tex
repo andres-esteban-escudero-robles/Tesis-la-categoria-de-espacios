@@ -7,16 +7,18 @@
 
 \usepackage[backend=biber,defernumbers=true,style=alphabetic,giveninits=true]{biblatex}
 \usepackage[style=mexican]{csquotes}
-\usepackage{mathtools} %Extensión y corrección de errores de amsmath
+\usepackage{mathtools} 
 \usepackage{amssymb}
 \usepackage{enumitem}
-\usepackage[predefined={parent=chapter}]{keytheorems} %Para ambientes de teoremas
+\usepackage[predefined={parent=chapter}]{keytheorems}
 \usepackage{mycats}
-\usetikzlibrary{shapes,arrows,spy,positioning,snakes}
 \usepackage{pdfcomment}
-\hypersetup{colorlinks, allcolors=blue}
 
-\newtheorem{observation}{Observación}
+\usetikzlibrary{shapes,arrows,spy,positioning,snakes}
+\hypersetup{colorlinks, allcolors=blue}
+\MakeOuterQuote{"}%las comillas están mal escritas. Esto las arreglará
+
+\newtheorem{observation}{Observación}%no es necesario, usar remark
 
 %Para tener axiomas como teoremas numerados
 \AtBeginDocument{%
