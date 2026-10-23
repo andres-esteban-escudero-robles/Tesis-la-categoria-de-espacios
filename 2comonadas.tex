@@ -70,8 +70,8 @@ Las comónadas, como sugiere la terminología, son estructuras duales a las món
   hereda directamente de $\catC$.
 \end{proof}
 
-Análogamente a como se construye la categoría de álgebras para una mónada y demostrar que toda mónada viene de una adjunción,
-a continuación realizamos la construcción dual para comónadas.
+Análogamente a como se construye la categoría de álgebras para una mónada para demostrar que toda mónada viene de una adjunción,
+se puede realizar una construcción dual para comónadas.
 
 \begin{definition}
   Dada una comónada $\textbf{F}=(F,\epsilon,\delta)$ en una categoría $\catC$, la categoría de coálgebras para la comónada $\catC_{\textbf{F}}$ 
@@ -89,6 +89,40 @@ a continuación realizamos la construcción dual para comónadas.
   $U\dashv R$ donde $U\colon \catC_{\textbf{F}}\to \catC$ es el funtor olvidadizo y $R\colon \catC\to \catC_{\textbf{F}}$ 
   es el funtor "colibre".
 \end{proposition}
+\begin{proof}
+  En objetos el funtor $U$ se olvida de la estructura de coálgebra y en morfismos olvida que
+  se trataba de un morfismo entre coálgebras. Por su parte, definimos a $R$ en objetos $A\in\catC$
+  como $RA = (FA,\delta_A\colon FA\to F^2A)$, aprovechando la estructura de comónada. Entonces en morfismos
+  $g\colon A\to B$ proponemos $R(g) = F(g)$ puesto que el diagrama correspondiente
+  \begin{equation*}
+    \begin{tikzcd}
+      FA\ar{d}{\delta_A}\ar{r}{F(g)} & FB\ar{d}{\delta_B} \\
+      F^2A\ar{r}{F^2(g)} & F^B,
+    \end{tikzcd}
+  \end{equation*}
+  es un cuadro de naturalidad de $\delta$, así que $F(g)$ es un morfismo de coálgebras y
+  se puede comprobar la funtorialidad de la asignación usando que $F$ es funtor. Más aun,
+  la asignación es colibre en el sentido de que, para toda $(X,t)$ coálgebra y $f\colon X\to A$
+  morfismo, existe un único morfismo $\overline{f}\colon(X,t)\to(FA,\delta_A)$ tal que $\epsilon_AU(\overline{f})=f$.
+  Primero, proponemos $\overline{f}=F(f)t$, que hace conmutar al diagrama:
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar{d}{t}\ar{r}{F(f)t} & FA\ar{d}{\delta_A} \\
+      FX\ar{r}{F^2(f)F(t)} & F^2A.
+    \end{tikzcd}
+  \end{equation*}
+  Como $(X,t)$ es coálgebra para la comónada, $F^2(f)F(t)t=F^2(f)\delta_Xt$ y por la naturalidad
+  de $\delta$, $F^2(f)\delta_Xt=\delta_AF(f)t$, demostrando la conmutatividad y que $F(f)t$ es morfismo
+  de coálgebras. Luego, si hubiera otro $g\colon(X,t)\to(FA,\delta_A)$ que cumpla la propiedad,
+  pasaría que el diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      X\ar[shift left = 0.4ex]{d}{\overline{f}}\ar[swap,shift right = 0.4ex]{d}{g}\ar{r}{t} & FX\ar[shift left = 0.4ex]{d}{F\overline{f}}\ar[swap,shift right = 0.4ex]{d}{Fg}\ar{rd}{F(f)} & {}\\
+      FA\ar[swap]{r}{\delta_A} & F^2A\ar[swap]{r}{F(\epsilon_A)} & FA,
+    \end{tikzcd}
+  \end{equation*}
+  conmuta. Pero $F(\epsilon_A)\delta_A=\id$ por la condición de counidad, entonces $\overline{f} = F(f)t = g$ 
+\end{proof}
 
 \begin{theorem}
   Sean $\mathcal{E}$ un topos y $C=(G,\epsilon,\delta)$ una comonada en $\mathcal{E}$ tal que
