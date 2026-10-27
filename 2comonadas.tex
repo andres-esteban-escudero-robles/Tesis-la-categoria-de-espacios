@@ -21,7 +21,7 @@ Las comónadas, como sugiere la terminología, son estructuras duales a las món
 
 En los diagramas duales de mónada se puede apreciar el parentesco con los axiomas de monoide.
 
-\begin{proposition}
+\begin{proposition}[label=prop:comonadainducida]
   Dada una adjunción $L\dashv R$, donde $L\colon\catC\to\catD$ y $R\colon\catD\to\catC$, con unidad $\eta\colon \id_{\catC}\to RL$ y counidad 
   $\epsilon\colon LR\to \id_{\catD}$, entonces $(LR,\epsilon,L(\eta_R))$ es una comónada en $\catD$.
 \end{proposition}
@@ -86,7 +86,7 @@ se puede realizar una construcción dual para comónadas.
   \end{equation*}
 \end{definition}
 
-\begin{proposition}
+\begin{proposition}[label=prop:adjcolibreolvida]
   Si $\textbf{F}=(F,\epsilon,\delta)$ es una comónada en $\catC$, entonces hay una adjunción 
   $U\dashv R$ donde $U\colon \catC_{\textbf{F}}\to \catC$ es el funtor olvidadizo y $R\colon \catC\to \catC_{\textbf{F}}$ 
   es el funtor "colibre".
@@ -135,30 +135,41 @@ se puede realizar una construcción dual para comónadas.
 \end{proof}
 
 \begin{theorem}
-  Dada una adjunción $L\colon\catC\leftrightarrows\catD :R$ existe un funtor de "comparación"
+  Dada una adjunción $L\colon\catC\leftrightarrows\catD :R$, si $G=L\circ R$, entonces existe un funtor de "comparación"
   $K\colon\catC\to\catD_{\textbf{G}}$ que es una equivalencia de categorías.
 \end{theorem}
 \begin{proof}
-  Llamemos $\alpha$ y $\beta$ a la unidad y counidad respectivamente, de la adjunción dada $L\dashv R$, 
-  entonces ya sabemos que $(G,\beta,L(\alpha_R))$ es una comónada en $\catD$ por ?? y podemos construir a $\catD_{\textbf{G}}$.
+  Llamemos $\eta$ y $\epsilon$ a la unidad y counidad respectivamente, de la adjunción dada $L\dashv R$, 
+  entonces ya sabemos que $(G,\epsilon,L(\eta_R))$ es una comónada en $\catD$ por \ref{prop:comonadainducida} y podemos construir a $\catD_{\textbf{G}}$.
   Si $F$ es el funtor colibre y $U$ el que olvida, tenemos una situación así:
   \begin{equation*}
     \begin{tikzcd}
-      \catC & \catD_{\textbf{G}} \\
-      \catD & \catD
+      \catC\ar[shift left = 0.4ex]{d}{L} & \catD_{\textbf{G}}\ar[shift left = 0.4ex]{d}{U} \\
+      \catD\ar[shift left = 0.4ex]{u}{R}\ar[no head,shift right = 0.4ex]{r}{}\ar[no head,shift left = 0.4ex]{r}{} & \catD.\ar[shift left = 0.4ex]{u}{F}
     \end{tikzcd}
   \end{equation*}
   De manera dual a la situación con mónadas, es posible definir un funtor $K\colon\catC\to\catD_{\textbf{G}}$
   que conmute tanto con los adjuntos izquierdos como con los derechos y tal que exhibe una equivalencia de categorías.
-  Proponemos $K(A) = (LA,L\alpha_A)$ y si $f\colon A\to B$, $K(f) = L(f)$, pero primero necesitamos que veamos que $(LA,L\alpha_A)$ sea una coálgebra para la comónada.
+  Proponemos $K(A) = (LA,L\eta_A)$ y si $f\colon A\to B$, $K(f) = L(f)$, pero primero 
+  necesitamos que $(LA,L\eta_A)$ sea una coálgebra para la comónada, para ello consideramos a los diagramas:
   \begin{equation*}
     \begin{tikzcd}
-      LA\ar{r}{Lf}\ar{d}{L\alpha_A} & LB\ar{d}{L\alpha_B} \\
-      LRLA\ar{r}{L^2f} & LRLB.
+      LA\ar{r}{L\eta_A}\ar[swap]{rd}{\id} & LRLA\ar{d}{\epsilon_{LA}} & {} & LA\ar{r}{L\eta_A}\ar[swap]{d}{L\eta_A} & GLA\ar{d}{L\eta_{RA}} \\
+      & LA, & {} & GLA\ar[swap]{r}{GL\eta_A} & G^2LA.
     \end{tikzcd}
   \end{equation*}
-  Conmuta por la naturalidad. Luego, $UKA = U(LA,L\alpha_A) = LA$ y similarmente $KRX=(LRX,L\alpha_{RX}) = FX$,
-  por lo que $UK=L$ y $KR=F$. 
+  El diagrama izquierdo conmuta al ser una de las identidades triangulares y el diagrama 
+  derecho es un cuadro de naturalidad de $L\eta$, entonces la coálgebra $K(A)$ es compatible 
+  con la comónada. Por otro lado, para verificar que $K(f)$ es un morfismo de coálgebras, el 
+  siguiente diagrama debe conmutar:
+  \begin{equation*}
+    \begin{tikzcd}
+      LA\ar{r}{Lf}\ar[swap]{d}{L\alpha_A} & LB\ar{d}{L\alpha_B} \\
+      LRLA\ar[swap]{r}{L^2f} & LRLB.
+    \end{tikzcd}
+  \end{equation*}
+  Pero nuevamente es un cuadro de conmutatividad de $L\eta$. Luego, por como definimos a $K$,
+  es inmediato comprobar que $UK=L$ y $KR=F$. 
 \end{proof}
 
 \begin{theorem}
