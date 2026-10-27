@@ -6,7 +6,7 @@ de conjuntos abstractos \cite{lawvere1964elementary}. Se conoce a esta axiomáti
 o Teoría Elemental de la Categoría de Conjuntos.
 
 \begin{axiom}[Raíces finitas]
-Existen todas las raíces (límites y colimites) finitas. Explícitamente:
+Existen todas las raíces (límites y colímites) finitas. Explícitamente:
 existen un objeto terminal $1$ y un objeto inicial $0$, para cada par de objetos
 $A,B$ existen el producto $A\times B$ y la suma (coproducto) $A+B$, y para cada
 par de flechas paralelas $f,g\colon A\to B$ existen su igualador y su coigualador.
@@ -48,12 +48,15 @@ $1$ y $0$ no son isomorfos.
 
 Con el desarrollo de la teoría de topos se demostró que la lista se puede simplificar a pedir
 que la categoría sea un topos bien punteado, con objeto de números naturales y axioma de elección.
-A partir de esos axiomas, Lawvere desmostró que es válido el axioma de extensionalidad, del par, de la unión
+A partir de esos axiomas, Lawvere demostró que es válido el axioma de extensionalidad, del par, de la unión
 y el axioma de potencia.También demostró un esquema restringido de separación y, por supuesto, la existencia
-de un conjunto vacio, el axioma de Elección y el de Infinito, son inmediatos. El axioma de Reemplazo y el
+de un conjunto vacío, el axioma de Elección y el de Infinito, son inmediatos. El axioma de Reemplazo y el
 axioma de buena fundación no forman parte de la teoría, aún así, todo modelo de ETCS es
 equivalente a $\con$ como categoría \cite{lawvere1964elementary}.
 
+
+
+\section{Objeto de Números Naturales}
 \begin{definition}
   Un objeto de números naturales (ONN) en una categoría con objeto terminal, es una tercia $(N,o,s)$
   donde $N$ es un objeto de la categoría, $o\colon 1\to N$ y $s\colon N\to N$ son morfismos tales que para todo
@@ -163,7 +166,7 @@ De manera informal, la conmutatividad del diagrama nos dice que $p(0)=0$ y $p(n+
     Un topos es bien punteado si
     \begin{itemize}
         \item No sucede que $1\cong 0$.
-        \item El objeto términal es separador (axioma 4 de ETCS).
+        \item El objeto terminal es separador (axioma 4 de ETCS).
     \end{itemize}
 \end{definition}
 
@@ -185,7 +188,7 @@ Un resultado estándar en teoría de topos caracteriza a los topos bien punteado
 \end{theorem}
 
 Como mencionamos anteriormente, ETCS demuestra un fragmento de los axiomas de ZFC, pero dicho fragmento también prueba a los axiomas de ETCS,
-este pedazo de ZFC se le llama BZC (Bounded Zermelo with Choice) o a veces "Teoría de Conjuntos de Mac Lane".
+este pedazo de ZFC se le llama BZC (\textit{Bounded Zermelo with Choice}) o a veces "Teoría de Conjuntos de Mac Lane".
 
 En esta sección seguiremos a Mclarty \cite{mclarty1988defining} y utilizaremos la siguiente lista de axiomas,
 a parte de los axiomas de topos, y a esta teoría la llamaremos CS.
@@ -315,51 +318,3 @@ así como booleano no implica bivaluado, con ejemplos más sencillos y abundante
 Con esta proposición nos damos cuenta que la diferencia entre los axiomas de Mclarty y ETCS es si 
 se asume o no el axioma de Elección.
 
-Para una categoría de espacios, en la que se pueda llevar acabo el cálculo infinitesimal, 
-Mclarty propone los siguientes axiomas.
-
-\begin{axioma}[label=ax:gds1]
-Existe un espacio, $R$, que cuenta con una estructura de anillo conmutativo con unidad.
-\end{axioma}
-\begin{axioma}[label=ax:gds2]
-El anillo $R$ no es trivial, es decir, $1\not = 0$.
-\end{axioma}
-\begin{axioma}[label=ax:gds3]
-En la lógica interna de $R$, $R$ es un campo.
-\end{axioma}
-Y el axioma de Kock-Lawvere \cite{lawvere1979categorical}, para el cual es necesario definir
-al espacio de infinitesimales $D$, el cual será el igualador de $0\colon R\to R$, el mapa constante $0$, y $(-)^2\colon R\to R$.
-Equivalentemente, $D$ es el subespacio (subobjeto) de $R$, $D= \{d \in R\colon d^2=0 \}$.
-\begin{axioma}[label=ax:gds4]
-$(\forall f \in R^D)(\exists ! b \in R)(\forall d \in D) (f(d) = f(0)+d \cdot b)$.
-\end{axioma}
-Intuitivamente, \ref{ax:gds4} dice que toda función de $D$ a $R$ es lineal. A continuación 
-mostramos algunas propiedades de los infinitesimales y que estos cuatro axiomas ya nos 
-permiten hacer cálculo básico.
-
-\begin{definition}[label=def:discreto]
-  Un espacio $E$ es discreto si y solo si es decidible, es decir, $(x=y) \lor \lnot(x = y)$ es verdad con $x,y$ variables
-  variando sobre $E$.
-\end{definition}
-
-Mclarty le pide más axiomas a Espacios.
-
-\begin{axioma}[label=ax:gds5]
-Existe un espacio $N$ que es un objeto de números naturales.
-\end{axioma}
-
-Se puede demostrar que $N$ es es un espacio discreto.
-
-\begin{definition}[label=puntos]
-Los puntos de un espacio $E$ son sus elementos globales, morfismos de la forma $1\to E$
-\end{definition}
-
-\begin{axioma}[label=ax:gds6]
-Para todo espacio $E$, o $E \cong  0 $ o bien $E$ tiene al menos un punto.
-\end{axioma}
-
-Esto implica que si $b_1, b_2\in B$ entonces $(b_1=b_2)\lor \lnot(b_1=b_2)$ es verdad incluso si $B$ no es discreto.
-
-\begin{axioma}[label=ax:gds7]
-Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma E\to E$ discreto tal que todo punto de $E$ está en $\Gamma E$. 
-\end{axioma} 

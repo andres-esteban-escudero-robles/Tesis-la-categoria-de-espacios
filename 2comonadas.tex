@@ -10,7 +10,7 @@ Las comónadas, como sugiere la terminología, son estructuras duales a las món
 \begin{definition}
   Una comónada en una categoría $\catC$ es un triplete $(F,\epsilon,\delta)$ donde 
   $F\colon \catC\to \catC$ es un funtor y $\epsilon\colon F\to \id_{\catC}$ 
-  y $\delta\colon F\to F^2$ son transformaciones naturales tales que los siguientes diagramas conmutan:
+  y $\delta\colon F\to F^2$ son transformaciones naturales, llamadas counidad y comultiplicación respectivamente, tales que los siguientes diagramas conmutan:
   \begin{equation*}
     \begin{tikzcd}
       {} & F\ar[swap]{ld}{\Id}\ar{d}{\delta}\ar{rd}{\Id} & {} & {} & F\ar{r}{\delta}\ar[swap]{d}{\delta} & F^2\ar{d}{\delta_F} \\
@@ -18,6 +18,8 @@ Las comónadas, como sugiere la terminología, son estructuras duales a las món
     \end{tikzcd}
   \end{equation*}
 \end{definition}
+
+En los diagramas duales de mónada se puede apreciar el parentesco con los axiomas de monoide.
 
 \begin{proposition}
   Dada una adjunción $L\dashv R$, donde $L\colon\catC\to\catD$ y $R\colon\catD\to\catC$, con unidad $\eta\colon \id_{\catC}\to RL$ y counidad 
@@ -96,8 +98,8 @@ se puede realizar una construcción dual para comónadas.
   $g\colon A\to B$ proponemos $R(g) = F(g)$ puesto que el diagrama correspondiente
   \begin{equation*}
     \begin{tikzcd}
-      FA\ar{d}{\delta_A}\ar{r}{F(g)} & FB\ar{d}{\delta_B} \\
-      F^2A\ar{r}{F^2(g)} & F^B,
+      FA\ar[swap]{d}{\delta_A}\ar{r}{F(g)} & FB\ar{d}{\delta_B} \\
+      F^2A\ar[swap]{r}{F^2(g)} & F^B,
     \end{tikzcd}
   \end{equation*}
   es un cuadro de naturalidad de $\delta$, así que $F(g)$ es un morfismo de coálgebras y
@@ -107,12 +109,12 @@ se puede realizar una construcción dual para comónadas.
   Primero, proponemos $\overline{f}=F(f)t$, que hace conmutar al diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      X\ar{d}{t}\ar{r}{F(f)t} & FA\ar{d}{\delta_A} \\
-      FX\ar{r}{F^2(f)F(t)} & F^2A.
+      X\ar[swap]{d}{t}\ar{r}{F(f)t} & FA\ar{d}{\delta_A} \\
+      FX\ar[swap]{r}{F^2(f)F(t)} & F^2A.
     \end{tikzcd}
   \end{equation*}
-  Como $(X,t)$ es coálgebra para la comónada, $F^2(f)F(t)t=F^2(f)\delta_Xt$ y por la naturalidad
-  de $\delta$, $F^2(f)\delta_Xt=\delta_AF(f)t$, demostrando la conmutatividad y que $F(f)t$ es morfismo
+  Para demostrar la conmutatividad usamos que $(X,t)$ es coálgebra para la comónada entonces, $F^2(f)F(t)t=F^2(f)\delta_Xt$ y por la naturalidad
+  de $\delta$, $F^2(f)\delta_Xt=\delta_AF(f)t$, demostrando que $F(f)t$ es morfismo
   de coálgebras. Luego, si hubiera otro $g\colon(X,t)\to(FA,\delta_A)$ que cumpla la propiedad,
   pasaría que el diagrama
   \begin{equation*}
@@ -121,15 +123,50 @@ se puede realizar una construcción dual para comónadas.
       FA\ar[swap]{r}{\delta_A} & F^2A\ar[swap]{r}{F(\epsilon_A)} & FA,
     \end{tikzcd}
   \end{equation*}
-  conmuta. Pero $F(\epsilon_A)\delta_A=\id$ por la condición de counidad, entonces $\overline{f} = F(f)t = g$ 
+  conmuta. Pero $F(\epsilon_A)\delta_A=\id$ por la condición de counidad, entonces $\overline{f} = F(f)t = g$, demostrando la unicidad.
+  Reescribiendo, lo que demostramos es que para todo $A\in\catC$ y $X\in\catC_\textbf{F}$ con $f\colon UX\to A$, el siguiente diagrama conmuta:
+  \begin{equation*}
+    \begin{tikzcd}
+      UX\ar[swap]{rd}{f}\ar[dashed]{r}{\overline{f}} & URA\ar{d}{\epsilon_A} \\
+      & A.
+    \end{tikzcd}
+  \end{equation*}
+  Es decir, $\epsilon$ es couniversal y tenemos que $U\dashv R$.
 \end{proof}
 
 \begin{theorem}
-  Sean $\mathcal{E}$ un topos y $C=(G,\epsilon,\delta)$ una comonada en $\mathcal{E}$ tal que
-  $G$ es exacto por la izquierda. Entonces la categoría de coálgebras $\mathcal{E}_C$ es un topos.
+  Dada una adjunción $L\colon\catC\leftrightarrows\catD :R$ existe un funtor de "comparación"
+  $K\colon\catC\to\catD_{\textbf{G}}$ que es una equivalencia de categorías.
+\end{theorem}
+\begin{proof}
+  Llamemos $\alpha$ y $\beta$ a la unidad y counidad respectivamente, de la adjunción dada $L\dashv R$, 
+  entonces ya sabemos que $(G,\beta,L(\alpha_R))$ es una comónada en $\catD$ por ?? y podemos construir a $\catD_{\textbf{G}}$.
+  Si $F$ es el funtor colibre y $U$ el que olvida, tenemos una situación así:
+  \begin{equation*}
+    \begin{tikzcd}
+      \catC & \catD_{\textbf{G}} \\
+      \catD & \catD
+    \end{tikzcd}
+  \end{equation*}
+  De manera dual a la situación con mónadas, es posible definir un funtor $K\colon\catC\to\catD_{\textbf{G}}$
+  que conmute tanto con los adjuntos izquierdos como con los derechos y tal que exhibe una equivalencia de categorías.
+  Proponemos $K(A) = (LA,L\alpha_A)$ y si $f\colon A\to B$, $K(f) = L(f)$, pero primero necesitamos que veamos que $(LA,L\alpha_A)$ sea una coálgebra para la comónada.
+  \begin{equation*}
+    \begin{tikzcd}
+      LA\ar{r}{Lf}\ar{d}{L\alpha_A} & LB\ar{d}{L\alpha_B} \\
+      LRLA\ar{r}{L^2f} & LRLB.
+    \end{tikzcd}
+  \end{equation*}
+  Conmuta por la naturalidad. Luego, $UKA = U(LA,L\alpha_A) = LA$ y similarmente $KRX=(LRX,L\alpha_{RX}) = FX$,
+  por lo que $UK=L$ y $KR=F$. 
+\end{proof}
+
+\begin{theorem}
+  Sean $\mathcal{E}$ un topos y $\textbf{G}=(G,\epsilon,\delta)$ una comonada en $\mathcal{E}$ tal que
+  $G$ es exacto por la izquierda. Entonces la categoría de coálgebras $\mathcal{E}_\textbf{G}$ es un topos.
 \end{theorem}
 \begin{lemma}
-  La categoría de coálgebras $\mathcal{E}_C$ tiene límites finitos.
+  La categoría de coálgebras $\mathcal{E}_\textbf{G}$ tiene límites finitos.
 \end{lemma}
 \begin{proof}
   Es suficiente mostrar que la categoría de coálgebras tiene productos e igualadores finitos. 
@@ -222,7 +259,7 @@ se puede realizar una construcción dual para comónadas.
   Cada parte de la izquierda conmuta por definición de $\phi^{-1}$ y la de $G(f)\times G(g)$,
   y la derecha conmuta al ser $G$ aplicado a la construcción de $f\times g$, así que, por la propiedad universal del producto, concluimos que $\phi^{-1}(G(f)\times G(g))=G(f\times g)$. Con esto logramos
   exhibir un morfismo $f\times g\colon (X,u)\to (A\times B,\phi^{-1}(s\times t))$. La conmutatividad con las proyecciones es inmediataLa y la unicidad
-  se da gracias a la unicidad de $f\times g$ en $\mathcal{E}$. Por tanto $\mathcal{E}_C$
+  se da gracias a la unicidad de $f\times g$ en $\mathcal{E}$. Por tanto $\mathcal{E}_\textbf{G}$
   tiene productos finitos y procedemos a mostrar que tiene igualadores. Consideramos $(A,s)$,
   $(B,t)$ coálgebras y $f,g\colon (A,s)\to (B,t)$. Proponemos $(E,u)$ como sigue:
   \begin{equation*}
@@ -271,7 +308,7 @@ se puede realizar una construcción dual para comónadas.
   por la coasociatividad de $A$, pero $G^2(e)$ es un igualador y como los cuadros conmutan, $\delta_Ase$, $G(s)se$
   también igualan a $G^2(f)$ con $G^2(g)$, entonces por la propiedad universal
   de $G^2E$ obtenemos que $\delta_Eu=G(u)u$. Ahora, para demostrar que $(E,u)$ es el
-  igualador de $f$ y $g$ en $\mathcal{E}_C$ nos fijamos en el siguiente diagrama.
+  igualador de $f$ y $g$ en $\mathcal{E}_\textbf{G}$ nos fijamos en el siguiente diagrama.
   \begin{equation*}
     \begin{tikzcd}
       E\ar{r}{e}\ar[swap]{d}{u} & A\ar[shift left=0.75ex]{r}{f}\ar[swap, shift right=0.75ex]{r}{g}\ar{d}{s} & B\ar{d}{t} \\
@@ -298,29 +335,29 @@ se puede realizar una construcción dual para comónadas.
   \end{equation*}
   Ya sabemos que cada cara del prisma conmuta, salvo por la frontal. Sin embargo, como $G(e)$ es un igualador
   y por tanto mono, si seguimos el diagrama es fácil verificar que $uj=G(j)w$. Por tanto, existe un morfismo 
-  $j\colon (X,w)\to (E,u)$ de coálgebras tal que $ej=h$ en $\mathcal{E}_C$ y es único por la propiedad universal de $E$ como igualador. 
-  Con esto concluimos que $\mathcal{E}_C$ tiene límites finitos.
+  $j\colon (X,w)\to (E,u)$ de coálgebras tal que $ej=h$ en $\mathcal{E}_\textbf{G}$ y es único por la propiedad universal de $E$ como igualador. 
+  Con esto concluimos que $\mathcal{E}_\textbf{G}$ tiene límites finitos.
 \end{proof}
 
 \begin{lemma}
-  La categoría $\mathcal{E}_C$ tiene exponenciales.
+  La categoría $\mathcal{E}_\textbf{G}$ tiene exponenciales.
 \end{lemma}
 \begin{proof}
   Seguiremos la demostración de Mac Lane y Moerdijk en
-  \cite{maclane2012sheaves}.  Recordemos que tenemos una adjunción entre el funtor olvidadizo $U\colon \mathcal{E}_C\to \mathcal{E}$, y el
-  funtor colibre $R\colon \mathcal{E}\to \mathcal{E}_C$.
+  \cite{maclane2012sheaves}.  Recordemos que tenemos una adjunción entre el funtor olvidadizo $U\colon \mathcal{E}_\textbf{G}\to \mathcal{E}$, y el
+  funtor colibre $R\colon \mathcal{E}\to \mathcal{E}_\textbf{G}$.
   La coálgebra colibre de un objeto $X$ es $(GX, \delta_X)$ y un morfismo $h\colon U(Y,\alpha)\to X$ es enviado a
   $G(h)\alpha\colon (Y,\alpha)\to RX$ bajo la adjunción. Sean $(A,s), (B,t)$ y $(C,u)$ coálgebras, entonces tenemos la siguiente cadena de isomorfismos naturales:
   
   \begin{equation*}
-    \homs_{\mathcal{E}}(A\times B, C) \cong \homs_{\mathcal{E}}(U(A,s), C^B) \cong \homs_{\mathcal{E}_C}((A,s), R(C^B)).
+    \homs_{\mathcal{E}}(A\times B, C) \cong \homs_{\mathcal{E}}(U(A,s), C^B) \cong \homs_{\mathcal{E}_\textbf{G}}((A,s), R(C^B)).
   \end{equation*}
   Por el isomorfismo anterior, un buen candidato
   para el exponencial $(C,u)^{(B,t)}$ es $R(C^B)$, sin embargo, debemos restringirnos a los morfismos
   de coálgebras, por lo que sospechamos que hay un subobjeto $(E,v)$ de $R(C^B)$ tal que tengamos
   el siguiente isomorfismo natural:
   \begin{equation*}
-    \homs_{\mathcal{E}_C}((A,s)\times (B,t), (C,u)) \cong \homs_{\mathcal{E}_C}((A,s), (E,v)).
+    \homs_{\mathcal{E}_\textbf{G}}((A,s)\times (B,t), (C,u)) \cong \homs_{\mathcal{E}_\textbf{G}}((A,s), (E,v)).
   \end{equation*}
   Lo anterior implicaría que $(E,v)$ es el exponencial que buscamos. Sea $f\colon (A,s)\times (B,t) \to (C,u)$,
   definimos a $f'$ como su transpuesta exponencial en $\mathcal{E}$ y sea $f''=G(f')s$. Si traducimos
@@ -356,7 +393,7 @@ se puede realizar una construcción dual para comónadas.
     G((GC)^tpf'')s &= G((GC)^t)G(p)G(f'')s = G((GC)^t)G(p)\delta_{C^B}f''.
   \end{align*}
   Recordando que $f''\colon (A,s)\to (G(C^B),\delta_{C^B})$. Como $f''$ iguala a los anteriores
-  morfismos entre coálgebras colibres, aprovechamos que $\mathcal{E}_C$ tiene límites finitos
+  morfismos entre coálgebras colibres, aprovechamos que $\mathcal{E}_\textbf{G}$ tiene límites finitos
   y proponemos a $(E,v)$ como el igualador de $G(u^B)$ con $G((GC)^t)G(p)\delta_{C^B}$
   \begin{equation*}
     \begin{tikzcd}
@@ -367,7 +404,7 @@ se puede realizar una construcción dual para comónadas.
   El mapeo de $f$ a $f^*$ define un isomorfismo natural ya que cada asignación se hizo a través
   de una propiedad universal, por lo que $(E,v)\cong (C,u)^{(B,t)}$.
 \end{proof}
-Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, para lo cual necesitaremos dos lemas.
+Procedemos a mostrar que $\mathcal{E}_\textbf{G}$ tiene un clasificador de subobjetos, para lo cual necesitaremos dos lemas.
 \begin{lemma}
   Sean (A,s) una coálgebra y $m\colon D\rightarrowtail A$ un subobjeto de $A$ en $\mathcal{E}$. Entonces hay
   a lo más un morfismo $d\colon D\to GD$ tal que $(D,d)$ sea coálgebra y $m$ un morfismo de coálgebras.
@@ -438,7 +475,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
   y es único porque $m$ es mono. Por tanto, el diagrama es un producto fibrado.
 \end{proof}
 \begin{lemma}
-  La categoría $\mathcal{E}_C$ tiene un clasificador de subobjetos.
+  La categoría $\mathcal{E}_\textbf{G}$ tiene un clasificador de subobjetos.
 \end{lemma}
 \begin{proof}
   Empezamos con $v\colon 1\to \Omega$ el clasificador de subobjetos en $\mathcal{E}$ y definimos a $\tau\colon G\Omega\to \Omega$
@@ -484,7 +521,7 @@ Procedemos a mostrar que $\mathcal{E}_C$ tiene un clasificador de subobjetos, pa
 Ahora el cuadrado de la derecha es un producto fibrado al tener un isomorfismo arriba y un mono abajo,
 mientras que el exterior es un producto fibrado al ser un rectángulo de~\eqref{eq:clasificadorm} (hay una única
 flecha de $D$ a $G1\cong 1$), por tanto, el cuadrado de la izquierda es un producto fibrado. De esta manera,
-para que $v_G\colon 1\to \Omega_G$ sea el clasificador de subobjetos en $\mathcal{E}_C$, solo falta mostrar que
+para que $v_G\colon 1\to \Omega_G$ sea el clasificador de subobjetos en $\mathcal{E}_\textbf{G}$, solo falta mostrar que
 $h^*$ es único. Supongamos que hay otro morfismo $f\colon (A,s)\to (\Omega_G,u)$ tal que el diagrama de la izquierda
 es un producto fibrado. Para mostrar que $f=h^*$, basta mostrar que $ef=eh^*=G(h)s$, pero $G(h)s$ es un morfismo
 hacia una coálgebra colibre, por lo que, pasando por la adjunción $U\dashv R$, es suficiente que
@@ -501,7 +538,7 @@ Sin embargo tenemos el siguiente diagrama:
     A\ar{r}{f} & \Omega_G\ar{r}{e} & G\Omega\ar{r}{\tau} & \Omega.
   \end{tikzcd}
 \end{equation*}
-Dado que $f$ clasifica a $m$, el cuadrado de la izquierda es un producto fibrado en $\mathcal{E}_C$, pero por
+Dado que $f$ clasifica a $m$, el cuadrado de la izquierda es un producto fibrado en $\mathcal{E}_\textbf{G}$, pero por
 como construimos los límites finitos en un lema anterior, el funtor que olvida los preserva, entonces también es un
 producto fibrado en $\mathcal{E}$. El cuadro de en medio tiene un iso arriba y un mono abajo, mientras que el cuadro
 de la derecha es un producto fibrado al ser la definición de $\tau$. Lo anterior nos permite concluir que el exterior
