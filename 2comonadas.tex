@@ -149,7 +149,7 @@ se puede realizar una construcción dual para comónadas.
     \end{tikzcd}
   \end{equation*}
   De manera dual a la situación con mónadas, es posible definir un funtor $K\colon\catC\to\catD_{\textbf{G}}$
-  que conmute tanto con los adjuntos izquierdos como con los derechos y tal que exhibe una equivalencia de categorías.
+  que conmute tanto con los adjuntos izquierdos como con los derechos.
   Proponemos $K(A) = (LA,L\eta_A)$ y si $f\colon A\to B$, $K(f) = L(f)$, pero primero 
   necesitamos que $(LA,L\eta_A)$ sea una coálgebra para la comónada, para ello consideramos a los diagramas:
   \begin{equation*}
@@ -219,7 +219,7 @@ se puede realizar una construcción dual para comónadas.
       A\times B\ar[phantom]{rd}{(a)}\ar{r}{s\times t}\ar[swap]{d}{s\times t} & GA\times GB\ar{r}{\phi^{-1}}\ar{d}{\delta_A\times \delta_B}
         & G(A\times B)\ar{dd}{\delta_{A\times B}} \\
       GA\times GB\ar{r}{G(s)\times G(t)}\ar[swap]{d}{\phi^{-1}} & G^2A\times G^2B\ar{d}{\psi^{-1}} \\
-      G(A\times B)\ar[phantom]{ur}{(b)}\ar[swap]{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(c)}\ar{r}{G(\phi^{-1})} & G^2(A\times B).
+      G(A\times B)\ar[phantom]{ur}{(b)}\ar[swap]{r}{G(s\times t)} & G(GA\times GB)\ar[phantom]{uur}{(c)}\ar[swap]{r}{G(\phi^{-1})} & G^2(A\times B).
     \end{tikzcd}
   \end{equation*}
   En (a) sabemos que el diagrama en cada coordenada conmuta pues $(A,s),(B,t)$ son coálgebras. 
