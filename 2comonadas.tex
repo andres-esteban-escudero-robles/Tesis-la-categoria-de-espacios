@@ -109,7 +109,7 @@ se puede realizar una construcción dual para comónadas.
   Primero, proponemos $\overline{f}=F(f)t$, que hace conmutar al diagrama:
   \begin{equation*}
     \begin{tikzcd}[column sep=large]
-      X\ar[swap]{d}{t}\ar{r}{Ff\,t} & FA\ar{d}{\delta_A} \\
+      X\ar[swap]{d}{t}\ar{r}{F(f)t} & FA\ar{d}{\delta_A} \\
       FX\ar[swap]{r}{F^2(f)F(t)} & F^2A.
     \end{tikzcd}
   \end{equation*}
@@ -119,7 +119,7 @@ se puede realizar una construcción dual para comónadas.
   pasaría que el diagrama
   \begin{equation*}
     \begin{tikzcd}
-      X\ar[shift left = 0.4ex]{d}{\overline{f}}\ar[swap,shift right = 0.4ex]{d}{g}\ar{r}{t} & FX\ar[shift left = 0.4ex]{d}{F\overline{f}}\ar[swap,shift right = 0.4ex]{d}{Fg}\ar{rd}{F(f)} &[1em] {}\\
+      X\ar[shift left = 0.4ex]{d}{\overline{f}}\ar[swap,shift right = 0.4ex]{d}{g}\ar{r}{t} & FX\ar[shift left = 0.4ex]{d}{F(\overline{f})}\ar[swap,shift right = 0.4ex]{d}{F(g)}\ar{rd}{F(f)} &[2em] {}\\
       FA\ar[swap]{r}{\delta_A} & F^2A\ar[swap]{r}{F(\epsilon_A)} & FA,
     \end{tikzcd}
   \end{equation*}
@@ -140,7 +140,7 @@ se puede realizar una construcción dual para comónadas.
 \end{theorem}
 \begin{proof}
   Llamemos $\eta$ y $\epsilon$ a la unidad y counidad respectivamente, de la adjunción dada $L\dashv R$, 
-  entonces ya sabemos que $(G,\epsilon,L(\eta_R))$ es una comónada en $\catD$ por \ref{prop:comonadainducida} y podemos construir a $\catD_{\textbf{G}}$.
+  entonces ya sabemos que $(G,\epsilon,L\eta_R)$ es una comónada en $\catD$ por \ref{prop:comonadainducida} y podemos construir a $\catD_{\textbf{G}}$.
   Si $F$ es el funtor colibre y $U$ el que olvida, tenemos una situación así:
   \begin{equation*}
     \begin{tikzcd}
@@ -154,8 +154,8 @@ se puede realizar una construcción dual para comónadas.
   necesitamos que $(LA,L\eta_A)$ sea una coálgebra para la comónada, para ello consideramos a los diagramas:
   \begin{equation*}
     \begin{tikzcd}
-      LA\ar{r}{L\eta_A}\ar[swap]{rd}{\id} & LRLA\ar{d}{\epsilon_{LA}} & {} & LA\ar{r}{L\eta_A}\ar[swap]{d}{L\eta_A} & GLA\ar{d}{L\eta_{RA}} \\
-      & LA, & {} & GLA\ar[swap]{r}{GL\eta_A} & G^2LA.
+      LA\ar{r}{L(\eta_A)}\ar[swap]{rd}{\id} & LRLA\ar{d}{\epsilon_{LA}} & {} & LA\ar{r}{L(\eta_A)}\ar[swap]{d}{L(\eta_A)} & GLA\ar{d}{L(\eta_{RA})} \\
+      & LA, & {} & GLA\ar[swap]{r}{GL(\eta_A)} & G^2LA.
     \end{tikzcd}
   \end{equation*}
   El diagrama izquierdo conmuta al ser una de las identidades triangulares y el diagrama 
@@ -164,8 +164,8 @@ se puede realizar una construcción dual para comónadas.
   siguiente diagrama debe conmutar:
   \begin{equation*}
     \begin{tikzcd}
-      LA\ar{r}{Lf}\ar[swap]{d}{L\alpha_A} & LB\ar{d}{L\alpha_B} \\
-      LRLA\ar[swap]{r}{L^2f} & LRLB.
+      LA\ar{r}{L(f)}\ar[swap]{d}{L(\eta_A)} & LB\ar{d}{L(\eta_B)} \\
+      LRLA\ar[swap]{r}{L^2(f)} & LRLB.
     \end{tikzcd}
   \end{equation*}
   Pero nuevamente es un cuadro de conmutatividad de $L\eta$. Luego, por como definimos a $K$,
@@ -261,9 +261,9 @@ se puede realizar una construcción dual para comónadas.
   diagrama de morfismo de coálgebras si tuviéramos que $\phi^{-1}(G(f)\times G(g))=G(f\times g)$,
   pero, usando la propiedad universal de $G(A\times B)$ como producto, es sencillo comprobar dicha igualdad:
   \begin{equation*}
-    \begin{tikzcd}
+    \begin{tikzcd}[column sep=large]
       {} & {GA}\ar{r}{\text{id}} & GA \\
-      GX\ar[bend left = 5ex]{ru}{Gf}\ar[swap, bend right = 5ex]{rd}{Gg}\ar{r}{Gf\times Gg} & GA\times GB\ar{r}{\phi^{-1}}\ar{u}{\pi_{GA}}\ar[swap]{d}{\pi_{GB}} & G(A\times B)\ar{u}{G(\pi_A)}\ar[swap]{d}{G(\pi_B)} & GX\ar[swap, bend right = 5ex]{lu}{Gf}\ar[bend left = 5ex]{ld}{Gg}\ar{l}{G(f\times g)}\\
+      GX\ar[bend left = 5ex]{ru}{G(f)}\ar[swap, bend right = 5ex]{rd}{G(g)}\ar{r}{G(f)\times G(g)} & GA\times GB\ar{r}{\phi^{-1}}\ar{u}{\pi_{GA}}\ar[swap]{d}{\pi_{GB}} & G(A\times B)\ar{u}{G(\pi_A)}\ar[swap]{d}{G(\pi_B)} & GX\ar[swap, bend right = 5ex]{lu}{G(f)}\ar[bend left = 5ex]{ld}{G(g)}\ar{l}{G(f\times g)}\\
       {} & {GB}\ar[swap]{r}{\text{id}} & GB \\
     \end{tikzcd}
   \end{equation*}
@@ -385,7 +385,7 @@ se puede realizar una construcción dual para comónadas.
   Ahora transponemos cada morfismo empezando por $G(f)\phi^{-1}(s\times t)$ con la siguiente observación:
   \begin{equation*}
     \begin{tikzcd}
-      A\times B\ar[equals]{d}\ar{r}{s\times 1_B}\ar[phantom]{rd}{(a)} & GA\times B\ar[swap]{d}{Gf'\times 1_B}\ar{r}{1_{GA}\times t}\ar[phantom]{rd}{(b)} & GA\times GB\ar[swap]{d}{Gf'\times 1_{GB}}\ar{r}{\cong}\ar[phantom]{rd}{(c)} & G(A\times B)\ar[swap]{d}{G(f'\times 1_B)}\ar{r}{Gf}\ar[phantom]{rd}{(d)} & GC\ar[equals]{d}\\
+      A\times B\ar[equals]{d}\ar{r}{s\times 1_B}\ar[near start,phantom]{rd}{(a)} & GA\times B\ar[swap]{d}{G(f')\times 1_B}\ar{r}{1_{GA}\times t}\ar[near start,phantom]{rd}{(b)} & GA\times GB\ar[swap]{d}{G(f')\times 1_{GB}}\ar{r}{\cong}\ar[near start,phantom]{rd}{(c)} & G(A\times B)\ar[swap]{d}{G(f'\times 1_B)}\ar{r}{G(f)}\ar[near start,phantom]{rd}{(d)} & GC\ar[equals]{d}\\
       A\times B\ar[swap]{r}{f''\times 1_B}              & G(C^B)\times B\ar[swap]{r}{1\times t}                       & G(C^B)\times GB\ar[swap]{r}{\phi^{-1}}                 & G(C^B\times B)\ar[swap]{r}{G(ev_{B,C})}             & GC,
     \end{tikzcd}
   \end{equation*}
@@ -409,7 +409,7 @@ se puede realizar una construcción dual para comónadas.
   \begin{equation*}
     \begin{tikzcd}
       (E,v)\ar{r}{i} & (G(C^B),\delta_{C^B})\ar{r}{G(u^B)}\ar{d}{\delta_{C^B}} & (G((GC)^B),\delta_{(GC)^B}) \\
-      (A,s)\ar[dashed]{u}{f^*}\ar{ru}[description]{f''} & (G(G(C^B)),\delta_{G(C^B)})\ar{r}{G(p)} & (G((GC)^{GB}),\delta_{(GC)^{GB}}).\ar{u}{G((GC)^t)} \\
+      (A,s)\ar[dashed]{u}{f^*}\ar{ru}[description]{f''} & (G^2(C^B),\delta_{G(C^B)})\ar{r}{G(p)} & (G((GC)^{GB}),\delta_{(GC)^{GB}}).\ar{u}{G((GC)^t)} \\
     \end{tikzcd}
   \end{equation*}
   El mapeo de $f$ a $f^*$ define un isomorfismo natural ya que cada asignación se hizo a través
@@ -441,10 +441,10 @@ Procedemos a mostrar que $\mathcal{E}_\textbf{G}$ tiene un clasificador de subob
   Veamos que $(D,d)$ es coálgebra, para ello consideremos el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      D\ar{rrr}{d}\ar[swap]{ddd}{d}\ar{rd}{m} & {} & {} & GD\ar{ddd}{Gd}\ar{ld}{Gm} \\
-      {} & A\ar{r}{s}\ar{d}{s} & GA\ar{d}{Gs} & {} \\
-      {} & GA\ar{r}{\delta_A} & G^2A & {} \\
-      GD\ar{rrr}{\delta_D}\ar{ru}{Gm} & {} & {} & G^2D.\ar{lu}{G^2m}
+      D\ar{rrr}{d}\ar[swap]{ddd}{d}\ar{rd}{m} & {} & {} & GD\ar{ddd}{G(d)}\ar{ld}{G(m} \\
+      {} & A\ar{r}{s}\ar[swap]{d}{s} & GA\ar{d}{Gs} & {} \\
+      {} & GA\ar[swap]{r}{\delta_A} & G^2A & {} \\
+      GD\ar[swap]{rrr}{\delta_D}\ar{ru}{G(m)} & {} & {} & G^2D.\ar{lu}{G^2(m)}
     \end{tikzcd}
   \end{equation*}
   El cuadrado interior conmuta dado que $(A,s)$ es coálgebra, el trapecio inferior conmuta por la
@@ -459,8 +459,8 @@ Procedemos a mostrar que $\mathcal{E}_\textbf{G}$ tiene un clasificador de subob
   Para la counidad, consideremos el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      D\ar{r}{d}\ar[swap,tail]{d}{m} & GD\ar{r}{\epsilon_D}\ar[tail]{d}{Gm} & D\ar[tail]{d}{m} \\
-      A\ar{r}{s} & GA\ar{r}{\epsilon_A} & A.
+      D\ar{r}{d}\ar[swap,tail]{d}{m} & GD\ar{r}{\epsilon_D}\ar[tail]{d}{G(m)} & D\ar[tail]{d}{m} \\
+      A\ar[swap]{r}{s} & GA\ar[swap]{r}{\epsilon_A} & A.
     \end{tikzcd}
   \end{equation*}
   El cuadrado de la izquierda conmuta por hipótesis y el de la derecha por la naturalidad de $\epsilon$,
@@ -473,7 +473,7 @@ Procedemos a mostrar que $\mathcal{E}_\textbf{G}$ tiene un clasificador de subob
     \begin{tikzcd}
       X\ar[bend left=30]{rrd}{p}\ar[bend right=30]{rdd}[swap]{q}
           \ar[dashed]{rd}{\epsilon_Dp}\\[-2ex]
-      & [-2ex] D\ar{r}{d}\ar[swap]{d}{m} & GD\ar{d}{Gm} \\
+      & [-2ex] D\ar{r}{d}\ar[swap]{d}{m} & GD\ar{d}{G(m)} \\
       & A\ar[swap]{r}{s} & GA.
     \end{tikzcd}
   \end{equation*}
@@ -496,8 +496,8 @@ Procedemos a mostrar que $\mathcal{E}_\textbf{G}$ tiene un clasificador de subob
   \begin{equation*}
     \label{eq:clasificadorm}
     \begin{tikzcd}
-      D\ar{r}{d}\ar[swap]{d}{m} & GD\ar{r}{G(!_D)}\ar{d}{Gm} & G1\ar{r}{!_{G1}}\ar{d}{Gv} & 1\ar{d}{v} \\
-      A\ar{r}{s} & GA\ar{r}{Gh} & G\Omega\ar{r}{\tau} & \Omega\mathrlap{,} \\
+      D\ar{r}{d}\ar[swap]{d}{m} & GD\ar{r}{G(!_D)}\ar{d}{G(m)} & G1\ar{r}{!_{G1}}\ar{d}{G(v)} & 1\ar{d}{v} \\
+      A\ar[swap]{r}{s} & GA\ar[swap]{r}{G(h)} & G\Omega\ar[swap]{r}{\tau} & \Omega\mathrlap{,} \\
     \end{tikzcd}
   \end{equation*}
   donde no solo cada cuadro conmuta, sino que es un producto fibrado. El cuadrado de la izquierda debido
@@ -524,7 +524,7 @@ Procedemos a mostrar que $\mathcal{E}_\textbf{G}$ tiene un clasificador de subob
   Por tanto, $G(v)\psi$ se factoriza a través de $\Omega_G$ por un morfismo, digamos, $v_G$.
   \begin{equation*}
     \begin{tikzcd}
-      D\ar{r}{!_D}\ar[swap]{d}{m} & 1\ar{r}{\cong}\ar{d}{v_G} & G1\ar{d}{Gv} \\
+      D\ar{r}{!_D}\ar[swap]{d}{m} & 1\ar{r}{\cong}\ar{d}{v_G} & G1\ar{d}{G(v)} \\
       A\ar{r}{h^*}\ar[to path = { -- ([yshift=-3ex]\tikztostart.south) -| (\tikztotarget.south)\tikztonodes}]{rr}[swap,pos=0.25]{G(h)s}
       & \Omega_G\ar{r}{e} & G\Omega.
     \end{tikzcd}
@@ -545,8 +545,8 @@ $\epsilon_{\Omega}ef=h$ en $\mathcal{E}$.
 Sin embargo tenemos el siguiente diagrama:
 \begin{equation*}
   \begin{tikzcd}
-    D\ar{r}{!_D}\ar[swap]{d}{m} & 1\ar{r}{\cong}\ar{d}{v_G} & G1\ar{r}{!_{G1}}\ar{d}{Gv} & 1\ar{d}{v} \\
-    A\ar{r}{f} & \Omega_G\ar{r}{e} & G\Omega\ar{r}{\tau} & \Omega.
+    D\ar{r}{!_D}\ar[swap]{d}{m} & 1\ar{r}{\cong}\ar{d}{v_G} & G1\ar{r}{!_{G1}}\ar{d}{G(v)} & 1\ar{d}{v} \\
+    A\ar[swap]{r}{f} & \Omega_G\ar[swap]{r}{e} & G\Omega\ar[swap]{r}{\tau} & \Omega.
   \end{tikzcd}
 \end{equation*}
 Dado que $f$ clasifica a $m$, el cuadrado de la izquierda es un producto fibrado en $\mathcal{E}_\textbf{G}$, pero por

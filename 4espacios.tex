@@ -242,7 +242,7 @@ Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma
   Para cada $A\in M$ y $m\colon S\to A$ un subespacio de $A$, existe un único morfismo $\chi_m\colon A\to \Omega$ tal que el siguiente diagrama conmuta:
   \begin{equation*}
     \begin{tikzcd}
-      \Delta S\ar{r}{!}\ar[swap,tail]{d}{\Delta m} & 1\ar{d}{v} \\
+      \Delta S\ar{r}{!}\ar[swap,tail]{d}{\Delta(m)} & 1\ar{d}{v} \\
       \Delta A\ar[swap]{r}{\chi_m} & \Omega.
     \end{tikzcd}
   \end{equation*}
@@ -250,16 +250,16 @@ Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma
   obtenemos un producto fibrado. Por \ref{prop:terminaldiscreto} $\Gamma 1 = 1$ y aplicamos \ref{cor:unidadidentidad}.
   \begin{equation*}
     \begin{tikzcd}
-      S\ar{r}{!}\ar[swap,tail]{d}{m} & 1\ar{d}{\Gamma v} \\
-      A\ar[swap]{r}{\Gamma \chi_m} & \Gamma\Omega.
+      S\ar{r}{!}\ar[swap,tail]{d}{m} & 1\ar{d}{\Gamma(v)} \\
+      A\ar[swap]{r}{\Gamma(\chi_m)} & \Gamma\Omega.
     \end{tikzcd}
   \end{equation*}
   Si hubiera otro morfismo $f\colon A\to \Gamma\Omega$ tal que el diagrama sea un producto fibrado, entonces
   consideramos al siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      S\ar{r}{!}\ar[swap,tail]{d}{m} & \Delta\Gamma 1\ar{d}{\Delta\Gamma v}\ar{r}{c_1} & 1\ar{d}{v} \\
-      A\ar[shift left=0.75ex]{r}{f}\ar[swap,shift right=0.75ex]{r}{\Gamma \chi_m} & \Delta\Gamma\Omega\ar[swap,tail]{r}{c_{\Omega}} & \Omega.
+      S\ar{r}{!}\ar[swap,tail]{d}{m} & \Delta\Gamma 1\ar{d}{\Delta\Gamma(v)}\ar{r}{c_1} & 1\ar{d}{v} \\
+      A\ar[shift left=0.75ex]{r}{f}\ar[swap,shift right=0.75ex]{r}{\Gamma(\chi_m)} & \Delta\Gamma\Omega\ar[swap,tail]{r}{c_{\Omega}} & \Omega.
     \end{tikzcd}
   \end{equation*}
   El cuadrado de la derecha conmuta por la naturalidad de la counidad, pero es también un producto fibrado.
@@ -267,8 +267,8 @@ Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma
     \begin{tikzcd}
       X\ar[bend left=30]{rrd}{!}\ar[bend right=30]{rdd}[swap]{p}
           \ar[dashed]{rd}{!}\\[-2ex]
-      &[-2ex] \Delta\Gamma 1\ar{r}{c_1}\ar[swap]{d}{\Delta\Gamma v} & 1\ar{d}{v} \\
-      &\Delta\Gamma\Omega\ar[tail]{r}{c_{\Omega}} & \Omega.
+      &[-2ex] \Delta\Gamma 1\ar{r}{c_1}\ar[swap]{d}{\Delta\Gamma(v)} & 1\ar{d}{v} \\
+      &\Delta\Gamma\Omega\ar[swap,tail]{r}{c_{\Omega}} & \Omega.
     \end{tikzcd}
   \end{equation*}
   Bajo la hipótesis de que $v!=c_{\Omega}p$, como los diagramas que terminal en $1$ conmutan, 
@@ -289,7 +289,7 @@ Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma
   \begin{equation*}
     \begin{tikzcd}
       (a+b)\times_A (a+b)\ar{r}\ar{d} & 1+1\ar{d}{a+b}\\
-      1+1\ar{r}{a+b} & A.
+      1+1\ar[swap]{r}{a+b} & A.
     \end{tikzcd}
   \end{equation*}
   En un topos el coproducto es estable bajo productos fibrados, entonces $(a+b)\times_A (a+b)\cong
