@@ -23,8 +23,8 @@ resulta muy útil en la práctica. La demostración se puede encontrar en \cite{
   fibrados a lo largo de inclusiones de coproductos y para cada diagrama conmutativo
   \begin{equation*}
     \begin{tikzcd}
-      A_1\ar{r}{a_1}\ar{d}{f_1} & A\ar{d}{f} & A_2\ar{l}{a_2}\ar{d}{f_2} \\
-      X\ar{r}{x} & X+Y & Y\ar{l}{y}
+      A_1\ar{r}{a_1}\ar[swap]{d}{f_1} & A\ar{d}{f} & A_2\ar[swap]{l}{a_2}\ar{d}{f_2} \\
+      X\ar[swap]{r}{x} & X+Y & Y\ar{l}{y}
     \end{tikzcd}
   \end{equation*}
   la fila superior es un coproducto si y solo si ambos cuadrados son productos fibrados.
@@ -45,8 +45,70 @@ esta afirmación, empezamos con la siguiente definición.
 \end{proposition}
 \begin{proof}
   Sea $\catC$ una categoría extensiva, entonces $\catC$ cuenta con objeto inicial pues es
-  el coproducto vacío.
+  el coproducto vacío. Además, es sencillo comprobar que, en una categoría con coproductos 
+  binarios y objeto inicial, $A\cong A+0$ para todo objeto $A$. Con lo anterior, consideramos
+  al diagrama conmutativo
+  \begin{equation*}
+    \begin{tikzcd}
+      0\ar{r}{}\ar[swap]{d}{} & B\ar{d}{b} & B\ar[swap]{l}{\id}\ar{d}{\id} \\
+      A\ar[swap]{r}{a} & A+B & B.\ar{l}{b}
+    \end{tikzcd}
+  \end{equation*}
+Dado que la parte superior es un coproducto, por el teorema~\ref{thm:condextensiva} ambos cuadrados 
+son productos fibrados, el izquierdo dice que el producto fibrado de $a$ y $b$ es el objeto inicial
+y el derecho implica que $b$ es un monomorfismo. Pero análogamente se puede demostrar que
+$a$ es un monomorfismo, por lo que los coproductos son disjuntos.
 \end{proof}
+
+\begin{definition}
+  Sea $\catC$ una categoría con coproductos y productos fibrados a lo largo de inclusiones.
+  Los coproductos son universales si calcular los productos fibrados a lo largo de inclusiones
+  resulta en un diagrama de coproducto.
+\end{definition}
+
+\begin{corollary}
+  Si $\catC$ es extensiva, entonces los coproductos son universales.
+\end{corollary}
+\begin{proof}
+  Es inmediato gracias al teorema~\ref{thm:condextensiva}.
+\end{proof}
+
+\begin{lemma}
+  En una categoría extensiva, el objeto inicial es estricto, es decir, si existe $f\colon A\to 0$ entonces $A\cong 0$.
+\end{lemma}
+\begin{proof}
+  Sea $\catC$ una categoría extensiva y supongamos que existe un morfismo $f\colon A\to 0$.
+  Consideremos al diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      A\ar{r}{\id}\ar[swap]{d}{f} & A\ar{d}{f} & A\ar[swap]{l}{\id}\ar{d}{f} \\
+      0\ar[swap]{r}{\id} & 0+0 & 0\ar{l}{\id}
+    \end{tikzcd}
+  \end{equation*}
+  que conmuta trivialmente, más aún, es fácil demostrar que un cuadrado con lados opuestos iguales es un
+  producto fibrado. Entonces, aplicando el teorema~\ref{thm:condextensiva}, la fila superior es un coproducto.
+  Ahora, si hubieran $g,h\colon A\to B$, tenemos la siguiente situación:
+  \begin{equation*}
+    \begin{tikzcd}
+      A\ar{r}{\id}\ar{rd}{g} & A\ar[dashed]{d}{g+h} & A\ar{l}{\id}\ar{ld}{h} \\
+      {} & B & {} 
+    \end{tikzcd}
+  \end{equation*}
+  Por la propiedad universal del coproducto, $g=g+h=h$, así que hay a lo más un morfismo de $A$ a
+  cualquier objeto $B$, pero siempre existe el morfismo $!_Bf$. Por lo tanto, $A$ es inicial.
+\end{proof}
+
+\begin{theorem}
+  Dada una categoría $\catC$ con coproductos finitos, $\catC$ es extensiva si y solo si sus coproductos
+  son disjuntos y universales.
+\end{theorem}
+
+Para el resto del capítulo nos será de utilidad contar con límites finitos en la categoría ambiente.
+
+\begin{definition}
+  Una categoría $\catC$ es ``lextensiva'' si es finitamente completa (es una categoría lex)
+  y es extensiva.
+\end{definition}
 
 \begin{proposition}
   Los subobjetos de un objeto decidible son decidibles.
