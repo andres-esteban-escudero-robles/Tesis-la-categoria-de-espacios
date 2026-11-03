@@ -171,20 +171,20 @@ Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma
   Basta demostrar que $\toposM$ es equivalente al topos $\esp_{\bm{\Delta\Gamma}}$ de coálgebras, con
   $\bm{\Delta\Gamma}$ la comónada del lema anterior. Con tal propósito, proponemos al funtor
   de comparación como lo definimos en~\ref{thm:comparacioncomonada}, $K\colon\toposM\to\esp_{\bm{\Delta\Gamma}}$ que envía a cada espacio discreto $D$ a la coálgebra 
-  $(\Delta D, \Delta u_D)$, donde $u\colon \Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
-  morfismos $K(f) = \Delta f$. Ahora, proponemos al funtor inverso $G\colon \esp_{\bm{\Delta\Gamma}}\to\toposM$ 
-  que envía a cada coálgebra $(A,s)$ a $\Gamma A$ y a cada morfismo de coálgebras $f\colon (A,s)\to (B,t)$ a $\Gamma f$.
+  $(\Delta D, \Delta(u_D))$, donde $u\colon\Id\to\Delta\Gamma$ es la unidad de la adjunción, y en 
+  morfismos $K(f) = \Delta(f)$. Ahora, proponemos al funtor inverso $G\colon \esp_{\bm{\Delta\Gamma}}\to\toposM$ 
+  que envía a cada coálgebra $(A,s)$ a $\Gamma A$ y a cada morfismo de coálgebras $f\colon (A,s)\to (B,t)$ a $\Gamma(f)$.
   Es fácil ver que $G$ es un funtor ya que $\Gamma$ lo es. Sea $D$ un espacio discreto y 
   $(A,s)$ una coálgebra, veamos qué sucede con las composiciones.
   \begin{align*}
-    GF(D) &= G(\Delta D, \Delta u_D) = \Gamma\Delta D = D \\
-    FG(A,s) &= F(\Gamma A) = (\Delta\Gamma A, \Delta u_{\Gamma A}) \cong (A,s).
+    GK(D) &= G(\Delta D, \Delta(u_D)) = \Gamma\Delta D \cong D \\
+    KG(A,s) &= K(\Gamma A) = (\Delta\Gamma A, \Delta(u_{\Gamma A})) \cong (A,s).
   \end{align*}
   Para convencernos del último paso consideremos el siguiente diagrama:
   \begin{equation*}
     \begin{tikzcd}
-      \Delta\Gamma A\ar[swap]{d}{\Delta u_{\Gamma A}}\ar{r}{c_A} & A\ar{d}{s} \\
-      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma c_A} & \Delta\Gamma A.
+      \Delta\Gamma A\ar[swap]{d}{\Delta(u_{\Gamma A})}\ar{r}{c_A} & A\ar{d}{s} \\
+      \Delta\Gamma\Delta\Gamma A\ar[swap]{r}{\Delta\Gamma(c_A)} & \Delta\Gamma A.
     \end{tikzcd}
   \end{equation*}
   Se trata de un diagrama conmutativo puesto que la parte inferior es la identidad, 
@@ -192,7 +192,7 @@ Todo espacio $E$ tiene un único (salvo isomorfismo) subespacio $c_E\colon\Gamma
   $(A,s)$ sea coálgebra nos dice que $c_As = \id_A$, por lo que $c_A$ es mono y tiene inverso por la derecha,
   así que $c_A$ es de hecho un isomorfismo con $s$ su inverso por ambos lados. Entonces la parte superior
   del diagrama también es la identidad, y por lo anterior, $c_A$ es un isomorfismo de coálgebras.
-  Por lo tanto $F$ es una equivalencia de categorías y $\toposM$ es un topos.
+  Por lo tanto $K$ es una equivalencia de categorías y $\toposM$ es un topos.
 \end{proof}
 
 \begin{theorem}

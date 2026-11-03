@@ -1,5 +1,52 @@
 \chapter{Objetos decidibles en Topos}
 
+En este capítulo presentaremos la noción de objeto decidible y sus propiedades
+más importantes para el resto del presente trabajo. El contexto natural para el
+estudio de los objetos decidibles, argumentan Carboni y Janelidze \cite{carboni1996decidable},
+es una categoría ``lextensiva'', una categoría con todos los límites finitos y coproductos binarios bien comportados.
+En seguida desarrollamos formalmente los conceptos.
+
+\begin{definition}
+  Una categoría $\catC$ con coproductos es extensiva si para cada par de objetos $A,B$
+  el funtor canónico
+  \begin{equation*}
+    +\colon\catC/A\times\catC/B \to \catC/(A+B)
+  \end{equation*}
+  es un equivalencia de categorías.
+\end{definition}
+
+El siguiente teorema nos da una definición equivalente de categoría extensiva que
+resulta muy útil en la práctica. La demostración se puede encontrar en \cite{carboni1993introduction}.
+
+\begin{theorem}[label=thm:condextensiva]
+  Una categoría $\catC$ con coproductos es extensiva si y solo si tiene productos
+  fibrados a lo largo de inclusiones de coproductos y para cada diagrama conmutativo
+  \begin{equation*}
+    \begin{tikzcd}
+      A_1\ar{r}{a_1}\ar{d}{f_1} & A\ar{d}{f} & A_2\ar{l}{a_2}\ar{d}{f_2} \\
+      X\ar{r}{x} & X+Y & Y\ar{l}{y}
+    \end{tikzcd}
+  \end{equation*}
+  la fila superior es un coproducto si y solo si ambos cuadrados son productos fibrados.
+\end{theorem}
+ 
+Se dice que los coproductos en una categoría extensiva son bien comportados,
+ya que se comportan de manera similar a los coproductos en $\con$. Para justificar
+esta afirmación, empezamos con la siguiente definición.
+
+\begin{definition}
+  En una categoría con coproductos y productos fibrados a lo largo de inclusiones, 
+  diremos que un coproducto binario es disjunto si el producto fibrado de las inclusiones
+  es el objeto inicial y las inclusiones son monomorfismos. 
+\end{definition}
+
+\begin{proposition}
+  Si $\catC$ es extensiva, entonces los coproductos son disjuntos.
+\end{proposition}
+\begin{proof}
+  Sea $\catC$ una categoría extensiva, entonces $\catC$ cuenta con objeto inicial pues es
+  el coproducto vacío.
+\end{proof}
 
 \begin{proposition}
   Los subobjetos de un objeto decidible son decidibles.
