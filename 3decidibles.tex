@@ -85,12 +85,12 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
       0\ar[swap]{r}{\id} & 0+0 & 0\ar{l}{\id}
     \end{tikzcd}
   \end{equation*}
-  que conmuta trivialmente, más aún, es fácil demostrar que un cuadrado con lados opuestos iguales es un
+  que conmuta trivialmente, más aún, es fácil demostrar que un cuadrado formado por la misma flecha e identidades siempre es un
   producto fibrado. Entonces, aplicando el teorema~\ref{thm:condextensiva}, la fila superior es un coproducto.
   Ahora, si hubieran $g,h\colon A\to B$, tenemos la siguiente situación:
   \begin{equation*}
     \begin{tikzcd}
-      A\ar{r}{\id}\ar{rd}{g} & A\ar[dashed]{d}{g+h} & A\ar{l}{\id}\ar{ld}{h} \\
+      A\ar{r}{\id}\ar[swap]{rd}{g} & A\ar[dashed]{d}{g+h} & A\ar[swap]{l}{\id}\ar{ld}{h} \\
       {} & B & {} 
     \end{tikzcd}
   \end{equation*}
@@ -102,12 +102,75 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
   Dada una categoría $\catC$ con coproductos finitos, $\catC$ es extensiva si y solo si sus coproductos
   son disjuntos y universales.
 \end{theorem}
+\begin{proof}
+  Solo falta demostrar el regreso. Sea $\catC$ una categoría con coproductos
+  disjuntos y universales, queremos demostrar que dado un diagrama conmutativo
+  de la forma:
+  \begin{equation*}
+    \begin{tikzcd}
+      A_1\ar{r}{a_1}\ar[swap]{d}{f_1} & A\ar{d}{f} & A_2\ar[swap]{l}{a_2}\ar{d}{f_2} \\
+      X_1\ar[swap]{r}{x_1} & X_1+X_2 & X_2,\ar{l}{x_2}
+    \end{tikzcd}
+  \end{equation*}
+  la fila superior es un coproducto si y solo si ambos cuadrados son productos fibrados.
+  Por la condición de universalidad el regreso es inmediato, entonces suponemos
+  que la fila superior es un coproducto. Ahora tomamos $g\colon B\to X_1$, $h\colon B\to A$ tales que $x_1g = fh$
+  y calculamos los productos fibrados a lo largo de $a_1$ y $a_2$, lo cual nos da al diagrama conmutativo:
+  \begin{equation}\label{eq:ceroestricto}
+    \begin{tikzcd}
+      B_1\ar{r}{b_1}\ar[swap]{d}{h_1}\ar[phantom, near start]{rd}{\lrcorner} & B\ar{d}{h} & B_2\ar[swap]{l}{b_2}\ar{d}{h_2}\ar[phantom, near start]{ld}{\llcorner} \\
+      A_1\ar[tail,swap]{r}{a_1}\ar[swap]{d}{f_1} & A_1+A_2\ar{d}{f} & A_2\ar[tail]{l}{a_2}\ar{d}{f_2} \\
+      X_1\ar[tail,swap]{r}{x_1} & X_1+X_2 & X_2.\ar[tail]{l}{x_2}
+    \end{tikzcd}
+  \end{equation}
+  Por la universalidad de los coproductos, $B\cong B_1+B_2$ y si pasara que $B_2\cong 0$,
+  $b_1$ sería un isomorfismo con lo que $h_1b_1^{-1}$ sería un buen candidato al único morfismo
+  $B\to A_1$ para mostrar que $A_1$ es un producto fibrado. Como los coproductos son disjuntos,
+  el producto fibrado de $x_1$ con $x_2$ es $0$, así que consideramos al diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      B_2\ar{r}{h_2}\ar{d}{b_2} & A_2\ar{d}{a_2}\ar{rd}{f_2} & {} \\
+      B\ar{r}{h}\ar{rd}{g} & A_1+A_2\ar{rd}{f} & X_2\ar{d}{x_2} \\
+      {} & X_1\ar{r}{x_1} & X_1+X_2,
+    \end{tikzcd}
+  \end{equation*}
+  donde cada parte conmuta por cómo pedimos a $B$ y por \eqref{eq:ceroestricto}, por lo que
+  el exterior conmuta y, al ser $0$ estricto, $B_2\cong 0$. Entonces proponemos
+  a $h_1b_1^{-1}$ como el único morfismo de $B$ a $A_1$ que hace que el siguiente diagrama
+  sea un producto fibrado:
+  \begin{equation*}
+    \begin{tikzcd}
+      B\ar[bend left]{drr}{h}\ar[bend right]{ddr}{g}\ar{dr}{h_1b_1^{-1}} \\
+      & A_1 & A_1+A_2 \\
+      & X_1 & X_1+X_2.
+    \end{tikzcd}
+  \end{equation*}
+  Sabemos que $x_1$ y $a_1$ son mono porque los coproductos son disjuntos, de manera que,
+  el lector puede verificar la conmutatividad de los triángulos persiguiendo al diagrama
+  \eqref{eq:ceroestricto} y usando que $x_1$ es mono. Por otro lado, que $a_1$ sea mono
+  nos da la unicidad de $h_1b_1^{-1}$, así que $A_1$ es un producto fibrado. Un argumento 
+  simétrico demuestra que $A_2$ también es un producto fibrado.
+\end{proof}
 
 Para el resto del capítulo nos será de utilidad contar con límites finitos en la categoría ambiente.
 
 \begin{definition}
   Una categoría $\catC$ es ``lextensiva'' si es finitamente completa (es una categoría lex)
   y es extensiva.
+\end{definition}
+
+La motivación detrás de los objetos decidibles\dots
+
+\begin{definition}
+  En una categoría lextensiva $\catC$ un objeto $D$ es decidible si su diagonal
+  tiene complemento, es decir, si existe una flecha $\overline{\delta}\colon \overline{D}\to D\times D$ 
+  tal que el diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      D\ar{r}{\delta} & D\times D & \overline{D}\ar[swap]{l}{\overline{\delta}}
+    \end{tikzcd}
+  \end{equation*}
+  es un coproducto.
 \end{definition}
 
 \begin{proposition}
