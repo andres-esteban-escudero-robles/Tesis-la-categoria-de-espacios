@@ -6,6 +6,42 @@ estudio de los objetos decidibles, argumentan Carboni y Janelidze \cite{carboni1
 es una categoría ``lextensiva'', una categoría con todos los límites finitos y coproductos binarios bien comportados.
 En seguida desarrollamos formalmente los conceptos.
 
+\begin{proposition}
+  Una categoría con coproductos finitos tiene un objeto inicial.
+\end{proposition}
+\begin{proof}
+  El coproducto vacío satisface la definición de objeto inicial.
+\end{proof}
+
+\begin{proposition}
+  Sea $\catC$ una categoría con coproductos finitos, entonces para todo objeto $A$ de $\catC$,
+  $A\cong A+0$.
+\end{proposition}
+\begin{proof}
+  Sea $A$ un objeto de $\catC$ y tomemos al coproducto $A+0$. Si $i_1\colon A\to A+0$ es una
+  de las inclusiones, veamos que $i_1$ es un isomorfismo. Notemos que podemos construir al
+  diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      A\ar{r}{i_1}\ar[swap]{rd}{\id_A}\ar[bend right,swap]{rdd}{i_1} & A+0\ar{d}{\phi} & 0\ar[swap]{l}{!}\ar{ld}{!}\ar[bend left]{ldd}{!} \\
+      & A\ar{d}{i_1} \\
+      & A+0
+    \end{tikzcd}
+  \end{equation*}
+  donde $\phi$ esta inducida por la propiedad universal, así que cada parte conmuta. Por
+  construcción, $\phi i_1 = \id_A$ y como podemos poner a $\id_{A+0}$ en lugar de $i_1\phi$ en el diagrama,
+  concluimos que $i_1\phi=\id_{A+0}$.
+\end{proof}
+
+\begin{proposition}
+  Si $\catC$ tiene coproductos finitos y $B\to A\leftarrow B$ es un coproducto 
+  con inclusiones idénticas, entonces para cualquier $C\in\catC$, hay a lo más un morfismo $A\to C$.
+\end{proposition}
+\begin{proof}
+  Supongamos que tenemos $f,g\colon A\to C$ morfismos y que $i\colon B\to A$ es la inclusión, 
+  entonces $f=(f+g)i=g$. 
+\end{proof}
+
 \begin{definition}
   Una categoría $\catC$ con coproductos es extensiva si para cada par de objetos $A,B$
   el funtor canónico
@@ -129,9 +165,9 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
   el producto fibrado de $x_1$ con $x_2$ es $0$, así que consideramos al diagrama
   \begin{equation*}
     \begin{tikzcd}
-      B_2\ar{r}{h_2}\ar{d}{b_2} & A_2\ar{d}{a_2}\ar{rd}{f_2} & {} \\
-      B\ar{r}{h}\ar{rd}{g} & A_1+A_2\ar{rd}{f} & X_2\ar{d}{x_2} \\
-      {} & X_1\ar{r}{x_1} & X_1+X_2,
+      B_2\ar{r}{h_2}\ar[swap]{d}{b_2} & A_2\ar{d}{a_2}\ar{rd}{f_2} & {} \\
+      B\ar{r}{h}\ar[swap]{rd}{g} & A_1+A_2\ar{rd}{f} & X_2\ar{d}{x_2} \\
+      {} & X_1\ar[swap]{r}{x_1} & X_1+X_2,
     \end{tikzcd}
   \end{equation*}
   donde cada parte conmuta por cómo pedimos a $B$ y por \eqref{eq:ceroestricto}, por lo que
@@ -140,9 +176,9 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
   sea un producto fibrado:
   \begin{equation*}
     \begin{tikzcd}
-      B\ar[bend left]{drr}{h}\ar[bend right]{ddr}{g}\ar{dr}{h_1b_1^{-1}} \\
-      & A_1 & A_1+A_2 \\
-      & X_1 & X_1+X_2.
+      B\ar[bend left]{drr}{h}\ar[bend right,swap]{ddr}{g}\ar{dr}{h_1b_1^{-1}} \\
+      & A_1\ar{r}{a_1}\ar[swap]{d}{f_1} & A_1+A_2\ar{d}{f} \\
+      & X_1\ar[swap]{r}{x_1} & X_1+X_2.
     \end{tikzcd}
   \end{equation*}
   Sabemos que $x_1$ y $a_1$ son mono porque los coproductos son disjuntos, de manera que,
@@ -159,11 +195,87 @@ Para el resto del capítulo nos será de utilidad contar con límites finitos en
   y es extensiva.
 \end{definition}
 
-La motivación detrás de los objetos decidibles\dots
+Por ``objeto decidible'' en una categoría queremos referirnos a aquellos objetos cuyos elementos son distinguibles entre sí,
+desde el lenguaje de la categoría ambiente. Por ejemplo, de manera externa, dos puntos de un espacio topológico
+pueden ser distintos, pero no separables, haciendo que el espacio no los pueda distinguir. Entonces, necesitamos
+una categoría que nos permita expresar que el predicado de igualdad cumple la ley del tercero excluido, es decir,
+la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías lextesivas soportan una noción adecuada de objeto decidible. 
+
+\begin{proposition}
+  Sea $\catC$ una categoría lextensiva y $A\in\catC$, el orden parcial $\sub(A)$
+  tiene $0$, $1$ e ínfimos.
+\end{proposition}
+\begin{proof}
+  Como el $0$ de $\catC$ es estricto, automáticamente toda flecha que sale del inicial es mono,
+  entonces $0\to A$ es el mínimo de $\sub(A)$, mientras que la identidad es el elemento máximo.
+  El ínfimo de dos subobjetos de $A$ es su producto fibrado.
+\end{proof}
+
+\begin{proposition}
+  En una categoría $\catC$ lextensiva, para cada $f\colon A\to B$ podemos construir al
+  funtor producto fibrado $f^*\colon\catC/B\to\catC/A$ y éste funtor preserva coproductos. 
+\end{proposition}
+\begin{proof}
+  Sea $f\colon A\to B$ un morfismo de $\catC$ fijo, definimos a $f^*$ en una rebanada
+  \begin{equation*}
+    \begin{tikzcd}
+      S\ar{r}{g}\ar{d}{s} & T\ar{ld}{t} \\
+      B
+    \end{tikzcd}
+  \end{equation*}
+  calculando los productos fibrados con $f$:
+  \begin{equation*}
+    \begin{tikzcd}
+      S'\ar{rr}{p}\ar[dashed]{rd}{f^*(g)}\ar[swap]{dd}{f^*S} & {} & S\ar{rd}{g}\ar[near start]{dd}{s} \\
+      {} & T'\ar[near start]{rr}{q}\ar{ld}{f^*T} & {} & T\ar{ld}{t} \\
+      A\ar[swap]{rr}{f} & {} & B.
+    \end{tikzcd}
+  \end{equation*}
+  Hacemos notar que dos caras del prisma son los productos fibrados que calculamos
+  y el lema del producto fibrado implica que el tercer cuadrado también es un producto fibrado.
+  De esta manera, si $h\colon S\to S+T$, $k\colon T\to S+T$ son inclusiones, $s+t$ es 
+  el coproducto en $\catC/B$ y tenemos al diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      S'\ar{r}{f^*(h)}\ar{d}{p} & (S+T)'\ar{d}{r} & T'\ar[swap]{l}{f^*(k)}\ar{d}{q} \\
+      S\ar[swap]{r}{h} & S+T & T,\ar{l}{k}
+    \end{tikzcd}
+  \end{equation*}
+  donde ambos cuadros son productos fibrados, así que, la extensionalidad nos da que
+  la fila superior del diagrama es un coproducto en $\catC$, pero uno puedo verificar fácilmente
+  que $f^*(S+T)\colon(S+T)'\to A$ es el coproducto $f^*S+f^*T$ en $\catC/A$. 
+\end{proof}
+
+\begin{corollary}
+  En una categoría lextensiva $\catC$, si $A\in\catC$ y $s\colon S\to A$, $t\colon T\to A$
+  con subobjetos disjuntos de $A$ (es decir, $S\land T\cong 0$), entonces $S+T$ es su supremo en $\sub(A)$.
+\end{corollary}
+\begin{proof}
+  Sea $i_1\colon S\to S+T\leftarrow T\noloc i_2$ el coproducto de $S$ y $T$, la flecha $h+k$ es el coproducto de $h$ y $k$ en $\catC/A$, entonces $k^*(h+k)\cong k^*h+k^*k$.
+  Dado que $k$ es mono, $k^*k=\id_T$ y por hipótesis $k^*h=0$, así que $k^*(h+k)\cong\id_T$:
+  \begin{equation*}
+    \begin{tikzcd}
+      T\ar{r}{i_2}\ar{d}{\id}\ar[phantom, near start]{rd}{\lrcorner} & S+T\ar{d}{h+k} \\
+      T\ar{r}{k} & A.
+    \end{tikzcd}
+  \end{equation*}
+  Por simetría, el diagrama dice que $(h+k)^*k=i_2$ y un argumento análogo muestra
+  que $(h+k)^*h=i_1$. Como $(h+k)^*(h+k)\cong(h+k)^*h+(h+k)^*k$, por lo anterior obtenemos que $(h+k)^*(h+k)=h+k$,
+  así que $h+k\colon S+T\to A$ es mono y claramente es el supremo de $S$ y $T$ en $\sub(A)$.
+\end{proof}
+
+Con el resultado anterior, vemos que, en una categoría lextensiva, tiene sentido
+preguntarse por subobjetos complementados.
 
 \begin{definition}
-  En una categoría lextensiva $\catC$ un objeto $D$ es decidible si su diagonal
-  tiene complemento, es decir, si existe una flecha $\overline{\delta}\colon \overline{D}\to D\times D$ 
+  Sea $\catC$ una categoría y $A\in\catC$. Si $\sub(A)$ es una retícula, decimos que
+  un subobjeto $S$ es complementado si existe un subobjeto $\overline{S}$ tal que
+  $S\land\overline{S}=0$ y $S\lor\overline{S}=A$.
+\end{definition}
+
+\begin{definition}
+  En una categoría lextensiva $\catC$ un objeto $D$ es decidible si para su diagonal, 
+  $\delta=\id_D\times\id_D$, existe una flecha $\overline{\delta}\colon \overline{D}\to D\times D$ 
   tal que el diagrama
   \begin{equation*}
     \begin{tikzcd}
@@ -172,6 +284,20 @@ La motivación detrás de los objetos decidibles\dots
   \end{equation*}
   es un coproducto.
 \end{definition}
+
+\begin{proposition}
+  Sea $\catC$ una categoría lextensiva. Si $D$ es un objeto decidible, $\delta\colon D\to D\times D$ es un subobjeto complementado
+  de $D\times D$.
+\end{proposition}
+\begin{proof}
+  Proponemos a $\overline{\delta}\colon\overline{D}\to D\times D$ como el complemento deseado.
+  Como los coproductos son disjuntos, $D\land\overline{D}=0$ y con ello sucede
+  que $D\lor\overline{D}=D+\overline{D}\cong D\times\overline{D}$.
+\end{proof}
+
+Así que, si una categoría lextensiva tiene una lógica interna, nuestra definición
+de objeto decidible sí captura la idea de que la igualdad en el objeto cumpla la ley
+del tercero excluido. 
 
 \begin{proposition}
   Los subobjetos de un objeto decidible son decidibles.
