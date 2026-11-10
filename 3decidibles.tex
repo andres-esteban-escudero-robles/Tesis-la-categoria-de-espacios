@@ -251,8 +251,8 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
     \end{tikzcd}
   \end{equation*}
   Por simetría, el diagrama dice que $(h+k)^*k=i_2$ y un argumento análogo muestra
-  que $(h+k)^*h=i_1$. Como $(h+k)^*(h+k)\cong(h+k)^*h+(h+k)^*k$, por lo anterior obtenemos que $(h+k)^*(h+k)=h+k$,
-  así que $h+k\colon S+T\to A$ es mono y claramente es el supremo de $S$ y $T$ en $\sub(A)$.
+  que $(h+k)^*h=i_1$. Como $(h+k)^*(h+k)\cong(h+k)^*h+(h+k)^*k$, por lo anterior, obtenemos que $(h+k)^*(h+k)=i_1+i_2=\id$.
+  Así que $h+k\colon S+T\to A$ es mono y claramente es el supremo de $S$ y $T$ en $\sub(A)$.
 \end{proof}
 
 Con el resultado anterior, vemos que, en una categoría lextensiva, tiene sentido
@@ -277,13 +277,15 @@ preguntarse por subobjetos complementados.
 \end{definition}
 
 \begin{proposition}
-  Sea $\catC$ una categoría lextensiva. Si $D$ es un objeto decidible, $\delta\colon D\to D\times D$ es un subobjeto complementado
+  Sea $\catC$ una categoría lextensiva. $D$ es un objeto decidible si y solo si $\delta\colon D\to D\times D$ es un subobjeto complementado
   de $D\times D$.
 \end{proposition}
 \begin{proof}
-  Proponemos a $\overline{\delta}\colon\overline{D}\to D\times D$ como el complemento deseado.
+  Para la ida proponemos a $\overline{\delta}\colon\overline{D}\to D\times D$ como el complemento deseado.
   Como los coproductos son disjuntos, $D\land\overline{D}=0$ y con ello sucede
   que $D\lor\overline{D}=D+\overline{D}\cong D\times\overline{D}$.
+  Ahora, si existe $\overline{\delta}\colon\overline{D}\to D\times D$ tal que es complemento de $\delta$,
+  que sean subobjetos ajenos hace que su supremo sea su coproducto, entonces $D+\overline{D}\cong D\lor\overline{D}=D\times D$.
 \end{proof}
 
 Así que, si una categoría lextensiva tiene una lógica interna, nuestra definición
@@ -292,7 +294,7 @@ del tercero excluido.
 
 En los siguientes resultados, asumimos que estamos trabajando en una categoría lextensiva.
 
-\begin{proposition}
+\begin{proposition}[label=prop:subdecidible]
   Los subobjetos de un objeto decidible son decidibles.
 \end{proposition}
 \begin{proof}
@@ -305,7 +307,7 @@ En los siguientes resultados, asumimos que estamos trabajando en una categoría 
         S\times S\ar{r}[swap]{m\times m} & A\times A.
     \end{tikzcd}
   \end{equation*}
-  Si además calculamos el producto fibrado de $\overline{\delta}_A$, obtenemos
+  Si además calculamos el producto fibrado de $\overline{\delta}_A$ a lo largo de $m\times m$, obtenemos
   \begin{equation*}
     \begin{tikzcd}
         S\ar[swap]{d}{m}\ar{r}{\delta_S} & S\times S\ar{d}{m\times m} & S'\ar[phantom,pos=0.1]{ld}{\llcorner}\ar[swap]{l}{p}\ar{d}{q} \\
@@ -323,6 +325,17 @@ En los siguientes resultados, asumimos que estamos trabajando en una categoría 
   si recordamos que $1\times1\cong1\cong1+0$. Por su parte, el $0$ es subobjeto de todos, 
   en particular del $1$.
 \end{proof}
+
+\begin{proposition}
+  Un coproducto $A+B$ es decidible si y solo si $A$ y $B$ son decidibles.
+\end{proposition}
+\begin{proof}
+  Las inclusiones son mono, entonces la ida se sigue de \ref{prop:subdecidible}. 
+\end{proof}
+
+\begin{proposition}
+  Un topos es una categoría lextensiva.
+\end{proposition}
 
 \begin{theorem}[label=thm:onndecidible]
   Sea $\mathcal{E}$ un topos con $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
