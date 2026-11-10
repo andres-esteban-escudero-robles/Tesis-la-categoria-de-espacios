@@ -6,14 +6,14 @@ estudio de los objetos decidibles, argumentan Carboni y Janelidze \cite{carboni1
 es una categoría ``lextensiva'', una categoría con todos los límites finitos y coproductos binarios bien comportados.
 En seguida desarrollamos formalmente los conceptos.
 
-\begin{proposition}
+\begin{proposition}[label=prop:coprovacio]
   Una categoría con coproductos finitos tiene un objeto inicial.
 \end{proposition}
 \begin{proof}
   El coproducto vacío satisface la definición de objeto inicial.
 \end{proof}
 
-\begin{proposition}
+\begin{proposition}[label=prop:amascero]
   Sea $\catC$ una categoría con coproductos finitos, entonces para todo objeto $A$ de $\catC$,
   $A\cong A+0$.
 \end{proposition}
@@ -33,12 +33,12 @@ En seguida desarrollamos formalmente los conceptos.
   concluimos que $i_1\phi=\id_{A+0}$.
 \end{proof}
 
-\begin{proposition}
-  Si $\catC$ tiene coproductos finitos y $B\to A\leftarrow B$ es un coproducto 
-  con inclusiones idénticas, entonces para cualquier $C\in\catC$, hay a lo más un morfismo $A\to C$.
+\begin{proposition}[label=prop:inclusionesidenticas]
+  Si $\catC$ tiene coproductos finitos y $B\to B\leftarrow B$ es un coproducto 
+  con inclusiones idénticas, entonces para cualquier $C\in\catC$, hay a lo más un morfismo $B\to C$.
 \end{proposition}
 \begin{proof}
-  Supongamos que tenemos $f,g\colon A\to C$ morfismos y que $i\colon B\to A$ es la inclusión, 
+  Supongamos que tenemos $f,g\colon B\to C$ morfismos y que $i\colon B\to B$ es la inclusión, 
   entonces $f=(f+g)i=g$. 
 \end{proof}
 
@@ -80,17 +80,14 @@ esta afirmación, empezamos con la siguiente definición.
   Si $\catC$ es extensiva, entonces los coproductos son disjuntos.
 \end{proposition}
 \begin{proof}
-  Sea $\catC$ una categoría extensiva, entonces $\catC$ cuenta con objeto inicial pues es
-  el coproducto vacío. Además, es sencillo comprobar que, en una categoría con coproductos 
-  binarios y objeto inicial, $A\cong A+0$ para todo objeto $A$. Con lo anterior, consideramos
-  al diagrama conmutativo
+  Sea $\catC$ una categoría extensiva y $A,B\in\catC$, consideramos al diagrama conmutativo
   \begin{equation*}
     \begin{tikzcd}
       0\ar{r}{}\ar[swap]{d}{} & B\ar{d}{b} & B\ar[swap]{l}{\id}\ar{d}{\id} \\
       A\ar[swap]{r}{a} & A+B & B.\ar{l}{b}
     \end{tikzcd}
   \end{equation*}
-Dado que la parte superior es un coproducto, por el teorema~\ref{thm:condextensiva} ambos cuadrados 
+La parte superior es un coproducto por~\ref{prop:amascero}, entonces el teorema~\ref{thm:condextensiva} dice que ambos cuadrados 
 son productos fibrados, el izquierdo dice que el producto fibrado de $a$ y $b$ es el objeto inicial
 y el derecho implica que $b$ es un monomorfismo. Pero análogamente se puede demostrar que
 $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
@@ -123,15 +120,9 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
   \end{equation*}
   que conmuta trivialmente, más aún, es fácil demostrar que un cuadrado formado por la misma flecha e identidades siempre es un
   producto fibrado. Entonces, aplicando el teorema~\ref{thm:condextensiva}, la fila superior es un coproducto.
-  Ahora, si hubieran $g,h\colon A\to B$, tenemos la siguiente situación:
-  \begin{equation*}
-    \begin{tikzcd}
-      A\ar{r}{\id}\ar[swap]{rd}{g} & A\ar[dashed]{d}{g+h} & A\ar[swap]{l}{\id}\ar{ld}{h} \\
-      {} & B & {} 
-    \end{tikzcd}
-  \end{equation*}
-  Por la propiedad universal del coproducto, $g=g+h=h$, así que hay a lo más un morfismo de $A$ a
-  cualquier objeto $B$, pero siempre existe el morfismo $!_Bf$. Por lo tanto, $A$ es inicial.
+  Ahora, para demostrar que $A$ sea inicial, para cualquier objeto $B$ debe existir un único morfismo $A\to B$. 
+  La unicidad se da por~\ref{prop:inclusionesidenticas}, mientras que $!_Bf\colon A\to B$ existe por hipótesis. 
+  Por lo tanto, $A\cong 0$.
 \end{proof}
 
 \begin{theorem}
@@ -154,7 +145,7 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
   y calculamos los productos fibrados a lo largo de $a_1$ y $a_2$, lo cual nos da al diagrama conmutativo:
   \begin{equation}\label{eq:ceroestricto}
     \begin{tikzcd}
-      B_1\ar{r}{b_1}\ar[swap]{d}{h_1}\ar[phantom, near start]{rd}{\lrcorner} & B\ar{d}{h} & B_2\ar[swap]{l}{b_2}\ar{d}{h_2}\ar[phantom, near start]{ld}{\llcorner} \\
+      B_1\ar{r}{b_1}\ar[swap]{d}{h_1}\ar[phantom, pos=0.1]{rd}{\lrcorner} & B\ar{d}{h} & B_2\ar[swap]{l}{b_2}\ar{d}{h_2}\ar[phantom, pos=0.1]{ld}{\llcorner} \\
       A_1\ar[tail,swap]{r}{a_1}\ar[swap]{d}{f_1} & A_1+A_2\ar{d}{f} & A_2\ar[tail]{l}{a_2}\ar{d}{f_2} \\
       X_1\ar[tail,swap]{r}{x_1} & X_1+X_2 & X_2.\ar[tail]{l}{x_2}
     \end{tikzcd}
@@ -219,7 +210,7 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
   Sea $f\colon A\to B$ un morfismo de $\catC$ fijo, definimos a $f^*$ en una rebanada
   \begin{equation*}
     \begin{tikzcd}
-      S\ar{r}{g}\ar{d}{s} & T\ar{ld}{t} \\
+      S\ar{r}{g}\ar[swap]{d}{s} & T\ar{ld}{t} \\
       B
     \end{tikzcd}
   \end{equation*}
@@ -237,7 +228,7 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
   el coproducto en $\catC/B$ y tenemos al diagrama
   \begin{equation*}
     \begin{tikzcd}
-      S'\ar{r}{f^*(h)}\ar{d}{p} & (S+T)'\ar{d}{r} & T'\ar[swap]{l}{f^*(k)}\ar{d}{q} \\
+      S'\ar{r}{f^*(h)}\ar[swap]{d}{p} & (S+T)'\ar{d}{r} & T'\ar[swap]{l}{f^*(k)}\ar{d}{q} \\
       S\ar[swap]{r}{h} & S+T & T,\ar{l}{k}
     \end{tikzcd}
   \end{equation*}
@@ -255,8 +246,8 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
   Dado que $k$ es mono, $k^*k=\id_T$ y por hipótesis $k^*h=0$, así que $k^*(h+k)\cong\id_T$:
   \begin{equation*}
     \begin{tikzcd}
-      T\ar{r}{i_2}\ar{d}{\id}\ar[phantom, near start]{rd}{\lrcorner} & S+T\ar{d}{h+k} \\
-      T\ar{r}{k} & A.
+      T\ar{r}{i_2}\ar[swap]{d}{\id}\ar[phantom, pos=0.1]{rd}{\lrcorner} & S+T\ar{d}{h+k} \\
+      T\ar[swap]{r}{k} & A.
     \end{tikzcd}
   \end{equation*}
   Por simetría, el diagrama dice que $(h+k)^*k=i_2$ y un argumento análogo muestra
@@ -299,48 +290,38 @@ Así que, si una categoría lextensiva tiene una lógica interna, nuestra defini
 de objeto decidible sí captura la idea de que la igualdad en el objeto cumpla la ley
 del tercero excluido. 
 
+En los siguientes resultados, asumimos que estamos trabajando en una categoría lextensiva.
+
 \begin{proposition}
   Los subobjetos de un objeto decidible son decidibles.
 \end{proposition}
 \begin{proof}
-  Sea $A$ un espacio discreto y $m\colon S\to A$ un subespacio de $A$, queremos demostrar que la 
-  diagonal $\delta_S\colon S\to S\times S$ es un subobjeto complementado. Por hipótesis, para $\delta_A\colon A\to A\times A$
-  existe su complemento, $C$, tal que $C\cap A=0$ y $C\cup A=A\times A$. Notamos que
-  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y $(m\times m)^{-1}(\delta_A)=\delta_S$ ya que el siguiente es un producto fibrado:
+  Sea $A$ un objeto decidible con $m\colon S\to A$ un subobjeto de $A$, notamos que
+  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y no es difícil 
+  demostrar que el siguiente es un producto fibrado:
   \begin{equation*}
     \begin{tikzcd}
-        %T\ar[bend left=30]{rrd}\ar[bend right=30]{rdd}[swap]{t}
-          %\ar[dashed]{rd}{\pi_S t}\\[-2ex]
         S\ar{r}{m} \ar[tail]{d}[swap]{\delta_S} & A\ar[tail]{d}{\delta_A}\\
         S\times S\ar{r}[swap]{m\times m} & A\times A.
     \end{tikzcd}
   \end{equation*}
-  Para demostrar que el diagrama es un producto fibrado necesitamos que el cuadrado conmute
-  y que para cualquier objeto $T$ con flechas que haga conmutar al diagrama exterior, exista 
-  un único morfismo $T\to S$ que haga conmutar los triángulos. Como $\delta_A m = \langle \id_A, \id_A\rangle m = m\times m$ la conmutatividad
-  del cuadrado es inmediata. Para un $T$ con flechas $t\colon T\to S\times S$, $u\colon T\to A$ tales
-  que $\delta_A u = \langle m, m\rangle t$, proponemos a $\pi_S t$ como la flecha de $T$
-  a $S$, aprovechando que $t=\langle\pi_S t, \pi_S t\rangle$ donde $\pi_S\colon S\times S \to S$
-  es la proyección a $S$. De esta manera tenemos la conmutatividad del triángulo izquierdo
-  y, junto con la conmutatividad del cuadrado exterior e interior, obtenemos que $\delta_A u
-  = \delta_A m \pi_S t$, pero $\delta_A$ es mono, entonces $u=m \pi_S t$ y el triángulo superior
-  también conmuta. La unicidad de $\pi_S t$ es inmediata ya que $\delta_S$ es
-  mono.\pdfcomment{Tal vez se pueda quitar la demostración}
-  
-
-  Dado que $S\times S$ es un subobjeto de $A\times A$ a través de $m\times m$, la imagen
-  inversa $(m\times m)^{-1}$ es un morfismo de álgebras de Heyting $Sub(A\times A)\to Sub(S\times S)$,
-  con lo cual $(m\times m)^{-1}$ preserva complementos y por lo anterior $\delta_S\colon S\to S\times S$ es un
-  subobjeto complementado con complemento $(m\times m)^{-1}(C)$.
-
+  Si además calculamos el producto fibrado de $\overline{\delta}_A$, obtenemos
+  \begin{equation*}
+    \begin{tikzcd}
+        S\ar[swap]{d}{m}\ar{r}{\delta_S} & S\times S\ar{d}{m\times m} & S'\ar[phantom,pos=0.1]{ld}{\llcorner}\ar[swap]{l}{p}\ar{d}{q} \\
+        A\ar[swap]{r}{\delta_A} & A\times A & \overline{A}\ar{l}{\overline{\delta}_A}
+    \end{tikzcd}
+  \end{equation*}
+  y por extensividad, la fila superior es un diagrama de coproducto.
 \end{proof}
 
-\begin{proposition}[label=prop:terminaldiscreto]
-  El objeto terminal de un topos es un objeto decidible.
-\end{proposition}
+\begin{corollary}[label=prop:cerounodiscreto]
+  El objeto terminal e inicial son objetos decidibles.
+\end{corollary}
 \begin{proof}
-  Queremos mostrar que $\delta_1\colon 1\to 1\times 1$ es un subobjeto complementado, pero $1\times 1 \cong 1$
-  entonces $1$ es el subobjeto maximal, por lo que $0 \to 1\times 1$ es el complemento que buscamos.
+  El $1$ es decidible puesto que el diagrama $1\to1\times1\leftarrow0$ es un coproducto
+  si recordamos que $1\times1\cong1\cong1+0$. Por su parte, el $0$ es subobjeto de todos, 
+  en particular del $1$.
 \end{proof}
 
 \begin{theorem}[label=thm:onndecidible]
