@@ -326,11 +326,49 @@ En los siguientes resultados, asumimos que estamos trabajando en una categoría 
   en particular del $1$.
 \end{proof}
 
+\begin{proposition}[label=prop:lextdistributiva]
+  En una categoría lextensiva (solo se necesitan productos) el producto se
+  distribuye sobre la suma.
+\end{proposition}
+\begin{proof}
+  Dados objetos $A,B_1,B_2$ podemos generar al diagrama conmutativo
+  \begin{equation*}
+    \begin{tikzcd}
+      B_1\ar{r}{b_1}\ar[swap]{d}{!} & B_1+B_2\ar{d}{!+!} & B_2\ar[swap]{l}{b_2}\ar{d}{!} \\
+      1\ar[swap]{r}{i_1} & 1+1 & 1\ar{l}{i_2}
+    \end{tikzcd}
+  \end{equation*}
+  con la fila superior un coproducto, por tanto, ambos cuadrados son productos fibrados.
+  Con esta información, es sencillo comprobar que en
+  \begin{equation*}
+    \begin{tikzcd}
+      A\times B_1\ar{r}{\id\times b_1}\ar[swap]{d}{!} & A\times(B_1+B_2)\ar{d}{(!+!)\pi_2} & A\times B_2\ar[swap]{l}{\id\times b_2}\ar{d}{!} \\
+      1\ar[swap]{r}{i_1} & 1+1 & 1\ar{l}{i_2}
+    \end{tikzcd}
+  \end{equation*}
+  los cuadros también son productos fibrados. Pero entonces la fila superior es
+  un coproducto y concluimos que $A\times(B_1+B_2)\cong(A\times B_1)+(A\times B_2)$.
+\end{proof}
+
 \begin{proposition}
   Un coproducto $A+B$ es decidible si y solo si $A$ y $B$ son decidibles.
 \end{proposition}
 \begin{proof}
-  Las inclusiones son mono, entonces la ida se sigue de \ref{prop:subdecidible}. 
+  Las inclusiones son mono, entonces la ida se sigue de \ref{prop:subdecidible}. Supongamos
+  que $A$ y $B$ son decidibles, entonces el diagrama
+  \begin{equation*}
+    \begin{tikzcd}
+      A+B\ar{r}{\delta_A+\delta_B} & (A\times A)+(B\times B) & \overline{A}+\overline{B}\ar[swap]{l}{\overline{\delta}_A+\overline{\delta}_B}
+    \end{tikzcd}
+  \end{equation*}
+  es un coproducto por la asociatividad y conmutatividad de la suma. Luego, por distributividad,
+  $(A+B)^2\cong(A\times A)+(B\times B)+(A\times B)+(B\times A)$, así que asociando
+  \begin{equation*}
+    \begin{tikzcd}
+      A+B\ar{r}{} & (A\times A)+(B\times B)\ar{r}{} & (A+B)^2 & (A\times B)+(B\times A)+(\overline{A}+\overline{B})\ar{l}{}
+    \end{tikzcd}
+  \end{equation*}
+  es un coproducto, de manera que solo falta demostrar que $(\pi^A_1+\pi^B_1,\pi^A_2+\pi^B_2)(\delta_A+\delta_B)=\delta_{A+B}$
 \end{proof}
 
 \begin{proposition}
