@@ -355,25 +355,56 @@ En los siguientes resultados, asumimos que estamos trabajando en una categoría 
 \end{proposition}
 \begin{proof}
   Las inclusiones son mono, entonces la ida se sigue de \ref{prop:subdecidible}. Supongamos
-  que $A$ y $B$ son decidibles, entonces el diagrama
+  que $A$ y $B$ son decidibles, si $i_A\colon A\to A+B\leftarrow B\noloc i_B$ es un coproducto, 
+  queremos mostrar que $\delta_{A+B}\colon A+B\to(A+B)\times(A+B)$ tiene complemento. Primero,
+  juntando las hipótesis tenemos que el diagrama
   \begin{equation*}
     \begin{tikzcd}
       A+B\ar{r}{\delta_A+\delta_B} & (A\times A)+(B\times B) & \overline{A}+\overline{B}\ar[swap]{l}{\overline{\delta}_A+\overline{\delta}_B}
     \end{tikzcd}
   \end{equation*}
   es un coproducto por la asociatividad y conmutatividad de la suma. Luego, por distributividad,
-  $(A+B)^2\cong(A\times A)+(B\times B)+(A\times B)+(B\times A)$, así que asociando
+  $(A+B)^2\cong(A\times A)+(B\times A)+(A\times B)+(B\times B)$, con inclusiones $i_A\times i_A,i_B\times i_A,i_A\times i_B,i_B\times i_B$ respectivamente, así que asociando
   \begin{equation*}
     \begin{tikzcd}
       A+B\ar{r}{} & (A\times A)+(B\times B)\ar{r}{} & (A+B)^2 & (A\times B)+(B\times A)+(\overline{A}+\overline{B})\ar{l}{}
     \end{tikzcd}
   \end{equation*}
-  es un coproducto, de manera que solo falta demostrar que $(\pi^A_1+\pi^B_1,\pi^A_2+\pi^B_2)(\delta_A+\delta_B)=\delta_{A+B}$
+  es un coproducto. Pero la inclusión de $A+B$ es la composición $(i_A\times i_A+i_B\times i_B)(\delta_A+\delta_B)$
+  que se simplifica a $k=[i_A\times i_A,i_B\times i_B]$. Por otro lado, sabemos que $\delta_{A+B}=[i_A,i_B]\times[i_A,i_B]$, 
+  entonces $\pi_1ki_A=\pi_1(i_A\times i_A)=i_A$ y $\pi_1\delta_{A+B}i_A=\id_{A+B}i_A=i_A$, con $\pi_1$ la primera
+  proyección de $(A+B)\times(A+B)$. Como sucede lo mismo con la otra inclusión y proyección, las propiedades universales
+  del producto y coproducto implican que $k=\delta_{A+B}$.
 \end{proof}
+
+\begin{proposition}
+  Una categoría lextensiva es localmente lextensiva.
+\end{proposition}
+\begin{proof}
+  Sea $\catC$ una categoría lextensiva y $A$ un objeto en $\catC$, si $f\colon B\to A$
+  y $g\colon C\to A$ son morfismos, $f+g$ es su coproducto en $\catC/A$. Luego, el funtor
+  \begin{equation*}
+    \begin{tikzcd}
+      +\colon(\catC/A)/f\times(\catC/A)/g\to(\catC/A)/(f+g)
+    \end{tikzcd}
+  \end{equation*}
+  debe ser una equivalencia ya que $(\catC/A)/f\cong\catC/B$, $(\catC/A)/g\cong\catC/C$
+  y $(\catC/A)/(f+g)\cong\catC/(B+C)$, por lo que la extensividad de $\catC$ nos da la de $\catC/A$.
+  Similarmente, como $\catC$ tiene productos fibrados, $\catC/A$ es finitamente completa.
+\end{proof}
+
+\begin{definition}
+  En una categoría lextensiva $\catC$ decimos que un morfismo $f\colon A\to B$ es 
+  decidible si es un objeto decidible en $\catC/B$.
+\end{definition}
 
 \begin{proposition}
   Un topos es una categoría lextensiva.
 \end{proposition}
+\begin{proof}
+  Tanto en \cite{johnstone2002sketches} como en \cite{maclane2012sheaves} se demuestra que
+  en un topos los coproductos son universales y disjuntos.
+\end{proof}
 
 \begin{theorem}[label=thm:onndecidible]
   Sea $\mathcal{E}$ un topos con $(N,o,s)$ un objeto de números naturales, entonces $N$ es un objeto decidible.
