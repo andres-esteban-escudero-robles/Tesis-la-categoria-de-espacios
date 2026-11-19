@@ -232,7 +232,7 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
       S\ar[swap]{r}{h} & S+T & T,\ar{l}{k}
     \end{tikzcd}
   \end{equation*}
-  donde ambos cuadros son productos fibrados, así que, la extensionalidad nos da que
+  donde ambos cuadros son productos fibrados, así que, la extensividad nos da que
   la fila superior del diagrama es un coproducto en $\catC$, pero uno puedo verificar fácilmente
   que $f^*(S+T)\colon(S+T)'\to A$ es el coproducto $f^*S+f^*T$ en $\catC/A$. 
 \end{proof}
@@ -265,7 +265,7 @@ preguntarse por subobjetos complementados.
 \end{definition}
 
 \begin{definition}
-  En una categoría lextensiva $\catC$ un objeto $D$ es decidible si para su diagonal, 
+  En una categoría lextensiva $\catC$, un objeto $D$ es decidible si para su diagonal, 
   $\delta=\id_D\times\id_D$, existe una flecha $\overline{\delta}\colon \overline{D}\to D\times D$ 
   tal que el diagrama
   \begin{equation*}
@@ -289,32 +289,46 @@ preguntarse por subobjetos complementados.
 \end{proof}
 
 Así que, si una categoría lextensiva tiene una lógica interna, nuestra definición
-de objeto decidible sí captura la idea de que la igualdad en el objeto cumpla la ley
+de objeto decidible sí captura la idea de que la igualdad en el objeto cumple la ley
 del tercero excluido. 
 
 En los siguientes resultados, asumimos que estamos trabajando en una categoría lextensiva.
+
+\begin{proposition}[label=prop:fcomplementos]
+  Dado un morfismo $f\colon B\to A$ con $A\cong A_1+A_2$, el funtor $f^*$ preserva complementos.
+\end{proposition}
+\begin{proof}
+  Calculamos el producto fibrado de $f$ con las inclusiones $a_1\colon A_1\to A$, $a_2\colon A_2\to A$
+  y obtenemos el diagrama conmutativo:
+  \begin{equation*}
+    \begin{tikzcd}
+        B_1\ar[swap]{d}{}\ar{r}{}\ar[phantom,pos=0.1]{rd}{\lrcorner} & B\ar{d}{f} & B_2\ar[phantom,pos=0.1]{ld}{\llcorner}\ar[swap]{l}{}\ar{d}{} \\
+        A_1\ar[swap]{r}{a_1} & A & A_2\ar{l}{a_2}
+    \end{tikzcd}
+  \end{equation*}
+  Por la universalidad del coproducto, $B\cong B_1+B_2$ con $f^*A_1=B_1$ y $f^*A_2=B_2$.
+\end{proof}
 
 \begin{proposition}[label=prop:subdecidible]
   Los subobjetos de un objeto decidible son decidibles.
 \end{proposition}
 \begin{proof}
   Sea $A$ un objeto decidible con $m\colon S\to A$ un subobjeto de $A$, notamos que
-  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$ y no es difícil 
-  demostrar que el siguiente es un producto fibrado:
+  $m$ induce $m\times m\colon S\times S \rightarrowtail A\times A$, así que aplicamos
+  \ref{prop:fcomplementos} a $m\times m$. Como el siguiente diagrama es un producto fibrado
+%  \begin{equation*}
+%    \begin{tikzcd}
+%        S\ar[swap]{d}{m}\ar{r}{\delta_S} & S\times S\ar{d}{m\times m} & S'\ar[phantom,pos=0.1]{ld}{\llcorner}\ar[swap]{l}{p}\ar{d}{q} \\
+%        A\ar[swap]{r}{\delta_A} & A\times A & \overline{A}\ar{l}{\overline{\delta}_A}
+%    \end{tikzcd}
+%  \end{equation*}
   \begin{equation*}
     \begin{tikzcd}
         S\ar{r}{m} \ar[tail]{d}[swap]{\delta_S} & A\ar[tail]{d}{\delta_A}\\
         S\times S\ar{r}[swap]{m\times m} & A\times A.
     \end{tikzcd}
   \end{equation*}
-  Si además calculamos el producto fibrado de $\overline{\delta}_A$ a lo largo de $m\times m$, obtenemos
-  \begin{equation*}
-    \begin{tikzcd}
-        S\ar[swap]{d}{m}\ar{r}{\delta_S} & S\times S\ar{d}{m\times m} & S'\ar[phantom,pos=0.1]{ld}{\llcorner}\ar[swap]{l}{p}\ar{d}{q} \\
-        A\ar[swap]{r}{\delta_A} & A\times A & \overline{A}\ar{l}{\overline{\delta}_A}
-    \end{tikzcd}
-  \end{equation*}
-  y por extensividad, la fila superior es un diagrama de coproducto.
+  Obtenemos que $(m\times m)^*$ manda $\delta_A$ a $\delta_S$ y $S$ es decidible.
 \end{proof}
 
 \begin{corollary}[label=prop:cerounodiscreto]
