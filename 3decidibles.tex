@@ -77,6 +77,9 @@ esta afirmación, empezamos con la siguiente definición.
 \end{definition}
 
 \begin{proposition}
+  \pdfcomment{Creo que este resultado debería ser que los coproductos son
+  disjuntos y las inclusiones al coproducto son monos. De lo contrario no
+  necesitas notar que a y b son monos}
   Si $\catC$ es extensiva, entonces los coproductos son disjuntos.
 \end{proposition}
 \begin{proof}
@@ -182,7 +185,7 @@ $a$ es un monomorfismo, por lo que los coproductos son disjuntos.
 Para el resto del capítulo nos será de utilidad contar con límites finitos en la categoría ambiente.
 
 \begin{definition}
-  Una categoría $\catC$ es ``lextensiva'' si es finitamente completa (es una categoría lex)
+  Una categoría $\catC$ es lextensiva si es finitamente completa (es una categoría lex)
   y es extensiva.
 \end{definition}
 
@@ -203,6 +206,8 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
 \end{proof}
 
 \begin{proposition}
+  \pdfcomment{Tengo que revisar este con más cuidado. Creo que no es cierto que
+  los tres cuadrados del diagrama sean productos fibrados, pero creo que no se usa}
   En una categoría $\catC$ lextensiva, para cada $f\colon A\to B$ podemos construir al
   funtor producto fibrado $f^*\colon\catC/B\to\catC/A$ y éste funtor preserva coproductos. 
 \end{proposition}
@@ -217,9 +222,10 @@ la diagonal de un objeto tiene complemento. Ahora mostramos que las categorías 
   calculando los productos fibrados con $f$:
   \begin{equation*}
     \begin{tikzcd}
-      S'\ar{rr}{p}\ar[dashed]{rd}{f^*(g)}\ar[swap]{dd}{f^*S} & {} & S\ar{rd}{g}\ar[near start]{dd}{s} \\
+      S'\ar{rr}{p}\ar[dashed]{rd}{f^*(g)}\ar[swap]{dd}{f^*S} & {} & S\ar{rd}{g} \\
       {} & T'\ar[near start]{rr}{q}\ar{ld}{f^*T} & {} & T\ar{ld}{t} \\
       A\ar[swap]{rr}{f} & {} & B.
+      \ar[from=1-3, to=3-3, crossing over, "s"{near start}]
     \end{tikzcd}
   \end{equation*}
   Hacemos notar que dos caras del prisma son los productos fibrados que calculamos
@@ -259,7 +265,7 @@ Con el resultado anterior, vemos que, en una categoría lextensiva, tiene sentid
 preguntarse por subobjetos complementados.
 
 \begin{definition}
-  Sea $\catC$ una categoría y $A\in\catC$. Si $\sub(A)$ es una retícula, decimos que
+  Sean $\catC$ una categoría y $A\in\catC$. Si $\sub(A)$ es una retícula, decimos que
   un subobjeto $S$ es complementado si existe un subobjeto $\overline{S}$ tal que
   $S\land\overline{S}=0$ y $S\lor\overline{S}=A$.
 \end{definition}
